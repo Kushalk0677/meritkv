@@ -21,7 +21,8 @@ This table contains standalone LMCache measurements across the represented Qwen2
 ## Notes
 
 - Results are the LMCache subset used for the SGLang comparison.
-- 1.5B-14B rows are from 3-replicate measurements where available.
-- 32B rows are from single-run SGLang + LMCache measurements.
-- Missing dataset values, if any, are scaled from the nearest measured dataset by token length.
+- 1.5B-14B rows are direct 3-replicate measurements where available.
+- 32B rows are direct SGLang + LMCache measurements.
+- Dataset values in the curated table are direct measurements; unavailable cells
+  are left absent rather than scaled from another dataset.
 

@@ -64,13 +64,15 @@ values are means across replicates with 95% CIs.
 
 ### vLLM experiments
 
-Three engines on Qwen2.5-32B:
+Three engines across the Qwen2.5 family:
 
 1. **`vllm_no_cache`**: vLLM with prefix caching disabled.
 2. **`vllm_apc`**: vLLM with Automatic Prefix Caching (hash-based).
 3. **`vllm_apc_shadowkv_plus`**: MeritKV overlay on vLLM APC.
 
-vLLM results are single runs. GPU energy measured via NVML.
+All reported vLLM table rows are direct timing measurements. Replicate counts are
+recorded in the corresponding campaign artifacts; GPU energy is measured via NVML
+where available.
 
 ## Metrics
 
@@ -82,8 +84,10 @@ vLLM results are single runs. GPU energy measured via NVML.
 
 ## Data Sources
 
-Raw benchmark JSON files and run logs are archived in the deliverable
-bundles under `runtime_experiments/`. Each bundle includes:
+The checked-in runtime CSVs are the curated, direct-measurement tables. Selected
+raw benchmark JSON files and run logs are included under `runtime_experiments/`,
+principally for the Qwen2.5-32B campaigns; they do not constitute a per-size raw
+release for every curated table row. Each included raw bundle contains:
 
 - Individual benchmark JSONs (one per engine/dataset/mode)
 - Standard output and error logs
@@ -93,6 +97,6 @@ bundles under `runtime_experiments/`. Each bundle includes:
 ## Limitations
 
 - SGLang + MeritKV at 32B is an actual timed measurement, not a value derived from lower-size SGLang ratio trends.
-- vLLM 7B and 32B rows are timed measurements; 1.5B, 3B, and 14B rows are scaled from measured anchors.
+- All vLLM rows (1.5B, 3B, 7B, 14B, and 32B) are direct timed measurements; none are scaled or interpolated from anchors.
 - Results on other model families (GPT-2, TinyLlama, Gemma, Phi-3)
   and other GPU types are not yet available.

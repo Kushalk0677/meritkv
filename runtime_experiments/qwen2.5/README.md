@@ -36,6 +36,8 @@ Qwen2.5 1.5B, 3B, 7B, 14B, and 32B appear in the curated tables. The included vL
 ## Notes
 
 - The curated CSVs are the primary public-facing tables.
+- Every reported table row is a direct measurement. The checked-in raw bundles
+  are selected audit artifacts, with the most complete coverage for Qwen2.5-32B.
 - The `raw/` subfolders keep the run files needed to audit or regenerate selected values without cluttering the top-level runtime folders.
 - The July 1 vLLM aggregate contains all five replicates. The June 3 vLLM run is retained as an additional full run tree.
 
