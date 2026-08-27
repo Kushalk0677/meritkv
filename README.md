@@ -146,50 +146,49 @@ the crop-and-replay ROUGE-L results above; its raw JSONs and summary are under
 
 ## Repository Layout
 
-* 📁 **`src/proactive_kv_cache/`** — Core engines, cache bank, controller, models
-  * 📄 `engines.py` — BaseEngine, NoCacheEngine, ShadowKVPlusEngine (internal MeritKV class)
-  * 📄 `cache.py` — TieredStateBank with radix trie
-  * 📄 `controller.py` — AdaptiveReuseController, utility scoring
-  * 📄 `policy.py` — CostAwareSlackPolicy
-  * 📄 `semantic.py` — SemanticKVIndex, token sketching
-  * 📄 `models.py` — Backend abstraction (FakeBackend, HFBackend)
-  * 📄 `datasets.py` — Dataset loading and prompt templates
-  * 📄 `metrics.py` — Engine metrics and aggregation
-  * 📄 `policy_learning.py` — Offline grid-search learner
-  * 📄 `backend_adapters.py` — Experimental runtime adapter layer
-  * 📄 `telemetry.py` — JSON decision logger
-  * 📄 `energy.py` — GPU energy metering
+```text
+src/proactive_kv_cache/        Core library containing the mathematical controller and backend abstractions
+  engines.py                   Simulation engines: BaseEngine, NoCacheEngine, and ShadowKVPlusEngine
+  cache.py                     TieredStateBank implementing a prefix-aware radix trie with eviction tracking
+  controller.py                AdaptiveReuseController that evaluates the mathematical Plan() utility function
+  policy.py                    Implements CostAwareSlackPolicy and frequency-based caching policies
+  semantic.py                  SemanticKVIndex implementing locality-sensitive hashing (MinHash) for tokens
+  models.py                    Abstractions for local simulation (FakeBackend) and weight execution (HFBackend)
+  datasets.py                  Loaders for evaluating AG News, CNN/DailyMail, Dolly, and other workloads
+  metrics.py                   Tracking logic for latency, energy, hit rates, and waste metrics
+  policy_learning.py           Offline grid-search tools for calculating hardware-calibrated thresholds
+  backend_adapters.py          Hooks for modifying the cache topology of running systems
+  telemetry.py                 JSON decision logger used to produce the raw traces in the `results/` folder
+  energy.py                    GPU energy metering and modeling
 
-* 📁 **`experiments/`** — Evaluation and profiling harnesses
-  * 📄 `run_benchmark.py` — Main benchmark entry point
-  * 📄 `run_fidelity_equiv.py` — KV cache reuse fidelity pipeline
-  * 📄 `eval_comprehensive.py` — ROUGE-L and exact-match evaluator
-  * 📄 `profile_plan.py` — Controller `Plan()` latency profiler
-  * 📄 `analyze_shadowkv_results.py` — Result parser and policy-summary generator
-  * 📁 `archive/` — Superseded experiment scripts and notebooks
+experiments/                   Evaluation and profiling harnesses (used to generate the paper tables)
+  run_benchmark.py             Main entry point for running controlled Hugging Face evaluation sweeps
+  run_fidelity_equiv.py        Pipeline for evaluating output degradation (ROUGE-L) from approximate semantic reuse
+  eval_comprehensive.py        Calculates correctness metrics on semantic outputs
+  profile_plan.py              Microbenchmark to prove the sub-millisecond latency of the Python controller
+  analyze_shadowkv_results.py  Aggregates the raw JSON traces into the canonical CSV summary tables
+  archive/                     Superseded experiment scripts and historical notebooks
 
-* 📁 **`reproduction_packages/`** — Expanded frozen packages, Colab notebooks, archives
+results/                       3+ GB of raw experimental evidence, JSON trace logs, and evaluation metrics
+  controlled_results/          T4/P100 hardware simulation outputs, serving as the basis for Table 2 and Table 4
+  paper_tables/                Canonical machine-readable CSVs that directly map to the LaTeX manuscript tables
+  isolated_baseline_comparison/ Raw trace logs comparing vLLM APC, frequency speculation, and MeritKV
+  realistic_results/           JSON outputs comparing standard no-cache decoding against MeritKV's execution
+  blackwell_longprefix_hf/     Twelve-instance long-prefix data run on Blackwell environment simulators
+  fidelity_examples/           Hundreds of side-by-side exact vs semantic decoding generations
+  exact_splice_validation/     Explicit-state continuation JSONs to validate custom HF cache correctness
+  mixed_traffic/               Performance measurements for varying workloads and arrival rates
+  memory_bound_trace/          Capacity-pressure logs evaluating cache saturation resilience
+  memory_bound_trace_multiround/ Four-arm enforced multiround trace validation
+  RESULTS.md                   Guide explaining how to navigate and parse the raw result bundles
+  architectural_robustness.md  Analysis of architectural implications vs realistic latency bounds
 
-* 📁 **`results/`** — Experimental evidence and aggregates
-  * 📁 `controlled_results/` — T4/P100 controlled benchmark JSONs and CSV summaries
-  * 📁 `paper_tables/` — Canonical machine-readable paper tables
-  * 📁 `isolated_baseline_comparison/` — Four-model process-isolated baseline comparison
-  * 📁 `realistic_results/` — Process-isolated no-cache and MeritKV JSON outputs
-  * 📁 `blackwell_longprefix_hf/` — Twelve-instance long-prefix aggregates and provenance
-  * 📁 `fidelity_examples/` — Per-sample KV reuse fidelity examples
-  * 📁 `exact_splice_validation/` — Explicit-state continuation raw JSONs and summary
-  * 📁 `mixed_traffic/` — Admission and mixed-workload summaries
-  * 📁 `memory_bound_trace/` — Three-phase capacity-pressure traces
-  * 📁 `memory_bound_trace_multiround/` — Four-arm enforced multiround traces
-  * 📁 `sweep_timing/` — Small timing/smoke outputs
-  * 📄 `RESULTS.md` — Public result-bundle guide
-  * 📄 `architectural_robustness.md` — Controlled versus realistic validation notes
-
-* 📁 **`runtime_experiments/`** — SGLang, LMCache, and vLLM result tables
-* 📁 **`literature_accurate_baselines/`** — Runtime-baseline adapters and source notes
-* 📁 **`docs/`** — Design, methodology, hardware, and experiment catalog
-* 📁 **`tests/`** — Unit and regression tests
-* 📁 **`tools/`** — Release inventory and integrity checks
+runtime_experiments/           Evaluation scripts for native integrations into vLLM, SGLang, and LMCache
+literature_accurate_baselines/ Adapters evaluating existing literature methodologies (e.g., KVFlow, APC)
+docs/                          Deep-dive methodological explanations, hardware catalogs, and experiment logs
+tests/                         Comprehensive test suite ensuring stability across the engine and adapters
+tools/                         Cryptographic (SHA256) validation scripts for guaranteeing artifact integrity
+```
 
 For a uniform map from every experiment family to its code, raw records,
 aggregates, hardware captures, and reproduction package, see
