@@ -50,6 +50,10 @@ MeritKV combines three cooperating components:
 
 ## Key Results
 
+<p align="center">
+  <img src="docs/meritkv_results_overview.png" alt="MeritKV Results Overview" width="800"/>
+</p>
+
 ### Controlled and Process-Isolated HF Evaluation
 
 The controlled Hugging Face study covers five models, ten datasets, three
