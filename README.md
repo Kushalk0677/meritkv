@@ -146,52 +146,50 @@ the crop-and-replay ROUGE-L results above; its raw JSONs and summary are under
 
 ## Repository Layout
 
-```text
-src/proactive_kv_cache/        Core engines, cache bank, controller, models
-  engines.py                   BaseEngine, NoCacheEngine, ShadowKVPlusEngine (internal MeritKV class)
-  cache.py                     TieredStateBank with radix trie
-  controller.py                AdaptiveReuseController, utility scoring
-  policy.py                    CostAwareSlackPolicy
-  semantic.py                  SemanticKVIndex, token sketching
-  models.py                    Backend abstraction (FakeBackend, HFBackend)
-  datasets.py                  Dataset loading and prompt templates
-  metrics.py                   Engine metrics and aggregation
-  policy_learning.py           Offline grid-search learner
-  backend_adapters.py          Experimental runtime adapter layer
-  telemetry.py                 JSON decision logger
-  energy.py                    GPU energy metering
+* 📁 **`src/proactive_kv_cache/`** — Core engines, cache bank, controller, models
+  * 📄 `engines.py` — BaseEngine, NoCacheEngine, ShadowKVPlusEngine (internal MeritKV class)
+  * 📄 `cache.py` — TieredStateBank with radix trie
+  * 📄 `controller.py` — AdaptiveReuseController, utility scoring
+  * 📄 `policy.py` — CostAwareSlackPolicy
+  * 📄 `semantic.py` — SemanticKVIndex, token sketching
+  * 📄 `models.py` — Backend abstraction (FakeBackend, HFBackend)
+  * 📄 `datasets.py` — Dataset loading and prompt templates
+  * 📄 `metrics.py` — Engine metrics and aggregation
+  * 📄 `policy_learning.py` — Offline grid-search learner
+  * 📄 `backend_adapters.py` — Experimental runtime adapter layer
+  * 📄 `telemetry.py` — JSON decision logger
+  * 📄 `energy.py` — GPU energy metering
 
-experiments/
-  run_benchmark.py             Main benchmark entry point
-  run_fidelity_equiv.py        KV cache reuse fidelity pipeline
-  eval_comprehensive.py        ROUGE-L and exact-match evaluator
-  profile_plan.py              Controller Plan() latency profiler
-  analyze_shadowkv_results.py  Result parser and policy-summary generator
-  archive/                     Superseded experiment scripts and notebooks
+* 📁 **`experiments/`** — Evaluation and profiling harnesses
+  * 📄 `run_benchmark.py` — Main benchmark entry point
+  * 📄 `run_fidelity_equiv.py` — KV cache reuse fidelity pipeline
+  * 📄 `eval_comprehensive.py` — ROUGE-L and exact-match evaluator
+  * 📄 `profile_plan.py` — Controller `Plan()` latency profiler
+  * 📄 `analyze_shadowkv_results.py` — Result parser and policy-summary generator
+  * 📁 `archive/` — Superseded experiment scripts and notebooks
 
-reproduction_packages/        Expanded frozen packages, Colab notebooks, archives
+* 📁 **`reproduction_packages/`** — Expanded frozen packages, Colab notebooks, archives
 
-results/
-  controlled_results/          T4/P100 controlled benchmark JSONs and CSV summaries
-  paper_tables/                Canonical machine-readable paper tables
-  isolated_baseline_comparison/ Four-model process-isolated baseline comparison
-  realistic_results/           Process-isolated no-cache and MeritKV JSON outputs
-  blackwell_longprefix_hf/      Twelve-instance long-prefix aggregates and provenance
-  fidelity_examples/           Per-sample KV reuse fidelity examples
-  exact_splice_validation/     Explicit-state continuation raw JSONs and summary
-  mixed_traffic/                Admission and mixed-workload summaries
-  memory_bound_trace/           Three-phase capacity-pressure traces
-  memory_bound_trace_multiround/ Four-arm enforced multiround traces
-  sweep_timing/                Small timing/smoke outputs
-  RESULTS.md                   Public result-bundle guide
-  architectural_robustness.md  Controlled versus realistic validation notes
+* 📁 **`results/`** — Experimental evidence and aggregates
+  * 📁 `controlled_results/` — T4/P100 controlled benchmark JSONs and CSV summaries
+  * 📁 `paper_tables/` — Canonical machine-readable paper tables
+  * 📁 `isolated_baseline_comparison/` — Four-model process-isolated baseline comparison
+  * 📁 `realistic_results/` — Process-isolated no-cache and MeritKV JSON outputs
+  * 📁 `blackwell_longprefix_hf/` — Twelve-instance long-prefix aggregates and provenance
+  * 📁 `fidelity_examples/` — Per-sample KV reuse fidelity examples
+  * 📁 `exact_splice_validation/` — Explicit-state continuation raw JSONs and summary
+  * 📁 `mixed_traffic/` — Admission and mixed-workload summaries
+  * 📁 `memory_bound_trace/` — Three-phase capacity-pressure traces
+  * 📁 `memory_bound_trace_multiround/` — Four-arm enforced multiround traces
+  * 📁 `sweep_timing/` — Small timing/smoke outputs
+  * 📄 `RESULTS.md` — Public result-bundle guide
+  * 📄 `architectural_robustness.md` — Controlled versus realistic validation notes
 
-runtime_experiments/           SGLang, LMCache, and vLLM result tables
-literature_accurate_baselines/ Runtime-baseline adapters and source notes
-docs/                          Design, methodology, hardware, and experiment catalog
-tests/                         Unit and regression tests
-tools/                         Release inventory and integrity checks
-```
+* 📁 **`runtime_experiments/`** — SGLang, LMCache, and vLLM result tables
+* 📁 **`literature_accurate_baselines/`** — Runtime-baseline adapters and source notes
+* 📁 **`docs/`** — Design, methodology, hardware, and experiment catalog
+* 📁 **`tests/`** — Unit and regression tests
+* 📁 **`tools/`** — Release inventory and integrity checks
 
 For a uniform map from every experiment family to its code, raw records,
 aggregates, hardware captures, and reproduction package, see
