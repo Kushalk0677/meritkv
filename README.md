@@ -36,6 +36,10 @@ This gives the system three useful properties:
 
 ## How It Works
 
+<p align="center">
+  <img src="docs/meritkv_schematic.png" alt="MeritKV Schematic Architecture" width="800"/>
+</p>
+
 MeritKV combines three cooperating components:
 
 - **TieredStateBank** - stores KV entries keyed by prefix token sequences with longest-prefix lookup via a radix trie. Per-prefix statistics track frequency, observation count, branching factor, and memory footprint.
