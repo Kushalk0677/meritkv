@@ -1,0 +1,20 @@
+{
+  "fifo_cap": {
+    "seeds": 5,
+    "seeds_list": [
+      42,
+      123,
+      456,
+      789,
+      999
+    ],
+    "mean_latency_ms": 72.432,
+    "mean_latency_ms_ci95": 0.6033,
+    "final_round_recovery": 0.337,
+    "final_round_recovery_ci95": 0.0089,
+    "total_evictions": 38.4,
+    "total_evictions_ci95": 1.6656,
+    "declined_admissions_phase1": 12.0,
+    "declined_admissions_phase1_ci95": 0.0
+  }
+}

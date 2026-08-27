@@ -1,0 +1,10 @@
+datasets=ag_news,alpaca_eval,banking77,cnn_dailymail,daily_dialog,dolly,oasst1,samsum,ultrachat,xsum
+prompt_mode=semantic
+seed=42
+n_requests=128
+semantic_shared_prefix_repeats=4
+semantic_shared_prefix_mode=common_scaffold
+include_experimental=true
+policy_preset=balanced
+measure_energy=true
+enable_policy_trace=true

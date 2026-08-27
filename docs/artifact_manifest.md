@@ -1,7 +1,7 @@
 # Repository Artifact Manifest
 
 This is the complete working repository, not the compact anonymised reviewer
-snapshot. It contains source, measured aggregates, selected raw campaigns,
+snapshot. It contains source, measured aggregates, complete project-retained raw campaigns,
 historical provenance, and explicitly modelled estimates. The current paper and
 `CLAIMS_TO_ARTIFACTS.md` define the paper-facing evidence boundary.
 
@@ -19,6 +19,8 @@ historical provenance, and explicitly modelled estimates. The current paper and
 | Native SGLang balanced admission | `runtime_experiments/qwen2.5/sglang/balanced_admission/` |
 | Mixed/admission and learned baselines | `results/mixed_traffic/`, `results/learned_admission_baseline/` |
 | Capacity-pressure evidence | `results/memory_bound_trace/`, `results/memory_bound_trace_multiround/` |
+| Expanded reproduction and Colab packages | `reproduction_packages/` |
+| Native enforcement and both storage-admission extensions | `runtime_experiments/native_enforcement_blackwell/` |
 
 ## Scope Classes
 
@@ -31,11 +33,13 @@ historical provenance, and explicitly modelled estimates. The current paper and
 | Historical development report | `docs/reports/`, `experiments/archive/` | Implementation history only. |
 | Modelled estimate | `results/energy_estimates/` | Excluded from measured paper evidence. |
 
-## External-Only Artifacts
+## Excluded Runtime Dependencies
 
-Large transfer packages, environment archives, model weights, downloaded
-datasets, caches, and duplicate repository snapshots should remain outside git.
-Attach release-quality archives separately and record checksums and provenance.
+All retained research transfer packages are included as named archives and/or
+expanded trees. Model weights, downloaded datasets, virtual environments,
+framework caches, and GPU-driver installations remain external dependencies.
+They are recoverable from public identifiers and version records rather than
+being redistributed.
 
 ## Consistency Rule
 
@@ -43,3 +47,6 @@ Campaign-specific notes may retain their original numbers, but they must carry
 a scope notice. Current READMEs and the claim map use the paper's aggregation,
 write-through/enforced distinction, and fidelity limitations. No missing seed
 record should be reconstructed from a paper aggregate.
+
+The uniform family-level index is `EXPERIMENT_CATALOG.md`; repository layout
+and evidence-editing rules are in `REPOSITORY_STRUCTURE.md`.

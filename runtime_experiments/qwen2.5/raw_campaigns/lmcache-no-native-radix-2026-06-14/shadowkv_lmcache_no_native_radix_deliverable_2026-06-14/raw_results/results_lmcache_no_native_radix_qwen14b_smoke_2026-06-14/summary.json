@@ -1,0 +1,63 @@
+{
+  "result_root": "/home/jade_hand/research/shadowkv/results_lmcache_no_native_radix_qwen14b_smoke_2026-06-14",
+  "responses_file": "/home/jade_hand/research/shadowkv/results_lmcache_no_native_radix_qwen14b_smoke_2026-06-14/responses.json",
+  "sglang_server.log": {
+    "bytes": 23887,
+    "lookup_hits": 0,
+    "retrieve_hits": 0,
+    "store_hits": 1,
+    "error_hits": 0,
+    "retrieved_token_lines": [],
+    "stored_token_lines": [],
+    "cached_token_lines": []
+  },
+  "lmcache_server.log": {
+    "bytes": 12863,
+    "lookup_hits": 7,
+    "retrieve_hits": 2,
+    "store_hits": 3,
+    "error_hits": 0,
+    "retrieved_token_lines": [],
+    "stored_token_lines": [],
+    "cached_token_lines": []
+  },
+  "responses": [
+    {
+      "label": "first_store",
+      "elapsed_s": 0.8290896415710449,
+      "usage": {
+        "prompt_tokens": 2651,
+        "total_tokens": 2652,
+        "completion_tokens": 1,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0
+      }
+    },
+    {
+      "label": "second_lmcache_hit_no_flush",
+      "elapsed_s": 0.06426310539245605,
+      "usage": {
+        "prompt_tokens": 2651,
+        "total_tokens": 2652,
+        "completion_tokens": 1,
+        "prompt_tokens_details": {
+          "cached_tokens": 2560
+        },
+        "reasoning_tokens": 0
+      }
+    },
+    {
+      "label": "third_lmcache_hit_no_flush",
+      "elapsed_s": 0.06709742546081543,
+      "usage": {
+        "prompt_tokens": 2651,
+        "total_tokens": 2652,
+        "completion_tokens": 1,
+        "prompt_tokens_details": {
+          "cached_tokens": 2560
+        },
+        "reasoning_tokens": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,4577 @@
+{
+  "sweeps": [
+    {
+      "name": "lambda (risk_aversion)",
+      "path": "policy.utility.risk_aversion",
+      "default": 0.15,
+      "values": [
+        0.0,
+        0.05,
+        0.15,
+        0.3,
+        0.5
+      ],
+      "fmt": ".2f"
+    },
+    {
+      "name": "semantic_threshold",
+      "path": "policy.utility.semantic_threshold",
+      "default": 0.58,
+      "values": [
+        0.4,
+        0.5,
+        0.58,
+        0.7,
+        0.85
+      ],
+      "fmt": ".2f"
+    },
+    {
+      "name": "util_min_ms",
+      "path": "policy.utility.util_min_ms",
+      "default": 0.0,
+      "values": [
+        0.0,
+        2.0,
+        5.0,
+        10.0,
+        20.0
+      ],
+      "fmt": ".1f"
+    },
+    {
+      "name": "semantic_prompt_benefit_discount",
+      "path": "policy.utility.semantic_prompt_benefit_discount",
+      "default": 0.72,
+      "values": [
+        0.4,
+        0.55,
+        0.72,
+        0.85,
+        1.0
+      ],
+      "fmt": ".2f"
+    },
+    {
+      "name": "semantic_default_benefit_discount",
+      "path": "policy.utility.semantic_default_benefit_discount",
+      "default": 0.55,
+      "values": [
+        0.3,
+        0.45,
+        0.55,
+        0.72,
+        0.9
+      ],
+      "fmt": ".2f"
+    },
+    {
+      "name": "semantic_prompt_waste_floor",
+      "path": "policy.utility.semantic_prompt_waste_floor",
+      "default": 0.03,
+      "values": [
+        0.01,
+        0.03,
+        0.05,
+        0.1,
+        0.2
+      ],
+      "fmt": ".2f"
+    },
+    {
+      "name": "lambda_m (memory weight)",
+      "path": "policy.utility.lambda_m_weight",
+      "default": 0.02,
+      "values": [
+        0.0,
+        0.01,
+        0.02,
+        0.05,
+        0.1
+      ],
+      "fmt": ".3f"
+    },
+    {
+      "name": "ewma_alpha",
+      "path": "policy.health.ewma_alpha",
+      "default": 0.2,
+      "values": [
+        0.05,
+        0.1,
+        0.2,
+        0.4,
+        0.6
+      ],
+      "fmt": ".2f"
+    },
+    {
+      "name": "entropy_penalty_weight",
+      "path": "policy.signals.entropy_penalty_weight",
+      "default": 0.35,
+      "values": [
+        0.0,
+        0.15,
+        0.35,
+        0.55,
+        0.75
+      ],
+      "fmt": ".2f"
+    },
+    {
+      "name": "exact_confidence_base",
+      "path": "policy.utility.exact_confidence_base",
+      "default": 0.45,
+      "values": [
+        0.2,
+        0.35,
+        0.45,
+        0.6,
+        0.8
+      ],
+      "fmt": ".2f"
+    }
+  ],
+  "scenarios": [
+    "Exact match, 64 tok, GPU tier",
+    "Exact match, 32 tok, CPU tier",
+    "Exact match, small (16 tok)",
+    "Exact match, low hit rate (0.1)",
+    "Semantic, high sim (0.85), prompt mode",
+    "Semantic, medium sim (0.60)",
+    "Semantic, low sim (0.40)",
+    "Semantic, high waste (0.40)",
+    "No match (bypass baseline)"
+  ],
+  "results": [
+    {
+      "param": "lambda (risk_aversion)",
+      "path": "policy.utility.risk_aversion",
+      "default": 0.15,
+      "values": [
+        {
+          "value": 0.0,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.63,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.69,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.72,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 15.87,
+            "benefit_ms": 27.65,
+            "cost_ms": 4.56,
+            "waste_ms": 2.14,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 8.98,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 3.68,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 7.27,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 4.26,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.05,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.61,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.68,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.72,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 15.87,
+            "benefit_ms": 27.65,
+            "cost_ms": 4.56,
+            "waste_ms": 2.14,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 8.98,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 3.68,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 7.27,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 4.26,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.15,
+          "is_default": true,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.57,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.68,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.72,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 15.87,
+            "benefit_ms": 27.65,
+            "cost_ms": 4.56,
+            "waste_ms": 2.14,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 8.98,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 3.68,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 7.27,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 4.26,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.3,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.52,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.66,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.72,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 15.87,
+            "benefit_ms": 27.65,
+            "cost_ms": 4.56,
+            "waste_ms": 2.14,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 8.98,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 3.68,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 7.27,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 4.26,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.5,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 15.87,
+            "benefit_ms": 27.65,
+            "cost_ms": 4.56,
+            "waste_ms": 2.14,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 8.98,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 3.68,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 7.27,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 4.26,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        }
+      ],
+      "scenarios": [
+        "Exact match, 64 tok, GPU tier",
+        "Exact match, 32 tok, CPU tier",
+        "Exact match, small (16 tok)",
+        "Exact match, low hit rate (0.1)",
+        "Semantic, high sim (0.85), prompt mode",
+        "Semantic, medium sim (0.60)",
+        "Semantic, low sim (0.40)",
+        "Semantic, high waste (0.40)",
+        "No match (bypass baseline)"
+      ]
+    },
+    {
+      "param": "semantic_threshold",
+      "path": "policy.utility.semantic_threshold",
+      "default": 0.58,
+      "values": [
+        {
+          "value": 0.4,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 15.87,
+            "benefit_ms": 27.65,
+            "cost_ms": 4.56,
+            "waste_ms": 2.14,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 8.98,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 3.68,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 7.27,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 4.26,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.5,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 15.87,
+            "benefit_ms": 27.65,
+            "cost_ms": 4.56,
+            "waste_ms": 2.14,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 8.98,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 3.68,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 7.27,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 4.26,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.58,
+          "is_default": true,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 15.87,
+            "benefit_ms": 27.65,
+            "cost_ms": 4.56,
+            "waste_ms": 2.14,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 8.98,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 3.68,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 7.27,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 4.26,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.7,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 15.87,
+            "benefit_ms": 27.65,
+            "cost_ms": 4.56,
+            "waste_ms": 2.14,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 8.98,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 3.68,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 7.27,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 4.26,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.85,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 15.87,
+            "benefit_ms": 27.65,
+            "cost_ms": 4.56,
+            "waste_ms": 2.14,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 8.98,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 3.68,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 7.27,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 4.26,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        }
+      ],
+      "scenarios": [
+        "Exact match, 64 tok, GPU tier",
+        "Exact match, 32 tok, CPU tier",
+        "Exact match, small (16 tok)",
+        "Exact match, low hit rate (0.1)",
+        "Semantic, high sim (0.85), prompt mode",
+        "Semantic, medium sim (0.60)",
+        "Semantic, low sim (0.40)",
+        "Semantic, high waste (0.40)",
+        "No match (bypass baseline)"
+      ]
+    },
+    {
+      "param": "util_min_ms",
+      "path": "policy.utility.util_min_ms",
+      "default": 0.0,
+      "values": [
+        {
+          "value": 0.0,
+          "is_default": true,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 15.87,
+            "benefit_ms": 27.65,
+            "cost_ms": 4.56,
+            "waste_ms": 2.14,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 8.98,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 3.68,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 7.27,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 4.26,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 2.0,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 15.87,
+            "benefit_ms": 27.65,
+            "cost_ms": 4.56,
+            "waste_ms": 2.14,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 8.98,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 3.68,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 7.27,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 4.26,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 5.0,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 15.87,
+            "benefit_ms": 27.65,
+            "cost_ms": 4.56,
+            "waste_ms": 2.14,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 8.98,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 3.68,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 7.27,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 4.26,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 10.0,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 15.87,
+            "benefit_ms": 27.65,
+            "cost_ms": 4.56,
+            "waste_ms": 2.14,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 8.98,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 3.68,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 7.27,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 4.26,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 20.0,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 15.87,
+            "benefit_ms": 27.65,
+            "cost_ms": 4.56,
+            "waste_ms": 2.14,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 8.98,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 3.68,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 7.27,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 4.26,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        }
+      ],
+      "scenarios": [
+        "Exact match, 64 tok, GPU tier",
+        "Exact match, 32 tok, CPU tier",
+        "Exact match, small (16 tok)",
+        "Exact match, low hit rate (0.1)",
+        "Semantic, high sim (0.85), prompt mode",
+        "Semantic, medium sim (0.60)",
+        "Semantic, low sim (0.40)",
+        "Semantic, high waste (0.40)",
+        "No match (bypass baseline)"
+      ]
+    },
+    {
+      "param": "semantic_prompt_benefit_discount",
+      "path": "policy.utility.semantic_prompt_benefit_discount",
+      "default": 0.72,
+      "values": [
+        {
+          "value": 0.4,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 7.05,
+            "benefit_ms": 15.36,
+            "cost_ms": 4.56,
+            "waste_ms": 1.49,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 2.97,
+            "benefit_ms": 11.52,
+            "cost_ms": 5.2,
+            "waste_ms": 2.39,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 1.95,
+            "benefit_ms": 11.52,
+            "cost_ms": 5.2,
+            "waste_ms": 3.29,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.55,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.19,
+            "benefit_ms": 21.12,
+            "cost_ms": 4.56,
+            "waste_ms": 1.79,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 5.79,
+            "benefit_ms": 15.84,
+            "cost_ms": 5.2,
+            "waste_ms": 3.0,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 4.45,
+            "benefit_ms": 15.84,
+            "cost_ms": 5.2,
+            "waste_ms": 3.74,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.72,
+          "is_default": true,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 15.87,
+            "benefit_ms": 27.65,
+            "cost_ms": 4.56,
+            "waste_ms": 2.14,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 8.98,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 3.68,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 7.27,
+            "benefit_ms": 20.74,
+            "cost_ms": 5.2,
+            "waste_ms": 4.26,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.85,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 19.45,
+            "benefit_ms": 32.64,
+            "cost_ms": 4.56,
+            "waste_ms": 2.4,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.42,
+            "benefit_ms": 24.48,
+            "cost_ms": 5.2,
+            "waste_ms": 4.21,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 9.44,
+            "benefit_ms": 24.48,
+            "cost_ms": 5.2,
+            "waste_ms": 4.65,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 1.0,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.59,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.7,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.23,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 4.81,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        }
+      ],
+      "scenarios": [
+        "Exact match, 64 tok, GPU tier",
+        "Exact match, 32 tok, CPU tier",
+        "Exact match, small (16 tok)",
+        "Exact match, low hit rate (0.1)",
+        "Semantic, high sim (0.85), prompt mode",
+        "Semantic, medium sim (0.60)",
+        "Semantic, low sim (0.40)",
+        "Semantic, high waste (0.40)",
+        "No match (bypass baseline)"
+      ]
+    },
+    {
+      "param": "semantic_default_benefit_discount",
+      "path": "policy.utility.semantic_default_benefit_discount",
+      "default": 0.55,
+      "values": [
+        {
+          "value": 0.3,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.59,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.7,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.23,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 4.81,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.45,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.59,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.7,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.23,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 4.81,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.55,
+          "is_default": true,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.59,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.7,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.23,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 4.81,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.72,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.59,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.7,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.23,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 4.81,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.9,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.59,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.7,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.23,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 4.81,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        }
+      ],
+      "scenarios": [
+        "Exact match, 64 tok, GPU tier",
+        "Exact match, 32 tok, CPU tier",
+        "Exact match, small (16 tok)",
+        "Exact match, low hit rate (0.1)",
+        "Semantic, high sim (0.85), prompt mode",
+        "Semantic, medium sim (0.60)",
+        "Semantic, low sim (0.40)",
+        "Semantic, high waste (0.40)",
+        "No match (bypass baseline)"
+      ]
+    },
+    {
+      "param": "semantic_prompt_waste_floor",
+      "path": "policy.utility.semantic_prompt_waste_floor",
+      "default": 0.03,
+      "values": [
+        {
+          "value": 0.01,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.59,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.7,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.23,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 4.81,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.03,
+          "is_default": true,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.59,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.7,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.23,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 4.81,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.05,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.59,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.7,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.23,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 4.81,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.1,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.59,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.7,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.23,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 4.81,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.2,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.42,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.93,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.03,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.07,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        }
+      ],
+      "scenarios": [
+        "Exact match, 64 tok, GPU tier",
+        "Exact match, 32 tok, CPU tier",
+        "Exact match, small (16 tok)",
+        "Exact match, low hit rate (0.1)",
+        "Semantic, high sim (0.85), prompt mode",
+        "Semantic, medium sim (0.60)",
+        "Semantic, low sim (0.40)",
+        "Semantic, high waste (0.40)",
+        "No match (bypass baseline)"
+      ]
+    },
+    {
+      "param": "lambda_m (memory weight)",
+      "path": "policy.utility.lambda_m_weight",
+      "default": 0.02,
+      "values": [
+        {
+          "value": 0.0,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.42,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.93,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.03,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.07,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.01,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.42,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.93,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.03,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.07,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.02,
+          "is_default": true,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.45,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.42,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.93,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.03,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.07,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.05,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.44,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.42,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.93,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.03,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.07,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.1,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.44,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.42,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.93,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.03,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.07,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        }
+      ],
+      "scenarios": [
+        "Exact match, 64 tok, GPU tier",
+        "Exact match, 32 tok, CPU tier",
+        "Exact match, small (16 tok)",
+        "Exact match, low hit rate (0.1)",
+        "Semantic, high sim (0.85), prompt mode",
+        "Semantic, medium sim (0.60)",
+        "Semantic, low sim (0.40)",
+        "Semantic, high waste (0.40)",
+        "No match (bypass baseline)"
+      ]
+    },
+    {
+      "param": "ewma_alpha",
+      "path": "policy.health.ewma_alpha",
+      "default": 0.2,
+      "values": [
+        {
+          "value": 0.05,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.44,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.42,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.93,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.03,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.07,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.1,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.44,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.42,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.93,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.03,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.07,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.2,
+          "is_default": true,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.44,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.42,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.93,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.03,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.07,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.4,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.44,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.42,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.93,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.03,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.07,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.6,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.44,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.42,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.93,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.03,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.07,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        }
+      ],
+      "scenarios": [
+        "Exact match, 64 tok, GPU tier",
+        "Exact match, 32 tok, CPU tier",
+        "Exact match, small (16 tok)",
+        "Exact match, low hit rate (0.1)",
+        "Semantic, high sim (0.85), prompt mode",
+        "Semantic, medium sim (0.60)",
+        "Semantic, low sim (0.40)",
+        "Semantic, high waste (0.40)",
+        "No match (bypass baseline)"
+      ]
+    },
+    {
+      "param": "entropy_penalty_weight",
+      "path": "policy.signals.entropy_penalty_weight",
+      "default": 0.35,
+      "values": [
+        {
+          "value": 0.0,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.44,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.42,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.93,
+            "confidence": 0.644,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.03,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.07,
+            "confidence": 0.454,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.451,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.15,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.44,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.42,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.93,
+            "confidence": 0.559,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.03,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.07,
+            "confidence": 0.395,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.392,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.35,
+          "is_default": true,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.44,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.42,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.93,
+            "confidence": 0.447,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.03,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.07,
+            "confidence": 0.315,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.313,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.55,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.44,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.42,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.93,
+            "confidence": 0.334,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.03,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.07,
+            "confidence": 0.236,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.234,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.75,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.44,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.42,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.93,
+            "confidence": 0.221,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.03,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.07,
+            "confidence": 0.156,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.155,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        }
+      ],
+      "scenarios": [
+        "Exact match, 64 tok, GPU tier",
+        "Exact match, 32 tok, CPU tier",
+        "Exact match, small (16 tok)",
+        "Exact match, low hit rate (0.1)",
+        "Semantic, high sim (0.85), prompt mode",
+        "Semantic, medium sim (0.60)",
+        "Semantic, low sim (0.40)",
+        "Semantic, high waste (0.40)",
+        "No match (bypass baseline)"
+      ]
+    },
+    {
+      "param": "exact_confidence_base",
+      "path": "policy.utility.exact_confidence_base",
+      "default": 0.45,
+      "values": [
+        {
+          "value": 0.2,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.44,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.275,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.42,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.93,
+            "confidence": 0.221,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.03,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.07,
+            "confidence": 0.156,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.155,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.35,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.44,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.398,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.289,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.42,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.93,
+            "confidence": 0.221,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.03,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.07,
+            "confidence": 0.156,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.155,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.45,
+          "is_default": true,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.44,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.473,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.407,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.379,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.344,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.42,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.93,
+            "confidence": 0.221,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.03,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.07,
+            "confidence": 0.156,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.155,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.6,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.44,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.587,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.521,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.488,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.426,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.42,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.93,
+            "confidence": 0.221,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.03,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.07,
+            "confidence": 0.156,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.155,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        },
+        {
+          "value": 0.8,
+          "is_default": false,
+          "Exact match, 64 tok, GPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 34.44,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.49,
+            "confidence": 0.739,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, 32 tok, CPU tier": {
+            "strategy": "exact",
+            "net_utility_ms": 14.64,
+            "benefit_ms": 19.2,
+            "cost_ms": 3.92,
+            "waste_ms": 0.59,
+            "confidence": 0.672,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, small (16 tok)": {
+            "strategy": "exact",
+            "net_utility_ms": 4.71,
+            "benefit_ms": 9.6,
+            "cost_ms": 4.24,
+            "waste_ms": 0.64,
+            "confidence": 0.639,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Exact match, low hit rate (0.1)": {
+            "strategy": "exact",
+            "net_utility_ms": 34.14,
+            "benefit_ms": 38.4,
+            "cost_ms": 3.28,
+            "waste_ms": 0.98,
+            "confidence": 0.536,
+            "reason": "exact_prefix_net_positive"
+          },
+          "Semantic, high sim (0.85), prompt mode": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 23.42,
+            "benefit_ms": 38.4,
+            "cost_ms": 4.56,
+            "waste_ms": 2.93,
+            "confidence": 0.221,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, medium sim (0.60)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 14.03,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.07,
+            "confidence": 0.156,
+            "reason": "semantic_partial_net_positive"
+          },
+          "Semantic, low sim (0.40)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          },
+          "Semantic, high waste (0.40)": {
+            "strategy": "semantic_partial",
+            "net_utility_ms": 11.93,
+            "benefit_ms": 28.8,
+            "cost_ms": 5.2,
+            "waste_ms": 5.1,
+            "confidence": 0.155,
+            "reason": "semantic_partial_net_positive"
+          },
+          "No match (bypass baseline)": {
+            "strategy": "bypass",
+            "net_utility_ms": -2.0,
+            "benefit_ms": 0.0,
+            "cost_ms": 0.0,
+            "waste_ms": 0.0,
+            "confidence": 0.0,
+            "reason": "no_reuse_signal"
+          }
+        }
+      ],
+      "scenarios": [
+        "Exact match, 64 tok, GPU tier",
+        "Exact match, 32 tok, CPU tier",
+        "Exact match, small (16 tok)",
+        "Exact match, low hit rate (0.1)",
+        "Semantic, high sim (0.85), prompt mode",
+        "Semantic, medium sim (0.60)",
+        "Semantic, low sim (0.40)",
+        "Semantic, high waste (0.40)",
+        "No match (bypass baseline)"
+      ]
+    }
+  ]
+}

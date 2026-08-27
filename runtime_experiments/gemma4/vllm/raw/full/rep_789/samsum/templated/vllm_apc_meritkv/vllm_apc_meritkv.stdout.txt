@@ -1,0 +1,2 @@
+Benchmark vllm_apc_meritkv for google/gemma-4-31B-it samsum templated seed=789
+Latency: 54.21ms, Throughput: 18.44 rps

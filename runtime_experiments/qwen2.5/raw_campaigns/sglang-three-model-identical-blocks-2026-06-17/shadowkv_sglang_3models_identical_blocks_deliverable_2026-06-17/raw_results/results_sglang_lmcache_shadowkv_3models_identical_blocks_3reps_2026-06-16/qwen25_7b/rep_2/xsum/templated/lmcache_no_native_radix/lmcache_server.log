@@ -1,0 +1,346 @@
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[32;20m[2026-06-17 02:29:03,750] LMCache INFO:[0m  torch_dev=<module 'torch.cuda' from '/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py'>, torch_device_type=cuda [3m(__init__.py:62:lmcache)[0m
+[32;20m[2026-06-17 02:29:04,085] LMCache INFO:[0m Skipping backend lmcache.xpu_ops: predicate returned False [3m(__init__.py:94:lmcache)[0m
+[32;20m[2026-06-17 02:29:04,086] LMCache INFO:[0m Using backend: lmcache.c_ops [3m(__init__.py:112:lmcache)[0m
+[32;20m[2026-06-17 02:29:04,554] LMCache INFO:[0m multi_layer_block_kv_transfer mode: ptr [3m(base.py:94:lmcache.v1.multiprocess.transfer_context.base)[0m
+[32;20m[2026-06-17 02:29:05,791] LMCache INFO:[0m Discovered API module: cache_api [3m(router_discovery.py:53:lmcache.v1.utils.router_discovery)[0m
+[32;20m[2026-06-17 02:29:05,791] LMCache INFO:[0m Discovered API module: env_api [3m(router_discovery.py:53:lmcache.v1.utils.router_discovery)[0m
+[32;20m[2026-06-17 02:29:05,792] LMCache INFO:[0m Discovered API module: loglevel_api [3m(router_discovery.py:53:lmcache.v1.utils.router_discovery)[0m
+[32;20m[2026-06-17 02:29:05,792] LMCache INFO:[0m Discovered API module: metrics_api [3m(router_discovery.py:53:lmcache.v1.utils.router_discovery)[0m
+[32;20m[2026-06-17 02:29:05,793] LMCache INFO:[0m Discovered API module: periodic_thread_api [3m(router_discovery.py:53:lmcache.v1.utils.router_discovery)[0m
+[32;20m[2026-06-17 02:29:05,793] LMCache INFO:[0m Discovered API module: run_script_api [3m(router_discovery.py:53:lmcache.v1.utils.router_discovery)[0m
+[32;20m[2026-06-17 02:29:05,794] LMCache INFO:[0m Discovered API module: thread_api [3m(router_discovery.py:53:lmcache.v1.utils.router_discovery)[0m
+[32;20m[2026-06-17 02:29:05,795] LMCache INFO:[0m Discovered API module: common_api [3m(router_discovery.py:53:lmcache.v1.utils.router_discovery)[0m
+[32;20m[2026-06-17 02:29:05,795] LMCache INFO:[0m Discovered API module: conf_api [3m(router_discovery.py:53:lmcache.v1.utils.router_discovery)[0m
+[32;20m[2026-06-17 02:29:05,796] LMCache INFO:[0m Discovered API module: healthcheck_api [3m(router_discovery.py:53:lmcache.v1.utils.router_discovery)[0m
+[32;20m[2026-06-17 02:29:05,797] LMCache INFO:[0m Discovered API module: quota_api [3m(router_discovery.py:53:lmcache.v1.utils.router_discovery)[0m
+[32;20m[2026-06-17 02:29:05,799] LMCache INFO:[0m Discovered API module: reconfigure_api [3m(router_discovery.py:53:lmcache.v1.utils.router_discovery)[0m
+[32;20m[2026-06-17 02:29:05,799] LMCache INFO:[0m Discovered API module: root_api [3m(router_discovery.py:53:lmcache.v1.utils.router_discovery)[0m
+[32;20m[2026-06-17 02:29:05,799] LMCache INFO:[0m Discovered API module: status_api [3m(router_discovery.py:53:lmcache.v1.utils.router_discovery)[0m
+[32;20m[2026-06-17 02:29:05,800] LMCache INFO:[0m Discovered API module: version_api [3m(router_discovery.py:53:lmcache.v1.utils.router_discovery)[0m
+[32;20m[2026-06-17 02:29:05,807] LMCache INFO:[0m Starting LMCache HTTP server on http://127.0.0.1:8088 [3m(http_server.py:230:lmcache.v1.multiprocess.http_server)[0m
+INFO:     Started server process [69]
+INFO:     Waiting for application startup.
+[32;20m[2026-06-17 02:29:05,988] LMCache INFO:[0m Starting LMCache HTTP server... (accelerator available: True) [3m(http_server.py:68:lmcache.v1.multiprocess.http_server)[0m
+[32;20m[2026-06-17 02:29:05,997] LMCache INFO:[0m OTel MeterProvider initialised with Prometheus fallback (standalone metrics HTTP server disabled; /metrics must be exposed by the caller), resource={'telemetry.sdk.language': 'python', 'telemetry.sdk.name': 'opentelemetry', 'telemetry.sdk.version': '1.40.0', 'service.instance.id': 'a07a1a75-4baa-4db4-98ad-8c83cdaede17', 'service.name': 'unknown_service'} [3m(otel_init.py:114:lmcache.v1.mp_observability.otel_init)[0m
+[32;20m[2026-06-17 02:29:05,998] LMCache INFO:[0m LookupHashLoggingSubscriber started: output_dir=/workspace/shadowkv/results_sglang_lmcache_shadowkv_3models_identical_blocks_3reps_2026-06-16/qwen25_7b/rep_2/xsum/templated/lmcache_no_native_radix/lmcache_lookup_hash, rotation_interval=21600s, rotation_max_size=104857600, max_files=100, existing_files=0 [3m(lookup_hash.py:113:lmcache.v1.mp_observability.subscribers.logging.lookup_hash)[0m
+[32;20m[2026-06-17 02:29:05,998] LMCache INFO:[0m Checking if shm capacity is larger than L1 request [3m(server.py:265:lmcache.v1.multiprocess.server)[0m
+[32;20m[2026-06-17 02:29:06,264] LMCache INFO:[0m Starting L1EvictionController... [3m(eviction_controller.py:53:lmcache.v1.distributed.storage_controllers.eviction_controller)[0m
+[32;20m[2026-06-17 02:29:06,274] LMCache INFO:[0m Starting L2EvictionController... [3m(eviction_controller.py:229:lmcache.v1.distributed.storage_controllers.eviction_controller)[0m
+[32;20m[2026-06-17 02:29:06,274] LMCache INFO:[0m Starting StoreController... [3m(store_controller.py:274:lmcache.v1.distributed.storage_controllers.store_controller)[0m
+[32;20m[2026-06-17 02:29:06,275] LMCache INFO:[0m Starting PrefetchController... [3m(prefetch_controller.py:457:lmcache.v1.distributed.storage_controllers.prefetch_controller)[0m
+[32;20m[2026-06-17 02:29:06,275] LMCache INFO:[0m Using blake3 hash function [3m(token_hasher.py:79:lmcache.v1.multiprocess.token_hasher)[0m
+[32;20m[2026-06-17 02:29:06,283] LMCache INFO:[0m Computed NONE_HASH=b"~>\xff\x9e\xf7a:P4\x0e\xb1&w\xee\x03\xb8:\xc7Y\xfc\xba\x9b\xb3'\x05\xf0rH\xd5mG;" using hash function [3m(token_hasher.py:180:lmcache.v1.multiprocess.token_hasher)[0m
+[32;20m[2026-06-17 02:29:06,284] LMCache INFO:[0m TokenHasher initialized: chunk_size=256, hash_algorithm=blake3 [3m(token_hasher.py:67:lmcache.v1.multiprocess.token_hasher)[0m
+[32;20m[2026-06-17 02:29:06,284] LMCache INFO:[0m Supported transfer mode: auto [3m(server.py:184:lmcache.v1.multiprocess.server)[0m
+[32;20m[2026-06-17 02:29:06,285] LMCache INFO:[0m LMCache ZMQ cache server is running on tcp://127.0.0.1:5555 [3m(server.py:320:lmcache.v1.multiprocess.server)[0m
+[32;20m[2026-06-17 02:29:06,294] LMCache INFO:[0m LMCache cache server is running... [3m(server.py:335:lmcache.v1.multiprocess.server)[0m
+[32;20m[2026-06-17 02:29:06,294] LMCache INFO:[0m LMCache HTTP server initialized [3m(http_server.py:159:lmcache.v1.multiprocess.http_server)[0m
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8088 (Press CTRL+C to quit)
+[32;20m[2026-06-17 02:29:07,014] LMCache INFO:[0m Checking memory allocator consistency [3m(memory_management.py:1738:lmcache.v1.memory_management)[0m
+[32;20m[2026-06-17 02:29:07,015] LMCache INFO:[0m  - Total active allocations: 0 [3m(memory_management.py:1739:lmcache.v1.memory_management)[0m
+[32;20m[2026-06-17 02:29:07,015] LMCache INFO:[0m  - Total allocated size: 0.0 MB [3m(memory_management.py:1740:lmcache.v1.memory_management)[0m
+[32;20m[2026-06-17 02:29:07,015] LMCache INFO:[0m  - Total free size: 6144.0 MB [3m(memory_management.py:1747:lmcache.v1.memory_management)[0m
+INFO:     127.0.0.1:32974 - "GET /status HTTP/1.1" 200 OK
+[32;20m[2026-06-17 02:29:07,509] LMCache INFO:[0m LazyMemoryAllocator: Expanded 10240 MB pinned memory, now total is 11264 MB / 20480 MB (55.0%) [3m(lazy_memory_allocator.py:259:lmcache.v1.lazy_memory_allocator)[0m
+[32;20m[2026-06-17 02:29:08,470] LMCache INFO:[0m LazyMemoryAllocator: Expanded 9216 MB pinned memory, now total is 20480 MB / 20480 MB (100.0%) [3m(lazy_memory_allocator.py:259:lmcache.v1.lazy_memory_allocator)[0m
+[32;20m[2026-06-17 02:29:29,652] LMCache INFO:[0m list_depth: 2, tensor_dim: 4 [3m(utils.py:636:lmcache.v1.gpu_connector.utils)[0m
+[32;20m[2026-06-17 02:29:29,652] LMCache INFO:[0m GPU KV Cache Dimensions: [2][28][1126202, 1, 4, 128] [3m(utils.py:647:lmcache.v1.gpu_connector.utils)[0m
+[32;20m[2026-06-17 02:29:29,652] LMCache INFO:[0m GPU KV Format: 2 x NL x [NB, BS, NH, HS] [3m(utils.py:498:lmcache.v1.gpu_connector.utils)[0m
+[32;20m[2026-06-17 02:29:29,652] LMCache INFO:[0m Currently used by:
+  - SGLang MHA via MP daemon (4-D inner) [3m(utils.py:499:lmcache.v1.gpu_connector.utils)[0m
+[32;20m[2026-06-17 02:29:29,654] LMCache INFO:[0m Group 0 first-layer tensor: layer_idx=0 shape=(1126202, 1, 4, 128) stride=(512, 512, 128, 1) is_contiguous=True dtype=torch.float16 device=cuda:0 storage_offset=0 numel=576615424 storage_nbytes=1153230848 padding_per_block=0 [3m(utils.py:1415:lmcache.v1.gpu_connector.utils)[0m
+[32;20m[2026-06-17 02:29:29,654] LMCache INFO:[0m KV layer groups: ---
+KernelGroupInfo(layers=28, indices=0-27, shape_desc=(kv=2, nl=28, nb=1126202, bs=1, nh=4, hs=128, element_size=2, block_stride_elems=0), dtype=torch.float16, tokens_per_block=1, slots_per_block=1, engine_group_idx=0, sw_size_tokens=-1)
+--- [3m(kv_layer_groups.py:403:lmcache.v1.kv_layer_groups)[0m
+[33;20m[2026-06-17 02:29:29,654] LMCache WARNING:[0m KVLayerGroupsManager.kv_layer_groups is deprecated: `kv_layer_groups` is an outdated alias for `kernel_groups` [3m(utils.py:733:lmcache.utils)[0m
+/usr/local/lib/python3.12/dist-packages/cupy/_environment.py:670: UserWarning: 
+--------------------------------------------------------------------------------
+
+  CuPy may not function correctly because multiple CuPy packages are installed
+  in your environment:
+
+    cupy-cuda12x, cupy-cuda13x
+
+  Follow these steps to resolve this issue:
+
+    1. For all packages listed above, run the following command to remove all
+       existing CuPy installations:
+
+         $ pip uninstall <package_name>
+
+      If you previously installed CuPy via conda, also run the following:
+
+         $ conda uninstall cupy
+
+    2. Install the appropriate CuPy package.
+       Refer to the Installation Guide for detailed instructions.
+
+         https://docs.cupy.dev/en/stable/install.html
+
+--------------------------------------------------------------------------------
+
+  warnings.warn(f'''
+[32;20m[2026-06-17 02:29:29,696] LMCache INFO:[0m Registered KV cache for GPU ID 205 with 28 layers [3m(gpu_transfer.py:563:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:29,697] LMCache INFO:[0m Initialized cuda stream on device cuda:0 [3m(gpu_context.py:424:lmcache.v1.multiprocess.gpu_context)[0m
+[32;20m[2026-06-17 02:29:43,731] LMCache INFO:[0m Stored 512 tokens in 0.003 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:47,597] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:47,639] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:47,684] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:47,729] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:47,766] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:47,798] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:47,841] LMCache INFO:[0m Stored 512 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:52,872] LMCache INFO:[0m Prefetch request completed (L1+L2): 2/2 retained keys (2 L1, 0 L2) in 0.3 ms (external_request_id=e4875aa7dc774cac84478ff8246d066d, prefetch_request_id=-1) [3m(storage_manager.py:636:lmcache.v1.distributed.storage_manager)[0m
+[32;20m[2026-06-17 02:29:52,874] LMCache INFO:[0m Retrieved 512 tokens in 0.001 seconds [3m(gpu_transfer.py:962:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:52,900] LMCache INFO:[0m Prefetch request completed (L1+L2): 1/1 retained keys (1 L1, 0 L2) in 0.2 ms (external_request_id=621877bbfc114cd4b4d5902c929656b9, prefetch_request_id=-1) [3m(storage_manager.py:636:lmcache.v1.distributed.storage_manager)[0m
+[32;20m[2026-06-17 02:29:52,901] LMCache INFO:[0m Retrieved 256 tokens in 0.000 seconds [3m(gpu_transfer.py:962:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:52,929] LMCache INFO:[0m Prefetch request completed (L1+L2): 1/1 retained keys (1 L1, 0 L2) in 0.2 ms (external_request_id=cf67c7ee07bb4da6a764f1a8e3465585, prefetch_request_id=-1) [3m(storage_manager.py:636:lmcache.v1.distributed.storage_manager)[0m
+[32;20m[2026-06-17 02:29:52,930] LMCache INFO:[0m Retrieved 256 tokens in 0.000 seconds [3m(gpu_transfer.py:962:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:52,958] LMCache INFO:[0m Prefetch request completed (L1+L2): 1/1 retained keys (1 L1, 0 L2) in 0.2 ms (external_request_id=9eb604487a104234bcc0b70af738b4b0, prefetch_request_id=-1) [3m(storage_manager.py:636:lmcache.v1.distributed.storage_manager)[0m
+[32;20m[2026-06-17 02:29:52,959] LMCache INFO:[0m Retrieved 256 tokens in 0.000 seconds [3m(gpu_transfer.py:962:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:52,986] LMCache INFO:[0m Prefetch request completed (L1+L2): 1/1 retained keys (1 L1, 0 L2) in 0.2 ms (external_request_id=fd68b55996e9444eb630978b723b1a6b, prefetch_request_id=-1) [3m(storage_manager.py:636:lmcache.v1.distributed.storage_manager)[0m
+[32;20m[2026-06-17 02:29:52,987] LMCache INFO:[0m Retrieved 256 tokens in 0.000 seconds [3m(gpu_transfer.py:962:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:53,015] LMCache INFO:[0m Prefetch request completed (L1+L2): 1/1 retained keys (1 L1, 0 L2) in 0.2 ms (external_request_id=b3b729ae703e4fb69cdc886c89157613, prefetch_request_id=-1) [3m(storage_manager.py:636:lmcache.v1.distributed.storage_manager)[0m
+[32;20m[2026-06-17 02:29:53,016] LMCache INFO:[0m Retrieved 256 tokens in 0.001 seconds [3m(gpu_transfer.py:962:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:53,044] LMCache INFO:[0m Prefetch request completed (L1+L2): 1/1 retained keys (1 L1, 0 L2) in 0.2 ms (external_request_id=0e4b18a08256400f9253448e2ca74248, prefetch_request_id=-1) [3m(storage_manager.py:636:lmcache.v1.distributed.storage_manager)[0m
+[32;20m[2026-06-17 02:29:53,045] LMCache INFO:[0m Retrieved 256 tokens in 0.000 seconds [3m(gpu_transfer.py:962:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:53,069] LMCache INFO:[0m Prefetch request completed (L1+L2): 2/2 retained keys (2 L1, 0 L2) in 0.2 ms (external_request_id=38a52ef850a24e8d8fcaf8078976e6bd, prefetch_request_id=-1) [3m(storage_manager.py:636:lmcache.v1.distributed.storage_manager)[0m
+[32;20m[2026-06-17 02:29:53,070] LMCache INFO:[0m Retrieved 512 tokens in 0.000 seconds [3m(gpu_transfer.py:962:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:53,123] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:53,158] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:53,189] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:53,251] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:53,282] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:53,320] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:53,357] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:53,395] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:53,436] LMCache INFO:[0m Stored 512 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:53,478] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:53,539] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:53,575] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:53,605] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:53,641] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:53,683] LMCache INFO:[0m Stored 512 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:53,722] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:53,761] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:53,797] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:53,832] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:53,869] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:53,905] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:53,941] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:53,978] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:54,019] LMCache INFO:[0m Stored 512 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:54,058] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:54,100] LMCache INFO:[0m Stored 512 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:54,133] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:54,170] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:54,211] LMCache INFO:[0m Stored 512 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:54,249] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:54,286] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:54,342] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:54,379] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:54,415] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:54,452] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:54,489] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:54,527] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:54,565] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:54,601] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:54,663] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:54,699] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:54,736] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:54,772] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:54,810] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:54,841] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:54,877] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:54,913] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:54,949] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:54,986] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:55,023] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:55,084] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:55,120] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:55,157] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:55,186] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:55,222] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:55,258] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:55,294] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:55,330] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:55,361] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:55,397] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:55,434] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:55,471] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:55,508] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:55,594] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:55,635] LMCache INFO:[0m Stored 512 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:55,674] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:55,712] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:55,749] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:55,787] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:55,819] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:55,856] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:55,894] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:55,932] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:55,964] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:55,995] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:56,032] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:56,068] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:56,105] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:56,165] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:56,201] LMCache INFO:[0m Stored 512 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:56,244] LMCache INFO:[0m Stored 512 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:56,283] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:56,322] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:56,363] LMCache INFO:[0m Stored 512 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:56,403] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:56,441] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:56,482] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:56,524] LMCache INFO:[0m Stored 512 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:56,562] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:56,600] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:56,636] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:56,674] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:56,709] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:56,746] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:56,781] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:56,825] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:56,868] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:56,911] LMCache INFO:[0m Stored 512 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:56,944] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:56,986] LMCache INFO:[0m Stored 512 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:57,030] LMCache INFO:[0m Stored 512 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:57,069] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:57,108] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:57,147] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:57,187] LMCache INFO:[0m Stored 512 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:57,252] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:57,287] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:57,318] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:57,355] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:57,392] LMCache INFO:[0m Stored 512 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:57,431] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:57,469] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:57,500] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:57,537] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:57,574] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:57,612] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:57,644] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:57,682] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:57,719] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:57,756] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:57,792] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:57,827] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:57,864] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:57,897] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:57,936] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:57,974] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:58,014] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:58,054] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:58,092] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:58,127] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:58,164] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:58,201] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:58,265] LMCache INFO:[0m Stored 512 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:58,307] LMCache INFO:[0m Stored 512 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:58,348] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:58,391] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:58,423] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:58,461] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:58,501] LMCache INFO:[0m Stored 512 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:58,543] LMCache INFO:[0m Stored 512 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:58,581] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:58,618] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:58,654] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:58,689] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:58,718] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:58,754] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:58,792] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:58,829] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:58,890] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:58,922] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:58,954] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:58,994] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:59,025] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:59,062] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:59,100] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:59,135] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:59,173] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:59,211] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:59,248] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:59,285] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:59,321] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:59,352] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:59,379] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:59,415] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:59,451] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:59,488] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:59,550] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:59,587] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:59,624] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:59,656] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:59,688] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:59,747] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:59,782] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:59,813] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:59,845] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:59,883] LMCache INFO:[0m Stored 512 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:59,921] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:29:59,951] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:00,015] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:00,078] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:00,114] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:00,152] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:00,189] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:00,227] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:00,262] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:00,298] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:00,337] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:00,373] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:00,410] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:00,447] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:00,483] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:00,519] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:00,582] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:00,619] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:00,654] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:00,690] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:00,719] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:00,754] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:00,815] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:00,852] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:00,889] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:00,928] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:00,959] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:00,998] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:01,035] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:01,073] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:01,110] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:01,146] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:01,184] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:01,243] LMCache INFO:[0m Stored 256 tokens in 0.000 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:01,274] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:01,312] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:01,342] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:01,384] LMCache INFO:[0m Stored 512 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:01,423] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:01,488] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:01,524] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:01,556] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:01,593] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:01,632] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:01,665] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:01,707] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:01,743] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:01,781] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:01,817] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:01,857] LMCache INFO:[0m Stored 512 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:01,920] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+[32;20m[2026-06-17 02:30:01,962] LMCache INFO:[0m Stored 256 tokens in 0.001 seconds [3m(gpu_transfer.py:790:lmcache.v1.multiprocess.modules.gpu_transfer)[0m
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+[32;20m[2026-06-17 02:30:02,085] LMCache INFO:[0m Shutting down LMCache HTTP server... [3m(http_server.py:164:lmcache.v1.multiprocess.http_server)[0m
+[32;20m[2026-06-17 02:30:02,085] LMCache INFO:[0m LookupHashLoggingSubscriber closed [3m(lookup_hash.py:137:lmcache.v1.mp_observability.subscribers.logging.lookup_hash)[0m
+[32;20m[2026-06-17 02:30:02,968] LMCache INFO:[0m LMCache HTTP server stopped [3m(http_server.py:186:lmcache.v1.multiprocess.http_server)[0m
+INFO:     Application shutdown complete.
+INFO:     Finished server process [69]

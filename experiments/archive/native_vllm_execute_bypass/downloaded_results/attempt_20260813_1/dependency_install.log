@@ -1,0 +1,327 @@
+Collecting vllm==0.10.2 (from -r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading vllm-0.10.2-cp38-abi3-manylinux1_x86_64.whl.metadata (16 kB)
+Collecting transformers==4.56.2 (from -r /content/meritkv_native_bypass/requirements.txt (line 2))
+  Downloading transformers-4.56.2-py3-none-any.whl.metadata (40 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.1/40.1 kB 4.3 MB/s eta 0:00:00
+Collecting huggingface_hub<1,>=0.34 (from -r /content/meritkv_native_bypass/requirements.txt (line 3))
+  Downloading huggingface_hub-0.36.2-py3-none-any.whl.metadata (15 kB)
+Requirement already satisfied: regex in /usr/local/lib/python3.12/dist-packages (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (2025.11.3)
+Requirement already satisfied: cachetools in /usr/local/lib/python3.12/dist-packages (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (6.2.6)
+Requirement already satisfied: psutil in /usr/local/lib/python3.12/dist-packages (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (5.9.5)
+Requirement already satisfied: sentencepiece in /usr/local/lib/python3.12/dist-packages (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (0.2.2)
+Requirement already satisfied: numpy in /usr/local/lib/python3.12/dist-packages (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (2.0.2)
+Requirement already satisfied: requests>=2.26.0 in /usr/local/lib/python3.12/dist-packages (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (2.32.4)
+Requirement already satisfied: tqdm in /usr/local/lib/python3.12/dist-packages (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (4.67.3)
+Collecting blake3 (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading blake3-1.0.9-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+Requirement already satisfied: py-cpuinfo in /usr/local/lib/python3.12/dist-packages (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (9.0.0)
+Requirement already satisfied: tokenizers>=0.21.1 in /usr/local/lib/python3.12/dist-packages (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (0.22.2)
+Requirement already satisfied: protobuf in /usr/local/lib/python3.12/dist-packages (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (5.29.6)
+Requirement already satisfied: fastapi>=0.115.0 in /usr/local/lib/python3.12/dist-packages (from fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (0.139.0)
+Requirement already satisfied: aiohttp in /usr/local/lib/python3.12/dist-packages (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (3.14.1)
+Requirement already satisfied: openai>=1.99.1 in /usr/local/lib/python3.12/dist-packages (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (2.45.0)
+Requirement already satisfied: pydantic>=2.11.7 in /usr/local/lib/python3.12/dist-packages (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (2.13.4)
+Requirement already satisfied: prometheus_client>=0.18.0 in /usr/local/lib/python3.12/dist-packages (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (0.25.0)
+Requirement already satisfied: pillow in /usr/local/lib/python3.12/dist-packages (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (11.3.0)
+Collecting prometheus-fastapi-instrumentator>=7.0.0 (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading prometheus_fastapi_instrumentator-8.1.0-py3-none-any.whl.metadata (13 kB)
+Requirement already satisfied: tiktoken>=0.6.0 in /usr/local/lib/python3.12/dist-packages (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (0.13.0)
+Collecting lm-format-enforcer==0.11.3 (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading lm_format_enforcer-0.11.3-py3-none-any.whl.metadata (17 kB)
+Collecting llguidance<0.8.0,>=0.7.11 (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading llguidance-0.7.30-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (10 kB)
+Collecting outlines_core==0.2.11 (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading outlines_core-0.2.11-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.8 kB)
+Collecting diskcache==5.6.3 (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading diskcache-5.6.3-py3-none-any.whl.metadata (20 kB)
+Collecting lark==1.2.2 (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading lark-1.2.2-py3-none-any.whl.metadata (1.8 kB)
+Collecting xgrammar==0.1.23 (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading xgrammar-0.1.23-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.4 kB)
+Requirement already satisfied: typing_extensions>=4.10 in /usr/local/lib/python3.12/dist-packages (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (4.16.0)
+Requirement already satisfied: filelock>=3.16.1 in /usr/local/lib/python3.12/dist-packages (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (3.29.7)
+Collecting partial-json-parser (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading partial_json_parser-0.2.1.1.post7-py3-none-any.whl.metadata (6.1 kB)
+Requirement already satisfied: pyzmq>=25.0.0 in /usr/local/lib/python3.12/dist-packages (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (26.2.1)
+Collecting msgspec (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading msgspec-0.21.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (5.8 kB)
+Collecting gguf>=0.13.0 (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading gguf-0.19.0-py3-none-any.whl.metadata (4.1 kB)
+Collecting mistral_common>=1.8.2 (from mistral_common[audio,image]>=1.8.2->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading mistral_common-1.11.7-py3-none-any.whl.metadata (5.9 kB)
+Requirement already satisfied: opencv-python-headless>=4.11.0 in /usr/local/lib/python3.12/dist-packages (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (5.0.0.93)
+Requirement already satisfied: pyyaml in /usr/local/lib/python3.12/dist-packages (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (6.0.3)
+Requirement already satisfied: six>=1.16.0 in /usr/local/lib/python3.12/dist-packages (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (1.17.0)
+Collecting setuptools<80,>=77.0.3 (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading setuptools-79.0.1-py3-none-any.whl.metadata (6.5 kB)
+Requirement already satisfied: einops in /usr/local/lib/python3.12/dist-packages (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (0.8.2)
+Collecting compressed-tensors==0.11.0 (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading compressed_tensors-0.11.0-py3-none-any.whl.metadata (7.0 kB)
+Collecting depyf==0.19.0 (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading depyf-0.19.0-py3-none-any.whl.metadata (7.3 kB)
+Requirement already satisfied: cloudpickle in /usr/local/lib/python3.12/dist-packages (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (3.1.2)
+Requirement already satisfied: watchfiles in /usr/local/lib/python3.12/dist-packages (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (1.2.0)
+Requirement already satisfied: python-json-logger in /usr/local/lib/python3.12/dist-packages (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (4.1.0)
+Requirement already satisfied: scipy in /usr/local/lib/python3.12/dist-packages (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (1.16.3)
+Collecting ninja (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading ninja-1.13.0-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.1 kB)
+Collecting pybase64 (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading pybase64-1.5.0-cp312-cp312-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl.metadata (11 kB)
+Collecting cbor2 (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading cbor2-6.1.4-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (5.5 kB)
+Collecting setproctitle (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading setproctitle-1.3.7-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (10 kB)
+Collecting openai-harmony>=0.0.3 (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading openai_harmony-0.0.8-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (8.0 kB)
+Collecting numba==0.61.2 (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading numba-0.61.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.8 kB)
+Collecting ray>=2.48.0 (from ray[cgraph]>=2.48.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading ray-2.57.0-cp312-cp312-manylinux2014_x86_64.whl.metadata (23 kB)
+Collecting torch==2.8.0 (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading torch-2.8.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (30 kB)
+Collecting torchaudio==2.8.0 (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading torchaudio-2.8.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (7.2 kB)
+Collecting torchvision==0.23.0 (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading torchvision-0.23.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (6.1 kB)
+Collecting xformers==0.0.32.post1 (from vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading xformers-0.0.32.post1-cp39-abi3-manylinux_2_28_x86_64.whl.metadata (1.1 kB)
+Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.12/dist-packages (from transformers==4.56.2->-r /content/meritkv_native_bypass/requirements.txt (line 2)) (26.2)
+Requirement already satisfied: safetensors>=0.4.3 in /usr/local/lib/python3.12/dist-packages (from transformers==4.56.2->-r /content/meritkv_native_bypass/requirements.txt (line 2)) (0.8.0)
+Requirement already satisfied: frozendict in /usr/local/lib/python3.12/dist-packages (from compressed-tensors==0.11.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (2.4.7)
+Collecting astor (from depyf==0.19.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading astor-0.8.1-py2.py3-none-any.whl.metadata (4.2 kB)
+Requirement already satisfied: dill in /usr/local/lib/python3.12/dist-packages (from depyf==0.19.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (0.3.8)
+Collecting interegular>=0.3.2 (from lm-format-enforcer==0.11.3->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading interegular-0.3.3-py37-none-any.whl.metadata (3.0 kB)
+Collecting llvmlite<0.45,>=0.44.0dev0 (from numba==0.61.2->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading llvmlite-0.44.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.0 kB)
+Requirement already satisfied: sympy>=1.13.3 in /usr/local/lib/python3.12/dist-packages (from torch==2.8.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (1.14.0)
+Requirement already satisfied: networkx in /usr/local/lib/python3.12/dist-packages (from torch==2.8.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (3.6.1)
+Requirement already satisfied: jinja2 in /usr/local/lib/python3.12/dist-packages (from torch==2.8.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (3.1.6)
+Requirement already satisfied: fsspec in /usr/local/lib/python3.12/dist-packages (from torch==2.8.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (2025.3.0)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.8.93 in /usr/local/lib/python3.12/dist-packages (from torch==2.8.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (12.8.93)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.8.90 in /usr/local/lib/python3.12/dist-packages (from torch==2.8.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (12.8.90)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.8.90 in /usr/local/lib/python3.12/dist-packages (from torch==2.8.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (12.8.90)
+Collecting nvidia-cudnn-cu12==9.10.2.21 (from torch==2.8.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading nvidia_cudnn_cu12-9.10.2.21-py3-none-manylinux_2_27_x86_64.whl.metadata (1.8 kB)
+Requirement already satisfied: nvidia-cublas-cu12==12.8.4.1 in /usr/local/lib/python3.12/dist-packages (from torch==2.8.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (12.8.4.1)
+Requirement already satisfied: nvidia-cufft-cu12==11.3.3.83 in /usr/local/lib/python3.12/dist-packages (from torch==2.8.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (11.3.3.83)
+Requirement already satisfied: nvidia-curand-cu12==10.3.9.90 in /usr/local/lib/python3.12/dist-packages (from torch==2.8.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (10.3.9.90)
+Requirement already satisfied: nvidia-cusolver-cu12==11.7.3.90 in /usr/local/lib/python3.12/dist-packages (from torch==2.8.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (11.7.3.90)
+Requirement already satisfied: nvidia-cusparse-cu12==12.5.8.93 in /usr/local/lib/python3.12/dist-packages (from torch==2.8.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (12.5.8.93)
+Requirement already satisfied: nvidia-cusparselt-cu12==0.7.1 in /usr/local/lib/python3.12/dist-packages (from torch==2.8.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (0.7.1)
+Collecting nvidia-nccl-cu12==2.27.3 (from torch==2.8.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading nvidia_nccl_cu12-2.27.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.0 kB)
+Requirement already satisfied: nvidia-nvtx-cu12==12.8.90 in /usr/local/lib/python3.12/dist-packages (from torch==2.8.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (12.8.90)
+Requirement already satisfied: nvidia-nvjitlink-cu12==12.8.93 in /usr/local/lib/python3.12/dist-packages (from torch==2.8.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (12.8.93)
+Requirement already satisfied: nvidia-cufile-cu12==1.13.1.3 in /usr/local/lib/python3.12/dist-packages (from torch==2.8.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (1.13.1.3)
+Collecting triton==3.4.0 (from torch==2.8.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading triton-3.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (1.7 kB)
+Requirement already satisfied: hf-xet<2.0.0,>=1.1.3 in /usr/local/lib/python3.12/dist-packages (from huggingface_hub<1,>=0.34->-r /content/meritkv_native_bypass/requirements.txt (line 3)) (1.5.1)
+Requirement already satisfied: starlette>=0.46.0 in /usr/local/lib/python3.12/dist-packages (from fastapi>=0.115.0->fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (1.3.1)
+Requirement already satisfied: typing-inspection>=0.4.2 in /usr/local/lib/python3.12/dist-packages (from fastapi>=0.115.0->fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (0.4.2)
+Requirement already satisfied: annotated-doc>=0.0.2 in /usr/local/lib/python3.12/dist-packages (from fastapi>=0.115.0->fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (0.0.4)
+Collecting fastapi-cli>=0.0.8 (from fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading fastapi_cli-0.0.32-py3-none-any.whl.metadata (6.7 kB)
+Collecting fastar>=0.9.0 (from fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading fastar-0.11.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
+Requirement already satisfied: httpx<1.0.0,>=0.23.0 in /usr/local/lib/python3.12/dist-packages (from fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (0.28.1)
+Requirement already satisfied: python-multipart>=0.0.18 in /usr/local/lib/python3.12/dist-packages (from fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (0.0.32)
+Collecting email-validator>=2.0.0 (from fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading email_validator-2.3.0-py3-none-any.whl.metadata (26 kB)
+Requirement already satisfied: uvicorn>=0.12.0 in /usr/local/lib/python3.12/dist-packages (from uvicorn[standard]>=0.12.0; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (0.51.0)
+Collecting pydantic-settings>=2.0.0 (from fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading pydantic_settings-2.15.0-py3-none-any.whl.metadata (3.9 kB)
+Collecting pydantic-extra-types>=2.0.0 (from fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading pydantic_extra_types-2.11.1-py3-none-any.whl.metadata (4.2 kB)
+Requirement already satisfied: jsonschema>=4.21.1 in /usr/local/lib/python3.12/dist-packages (from mistral_common>=1.8.2->mistral_common[audio,image]>=1.8.2->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (4.26.0)
+Requirement already satisfied: anyio<5,>=3.5.0 in /usr/local/lib/python3.12/dist-packages (from openai>=1.99.1->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (4.14.2)
+Requirement already satisfied: distro<2,>=1.7.0 in /usr/local/lib/python3.12/dist-packages (from openai>=1.99.1->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (1.9.0)
+Requirement already satisfied: jiter<1,>=0.10.0 in /usr/local/lib/python3.12/dist-packages (from openai>=1.99.1->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (0.16.0)
+Requirement already satisfied: sniffio in /usr/local/lib/python3.12/dist-packages (from openai>=1.99.1->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (1.3.1)
+Requirement already satisfied: annotated-types>=0.6.0 in /usr/local/lib/python3.12/dist-packages (from pydantic>=2.11.7->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (0.7.0)
+Requirement already satisfied: pydantic-core==2.46.4 in /usr/local/lib/python3.12/dist-packages (from pydantic>=2.11.7->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (2.46.4)
+Requirement already satisfied: click>=7.0 in /usr/local/lib/python3.12/dist-packages (from ray>=2.48.0->ray[cgraph]>=2.48.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (8.4.2)
+Requirement already satisfied: msgpack<2.0.0,>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from ray>=2.48.0->ray[cgraph]>=2.48.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (1.2.1)
+Requirement already satisfied: cupy-cuda12x in /usr/local/lib/python3.12/dist-packages (from ray[cgraph]>=2.48.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (14.0.1)
+Requirement already satisfied: charset_normalizer<4,>=2 in /usr/local/lib/python3.12/dist-packages (from requests>=2.26.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (3.4.9)
+Requirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.12/dist-packages (from requests>=2.26.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (3.18)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.12/dist-packages (from requests>=2.26.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (2.5.0)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.12/dist-packages (from requests>=2.26.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (2026.6.17)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (2.7.1)
+Requirement already satisfied: aiosignal>=1.4.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (1.4.0)
+Requirement already satisfied: attrs>=17.3.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (26.1.0)
+Requirement already satisfied: frozenlist>=1.1.1 in /usr/local/lib/python3.12/dist-packages (from aiohttp->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (1.8.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in /usr/local/lib/python3.12/dist-packages (from aiohttp->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (6.7.1)
+Requirement already satisfied: propcache>=0.2.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (0.5.2)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (1.24.2)
+Collecting dnspython>=2.0.0 (from email-validator>=2.0.0->fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading dnspython-2.8.0-py3-none-any.whl.metadata (5.7 kB)
+Requirement already satisfied: typer>=0.16.0 in /usr/local/lib/python3.12/dist-packages (from fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (0.26.8)
+Collecting rich-toolkit>=0.14.8 (from fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading rich_toolkit-0.20.3-py3-none-any.whl.metadata (1.0 kB)
+Collecting fastapi-cloud-cli>=0.1.1 (from fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading fastapi_cloud_cli-0.23.0-py3-none-any.whl.metadata (3.1 kB)
+Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.12/dist-packages (from httpx<1.0.0,>=0.23.0->fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (1.0.9)
+Requirement already satisfied: h11>=0.16 in /usr/local/lib/python3.12/dist-packages (from httpcore==1.*->httpx<1.0.0,>=0.23.0->fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (0.16.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.12/dist-packages (from jinja2->torch==2.8.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (3.0.3)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in /usr/local/lib/python3.12/dist-packages (from jsonschema>=4.21.1->mistral_common>=1.8.2->mistral_common[audio,image]>=1.8.2->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (2025.9.1)
+Requirement already satisfied: referencing>=0.28.4 in /usr/local/lib/python3.12/dist-packages (from jsonschema>=4.21.1->mistral_common>=1.8.2->mistral_common[audio,image]>=1.8.2->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (0.37.0)
+Requirement already satisfied: rpds-py>=0.25.0 in /usr/local/lib/python3.12/dist-packages (from jsonschema>=4.21.1->mistral_common>=1.8.2->mistral_common[audio,image]>=1.8.2->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (2026.6.3)
+Collecting pycountry>=23 (from pydantic-extra-types[pycountry]>=2.10.5->mistral_common>=1.8.2->mistral_common[audio,image]>=1.8.2->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading pycountry-26.2.16-py3-none-any.whl.metadata (12 kB)
+Requirement already satisfied: python-dotenv>=0.21.0 in /usr/local/lib/python3.12/dist-packages (from pydantic-settings>=2.0.0->fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (1.2.2)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.12/dist-packages (from sympy>=1.13.3->torch==2.8.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (1.3.0)
+Requirement already satisfied: httptools>=0.8.0 in /usr/local/lib/python3.12/dist-packages (from uvicorn[standard]>=0.12.0; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (0.8.0)
+Requirement already satisfied: uvloop>=0.15.1 in /usr/local/lib/python3.12/dist-packages (from uvicorn[standard]>=0.12.0; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (0.22.1)
+Requirement already satisfied: websockets>=13.0 in /usr/local/lib/python3.12/dist-packages (from uvicorn[standard]>=0.12.0; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (15.0.1)
+Requirement already satisfied: cuda-pathfinder==1.*,>=1.3.3 in /usr/local/lib/python3.12/dist-packages (from cupy-cuda12x->ray[cgraph]>=2.48.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (1.5.6)
+Requirement already satisfied: soundfile>=0.12.1 in /usr/local/lib/python3.12/dist-packages (from mistral_common>=1.8.2->mistral_common[audio,image]>=1.8.2->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (0.14.0)
+Requirement already satisfied: soxr>=0.5.0 in /usr/local/lib/python3.12/dist-packages (from mistral_common>=1.8.2->mistral_common[audio,image]>=1.8.2->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (1.1.0)
+Collecting rignore>=0.5.1 (from fastapi-cloud-cli>=0.1.1->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading rignore-0.8.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.2 kB)
+Requirement already satisfied: sentry-sdk>=2.20.0 in /usr/local/lib/python3.12/dist-packages (from fastapi-cloud-cli>=0.1.1->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (2.65.0)
+Collecting detect-installer>=0.1.0 (from fastapi-cloud-cli>=0.1.1->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1))
+  Downloading detect_installer-0.1.0-py3-none-any.whl.metadata (1.2 kB)
+Requirement already satisfied: rich>=13.7.1 in /usr/local/lib/python3.12/dist-packages (from rich-toolkit>=0.14.8->fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (13.9.4)
+Requirement already satisfied: cffi>=1.0 in /usr/local/lib/python3.12/dist-packages (from soundfile>=0.12.1->mistral_common>=1.8.2->mistral_common[audio,image]>=1.8.2->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (2.1.0)
+Requirement already satisfied: shellingham>=1.3.0 in /usr/local/lib/python3.12/dist-packages (from typer>=0.16.0->fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (1.5.4)
+Requirement already satisfied: pycparser in /usr/local/lib/python3.12/dist-packages (from cffi>=1.0->soundfile>=0.12.1->mistral_common>=1.8.2->mistral_common[audio,image]>=1.8.2->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (3.0)
+Requirement already satisfied: markdown-it-py>=2.2.0 in /usr/local/lib/python3.12/dist-packages (from rich>=13.7.1->rich-toolkit>=0.14.8->fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (4.2.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /usr/local/lib/python3.12/dist-packages (from rich>=13.7.1->rich-toolkit>=0.14.8->fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (2.20.0)
+Requirement already satisfied: mdurl~=0.1 in /usr/local/lib/python3.12/dist-packages (from markdown-it-py>=2.2.0->rich>=13.7.1->rich-toolkit>=0.14.8->fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm==0.10.2->-r /content/meritkv_native_bypass/requirements.txt (line 1)) (0.1.2)
+Downloading vllm-0.10.2-cp38-abi3-manylinux1_x86_64.whl (436.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 436.4/436.4 MB 4.0 MB/s eta 0:00:00
+Downloading transformers-4.56.2-py3-none-any.whl (11.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.6/11.6 MB 112.6 MB/s eta 0:00:00
+Downloading compressed_tensors-0.11.0-py3-none-any.whl (179 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 180.0/180.0 kB 21.3 MB/s eta 0:00:00
+Downloading depyf-0.19.0-py3-none-any.whl (39 kB)
+Downloading diskcache-5.6.3-py3-none-any.whl (45 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.5/45.5 kB 5.3 MB/s eta 0:00:00
+Downloading lark-1.2.2-py3-none-any.whl (111 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 111.0/111.0 kB 14.3 MB/s eta 0:00:00
+Downloading lm_format_enforcer-0.11.3-py3-none-any.whl (45 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.4/45.4 kB 5.2 MB/s eta 0:00:00
+Downloading numba-0.61.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (3.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.9/3.9 MB 76.5 MB/s eta 0:00:00
+Downloading outlines_core-0.2.11-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 50.4 MB/s eta 0:00:00
+Downloading torch-2.8.0-cp312-cp312-manylinux_2_28_x86_64.whl (887.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 887.9/887.9 MB 1.8 MB/s eta 0:00:00
+Downloading torchaudio-2.8.0-cp312-cp312-manylinux_2_28_x86_64.whl (4.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.0/4.0 MB 77.7 MB/s eta 0:00:00
+Downloading torchvision-0.23.0-cp312-cp312-manylinux_2_28_x86_64.whl (8.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.6/8.6 MB 74.3 MB/s eta 0:00:00
+Downloading xformers-0.0.32.post1-cp39-abi3-manylinux_2_28_x86_64.whl (117.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 117.2/117.2 MB 7.9 MB/s eta 0:00:00
+Downloading xgrammar-0.1.23-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (7.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.9/7.9 MB 110.4 MB/s eta 0:00:00
+Downloading nvidia_cudnn_cu12-9.10.2.21-py3-none-manylinux_2_27_x86_64.whl (706.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 706.8/706.8 MB 1.3 MB/s eta 0:00:00
+Downloading nvidia_nccl_cu12-2.27.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (322.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 322.4/322.4 MB 5.0 MB/s eta 0:00:00
+Downloading triton-3.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (155.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 155.6/155.6 MB 6.5 MB/s eta 0:00:00
+Downloading huggingface_hub-0.36.2-py3-none-any.whl (566 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 kB 41.6 MB/s eta 0:00:00
+Downloading gguf-0.19.0-py3-none-any.whl (118 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 118.5/118.5 kB 13.5 MB/s eta 0:00:00
+Downloading llguidance-0.7.30-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (15.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.0/15.0 MB 90.8 MB/s eta 0:00:00
+Downloading mistral_common-1.11.7-py3-none-any.whl (6.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.6/6.6 MB 115.1 MB/s eta 0:00:00
+Downloading openai_harmony-0.0.8-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 103.5 MB/s eta 0:00:00
+Downloading prometheus_fastapi_instrumentator-8.1.0-py3-none-any.whl (19 kB)
+Downloading ray-2.57.0-cp312-cp312-manylinux2014_x86_64.whl (77.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 77.9/77.9 MB 9.9 MB/s eta 0:00:00
+Downloading setuptools-79.0.1-py3-none-any.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 64.8 MB/s eta 0:00:00
+Downloading blake3-1.0.9-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (383 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 383.9/383.9 kB 37.4 MB/s eta 0:00:00
+Downloading cbor2-6.1.4-cp312-cp312-manylinux_2_28_x86_64.whl (461 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 461.2/461.2 kB 41.6 MB/s eta 0:00:00
+Downloading msgspec-0.21.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (225 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 225.0/225.0 kB 25.8 MB/s eta 0:00:00
+Downloading ninja-1.13.0-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (180 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 180.7/180.7 kB 21.2 MB/s eta 0:00:00
+Downloading partial_json_parser-0.2.1.1.post7-py3-none-any.whl (10 kB)
+Downloading pybase64-1.5.0-cp312-cp312-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl (94 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 94.7/94.7 kB 10.9 MB/s eta 0:00:00
+Downloading setproctitle-1.3.7-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (32 kB)
+Downloading email_validator-2.3.0-py3-none-any.whl (35 kB)
+Downloading fastapi_cli-0.0.32-py3-none-any.whl (14 kB)
+Downloading fastar-0.11.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (819 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 819.4/819.4 kB 56.3 MB/s eta 0:00:00
+Downloading interegular-0.3.3-py37-none-any.whl (23 kB)
+Downloading llvmlite-0.44.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (42.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.4/42.4 MB 21.7 MB/s eta 0:00:00
+Downloading pydantic_extra_types-2.11.1-py3-none-any.whl (79 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.5/79.5 kB 8.7 MB/s eta 0:00:00
+Downloading pydantic_settings-2.15.0-py3-none-any.whl (69 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 69.4/69.4 kB 7.7 MB/s eta 0:00:00
+Downloading astor-0.8.1-py2.py3-none-any.whl (27 kB)
+Downloading dnspython-2.8.0-py3-none-any.whl (331 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 331.1/331.1 kB 32.3 MB/s eta 0:00:00
+Downloading fastapi_cloud_cli-0.23.0-py3-none-any.whl (78 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.1/78.1 kB 8.8 MB/s eta 0:00:00
+Downloading pycountry-26.2.16-py3-none-any.whl (8.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.0/8.0 MB 105.1 MB/s eta 0:00:00
+Downloading rich_toolkit-0.20.3-py3-none-any.whl (36 kB)
+Downloading detect_installer-0.1.0-py3-none-any.whl (4.5 kB)
+Downloading rignore-0.8.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (927 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 927.8/927.8 kB 58.1 MB/s eta 0:00:00
+Installing collected packages: setuptools, setproctitle, rignore, pycountry, pybase64, partial-json-parser, outlines_core, nvidia-nccl-cu12, nvidia-cudnn-cu12, ninja, msgspec, llvmlite, llguidance, lark, interegular, fastar, dnspython, diskcache, detect-installer, cbor2, blake3, astor, triton, numba, huggingface_hub, gguf, email-validator, depyf, torch, rich-toolkit, pydantic-settings, pydantic-extra-types, prometheus-fastapi-instrumentator, openai-harmony, lm-format-enforcer, xformers, transformers, torchvision, torchaudio, ray, fastapi-cloud-cli, fastapi-cli, xgrammar, mistral_common, compressed-tensors, vllm
+  Attempting uninstall: setuptools
+    Found existing installation: setuptools 75.2.0
+    Uninstalling setuptools-75.2.0:
+      Successfully uninstalled setuptools-75.2.0
+  Attempting uninstall: nvidia-nccl-cu12
+    Found existing installation: nvidia-nccl-cu12 2.28.9
+    Uninstalling nvidia-nccl-cu12-2.28.9:
+      Successfully uninstalled nvidia-nccl-cu12-2.28.9
+  Attempting uninstall: nvidia-cudnn-cu12
+    Found existing installation: nvidia-cudnn-cu12 9.19.0.56
+    Uninstalling nvidia-cudnn-cu12-9.19.0.56:
+      Successfully uninstalled nvidia-cudnn-cu12-9.19.0.56
+  Attempting uninstall: llvmlite
+    Found existing installation: llvmlite 0.43.0
+    Uninstalling llvmlite-0.43.0:
+      Successfully uninstalled llvmlite-0.43.0
+  Attempting uninstall: lark
+    Found existing installation: lark 1.3.1
+    Uninstalling lark-1.3.1:
+      Successfully uninstalled lark-1.3.1
+  Attempting uninstall: triton
+    Found existing installation: triton 3.6.0
+    Uninstalling triton-3.6.0:
+      Successfully uninstalled triton-3.6.0
+  Attempting uninstall: numba
+    Found existing installation: numba 0.60.0
+    Uninstalling numba-0.60.0:
+      Successfully uninstalled numba-0.60.0
+  Attempting uninstall: huggingface_hub
+    Found existing installation: huggingface_hub 1.23.0
+    Uninstalling huggingface_hub-1.23.0:
+      Successfully uninstalled huggingface_hub-1.23.0
+  Attempting uninstall: torch
+    Found existing installation: torch 2.11.0+cu128
+    Uninstalling torch-2.11.0+cu128:
+      Successfully uninstalled torch-2.11.0+cu128
+  Attempting uninstall: transformers
+    Found existing installation: transformers 5.13.1
+    Uninstalling transformers-5.13.1:
+      Successfully uninstalled transformers-5.13.1
+  Attempting uninstall: torchvision
+    Found existing installation: torchvision 0.26.0+cu128
+    Uninstalling torchvision-0.26.0+cu128:
+      Successfully uninstalled torchvision-0.26.0+cu128
+  Attempting uninstall: torchaudio
+    Found existing installation: torchaudio 2.11.0+cu128
+    Uninstalling torchaudio-2.11.0+cu128:
+      Successfully uninstalled torchaudio-2.11.0+cu128
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+ipython 7.34.0 requires jedi>=0.16, which is not installed.
+gradio 6.20.0 requires huggingface-hub<2.0,>=1.2.0, but you have huggingface-hub 0.36.2 which is incompatible.
+Successfully installed astor-0.8.1 blake3-1.0.9 cbor2-6.1.4 compressed-tensors-0.11.0 depyf-0.19.0 detect-installer-0.1.0 diskcache-5.6.3 dnspython-2.8.0 email-validator-2.3.0 fastapi-cli-0.0.32 fastapi-cloud-cli-0.23.0 fastar-0.11.0 gguf-0.19.0 huggingface_hub-0.36.2 interegular-0.3.3 lark-1.2.2 llguidance-0.7.30 llvmlite-0.44.0 lm-format-enforcer-0.11.3 mistral_common-1.11.7 msgspec-0.21.1 ninja-1.13.0 numba-0.61.2 nvidia-cudnn-cu12-9.10.2.21 nvidia-nccl-cu12-2.27.3 openai-harmony-0.0.8 outlines_core-0.2.11 partial-json-parser-0.2.1.1.post7 prometheus-fastapi-instrumentator-8.1.0 pybase64-1.5.0 pycountry-26.2.16 pydantic-extra-types-2.11.1 pydantic-settings-2.15.0 ray-2.57.0 rich-toolkit-0.20.3 rignore-0.8.1 setproctitle-1.3.7 setuptools-79.0.1 torch-2.8.0 torchaudio-2.8.0 torchvision-0.23.0 transformers-4.56.2 triton-3.4.0 vllm-0.10.2 xformers-0.0.32.post1 xgrammar-0.1.23

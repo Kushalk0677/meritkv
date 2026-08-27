@@ -1,0 +1,9 @@
+state=completed
+mode=full
+run_id=sglang_lmcache_shadowkv_qwen14b_identical_blocks_3reps_2026-06-17
+updated_at=2026-06-17T21:20:48-04:00
+result_root=/home/jade_hand/research/shadowkv/results_sglang_lmcache_shadowkv_qwen14b_identical_blocks_3reps_2026-06-17
+log=/home/jade_hand/research/shadowkv/run_logs/sglang_lmcache_shadowkv_qwen14b_identical_blocks_3reps_2026-06-17.log
+image=shadowkv-sglang-lmcache:2026-06-14-no-native-radix
+total_jobs=90
+completed_at=2026-06-17T21:20:48-04:00

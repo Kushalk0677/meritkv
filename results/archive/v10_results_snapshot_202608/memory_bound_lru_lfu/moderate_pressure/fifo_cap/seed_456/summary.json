@@ -1,0 +1,8 @@
+{
+  "fifo_cap": {
+    "mean_latency_ms": 69.04,
+    "final_round_recovery": 0.5984,
+    "total_evictions": 25,
+    "declined_admissions_phase1": 12
+  }
+}

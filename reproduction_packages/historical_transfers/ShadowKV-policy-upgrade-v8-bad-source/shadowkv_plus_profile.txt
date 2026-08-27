@@ -1,0 +1,259 @@
+         211833 function calls (211493 primitive calls) in 0.546 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+    46/45    0.001    0.000    0.545    0.012 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:2171(serve_tokens)
+       45    0.002    0.000    0.471    0.010 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\models.py:101(prefill)
+       27    0.000    0.000    0.283    0.010 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:595(_prefill_with_cache_fallback)
+       18    0.000    0.000    0.189    0.010 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:589(_prefill_full)
+       10    0.000    0.000    0.106    0.011 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:2164(_fast_bypass_request)
+       35    0.001    0.000    0.045    0.001 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:1671(_plan_for_request)
+       35    0.000    0.000    0.040    0.001 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:1627(_semantic_best_match)
+       15    0.003    0.000    0.039    0.003 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\semantic.py:126(query)
+     1223    0.020    0.000    0.037    0.000 {built-in method builtins.sum}
+     1124    0.001    0.000    0.034    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\semantic.py:59(cosine)
+       45    0.001    0.000    0.017    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:1615(_observe_request)
+   144996    0.015    0.000    0.015    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\semantic.py:61(<genexpr>)
+      454    0.001    0.000    0.010    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\semantic.py:102(add)
+       83    0.005    0.000    0.009    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\semantic.py:41(sketch)
+       45    0.001    0.000    0.007    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:389(_observe_request)
+       45    0.002    0.000    0.004    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\cache.py:187(observe_query)
+       16    0.000    0.000    0.004    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\controller.py:46(plan)
+       16    0.000    0.000    0.003    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\utility_policy.py:36(plan)
+       16    0.000    0.000    0.003    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\utility.py:62(admission)
+       45    0.001    0.000    0.003    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:264(_record)
+    12238    0.003    0.000    0.003    0.000 {method 'get' of 'dict' objects}
+       73    0.000    0.000    0.002    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:357(_tracked_prefix_lengths)
+      803    0.001    0.000    0.002    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\config_loader.py:194(get)
+       53    0.000    0.000    0.002    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\cache.py:91(default_prefix_lengths)
+       53    0.001    0.000    0.002    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\cache.py:497(_default_prefix_lengths)
+       16    0.001    0.000    0.002    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\semantic.py:64(token_entropy)
+      954    0.001    0.000    0.002    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\cache.py:517(_decayed_frequency_unlocked)
+        3    0.000    0.000    0.001    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:1941(_store_reactive_prefix_from_prefill)
+    10707    0.001    0.000    0.001    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\semantic.py:57(<genexpr>)
+       45    0.000    0.000    0.001    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:145(_on_request_finish)
+       45    0.000    0.000    0.001    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\cache.py:211(peek_match)
+       45    0.000    0.000    0.001    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:2142(_is_raw_conservative_bypass_active)
+       45    0.000    0.000    0.001    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:150(_maybe_auto_disable)
+    10707    0.001    0.000    0.001    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\semantic.py:56(<genexpr>)
+       45    0.001    0.000    0.001    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\cache.py:401(_find_match_unlocked)
+       10    0.000    0.000    0.001    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:2085(_raw_reuse_evidence_strong)
+        3    0.000    0.000    0.001    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:475(_reactive_prefix_len)
+     6503    0.001    0.000    0.001    0.000 {built-in method builtins.len}
+       90    0.001    0.000    0.001    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\cache.py:380(snapshot_metrics)
+       53    0.000    0.000    0.001    0.000 {built-in method builtins.sorted}
+       45    0.000    0.000    0.001    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\controller.py:43(update_feedback)
+       45    0.000    0.000    0.001    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\utility_policy.py:31(update_feedback)
+     1296    0.000    0.000    0.001    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\semantic.py:71(<genexpr>)
+       45    0.000    0.000    0.001    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:368(_safe_trace_metadata)
+        4    0.000    0.000    0.001    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:1865(_store_prefix_from_prefill)
+      153    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\cache.py:112(get_frequency)
+       27    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:553(_should_attempt_cache_use)
+     2405    0.000    0.000    0.000    0.000 {built-in method builtins.max}
+     1471    0.000    0.000    0.000    0.000 {built-in method time.time}
+       15    0.000    0.000    0.000    0.000 {method 'sort' of 'list' objects}
+      347    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:334(_shared_prefix_hint)
+  564/364    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+       46    0.000    0.000    0.000    0.000 C:\Python314\Lib\threading.py:630(set)
+       92    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:348(_has_scaffold_hint)
+     1643    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\cache.py:508(<genexpr>)
+        1    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:1911(_store_scaffold_bypass_prefix_from_prefill)
+       45    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:1251(_after_record)
+     1276    0.000    0.000    0.000    0.000 {method 'add' of 'set' objects}
+       35    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:1659(_record_plan)
+       16    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\prefix_gate.py:15(breakeven_prefix_len)
+      100    0.000    0.000    0.000    0.000 C:\Python314\Lib\typing.py:1292(__instancecheck__)
+       16    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\utility.py:53(_health)
+       45    0.000    0.000    0.000    0.000 C:\Python314\Lib\threading.py:641(clear)
+     1050    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+       46    0.000    0.000    0.000    0.000 C:\Python314\Lib\threading.py:438(notify_all)
+      759    0.000    0.000    0.000    0.000 {method '__enter__' of '_thread.RLock' objects}
+     1280    0.000    0.000    0.000    0.000 {built-in method math.log2}
+       27    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\cache.py:218(admit_match)
+      995    0.000    0.000    0.000    0.000 {built-in method builtins.min}
+       80    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:1611(_semantic_enabled_for_request)
+      100    0.000    0.000    0.000    0.000 C:\Python314\Lib\typing.py:1583(__subclasscheck__)
+      759    0.000    0.000    0.000    0.000 {method '__exit__' of '_thread.RLock' objects}
+       71    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\cache.py:116(get_observation_count)
+        4    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\cache.py:247(store)
+       27    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:320(_update_reuse_cost_stats)
+      211    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+       46    0.000    0.000    0.000    0.000 C:\Python314\Lib\threading.py:408(notify)
+      915    0.000    0.000    0.000    0.000 <string>:2(__init__)
+       60    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:2082(_is_raw_prompt)
+    46/45    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:1241(_ensure_worker_started)
+       90    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\cache.py:165(branching_factor)
+       87    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\cache.py:94(contains)
+      915    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\semantic.py:167(<lambda>)
+       19    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:464(_calibrated_scaffold_saved_ms)
+       53    0.000    0.000    0.000    0.000 {method 'update' of 'set' objects}
+      159    0.000    0.000    0.000    0.000 {built-in method builtins.round}
+      100    0.000    0.000    0.000    0.000 {built-in method builtins.issubclass}
+        4    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\cache.py:527(_trie_insert_unlocked)
+       38    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:2149(_is_raw_fast_bypass_active)
+       92    0.000    0.000    0.000    0.000 C:\Python314\Lib\threading.py:313(__enter__)
+       18    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:311(_update_full_cost_stats)
+       92    0.000    0.000    0.000    0.000 C:\Python314\Lib\threading.py:316(__exit__)
+      327    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+      454    0.000    0.000    0.000    0.000 {method 'clear' of 'dict' objects}
+      261    0.000    0.000    0.000    0.000 {method 'strip' of 'str' objects}
+       45    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+      158    0.000    0.000    0.000    0.000 {method 'append' of 'collections.deque' objects}
+       45    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:209(_append_policy_trace)
+       16    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\prefix_gate.py:8(transfer_ms_per_token)
+        7    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+       40    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\semantic.py:74(longest_common_prefix_len)
+        5    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:1766(_should_store_scaffold_on_bypass)
+       47    0.000    0.000    0.000    0.000 C:\Python314\Lib\threading.py:328(_is_owned)
+      2/1    0.000    0.000    0.000    0.000 C:\Python314\Lib\threading.py:975(start)
+      178    0.000    0.000    0.000    0.000 C:\Python314\Lib\threading.py:615(is_set)
+      2/1    0.000    0.000    0.000    0.000 C:\Python314\Lib\threading.py:651(wait)
+      100    0.000    0.000    0.000    0.000 <frozen abc>:121(__subclasscheck__)
+    51/49    0.001    0.000    0.000    0.000 {method 'acquire' of '_thread.lock' objects}
+       34    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\config_loader.py:163(reload_if_changed)
+       18    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\cache.py:215(record_miss)
+       46    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\models.py:94(estimate_prefill_cost_ms)
+      106    0.000    0.000    0.000    0.000 {method 'values' of 'dict' objects}
+        4    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:433(_materialize_cache_for_tier)
+      2/1    0.000    0.000    0.000    0.000 C:\Python314\Lib\threading.py:337(wait)
+        3    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:1731(_should_defer_reactive_store)
+        1    0.000    0.000    0.000    0.000 {built-in method _thread.start_joinable_thread}
+       18    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\cache.py:87(add_metric)
+        3    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:507(_should_store_reactive_prefix)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+       92    0.000    0.000    0.000    0.000 {method '__enter__' of '_thread.lock' objects}
+        4    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:1839(_slice_prefill_kv_to_prefix)
+      146    0.000    0.000    0.000    0.000 {method 'setdefault' of 'dict' objects}
+       45    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:139(_mark_cache_active)
+        8    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:446(_estimate_saved_ms)
+       35    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:1754(_record_semantic_opportunity)
+        1    0.000    0.000    0.000    0.000 C:\Python314\Lib\threading.py:880(__init__)
+       14    0.000    0.000    0.000    0.000 C:\Python314\Lib\encodings\cp1252.py:18(encode)
+      100    0.000    0.000    0.000    0.000 {built-in method _abc._abc_subclasscheck}
+       90    0.000    0.000    0.000    0.000 {built-in method time.perf_counter}
+        4    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\models.py:552(estimate_past_key_values_bytes)
+       92    0.000    0.000    0.000    0.000 {method '__exit__' of '_thread.lock' objects}
+       83    0.000    0.000    0.000    0.000 {built-in method math.sqrt}
+       60    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+       34    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+        4    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:1777(_default_shadowkv_plus_store_tier)
+        6    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:420(_request_cacheable_prefix_limit)
+        4    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\models.py:134(slice_past_key_values)
+       45    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:1247(_check_background_exception)
+       27    0.000    0.000    0.000    0.000 {built-in method builtins.setattr}
+       14    0.000    0.000    0.000    0.000 {built-in method _codecs.charmap_encode}
+       16    0.000    0.000    0.000    0.000 {built-in method math.ceil}
+        3    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:2002(_partial_semantic_reuse)
+       19    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:426(_estimate_full_cost_ms)
+       35    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\controller.py:39(last_breakdown)
+        1    0.000    0.000    0.000    0.000 C:\Python314\Lib\_weakrefset.py:45(add)
+        3    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\cache.py:120(get_entry)
+        3    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:1228(_should_defer_reactive_store)
+        1    0.000    0.000    0.000    0.000 C:\Python314\Lib\threading.py:1057(_set_os_name)
+        1    0.000    0.000    0.000    0.000 C:\Python314\Lib\threading.py:602(__init__)
+        4    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\models.py:98(estimate_kv_cache_bytes)
+        2    0.000    0.000    0.000    0.000 {method 'release' of '_thread.lock' objects}
+        1    0.000    0.000    0.000    0.000 C:\Python314\Lib\threading.py:1050(_set_ident)
+        1    0.000    0.000    0.000    0.000 {built-in method _thread.set_name}
+        1    0.000    0.000    0.000    0.000 C:\Python314\Lib\threading.py:290(__init__)
+        1    0.000    0.000    0.000    0.000 C:\Python314\Lib\threading.py:325(_acquire_restore)
+        1    0.000    0.000    0.000    0.000 C:\Python314\Lib\threading.py:1054(_set_native_id)
+        4    0.000    0.000    0.000    0.000 {built-in method builtins.callable}
+        1    0.000    0.000    0.000    0.000 C:\Python314\Lib\threading.py:854(_newname)
+        1    0.000    0.000    0.000    0.000 C:\Python314\Lib\threading.py:322(_release_save)
+        4    0.000    0.000    0.000    0.000 C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:306(_device_target_for_tier)
+        1    0.000    0.000    0.000    0.000 C:\Python314\Lib\threading.py:1308(_make_invoke_excepthook)
+        3    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+        1    0.000    0.000    0.000    0.000 {method 'remove' of 'collections.deque' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method _thread.daemon_threads_allowed}
+        1    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+        1    0.000    0.000    0.000    0.000 {built-in method _thread.get_native_id}
+        1    0.000    0.000    0.000    0.000 C:\Python314\Lib\threading.py:1188(daemon)
+        1    0.000    0.000    0.000    0.000 {built-in method _thread.allocate_lock}
+    133/0    0.469    0.004    0.000          {built-in method time.sleep}
+
+
+
+============================================================
+Callers for key functions:
+============================================================
+
+Callers for _plan_for_request:
+----------------------------------------
+   Ordered by: cumulative time
+   List reduced from 169 to 1 due to restriction <'_plan_for_request'>
+
+Function                                                                                        was called by...
+                                                                                                    ncalls  tottime  cumtime
+C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:1671(_plan_for_request)  <-      34    0.001    0.044  C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:2171(serve_tokens)
+
+
+
+Callers for _semantic_best_match:
+----------------------------------------
+   Ordered by: cumulative time
+   List reduced from 169 to 1 due to restriction <'_semantic_best_match'>
+
+Function                                                                                           was called by...
+                                                                                                       ncalls  tottime  cumtime
+C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:1627(_semantic_best_match)  <-      35    0.000    0.040  C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:1671(_plan_for_request)
+
+
+
+Callers for _partial_semantic_reuse:
+----------------------------------------
+   Ordered by: cumulative time
+   List reduced from 169 to 1 due to restriction <'_partial_semantic_reuse'>
+
+Function                                                                                              was called by...
+                                                                                                          ncalls  tottime  cumtime
+C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:2002(_partial_semantic_reuse)  <-       3    0.000    0.000  C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:2171(serve_tokens)
+
+
+
+Callers for serve_tokens:
+----------------------------------------
+   Ordered by: cumulative time
+   List reduced from 169 to 1 due to restriction <'serve_tokens'>
+
+Function                                                                                   was called by...
+                                                                                               ncalls  tottime  cumtime
+C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:2171(serve_tokens)  <-      44    0.001    0.533  {method 'acquire' of '_thread.lock' objects}
+
+
+
+Callers for _observe_request:
+----------------------------------------
+   Ordered by: cumulative time
+   List reduced from 169 to 2 due to restriction <'_observe_request'>
+
+Function                                                                                       was called by...
+                                                                                                   ncalls  tottime  cumtime
+C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:1615(_observe_request)  <-      44    0.001    0.017  C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:2171(serve_tokens)
+C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:389(_observe_request)   <-      45    0.001    0.007  C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:1615(_observe_request)
+
+
+
+Callers for _store_reactive_prefix:
+----------------------------------------
+   Ordered by: cumulative time
+   List reduced from 169 to 2 due to restriction <'_store_reactive_prefix'>
+
+Function                                                                                                          was called by...
+                                                                                                                      ncalls  tottime  cumtime
+C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:1941(_store_reactive_prefix_from_prefill)  <-       3    0.000    0.001  C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:2171(serve_tokens)
+C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:507(_should_store_reactive_prefix)         <-       3    0.000    0.000  C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:1941(_store_reactive_prefix_from_prefill)
+
+
+
+Callers for _should_attempt_cache_use:
+----------------------------------------
+   Ordered by: cumulative time
+   List reduced from 169 to 1 due to restriction <'_should_attempt_cache_use'>
+
+Function                                                                                               was called by...
+                                                                                                           ncalls  tottime  cumtime
+C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:553(_should_attempt_cache_use)  <-      27    0.000    0.000  C:\shadowkv\robust_policy_upgrade_v6\src\proactive_kv_cache\engines.py:2171(serve_tokens)
+
+

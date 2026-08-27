@@ -1,0 +1,210 @@
+2026-05-04 08:30:13  ================================================================================
+2026-05-04 08:30:13  SWEEP START  n_requests=64  models=1  datasets=4  modes=4  total_jobs=16
+2026-05-04 08:30:13  main_hf=True runtime=False runtime_baselines=['vllm_apc', 'vllm_apc_shadowkv_plus', 'sglang_radix_attention', 'sglang_radix_attention_shadowkv_plus', 'lmcache', 'lmcache_shadowkv_plus']
+2026-05-04 08:30:13  ================================================================================
+2026-05-04 08:30:13  
+2026-05-04 08:30:13  --------------------------------------------------------------------------------
+2026-05-04 08:30:13  JOB 1/16  ETA~0:00:15
+2026-05-04 08:30:13    kind=main_hf baseline=main_hf model=Qwen/Qwen2.5-1.5B-Instruct dataset=daily_dialog mode=templated seed=42
+2026-05-04 08:30:13  --------------------------------------------------------------------------------
+2026-05-04 08:30:13  CMD  python experiments/run_benchmark.py --backend hf --model Qwen/Qwen2.5-1.5B-Instruct --device cuda --dtype float16 --workload public_dataset --prompt_mode templated --dataset daily_dialog --n_requests 64 --mean_inter_arrival_ms 50 --max_arrival_sleep_ms 500 --seed 42 --include_experimental --output_dir results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/daily_dialog/main_hf --engines no_cache shadow_kv_plus_lite shadow_kv_plus shadow_kv reactive_prefix_cache strict_reactive_prefix_cache greedy_prefix_cache frequency_speculative --min_reuse_prefix_tokens 128 --utility_min_net_saved_ms 0.0 --measure_energy --gpu_index 0 --idle_baseline_seconds 10 --energy_output_csv results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/daily_dialog/main_hf/energy_utility_summary.csv --enable_policy_tuning --policy_tuning_requests 24 --policy_tuning_presets balanced aggressive_prefix aggressive_gpu
+2026-05-04 08:32:15  ================================================================================
+2026-05-04 08:32:15  SWEEP START  n_requests=64  models=1  datasets=4  modes=4  total_jobs=16
+2026-05-04 08:32:15  main_hf=True runtime=False runtime_baselines=['vllm_apc', 'vllm_apc_shadowkv_plus', 'sglang_radix_attention', 'sglang_radix_attention_shadowkv_plus', 'lmcache', 'lmcache_shadowkv_plus']
+2026-05-04 08:32:15  ================================================================================
+2026-05-04 08:32:15  
+2026-05-04 08:32:15  --------------------------------------------------------------------------------
+2026-05-04 08:32:15  JOB 1/16  ETA~0:00:15
+2026-05-04 08:32:15    kind=main_hf baseline=main_hf model=Qwen/Qwen2.5-1.5B-Instruct dataset=daily_dialog mode=templated seed=42
+2026-05-04 08:32:15  --------------------------------------------------------------------------------
+2026-05-04 08:32:15  CMD  python experiments/run_benchmark.py --backend hf --model Qwen/Qwen2.5-1.5B-Instruct --device cuda --dtype float16 --workload public_dataset --prompt_mode templated --dataset daily_dialog --n_requests 64 --mean_inter_arrival_ms 50 --max_arrival_sleep_ms 500 --seed 42 --include_experimental --output_dir results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/daily_dialog/main_hf --engines no_cache shadow_kv_plus_lite shadow_kv_plus shadow_kv reactive_prefix_cache strict_reactive_prefix_cache greedy_prefix_cache frequency_speculative --min_reuse_prefix_tokens 128 --utility_min_net_saved_ms 0.0 --measure_energy --gpu_index 0 --idle_baseline_seconds 10 --energy_output_csv results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/daily_dialog/main_hf/energy_utility_summary.csv --enable_policy_tuning --policy_tuning_requests 24 --policy_tuning_presets balanced aggressive_prefix aggressive_gpu
+2026-05-04 08:32:54  ================================================================================
+2026-05-04 08:32:54  SWEEP START  n_requests=512  models=1  datasets=4  modes=2  total_jobs=24
+2026-05-04 08:32:54  main_hf=True runtime=True runtime_baselines=['vllm_apc', 'vllm_apc_shadowkv_plus']
+2026-05-04 08:32:54  ================================================================================
+2026-05-04 08:32:54  
+2026-05-04 08:32:54  --------------------------------------------------------------------------------
+2026-05-04 08:32:54  JOB 1/24  ETA~0:00:23
+2026-05-04 08:32:54    kind=main_hf baseline=main_hf model=Qwen/Qwen2.5-1.5B-Instruct dataset=daily_dialog mode=templated seed=42
+2026-05-04 08:32:54  --------------------------------------------------------------------------------
+2026-05-04 08:32:54  CMD  python experiments/run_benchmark.py --backend hf --model Qwen/Qwen2.5-1.5B-Instruct --device cuda --dtype float16 --workload public_dataset --prompt_mode templated --dataset daily_dialog --n_requests 512 --mean_inter_arrival_ms 50 --max_arrival_sleep_ms 500 --seed 42 --include_experimental --output_dir results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/daily_dialog/main_hf --engines no_cache shadow_kv_plus_lite shadow_kv_plus shadow_kv reactive_prefix_cache strict_reactive_prefix_cache greedy_prefix_cache frequency_speculative --min_reuse_prefix_tokens 128 --utility_min_net_saved_ms 0.0 --measure_energy --gpu_index 0 --idle_baseline_seconds 10 --energy_output_csv results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/daily_dialog/main_hf/energy_utility_summary.csv --enable_policy_tuning --policy_tuning_requests 24 --policy_tuning_presets balanced aggressive_prefix aggressive_gpu
+2026-05-04 08:33:24  ================================================================================
+2026-05-04 08:33:24  SWEEP START  n_requests=64  models=1  datasets=4  modes=2  total_jobs=24
+2026-05-04 08:33:24  main_hf=True runtime=True runtime_baselines=['vllm_apc', 'vllm_apc_shadowkv_plus']
+2026-05-04 08:33:24  ================================================================================
+2026-05-04 08:33:24  
+2026-05-04 08:33:24  --------------------------------------------------------------------------------
+2026-05-04 08:33:24  JOB 1/24  ETA~0:00:23
+2026-05-04 08:33:24    kind=main_hf baseline=main_hf model=Qwen/Qwen2.5-1.5B-Instruct dataset=daily_dialog mode=templated seed=42
+2026-05-04 08:33:24  --------------------------------------------------------------------------------
+2026-05-04 08:33:24  CMD  python experiments/run_benchmark.py --backend hf --model Qwen/Qwen2.5-1.5B-Instruct --device cuda --dtype float16 --workload public_dataset --prompt_mode templated --dataset daily_dialog --n_requests 64 --mean_inter_arrival_ms 50 --max_arrival_sleep_ms 500 --seed 42 --include_experimental --output_dir results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/daily_dialog/main_hf --engines no_cache shadow_kv_plus_lite shadow_kv_plus shadow_kv reactive_prefix_cache strict_reactive_prefix_cache greedy_prefix_cache frequency_speculative --min_reuse_prefix_tokens 128 --utility_min_net_saved_ms 0.0 --measure_energy --gpu_index 0 --idle_baseline_seconds 10 --energy_output_csv results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/daily_dialog/main_hf/energy_utility_summary.csv --enable_policy_tuning --policy_tuning_requests 24 --policy_tuning_presets balanced aggressive_prefix aggressive_gpu
+2026-05-04 08:35:35       OK  elapsed=0:02:10
+2026-05-04 08:35:35  
+2026-05-04 08:35:35  --------------------------------------------------------------------------------
+2026-05-04 08:35:35  JOB 2/24  ETA~0:23:58
+2026-05-04 08:35:35    kind=runtime baseline=vllm_apc model=Qwen/Qwen2.5-1.5B-Instruct dataset=daily_dialog mode=templated seed=42
+2026-05-04 08:35:35  --------------------------------------------------------------------------------
+2026-05-04 08:35:35  CMD  python literature_accurate_baselines/run_runtime_cache_baseline.py --baseline vllm_apc --model Qwen/Qwen2.5-1.5B-Instruct --host 127.0.0.1 --port 8000 --workload public_dataset --prompt_mode templated --dataset daily_dialog --n_requests 64 --mean_inter_arrival_ms 50 --max_arrival_sleep_ms 500 --seed 42 --output_dir results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/daily_dialog/runtime/vllm_apc --dtype float16 --launch_server --server_extra_arg=--gpu-memory-utilization=0.85 --server_ready_timeout_s 600
+2026-05-04 08:37:40       OK  elapsed=0:02:05
+2026-05-04 08:37:40  
+2026-05-04 08:37:40  --------------------------------------------------------------------------------
+2026-05-04 08:37:40  JOB 3/24  ETA~0:29:50
+2026-05-04 08:37:40    kind=runtime baseline=vllm_apc_shadowkv_plus model=Qwen/Qwen2.5-1.5B-Instruct dataset=daily_dialog mode=templated seed=42
+2026-05-04 08:37:40  --------------------------------------------------------------------------------
+2026-05-04 08:37:40  CMD  python literature_accurate_baselines/run_runtime_cache_baseline.py --baseline vllm_apc_shadowkv_plus --model Qwen/Qwen2.5-1.5B-Instruct --host 127.0.0.1 --port 8000 --workload public_dataset --prompt_mode templated --dataset daily_dialog --n_requests 64 --mean_inter_arrival_ms 50 --max_arrival_sleep_ms 500 --seed 42 --output_dir results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/daily_dialog/runtime/vllm_apc_shadowkv_plus --dtype float16 --admission_mode write_through_admission --enable_admission_tuning --admission_tuning_requests 16 --admission_tuning_presets balanced aggressive_prefix low_latency --launch_server --server_extra_arg=--gpu-memory-utilization=0.85 --server_ready_timeout_s 600
+2026-05-04 08:40:04       OK  elapsed=0:02:23
+2026-05-04 08:40:04  
+2026-05-04 08:40:04  --------------------------------------------------------------------------------
+2026-05-04 08:40:04  JOB 4/24  ETA~0:33:15
+2026-05-04 08:40:04    kind=main_hf baseline=main_hf model=Qwen/Qwen2.5-1.5B-Instruct dataset=ultrachat mode=templated seed=42
+2026-05-04 08:40:04  --------------------------------------------------------------------------------
+2026-05-04 08:40:04  CMD  python experiments/run_benchmark.py --backend hf --model Qwen/Qwen2.5-1.5B-Instruct --device cuda --dtype float16 --workload public_dataset --prompt_mode templated --dataset ultrachat --n_requests 64 --mean_inter_arrival_ms 50 --max_arrival_sleep_ms 500 --seed 42 --include_experimental --output_dir results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/ultrachat/main_hf --engines no_cache shadow_kv_plus_lite shadow_kv_plus shadow_kv reactive_prefix_cache strict_reactive_prefix_cache greedy_prefix_cache frequency_speculative --min_reuse_prefix_tokens 128 --utility_min_net_saved_ms 0.0 --measure_energy --gpu_index 0 --idle_baseline_seconds 10 --energy_output_csv results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/ultrachat/main_hf/energy_utility_summary.csv --enable_policy_tuning --policy_tuning_requests 24 --policy_tuning_presets balanced aggressive_prefix aggressive_gpu
+2026-05-04 08:42:45       OK  elapsed=0:02:41
+2026-05-04 08:42:45  
+2026-05-04 08:42:45  --------------------------------------------------------------------------------
+2026-05-04 08:42:45  JOB 5/24  ETA~0:35:30
+2026-05-04 08:42:45    kind=runtime baseline=vllm_apc model=Qwen/Qwen2.5-1.5B-Instruct dataset=ultrachat mode=templated seed=42
+2026-05-04 08:42:45  --------------------------------------------------------------------------------
+2026-05-04 08:42:45  CMD  python literature_accurate_baselines/run_runtime_cache_baseline.py --baseline vllm_apc --model Qwen/Qwen2.5-1.5B-Instruct --host 127.0.0.1 --port 8000 --workload public_dataset --prompt_mode templated --dataset ultrachat --n_requests 64 --mean_inter_arrival_ms 50 --max_arrival_sleep_ms 500 --seed 42 --output_dir results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/ultrachat/runtime/vllm_apc --dtype float16 --launch_server --server_extra_arg=--gpu-memory-utilization=0.85 --server_ready_timeout_s 600
+2026-05-04 08:44:55       OK  elapsed=0:02:09
+2026-05-04 08:44:55  
+2026-05-04 08:44:55  --------------------------------------------------------------------------------
+2026-05-04 08:44:55  JOB 6/24  ETA~0:34:30
+2026-05-04 08:44:55    kind=runtime baseline=vllm_apc_shadowkv_plus model=Qwen/Qwen2.5-1.5B-Instruct dataset=ultrachat mode=templated seed=42
+2026-05-04 08:44:55  --------------------------------------------------------------------------------
+2026-05-04 08:44:55  CMD  python literature_accurate_baselines/run_runtime_cache_baseline.py --baseline vllm_apc_shadowkv_plus --model Qwen/Qwen2.5-1.5B-Instruct --host 127.0.0.1 --port 8000 --workload public_dataset --prompt_mode templated --dataset ultrachat --n_requests 64 --mean_inter_arrival_ms 50 --max_arrival_sleep_ms 500 --seed 42 --output_dir results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/ultrachat/runtime/vllm_apc_shadowkv_plus --dtype float16 --admission_mode write_through_admission --enable_admission_tuning --admission_tuning_requests 16 --admission_tuning_presets balanced aggressive_prefix low_latency --launch_server --server_extra_arg=--gpu-memory-utilization=0.85 --server_ready_timeout_s 600
+2026-05-04 08:47:22       OK  elapsed=0:02:27
+2026-05-04 08:47:22  
+2026-05-04 08:47:22  --------------------------------------------------------------------------------
+2026-05-04 08:47:22  JOB 7/24  ETA~0:33:53
+2026-05-04 08:47:22    kind=main_hf baseline=main_hf model=Qwen/Qwen2.5-1.5B-Instruct dataset=oasst1 mode=templated seed=42
+2026-05-04 08:47:22  --------------------------------------------------------------------------------
+2026-05-04 08:47:22  CMD  python experiments/run_benchmark.py --backend hf --model Qwen/Qwen2.5-1.5B-Instruct --device cuda --dtype float16 --workload public_dataset --prompt_mode templated --dataset oasst1 --n_requests 64 --mean_inter_arrival_ms 50 --max_arrival_sleep_ms 500 --seed 42 --include_experimental --output_dir results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/oasst1/main_hf --engines no_cache shadow_kv_plus_lite shadow_kv_plus shadow_kv reactive_prefix_cache strict_reactive_prefix_cache greedy_prefix_cache frequency_speculative --min_reuse_prefix_tokens 128 --utility_min_net_saved_ms 0.0 --measure_energy --gpu_index 0 --idle_baseline_seconds 10 --energy_output_csv results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/oasst1/main_hf/energy_utility_summary.csv --enable_policy_tuning --policy_tuning_requests 24 --policy_tuning_presets balanced aggressive_prefix aggressive_gpu
+2026-05-04 08:49:53       OK  elapsed=0:02:30
+2026-05-04 08:49:53  
+2026-05-04 08:49:53  --------------------------------------------------------------------------------
+2026-05-04 08:49:53  JOB 8/24  ETA~0:32:56
+2026-05-04 08:49:53    kind=runtime baseline=vllm_apc model=Qwen/Qwen2.5-1.5B-Instruct dataset=oasst1 mode=templated seed=42
+2026-05-04 08:49:53  --------------------------------------------------------------------------------
+2026-05-04 08:49:53  CMD  python literature_accurate_baselines/run_runtime_cache_baseline.py --baseline vllm_apc --model Qwen/Qwen2.5-1.5B-Instruct --host 127.0.0.1 --port 8000 --workload public_dataset --prompt_mode templated --dataset oasst1 --n_requests 64 --mean_inter_arrival_ms 50 --max_arrival_sleep_ms 500 --seed 42 --output_dir results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/oasst1/runtime/vllm_apc --dtype float16 --launch_server --server_extra_arg=--gpu-memory-utilization=0.85 --server_ready_timeout_s 600
+2026-05-04 08:52:03       OK  elapsed=0:02:09
+2026-05-04 08:52:03  
+2026-05-04 08:52:03  --------------------------------------------------------------------------------
+2026-05-04 08:52:03  JOB 9/24  ETA~0:31:03
+2026-05-04 08:52:03    kind=runtime baseline=vllm_apc_shadowkv_plus model=Qwen/Qwen2.5-1.5B-Instruct dataset=oasst1 mode=templated seed=42
+2026-05-04 08:52:03  --------------------------------------------------------------------------------
+2026-05-04 08:52:03  CMD  python literature_accurate_baselines/run_runtime_cache_baseline.py --baseline vllm_apc_shadowkv_plus --model Qwen/Qwen2.5-1.5B-Instruct --host 127.0.0.1 --port 8000 --workload public_dataset --prompt_mode templated --dataset oasst1 --n_requests 64 --mean_inter_arrival_ms 50 --max_arrival_sleep_ms 500 --seed 42 --output_dir results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/oasst1/runtime/vllm_apc_shadowkv_plus --dtype float16 --admission_mode write_through_admission --enable_admission_tuning --admission_tuning_requests 16 --admission_tuning_presets balanced aggressive_prefix low_latency --launch_server --server_extra_arg=--gpu-memory-utilization=0.85 --server_ready_timeout_s 600
+2026-05-04 08:54:25       OK  elapsed=0:02:22
+2026-05-04 08:54:25  
+2026-05-04 08:54:25  --------------------------------------------------------------------------------
+2026-05-04 08:54:25  JOB 10/24  ETA~0:29:24
+2026-05-04 08:54:25    kind=main_hf baseline=main_hf model=Qwen/Qwen2.5-1.5B-Instruct dataset=samsum mode=templated seed=42
+2026-05-04 08:54:25  --------------------------------------------------------------------------------
+2026-05-04 08:54:25  CMD  python experiments/run_benchmark.py --backend hf --model Qwen/Qwen2.5-1.5B-Instruct --device cuda --dtype float16 --workload public_dataset --prompt_mode templated --dataset samsum --n_requests 64 --mean_inter_arrival_ms 50 --max_arrival_sleep_ms 500 --seed 42 --include_experimental --output_dir results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/samsum/main_hf --engines no_cache shadow_kv_plus_lite shadow_kv_plus shadow_kv reactive_prefix_cache strict_reactive_prefix_cache greedy_prefix_cache frequency_speculative --min_reuse_prefix_tokens 128 --utility_min_net_saved_ms 0.0 --measure_energy --gpu_index 0 --idle_baseline_seconds 10 --energy_output_csv results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/samsum/main_hf/energy_utility_summary.csv --enable_policy_tuning --policy_tuning_requests 24 --policy_tuning_presets balanced aggressive_prefix aggressive_gpu
+2026-05-04 08:56:59       OK  elapsed=0:02:34
+2026-05-04 08:56:59  
+2026-05-04 08:56:59  --------------------------------------------------------------------------------
+2026-05-04 08:56:59  JOB 11/24  ETA~0:27:51
+2026-05-04 08:56:59    kind=runtime baseline=vllm_apc model=Qwen/Qwen2.5-1.5B-Instruct dataset=samsum mode=templated seed=42
+2026-05-04 08:56:59  --------------------------------------------------------------------------------
+2026-05-04 08:56:59  CMD  python literature_accurate_baselines/run_runtime_cache_baseline.py --baseline vllm_apc --model Qwen/Qwen2.5-1.5B-Instruct --host 127.0.0.1 --port 8000 --workload public_dataset --prompt_mode templated --dataset samsum --n_requests 64 --mean_inter_arrival_ms 50 --max_arrival_sleep_ms 500 --seed 42 --output_dir results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/samsum/runtime/vllm_apc --dtype float16 --launch_server --server_extra_arg=--gpu-memory-utilization=0.85 --server_ready_timeout_s 600
+2026-05-04 08:59:09       OK  elapsed=0:02:10
+2026-05-04 08:59:09  
+2026-05-04 08:59:09  --------------------------------------------------------------------------------
+2026-05-04 08:59:09  JOB 12/24  ETA~0:25:44
+2026-05-04 08:59:09    kind=runtime baseline=vllm_apc_shadowkv_plus model=Qwen/Qwen2.5-1.5B-Instruct dataset=samsum mode=templated seed=42
+2026-05-04 08:59:09  --------------------------------------------------------------------------------
+2026-05-04 08:59:09  CMD  python literature_accurate_baselines/run_runtime_cache_baseline.py --baseline vllm_apc_shadowkv_plus --model Qwen/Qwen2.5-1.5B-Instruct --host 127.0.0.1 --port 8000 --workload public_dataset --prompt_mode templated --dataset samsum --n_requests 64 --mean_inter_arrival_ms 50 --max_arrival_sleep_ms 500 --seed 42 --output_dir results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/samsum/runtime/vllm_apc_shadowkv_plus --dtype float16 --admission_mode write_through_admission --enable_admission_tuning --admission_tuning_requests 16 --admission_tuning_presets balanced aggressive_prefix low_latency --launch_server --server_extra_arg=--gpu-memory-utilization=0.85 --server_ready_timeout_s 600
+2026-05-04 09:01:33       OK  elapsed=0:02:23
+2026-05-04 09:01:33  
+2026-05-04 09:01:33  --------------------------------------------------------------------------------
+2026-05-04 09:01:33  JOB 13/24  ETA~0:23:48
+2026-05-04 09:01:33    kind=main_hf baseline=main_hf model=Qwen/Qwen2.5-1.5B-Instruct dataset=daily_dialog mode=rag seed=42
+2026-05-04 09:01:33  --------------------------------------------------------------------------------
+2026-05-04 09:01:33  CMD  python experiments/run_benchmark.py --backend hf --model Qwen/Qwen2.5-1.5B-Instruct --device cuda --dtype float16 --workload public_dataset --prompt_mode rag --dataset daily_dialog --n_requests 64 --mean_inter_arrival_ms 50 --max_arrival_sleep_ms 500 --seed 42 --include_experimental --output_dir results_n512/Qwen_Qwen2_5-1_5B-Instruct/rag/seed_42/daily_dialog/main_hf --engines no_cache shadow_kv_plus_lite shadow_kv_plus shadow_kv reactive_prefix_cache strict_reactive_prefix_cache greedy_prefix_cache frequency_speculative --min_reuse_prefix_tokens 128 --utility_min_net_saved_ms 0.0 --measure_energy --gpu_index 0 --idle_baseline_seconds 10 --energy_output_csv results_n512/Qwen_Qwen2_5-1_5B-Instruct/rag/seed_42/daily_dialog/main_hf/energy_utility_summary.csv --enable_policy_tuning --policy_tuning_requests 24 --policy_tuning_presets balanced aggressive_prefix aggressive_gpu
+2026-05-04 09:04:03       OK  elapsed=0:02:30
+2026-05-04 09:04:03  
+2026-05-04 09:04:03  --------------------------------------------------------------------------------
+2026-05-04 09:04:03  JOB 14/24  ETA~0:21:53
+2026-05-04 09:04:03    kind=runtime baseline=vllm_apc model=Qwen/Qwen2.5-1.5B-Instruct dataset=daily_dialog mode=rag seed=42
+2026-05-04 09:04:03  --------------------------------------------------------------------------------
+2026-05-04 09:04:03  CMD  python literature_accurate_baselines/run_runtime_cache_baseline.py --baseline vllm_apc --model Qwen/Qwen2.5-1.5B-Instruct --host 127.0.0.1 --port 8000 --workload public_dataset --prompt_mode rag --dataset daily_dialog --n_requests 64 --mean_inter_arrival_ms 50 --max_arrival_sleep_ms 500 --seed 42 --output_dir results_n512/Qwen_Qwen2_5-1_5B-Instruct/rag/seed_42/daily_dialog/runtime/vllm_apc --dtype float16 --launch_server --server_extra_arg=--gpu-memory-utilization=0.85 --server_ready_timeout_s 600
+2026-05-04 09:06:12       OK  elapsed=0:02:09
+2026-05-04 09:06:12  
+2026-05-04 09:06:12  --------------------------------------------------------------------------------
+2026-05-04 09:06:12  JOB 15/24  ETA~0:19:40
+2026-05-04 09:06:12    kind=runtime baseline=vllm_apc_shadowkv_plus model=Qwen/Qwen2.5-1.5B-Instruct dataset=daily_dialog mode=rag seed=42
+2026-05-04 09:06:12  --------------------------------------------------------------------------------
+2026-05-04 09:06:12  CMD  python literature_accurate_baselines/run_runtime_cache_baseline.py --baseline vllm_apc_shadowkv_plus --model Qwen/Qwen2.5-1.5B-Instruct --host 127.0.0.1 --port 8000 --workload public_dataset --prompt_mode rag --dataset daily_dialog --n_requests 64 --mean_inter_arrival_ms 50 --max_arrival_sleep_ms 500 --seed 42 --output_dir results_n512/Qwen_Qwen2_5-1_5B-Instruct/rag/seed_42/daily_dialog/runtime/vllm_apc_shadowkv_plus --dtype float16 --admission_mode write_through_admission --enable_admission_tuning --admission_tuning_requests 16 --admission_tuning_presets balanced aggressive_prefix low_latency --launch_server --server_extra_arg=--gpu-memory-utilization=0.85 --server_ready_timeout_s 600
+2026-05-04 09:08:38       OK  elapsed=0:02:25
+2026-05-04 09:08:38  
+2026-05-04 09:08:38  --------------------------------------------------------------------------------
+2026-05-04 09:08:38  JOB 16/24  ETA~0:17:36
+2026-05-04 09:08:38    kind=main_hf baseline=main_hf model=Qwen/Qwen2.5-1.5B-Instruct dataset=ultrachat mode=rag seed=42
+2026-05-04 09:08:38  --------------------------------------------------------------------------------
+2026-05-04 09:08:38  CMD  python experiments/run_benchmark.py --backend hf --model Qwen/Qwen2.5-1.5B-Instruct --device cuda --dtype float16 --workload public_dataset --prompt_mode rag --dataset ultrachat --n_requests 64 --mean_inter_arrival_ms 50 --max_arrival_sleep_ms 500 --seed 42 --include_experimental --output_dir results_n512/Qwen_Qwen2_5-1_5B-Instruct/rag/seed_42/ultrachat/main_hf --engines no_cache shadow_kv_plus_lite shadow_kv_plus shadow_kv reactive_prefix_cache strict_reactive_prefix_cache greedy_prefix_cache frequency_speculative --min_reuse_prefix_tokens 128 --utility_min_net_saved_ms 0.0 --measure_energy --gpu_index 0 --idle_baseline_seconds 10 --energy_output_csv results_n512/Qwen_Qwen2_5-1_5B-Instruct/rag/seed_42/ultrachat/main_hf/energy_utility_summary.csv --enable_policy_tuning --policy_tuning_requests 24 --policy_tuning_presets balanced aggressive_prefix aggressive_gpu
+2026-05-04 09:11:19       OK  elapsed=0:02:40
+2026-05-04 09:11:19  
+2026-05-04 09:11:19  --------------------------------------------------------------------------------
+2026-05-04 09:11:19  JOB 17/24  ETA~0:15:36
+2026-05-04 09:11:19    kind=runtime baseline=vllm_apc model=Qwen/Qwen2.5-1.5B-Instruct dataset=ultrachat mode=rag seed=42
+2026-05-04 09:11:19  --------------------------------------------------------------------------------
+2026-05-04 09:11:19  CMD  python literature_accurate_baselines/run_runtime_cache_baseline.py --baseline vllm_apc --model Qwen/Qwen2.5-1.5B-Instruct --host 127.0.0.1 --port 8000 --workload public_dataset --prompt_mode rag --dataset ultrachat --n_requests 64 --mean_inter_arrival_ms 50 --max_arrival_sleep_ms 500 --seed 42 --output_dir results_n512/Qwen_Qwen2_5-1_5B-Instruct/rag/seed_42/ultrachat/runtime/vllm_apc --dtype float16 --launch_server --server_extra_arg=--gpu-memory-utilization=0.85 --server_ready_timeout_s 600
+2026-05-04 09:13:28       OK  elapsed=0:02:08
+2026-05-04 09:13:28  
+2026-05-04 09:13:28  --------------------------------------------------------------------------------
+2026-05-04 09:13:28  JOB 18/24  ETA~0:13:21
+2026-05-04 09:13:28    kind=runtime baseline=vllm_apc_shadowkv_plus model=Qwen/Qwen2.5-1.5B-Instruct dataset=ultrachat mode=rag seed=42
+2026-05-04 09:13:28  --------------------------------------------------------------------------------
+2026-05-04 09:13:28  CMD  python literature_accurate_baselines/run_runtime_cache_baseline.py --baseline vllm_apc_shadowkv_plus --model Qwen/Qwen2.5-1.5B-Instruct --host 127.0.0.1 --port 8000 --workload public_dataset --prompt_mode rag --dataset ultrachat --n_requests 64 --mean_inter_arrival_ms 50 --max_arrival_sleep_ms 500 --seed 42 --output_dir results_n512/Qwen_Qwen2_5-1_5B-Instruct/rag/seed_42/ultrachat/runtime/vllm_apc_shadowkv_plus --dtype float16 --admission_mode write_through_admission --enable_admission_tuning --admission_tuning_requests 16 --admission_tuning_presets balanced aggressive_prefix low_latency --launch_server --server_extra_arg=--gpu-memory-utilization=0.85 --server_ready_timeout_s 600
+2026-05-04 09:15:57       OK  elapsed=0:02:29
+2026-05-04 09:15:57  
+2026-05-04 09:15:57  --------------------------------------------------------------------------------
+2026-05-04 09:15:57  JOB 19/24  ETA~0:11:11
+2026-05-04 09:15:57    kind=main_hf baseline=main_hf model=Qwen/Qwen2.5-1.5B-Instruct dataset=oasst1 mode=rag seed=42
+2026-05-04 09:15:57  --------------------------------------------------------------------------------
+2026-05-04 09:15:57  CMD  python experiments/run_benchmark.py --backend hf --model Qwen/Qwen2.5-1.5B-Instruct --device cuda --dtype float16 --workload public_dataset --prompt_mode rag --dataset oasst1 --n_requests 64 --mean_inter_arrival_ms 50 --max_arrival_sleep_ms 500 --seed 42 --include_experimental --output_dir results_n512/Qwen_Qwen2_5-1_5B-Instruct/rag/seed_42/oasst1/main_hf --engines no_cache shadow_kv_plus_lite shadow_kv_plus shadow_kv reactive_prefix_cache strict_reactive_prefix_cache greedy_prefix_cache frequency_speculative --min_reuse_prefix_tokens 128 --utility_min_net_saved_ms 0.0 --measure_energy --gpu_index 0 --idle_baseline_seconds 10 --energy_output_csv results_n512/Qwen_Qwen2_5-1_5B-Instruct/rag/seed_42/oasst1/main_hf/energy_utility_summary.csv --enable_policy_tuning --policy_tuning_requests 24 --policy_tuning_presets balanced aggressive_prefix aggressive_gpu
+2026-05-04 09:18:27       OK  elapsed=0:02:29
+2026-05-04 09:18:27  
+2026-05-04 09:18:27  --------------------------------------------------------------------------------
+2026-05-04 09:18:27  JOB 20/24  ETA~0:09:00
+2026-05-04 09:18:27    kind=runtime baseline=vllm_apc model=Qwen/Qwen2.5-1.5B-Instruct dataset=oasst1 mode=rag seed=42
+2026-05-04 09:18:27  --------------------------------------------------------------------------------
+2026-05-04 09:18:27  CMD  python literature_accurate_baselines/run_runtime_cache_baseline.py --baseline vllm_apc --model Qwen/Qwen2.5-1.5B-Instruct --host 127.0.0.1 --port 8000 --workload public_dataset --prompt_mode rag --dataset oasst1 --n_requests 64 --mean_inter_arrival_ms 50 --max_arrival_sleep_ms 500 --seed 42 --output_dir results_n512/Qwen_Qwen2_5-1_5B-Instruct/rag/seed_42/oasst1/runtime/vllm_apc --dtype float16 --launch_server --server_extra_arg=--gpu-memory-utilization=0.85 --server_ready_timeout_s 600
+2026-05-04 09:20:36       OK  elapsed=0:02:08
+2026-05-04 09:20:36  
+2026-05-04 09:20:36  --------------------------------------------------------------------------------
+2026-05-04 09:20:36  JOB 21/24  ETA~0:06:44
+2026-05-04 09:20:36    kind=runtime baseline=vllm_apc_shadowkv_plus model=Qwen/Qwen2.5-1.5B-Instruct dataset=oasst1 mode=rag seed=42
+2026-05-04 09:20:36  --------------------------------------------------------------------------------
+2026-05-04 09:20:36  CMD  python literature_accurate_baselines/run_runtime_cache_baseline.py --baseline vllm_apc_shadowkv_plus --model Qwen/Qwen2.5-1.5B-Instruct --host 127.0.0.1 --port 8000 --workload public_dataset --prompt_mode rag --dataset oasst1 --n_requests 64 --mean_inter_arrival_ms 50 --max_arrival_sleep_ms 500 --seed 42 --output_dir results_n512/Qwen_Qwen2_5-1_5B-Instruct/rag/seed_42/oasst1/runtime/vllm_apc_shadowkv_plus --dtype float16 --admission_mode write_through_admission --enable_admission_tuning --admission_tuning_requests 16 --admission_tuning_presets balanced aggressive_prefix low_latency --launch_server --server_extra_arg=--gpu-memory-utilization=0.85 --server_ready_timeout_s 600
+2026-05-04 09:22:58       OK  elapsed=0:02:21
+2026-05-04 09:22:58  
+2026-05-04 09:22:58  --------------------------------------------------------------------------------
+2026-05-04 09:22:58  JOB 22/24  ETA~0:04:30
+2026-05-04 09:22:58    kind=main_hf baseline=main_hf model=Qwen/Qwen2.5-1.5B-Instruct dataset=samsum mode=rag seed=42
+2026-05-04 09:22:58  --------------------------------------------------------------------------------
+2026-05-04 09:22:58  CMD  python experiments/run_benchmark.py --backend hf --model Qwen/Qwen2.5-1.5B-Instruct --device cuda --dtype float16 --workload public_dataset --prompt_mode rag --dataset samsum --n_requests 64 --mean_inter_arrival_ms 50 --max_arrival_sleep_ms 500 --seed 42 --include_experimental --output_dir results_n512/Qwen_Qwen2_5-1_5B-Instruct/rag/seed_42/samsum/main_hf --engines no_cache shadow_kv_plus_lite shadow_kv_plus shadow_kv reactive_prefix_cache strict_reactive_prefix_cache greedy_prefix_cache frequency_speculative --min_reuse_prefix_tokens 128 --utility_min_net_saved_ms 0.0 --measure_energy --gpu_index 0 --idle_baseline_seconds 10 --energy_output_csv results_n512/Qwen_Qwen2_5-1_5B-Instruct/rag/seed_42/samsum/main_hf/energy_utility_summary.csv --enable_policy_tuning --policy_tuning_requests 24 --policy_tuning_presets balanced aggressive_prefix aggressive_gpu
+2026-05-04 09:25:31       OK  elapsed=0:02:33
+2026-05-04 09:25:31  
+2026-05-04 09:25:31  --------------------------------------------------------------------------------
+2026-05-04 09:25:31  JOB 23/24  ETA~0:02:15
+2026-05-04 09:25:31    kind=runtime baseline=vllm_apc model=Qwen/Qwen2.5-1.5B-Instruct dataset=samsum mode=rag seed=42
+2026-05-04 09:25:31  --------------------------------------------------------------------------------
+2026-05-04 09:25:31  CMD  python literature_accurate_baselines/run_runtime_cache_baseline.py --baseline vllm_apc --model Qwen/Qwen2.5-1.5B-Instruct --host 127.0.0.1 --port 8000 --workload public_dataset --prompt_mode rag --dataset samsum --n_requests 64 --mean_inter_arrival_ms 50 --max_arrival_sleep_ms 500 --seed 42 --output_dir results_n512/Qwen_Qwen2_5-1_5B-Instruct/rag/seed_42/samsum/runtime/vllm_apc --dtype float16 --launch_server --server_extra_arg=--gpu-memory-utilization=0.85 --server_ready_timeout_s 600
+2026-05-04 09:27:37       OK  elapsed=0:02:06
+2026-05-04 09:27:37  
+2026-05-04 09:27:37  --------------------------------------------------------------------------------
+2026-05-04 09:27:37  JOB 24/24  ETA~0:00:00
+2026-05-04 09:27:37    kind=runtime baseline=vllm_apc_shadowkv_plus model=Qwen/Qwen2.5-1.5B-Instruct dataset=samsum mode=rag seed=42
+2026-05-04 09:27:37  --------------------------------------------------------------------------------
+2026-05-04 09:27:37  CMD  python literature_accurate_baselines/run_runtime_cache_baseline.py --baseline vllm_apc_shadowkv_plus --model Qwen/Qwen2.5-1.5B-Instruct --host 127.0.0.1 --port 8000 --workload public_dataset --prompt_mode rag --dataset samsum --n_requests 64 --mean_inter_arrival_ms 50 --max_arrival_sleep_ms 500 --seed 42 --output_dir results_n512/Qwen_Qwen2_5-1_5B-Instruct/rag/seed_42/samsum/runtime/vllm_apc_shadowkv_plus --dtype float16 --admission_mode write_through_admission --enable_admission_tuning --admission_tuning_requests 16 --admission_tuning_presets balanced aggressive_prefix low_latency --launch_server --server_extra_arg=--gpu-memory-utilization=0.85 --server_ready_timeout_s 600
+2026-05-04 09:29:57       OK  elapsed=0:02:19
+2026-05-04 09:29:57  
+2026-05-04 09:29:57  ================================================================================
+2026-05-04 09:29:57  SWEEP DONE  wall=0:56:32  failed=0/24
+2026-05-04 09:29:57  ================================================================================
+2026-05-04 09:29:57  Imported 112 result rows
+2026-05-04 09:29:57  Saved: results_n512/n512_all_results.csv
+2026-05-04 09:29:57  Zip ready: /content/results_n512.zip
+2026-05-04 09:29:57  scp user@host:/content/results_n512.zip .

@@ -1,0 +1,41 @@
+/home/kushalkhemani/research/myenv/lib/python3.12/site-packages/torch/cuda/__init__.py:58: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+`torch_dtype` is deprecated! Use `dtype` instead!
+========================================================================
+Memory-bound learned-baseline trace
+========================================================================
+model=TinyLlama/TinyLlama-1.1B-Chat-v1.0 backend=hf device=cuda dtype=float16
+seeds=[42, 123, 456, 789, 999]
+out_root=results/learned_baseline_5seed_all_models/tinyllama_11b/memory_bound_fixed
+engines=['no_cache', 'shadow_kv', 'shadow_kv_plus', 'learned_raw', 'learned_utility']
+[seed 42] running no_cache (budget=8 MB)
+[seed 42] running shadow_kv (budget=8 MB)
+[seed 42] running shadow_kv_plus (budget=8 MB)
+[seed 42] running learned_raw (budget=8 MB)
+[seed 42] running learned_utility (budget=8 MB)
+Saved results/learned_baseline_5seed_all_models/tinyllama_11b/memory_bound_fixed/seed_42/memory_bound_summary.json
+[seed 123] running no_cache (budget=8 MB)
+[seed 123] running shadow_kv (budget=8 MB)
+[seed 123] running shadow_kv_plus (budget=8 MB)
+[seed 123] running learned_raw (budget=8 MB)
+[seed 123] running learned_utility (budget=8 MB)
+Saved results/learned_baseline_5seed_all_models/tinyllama_11b/memory_bound_fixed/seed_123/memory_bound_summary.json
+[seed 456] running no_cache (budget=8 MB)
+[seed 456] running shadow_kv (budget=8 MB)
+[seed 456] running shadow_kv_plus (budget=8 MB)
+[seed 456] running learned_raw (budget=8 MB)
+[seed 456] running learned_utility (budget=8 MB)
+Saved results/learned_baseline_5seed_all_models/tinyllama_11b/memory_bound_fixed/seed_456/memory_bound_summary.json
+[seed 789] running no_cache (budget=8 MB)
+[seed 789] running shadow_kv (budget=8 MB)
+[seed 789] running shadow_kv_plus (budget=8 MB)
+[seed 789] running learned_raw (budget=8 MB)
+[seed 789] running learned_utility (budget=8 MB)
+Saved results/learned_baseline_5seed_all_models/tinyllama_11b/memory_bound_fixed/seed_789/memory_bound_summary.json
+[seed 999] running no_cache (budget=8 MB)
+[seed 999] running shadow_kv (budget=8 MB)
+[seed 999] running shadow_kv_plus (budget=8 MB)
+[seed 999] running learned_raw (budget=8 MB)
+[seed 999] running learned_utility (budget=8 MB)
+Saved results/learned_baseline_5seed_all_models/tinyllama_11b/memory_bound_fixed/seed_999/memory_bound_summary.json
+Saved aggregate to results/learned_baseline_5seed_all_models/tinyllama_11b/memory_bound_fixed/memory_bound_aggregate.json

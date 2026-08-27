@@ -1,0 +1,18 @@
+2026-07-11 03:42:55  ================================================================================
+2026-07-11 03:42:55  BLACKWELL SEMANTIC N128 ISOLATED START models=1 datasets=1 modes=1 engines=3 seeds=[42] jobs=3
+2026-07-11 03:42:55  ================================================================================
+2026-07-11 03:42:55  JOB 1/3 model=Qwen/Qwen2.5-14B-Instruct dataset=ag_news mode=semantic engine=no_cache seed=42
+2026-07-11 03:42:55  CMD  /usr/bin/python3 experiments/run_benchmark.py --backend hf --model Qwen/Qwen2.5-14B-Instruct --device cuda --dtype float16 --workload public_dataset --dataset ag_news --prompt_mode semantic --n_requests 16 --mean_inter_arrival_ms 50.0 --max_arrival_sleep_ms 500.0 --max_memory_mb 512 --speculative_k 2 --idle_threshold_ms 30.0 --seed 42 --engines no_cache --policy_preset balanced --early_layer_reuse_ratio 0.35 --logit_guard_threshold 0.08 --gpu_index 0 --idle_baseline_seconds 5.0 --output_dir results_smoke_qwen14b_longprefix_smoke_20260711/Qwen_Qwen2_5-14B-Instruct/semantic/seed_42/ag_news/no_cache --measure_energy --simulate_arrivals --allow_unsafe_semantic_kv_reuse --enable_policy_trace
+2026-07-11 03:43:24       OK elapsed=29.4s
+2026-07-11 03:43:24  JOB 2/3 model=Qwen/Qwen2.5-14B-Instruct dataset=ag_news mode=semantic engine=shadow_kv seed=42
+2026-07-11 03:43:24  CMD  /usr/bin/python3 experiments/run_benchmark.py --backend hf --model Qwen/Qwen2.5-14B-Instruct --device cuda --dtype float16 --workload public_dataset --dataset ag_news --prompt_mode semantic --n_requests 16 --mean_inter_arrival_ms 50.0 --max_arrival_sleep_ms 500.0 --max_memory_mb 512 --speculative_k 2 --idle_threshold_ms 30.0 --seed 42 --engines shadow_kv --policy_preset balanced --early_layer_reuse_ratio 0.35 --logit_guard_threshold 0.08 --gpu_index 0 --idle_baseline_seconds 5.0 --output_dir results_smoke_qwen14b_longprefix_smoke_20260711/Qwen_Qwen2_5-14B-Instruct/semantic/seed_42/ag_news/shadow_kv --measure_energy --simulate_arrivals --allow_unsafe_semantic_kv_reuse --enable_policy_trace
+2026-07-11 03:43:53       OK elapsed=29.2s
+2026-07-11 03:43:53  JOB 3/3 model=Qwen/Qwen2.5-14B-Instruct dataset=ag_news mode=semantic engine=shadow_kv_plus seed=42
+2026-07-11 03:43:53  CMD  /usr/bin/python3 experiments/run_benchmark.py --backend hf --model Qwen/Qwen2.5-14B-Instruct --device cuda --dtype float16 --workload public_dataset --dataset ag_news --prompt_mode semantic --n_requests 16 --mean_inter_arrival_ms 50.0 --max_arrival_sleep_ms 500.0 --max_memory_mb 512 --speculative_k 2 --idle_threshold_ms 30.0 --seed 42 --engines shadow_kv_plus --policy_preset balanced --early_layer_reuse_ratio 0.35 --logit_guard_threshold 0.08 --gpu_index 0 --idle_baseline_seconds 5.0 --output_dir results_smoke_qwen14b_longprefix_smoke_20260711/Qwen_Qwen2_5-14B-Instruct/semantic/seed_42/ag_news/shadow_kv_plus --measure_energy --simulate_arrivals --allow_unsafe_semantic_kv_reuse --enable_policy_trace
+2026-07-11 03:44:18       OK elapsed=24.7s
+2026-07-11 03:44:18  ================================================================================
+2026-07-11 03:44:18  DONE elapsed=83.3s failed=0/3
+2026-07-11 03:44:18  Saved results_smoke_qwen14b_longprefix_smoke_20260711/all_results.csv
+2026-07-11 03:44:18  Saved results_smoke_qwen14b_longprefix_smoke_20260711/comparisons_vs_no_cache.csv
+2026-07-11 03:44:18  Saved results_smoke_qwen14b_longprefix_smoke_20260711/reuse_path_breakdown.csv
+2026-07-11 03:44:18  ================================================================================

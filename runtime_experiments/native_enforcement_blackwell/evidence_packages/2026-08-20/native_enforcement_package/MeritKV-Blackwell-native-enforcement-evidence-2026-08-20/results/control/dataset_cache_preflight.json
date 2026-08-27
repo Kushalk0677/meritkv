@@ -1,0 +1,405 @@
+{
+  "core_sha256": "942f41f4df4fb3379fd51e29a1c6b3e61b8459bb442edc8e9a73f796b1a8f20b",
+  "dataset_count": 5,
+  "datasets": [
+    {
+      "dataset": "daily_dialog",
+      "fingerprint": "f3e877abdbff64c7",
+      "hf_name": "DeepPavlov/daily_dialog",
+      "prepared_revision": "12f30df52a776875c2e334d9d051fa67afd15756",
+      "rows": 87170,
+      "split": "train"
+    },
+    {
+      "dataset": "samsum",
+      "fingerprint": "c0968f141bef547e",
+      "hf_name": "knkarthick/samsum",
+      "prepared_revision": "6b929ff10edec703164e3ddb2e94aae058c9ab5f",
+      "rows": 14731,
+      "split": "train"
+    },
+    {
+      "dataset": "ag_news",
+      "fingerprint": "2bc1e2be15d7f2ee",
+      "hf_name": "fancyzhx/ag_news",
+      "prepared_revision": "eb185aade064a813bc0b7f42de02595523103ca4",
+      "rows": 120000,
+      "split": "train"
+    },
+    {
+      "dataset": "dolly",
+      "fingerprint": "2537fb912ac88184",
+      "hf_name": "databricks/databricks-dolly-15k",
+      "prepared_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+      "rows": 15011,
+      "split": "train"
+    },
+    {
+      "dataset": "xsum",
+      "fingerprint": "5a1b0a50e80b133b",
+      "hf_name": "EdinburghNLP/xsum",
+      "prepared_revision": "7d4d486c2f8ef850b1a11aead99b894ff3dd7da9",
+      "rows": 204045,
+      "split": "train"
+    }
+  ],
+  "expected_manifest_sha256": "d9d8e448dae2947407586a130e95b87474060e5c1a0cca8f5c725470473816e1",
+  "frozen_config_sha256": "0a35f52a0930276f019b73ab2c51eed0bbbc7ba0c09afdd9bc9da3552d982e32",
+  "offline": true,
+  "rows_probed": 12800,
+  "schema_version": 1,
+  "status": "pass",
+  "workload_count": 50,
+  "workloads": [
+    {
+      "dataset": "daily_dialog",
+      "prompt_mode": "templated",
+      "rows": 256,
+      "rows_sha256": "e7f9d3c2013527253d441f7c51e068a7ea1f3d1a439567788b575f4f789209ad",
+      "seed": 1
+    },
+    {
+      "dataset": "daily_dialog",
+      "prompt_mode": "rag",
+      "rows": 256,
+      "rows_sha256": "0e346f48678ad8eb6096271101393df9d6005a38b80acae49438e4e2b207292d",
+      "seed": 1
+    },
+    {
+      "dataset": "daily_dialog",
+      "prompt_mode": "templated",
+      "rows": 256,
+      "rows_sha256": "4e5bc9c888fde4535db4ceec9aaa39b686fe74555bbf13a97890743958fe265c",
+      "seed": 2
+    },
+    {
+      "dataset": "daily_dialog",
+      "prompt_mode": "rag",
+      "rows": 256,
+      "rows_sha256": "6250d275b6974bb1df8a6abd7ea1da873d955660b9aa9ea6483564e31e6b8f9e",
+      "seed": 2
+    },
+    {
+      "dataset": "daily_dialog",
+      "prompt_mode": "templated",
+      "rows": 256,
+      "rows_sha256": "3e307993682e259a33b5593425d2bef3e7d9ac722405e07d631f0518fd0fc2d9",
+      "seed": 3
+    },
+    {
+      "dataset": "daily_dialog",
+      "prompt_mode": "rag",
+      "rows": 256,
+      "rows_sha256": "eb4a17b19e1ed68645487bc02b42f4d4c1ccea1cc42df22ca3d379e9f7e7ac0b",
+      "seed": 3
+    },
+    {
+      "dataset": "daily_dialog",
+      "prompt_mode": "templated",
+      "rows": 256,
+      "rows_sha256": "07af7c308c2fffe379f692b5f4ba551582636f15a508cff75aef2ca9c0039730",
+      "seed": 4
+    },
+    {
+      "dataset": "daily_dialog",
+      "prompt_mode": "rag",
+      "rows": 256,
+      "rows_sha256": "ab577d0bb692f51172e217735c5b31958168513e24485007108c3732e614f8a4",
+      "seed": 4
+    },
+    {
+      "dataset": "daily_dialog",
+      "prompt_mode": "templated",
+      "rows": 256,
+      "rows_sha256": "6ec756c639ab310db54d3552814ced3845481ad9ef89987b74c856221c2dae7e",
+      "seed": 5
+    },
+    {
+      "dataset": "daily_dialog",
+      "prompt_mode": "rag",
+      "rows": 256,
+      "rows_sha256": "e732401c62328f17becb02534659aa06e92c614c9982d05dec3568d20fce85eb",
+      "seed": 5
+    },
+    {
+      "dataset": "samsum",
+      "prompt_mode": "templated",
+      "rows": 256,
+      "rows_sha256": "a770ef3ce76c90f1cf77c9f43f5942c9f1c1cff5406f13522580457fe78b63d0",
+      "seed": 1
+    },
+    {
+      "dataset": "samsum",
+      "prompt_mode": "rag",
+      "rows": 256,
+      "rows_sha256": "d6aa9b6a4c70695f9dbc6511310cba9d281567b5c04df003edee3eb3a0e6e050",
+      "seed": 1
+    },
+    {
+      "dataset": "samsum",
+      "prompt_mode": "templated",
+      "rows": 256,
+      "rows_sha256": "4a7c0fb49f1162ac8a460871abb2847692dd93d7116040c6ab9dc6fe412e2b1a",
+      "seed": 2
+    },
+    {
+      "dataset": "samsum",
+      "prompt_mode": "rag",
+      "rows": 256,
+      "rows_sha256": "fb77f4a3ec6e127e9d20cc013d72f1d07b4cb590bd6b87ca288e11f29b539700",
+      "seed": 2
+    },
+    {
+      "dataset": "samsum",
+      "prompt_mode": "templated",
+      "rows": 256,
+      "rows_sha256": "fc260f45458775c76e3ad7367cb622fc87c95ef113acebb2569585e4e6647c5b",
+      "seed": 3
+    },
+    {
+      "dataset": "samsum",
+      "prompt_mode": "rag",
+      "rows": 256,
+      "rows_sha256": "ee335d6451e767076bedadfa8a953db68617ac2811ff0abe3c07105bdf8103c9",
+      "seed": 3
+    },
+    {
+      "dataset": "samsum",
+      "prompt_mode": "templated",
+      "rows": 256,
+      "rows_sha256": "f48380ce9116310c34524ad0fb6edcbb6480ba2400061e7600173c101dbcd8fc",
+      "seed": 4
+    },
+    {
+      "dataset": "samsum",
+      "prompt_mode": "rag",
+      "rows": 256,
+      "rows_sha256": "3ac4a4d06d0d281b9317462addacffaf80621c9c8f4208a20725111981d06e6b",
+      "seed": 4
+    },
+    {
+      "dataset": "samsum",
+      "prompt_mode": "templated",
+      "rows": 256,
+      "rows_sha256": "39aca8f5a3de0f68687b4d4c7b7d34b7da89af6b20585c6ecc3ab31b927b40fb",
+      "seed": 5
+    },
+    {
+      "dataset": "samsum",
+      "prompt_mode": "rag",
+      "rows": 256,
+      "rows_sha256": "68f3af045543dfb240f7d2cfc728ec2d64db91196104df08552eb0b57494d4b1",
+      "seed": 5
+    },
+    {
+      "dataset": "ag_news",
+      "prompt_mode": "templated",
+      "rows": 256,
+      "rows_sha256": "0bd3647d4c7f33521d0fd266228e346beb8c27f83ded93f72e7911cbe9547679",
+      "seed": 1
+    },
+    {
+      "dataset": "ag_news",
+      "prompt_mode": "rag",
+      "rows": 256,
+      "rows_sha256": "d86bcca35ebabb31251d22c0121fd24dcf7b40f68884f51cb0085863eabc3141",
+      "seed": 1
+    },
+    {
+      "dataset": "ag_news",
+      "prompt_mode": "templated",
+      "rows": 256,
+      "rows_sha256": "3080a5a607ae203ca3e296076981679a793b7d29940928f5f4edd41590baa38f",
+      "seed": 2
+    },
+    {
+      "dataset": "ag_news",
+      "prompt_mode": "rag",
+      "rows": 256,
+      "rows_sha256": "35f01674a92405f103cac0995f0cc3e3ac4f29edd24e2a5ef673bc84413a84a3",
+      "seed": 2
+    },
+    {
+      "dataset": "ag_news",
+      "prompt_mode": "templated",
+      "rows": 256,
+      "rows_sha256": "f9c3f0d84935e9471f978a66bdf57e24e178412ebe0b23ef844804e8449d80fe",
+      "seed": 3
+    },
+    {
+      "dataset": "ag_news",
+      "prompt_mode": "rag",
+      "rows": 256,
+      "rows_sha256": "1829caddcd24e47b5632c791018bd16afaec2e97373fadcc18ca04cf3271bfa8",
+      "seed": 3
+    },
+    {
+      "dataset": "ag_news",
+      "prompt_mode": "templated",
+      "rows": 256,
+      "rows_sha256": "1de6e7923c6e3b51f20b17f53411e9014cd3b7b786f53878aea2b53ecc6e6bb4",
+      "seed": 4
+    },
+    {
+      "dataset": "ag_news",
+      "prompt_mode": "rag",
+      "rows": 256,
+      "rows_sha256": "6c22d018c762420c3682aa9aea3ece909f57866ccdfaf243caa85385e39b86e5",
+      "seed": 4
+    },
+    {
+      "dataset": "ag_news",
+      "prompt_mode": "templated",
+      "rows": 256,
+      "rows_sha256": "ec31e8c7594b69c8d26813cb3295e9bab10ab25355a1de873ff09378a07624c6",
+      "seed": 5
+    },
+    {
+      "dataset": "ag_news",
+      "prompt_mode": "rag",
+      "rows": 256,
+      "rows_sha256": "3e6f258028af282c8074bf7b1723fa8d82714ac948d7a2f652f3d357d765eb37",
+      "seed": 5
+    },
+    {
+      "dataset": "dolly",
+      "prompt_mode": "templated",
+      "rows": 256,
+      "rows_sha256": "8faeb97122685cbda75ea2fa3bf1f75494711cbc8934a5fea46f8e68c3172c9a",
+      "seed": 1
+    },
+    {
+      "dataset": "dolly",
+      "prompt_mode": "rag",
+      "rows": 256,
+      "rows_sha256": "112ddb4a45115c6089f5fbf3bb6c73ed3cf3dfabdbd4c25eeb6ce27dcf79939b",
+      "seed": 1
+    },
+    {
+      "dataset": "dolly",
+      "prompt_mode": "templated",
+      "rows": 256,
+      "rows_sha256": "4f0c561021701f147d068eea44e7d1cf9865a007a2d3bb3faa7e5da87bd47840",
+      "seed": 2
+    },
+    {
+      "dataset": "dolly",
+      "prompt_mode": "rag",
+      "rows": 256,
+      "rows_sha256": "7126d49c3b0027e82d44890e02a38160533cb4df8ff497a813e450c3530d8876",
+      "seed": 2
+    },
+    {
+      "dataset": "dolly",
+      "prompt_mode": "templated",
+      "rows": 256,
+      "rows_sha256": "12c1dd9ab8e44dab7a2ab09ea61498ff25c3367e850562e293e82df0b39c5f0d",
+      "seed": 3
+    },
+    {
+      "dataset": "dolly",
+      "prompt_mode": "rag",
+      "rows": 256,
+      "rows_sha256": "3533d03126e197ac2157ae9b4d26479a8f99080afb09c89540eb5cabc9fbed4b",
+      "seed": 3
+    },
+    {
+      "dataset": "dolly",
+      "prompt_mode": "templated",
+      "rows": 256,
+      "rows_sha256": "f7e45e075aee9f1f4d94dc53da45c6d209a9558bba6b9e7d8da01c5ed05e7ff2",
+      "seed": 4
+    },
+    {
+      "dataset": "dolly",
+      "prompt_mode": "rag",
+      "rows": 256,
+      "rows_sha256": "daedb14b4b2606be76d26873db29c2bcf15e2fd8fbcb7c973b2e5c1616baf9e4",
+      "seed": 4
+    },
+    {
+      "dataset": "dolly",
+      "prompt_mode": "templated",
+      "rows": 256,
+      "rows_sha256": "95c7183096a543731abf6f656113c1b6aab40fafc595dd3a917199d44331cd5e",
+      "seed": 5
+    },
+    {
+      "dataset": "dolly",
+      "prompt_mode": "rag",
+      "rows": 256,
+      "rows_sha256": "cd389fdf56d692a0efaa4f2e0ecae02755eebea0445322e867e2fb1062a734bb",
+      "seed": 5
+    },
+    {
+      "dataset": "xsum",
+      "prompt_mode": "templated",
+      "rows": 256,
+      "rows_sha256": "33628ffbd90ff5685aca9be81fb65392595b172bec0ccd64664e5c06e74d82ea",
+      "seed": 1
+    },
+    {
+      "dataset": "xsum",
+      "prompt_mode": "rag",
+      "rows": 256,
+      "rows_sha256": "931539a1416319c2a2b4c103fa55d6138b940167217c5e6b8dc6621c4f820a87",
+      "seed": 1
+    },
+    {
+      "dataset": "xsum",
+      "prompt_mode": "templated",
+      "rows": 256,
+      "rows_sha256": "ed769dd809cc8e0e29d040d3eaa70d12b61b678853fb34c763318e56687aef1c",
+      "seed": 2
+    },
+    {
+      "dataset": "xsum",
+      "prompt_mode": "rag",
+      "rows": 256,
+      "rows_sha256": "2f77a0b7f3d2b286e505dbfe1fa46facb6a3cb92963030339d0796077ff7b41a",
+      "seed": 2
+    },
+    {
+      "dataset": "xsum",
+      "prompt_mode": "templated",
+      "rows": 256,
+      "rows_sha256": "b48157f5ab22b741460904f0870f72c507133559c577fea73c1900ba198920ce",
+      "seed": 3
+    },
+    {
+      "dataset": "xsum",
+      "prompt_mode": "rag",
+      "rows": 256,
+      "rows_sha256": "e9332b843ddf86dc4e75dd1f36dab761e8e13d5f5cf04106fd18a98e2b378b47",
+      "seed": 3
+    },
+    {
+      "dataset": "xsum",
+      "prompt_mode": "templated",
+      "rows": 256,
+      "rows_sha256": "5ce135f8fb0e86a7b56b68baf2bd92567cc3941a5229403a5a6b2e334ebcb785",
+      "seed": 4
+    },
+    {
+      "dataset": "xsum",
+      "prompt_mode": "rag",
+      "rows": 256,
+      "rows_sha256": "161d21f70865374707ac3dec5e2caa319f4c899febd9f3092ca0632aa9844fe7",
+      "seed": 4
+    },
+    {
+      "dataset": "xsum",
+      "prompt_mode": "templated",
+      "rows": 256,
+      "rows_sha256": "e6ce9456d6c313b3356a59356548fa837f8ccfad627b0934c83c871d2c45bcac",
+      "seed": 5
+    },
+    {
+      "dataset": "xsum",
+      "prompt_mode": "rag",
+      "rows": 256,
+      "rows_sha256": "34ddbe380f641c62bd6ae88bf1807d71f2595cd62f1ed77f0c12e94cd1f124bd",
+      "seed": 5
+    }
+  ]
+}

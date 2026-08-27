@@ -1,0 +1,31 @@
+model_slug,model_params_B,engine,engine_label,mode,mean_latency_ms_all,mean_latency_ms_measured_only,latency_95_ci_range,mean_throughput_rps,mean_speedup_vs_lmcache_pct,n_measured_datasets,n_estimated_datasets
+qwen25_14b,14.7,lmcache_no_native_radix,LMCache (no native radix),rag,53.43212846010264,52.68372866952026,"[47.5, 48.1]",18.959275706132722,0.0,5,5
+qwen25_14b,14.7,lmcache_no_native_radix,LMCache (no native radix),templated,52.663608783873165,51.93017790221954,"[46.9, 47.4]",19.2251531030784,0.0,5,5
+qwen25_14b,14.7,sglang_radix_attention,Native RadixAttention,rag,47.027717417573314,46.36422285266236,"[41.4, 41.7]",21.419970468069266,11.689527430014646,5,5
+qwen25_14b,14.7,sglang_radix_attention,Native RadixAttention,templated,46.90040806051833,46.23737753706034,"[41.1, 41.5]",21.480260845478504,10.68098625707972,5,5
+qwen25_14b,14.7,sglang_radix_attention_shadowkv_plus,ShadowKV++,rag,46.19396792217371,45.540410845812104,"[40.2, 40.6]",21.79905448729358,13.233612461262846,5,5
+qwen25_14b,14.7,sglang_radix_attention_shadowkv_plus,ShadowKV++,templated,46.09186104508875,45.43956620503498,"[40.1, 40.5]",21.850043829373877,12.200939885963574,5,5
+qwen25_15b,1.54,lmcache_no_native_radix,LMCache (no native radix),rag,12.568396479587587,12.386643766270328,"[11.5, 11.7]",80.52272327692154,0.0,5,5
+qwen25_15b,1.54,lmcache_no_native_radix,LMCache (no native radix),templated,12.505404146452026,12.326542713223414,"[11.4, 11.6]",80.91840025282282,0.0,5,5
+qwen25_15b,1.54,sglang_radix_attention,Native RadixAttention,rag,11.420356083021833,11.255324761259544,"[10.4, 10.6]",87.97088346884962,8.6954952455411,5,5
+qwen25_15b,1.54,sglang_radix_attention,Native RadixAttention,templated,11.463141925937695,11.295856939038154,"[10.3, 10.6]",87.58105606128865,7.810666597834725,5,5
+qwen25_15b,1.54,sglang_radix_attention_shadowkv_plus,ShadowKV++,rag,11.604849126552411,11.436531524941529,"[10.5, 10.8]",86.53250539269348,7.173323449895281,5,5
+qwen25_15b,1.54,sglang_radix_attention_shadowkv_plus,ShadowKV++,templated,11.533901308383511,11.367201606329521,"[10.5, 10.7]",87.05041568937006,7.269990245431337,5,5
+qwen25_32b,32.5,lmcache_no_native_radix,LMCache (no native radix),rag,102.12141231661266,99.58203540772956,"[nan, nan]",9.876999010387523,0.0,5,45
+qwen25_32b,32.5,lmcache_no_native_radix,LMCache (no native radix),templated,101.85493410449764,99.31377849861747,"[nan, nan]",9.901145237834443,0.0,5,45
+qwen25_32b,32.5,sglang_radix_attention,Native RadixAttention,rag,101.71748106369824,99.19906159702805,"[nan, nan]",9.920027393384544,0.41486106118921995,5,45
+qwen25_32b,32.5,sglang_radix_attention,Native RadixAttention,templated,101.50585428601404,98.9890488650417,"[nan, nan]",9.94154184750186,0.37428027012686693,5,45
+qwen25_32b,32.5,sglang_radix_attention_shadowkv_plus,ShadowKV++,rag,96.83346269556412,,"[96.3, 97.3]",10.42087921480254,2.7595120400809714,0,5
+qwen25_32b,32.5,sglang_radix_attention_shadowkv_plus,ShadowKV++,templated,96.76056276658315,,"[96.1, 97.4]",10.425418151679665,2.57151183800896,0,5
+qwen25_3b,3.09,lmcache_no_native_radix,LMCache (no native radix),rag,17.27699549902407,17.030520986251453,"[17.8, 18.0]",58.81037514223574,0.0,5,5
+qwen25_3b,3.09,lmcache_no_native_radix,LMCache (no native radix),templated,17.055790650348406,16.815432409718294,"[17.6, 17.9]",59.47434424041121,0.0,5,5
+qwen25_3b,3.09,sglang_radix_attention,Native RadixAttention,rag,15.559731772490185,15.338630079410603,"[16.0, 16.1]",64.65073534116134,9.354384497599009,5,5
+qwen25_3b,3.09,sglang_radix_attention,Native RadixAttention,templated,15.45393110364592,15.234494402708757,"[15.9, 16.1]",65.11123820535154,8.918074078372808,5,5
+qwen25_3b,3.09,sglang_radix_attention_shadowkv_plus,ShadowKV++,rag,15.656085508452247,15.433819539703109,"[16.0, 16.2]",64.28941923167433,8.839236708464462,5,5
+qwen25_3b,3.09,sglang_radix_attention_shadowkv_plus,ShadowKV++,templated,15.607196477788685,15.386512594007703,"[15.9, 16.1]",64.46829817840009,8.01356746009155,5,5
+qwen25_7b,7.61,lmcache_no_native_radix,LMCache (no native radix),rag,28.603928343271907,28.20680961670708,"[31.5, 31.8]",35.56176431511896,0.0,5,5
+qwen25_7b,7.61,lmcache_no_native_radix,LMCache (no native radix),templated,28.230004832898867,27.842380842776038,"[31.1, 31.3]",35.99273291177463,0.0,5,5
+qwen25_7b,7.61,sglang_radix_attention,Native RadixAttention,rag,24.575365497269722,24.228951385672797,"[27.7, 27.8]",40.99640586599318,13.562464832996179,5,5
+qwen25_7b,7.61,sglang_radix_attention,Native RadixAttention,templated,24.47134479789119,24.126094828261557,"[27.6, 27.8]",41.172770499490625,12.856523886943714,5,5
+qwen25_7b,7.61,sglang_radix_attention_shadowkv_plus,ShadowKV++,rag,23.827732089511095,23.489998664748175,"[27.3, 27.4]",42.25907563977422,16.153965901535617,5,5
+qwen25_7b,7.61,sglang_radix_attention_shadowkv_plus,ShadowKV++,templated,23.784049785260777,23.44659722787886,"[27.2, 27.4]",42.33566097082868,15.259378768688805,5,5

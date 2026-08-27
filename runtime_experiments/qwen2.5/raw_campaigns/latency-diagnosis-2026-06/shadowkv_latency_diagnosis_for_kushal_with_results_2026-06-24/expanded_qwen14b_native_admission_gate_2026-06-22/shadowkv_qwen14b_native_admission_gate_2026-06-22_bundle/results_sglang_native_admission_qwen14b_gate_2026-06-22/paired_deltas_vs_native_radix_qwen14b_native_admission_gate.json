@@ -1,0 +1,68 @@
+[
+  {
+    "rep": 1,
+    "mode": "rag",
+    "comparison": "sglang_radix_attention_shadowkv_plus_vs_sglang_radix_attention",
+    "end_to_end_latency_delta_pct": 9.044755995046854,
+    "end_to_end_p95_delta_pct": 14.519058463200137,
+    "end_to_end_throughput_delta_pct": -8.294132868693197,
+    "cached_token_delta": -9949,
+    "skip_lookup_delta": 183,
+    "skip_write_delta": 180
+  },
+  {
+    "rep": 1,
+    "mode": "templated",
+    "comparison": "sglang_radix_attention_shadowkv_plus_vs_sglang_radix_attention",
+    "end_to_end_latency_delta_pct": 4.302163574600169,
+    "end_to_end_p95_delta_pct": 17.758019109084636,
+    "end_to_end_throughput_delta_pct": -4.123637475371984,
+    "cached_token_delta": -7160,
+    "skip_lookup_delta": 158,
+    "skip_write_delta": 154
+  },
+  {
+    "rep": 2,
+    "mode": "rag",
+    "comparison": "sglang_radix_attention_shadowkv_plus_vs_sglang_radix_attention",
+    "end_to_end_latency_delta_pct": 16.791945203571206,
+    "end_to_end_p95_delta_pct": 31.81111266020761,
+    "end_to_end_throughput_delta_pct": -14.376791854686116,
+    "cached_token_delta": -7782,
+    "skip_lookup_delta": 158,
+    "skip_write_delta": 154
+  },
+  {
+    "rep": 2,
+    "mode": "templated",
+    "comparison": "sglang_radix_attention_shadowkv_plus_vs_sglang_radix_attention",
+    "end_to_end_latency_delta_pct": 17.167994861933046,
+    "end_to_end_p95_delta_pct": 25.254974419005467,
+    "end_to_end_throughput_delta_pct": -14.65159833388351,
+    "cached_token_delta": -11487,
+    "skip_lookup_delta": 208,
+    "skip_write_delta": 206
+  },
+  {
+    "rep": 3,
+    "mode": "rag",
+    "comparison": "sglang_radix_attention_shadowkv_plus_vs_sglang_radix_attention",
+    "end_to_end_latency_delta_pct": 6.9876288654492855,
+    "end_to_end_p95_delta_pct": 13.601759675716925,
+    "end_to_end_throughput_delta_pct": -6.530201555225959,
+    "cached_token_delta": -7782,
+    "skip_lookup_delta": 158,
+    "skip_write_delta": 154
+  },
+  {
+    "rep": 3,
+    "mode": "templated",
+    "comparison": "sglang_radix_attention_shadowkv_plus_vs_sglang_radix_attention",
+    "end_to_end_latency_delta_pct": 7.977849046877659,
+    "end_to_end_p95_delta_pct": 14.393488942797028,
+    "end_to_end_throughput_delta_pct": -7.388655667283235,
+    "cached_token_delta": -9386,
+    "skip_lookup_delta": 183,
+    "skip_write_delta": 180
+  }
+]

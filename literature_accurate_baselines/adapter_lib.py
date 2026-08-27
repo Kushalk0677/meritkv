@@ -39,6 +39,7 @@ MODEL_PRESETS = {
 }
 
 
+# Shared workload and artifact helpers.
 def resolve_model(model: str | None) -> str | None:
     if model is None:
         return None
@@ -131,6 +132,7 @@ def make_output_filename(prefix: str, args: argparse.Namespace) -> str:
 
 
 @dataclass
+# External request measurements.
 class ExternalCallResult:
     request_id: int
     latency_ms: float
@@ -175,6 +177,7 @@ def summarize_external_results(results: Sequence[ExternalCallResult]) -> Dict[st
     return summary
 
 
+# OpenAI-compatible runtime client and server lifecycle.
 class OpenAICompatClient:
     def __init__(self, api_base: str, model: str, endpoint: str = "chat") -> None:
         self.api_base = api_base.rstrip("/")
@@ -353,6 +356,7 @@ def vllm_compat_env_updates() -> Dict[str, str]:
     return {"VLLM_USE_V1": "0"}
 
 
+# Reproducible backend launch commands.
 def build_sglang_hicache_command(args: argparse.Namespace) -> List[str]:
     cmd = [
         args.python_executable,
@@ -502,6 +506,7 @@ def build_lmcache_command(args: argparse.Namespace) -> tuple[List[str], Dict[str
     return cmd, env_updates
 
 
+# Write-through or enforced admission accounting.
 class ExternalAdmissionController:
     """Conservative MeritKV admission wrapper for external runtimes.
 
@@ -627,6 +632,7 @@ class ExternalAdmissionController:
         return stored
 
 
+# Runtime reset and trace loading.
 def reset_runtime_cache(client: OpenAICompatClient, runtime: str, reset_external: bool = False) -> bool:
     candidates = []
     if runtime == "sglang":

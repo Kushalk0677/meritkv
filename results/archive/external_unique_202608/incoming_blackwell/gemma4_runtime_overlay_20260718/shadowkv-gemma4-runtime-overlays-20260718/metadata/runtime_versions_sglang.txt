@@ -1,0 +1,6 @@
+python=3.12.3
+vllm=not-installed
+sglang=0.0.0.dev1+gf7d4e44d8
+lmcache=not-installed
+torch=2.11.0+cu130
+transformers=5.10.0.dev0

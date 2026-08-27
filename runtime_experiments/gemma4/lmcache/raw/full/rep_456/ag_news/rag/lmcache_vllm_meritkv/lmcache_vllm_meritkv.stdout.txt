@@ -1,0 +1,2 @@
+Benchmark lmcache_vllm_meritkv for google/gemma-4-31B-it ag_news rag seed=456
+Latency: 56.89ms, Throughput: 17.58 rps

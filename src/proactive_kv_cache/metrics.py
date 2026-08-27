@@ -6,6 +6,7 @@ from typing import Dict, List
 import numpy as np
 
 
+# Per-run latency, reuse, waste, and energy summary.
 @dataclass
 class RunSummary:
     mean_latency_ms: float

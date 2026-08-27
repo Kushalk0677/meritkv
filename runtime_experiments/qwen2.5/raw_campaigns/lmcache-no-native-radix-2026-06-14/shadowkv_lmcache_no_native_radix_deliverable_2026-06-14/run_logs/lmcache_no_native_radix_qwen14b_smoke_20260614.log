@@ -1,0 +1,47 @@
+[2026-06-14T14:55:02-04:00] LMCache no-native-radix smoke start image=shadowkv-sglang-lmcache:2026-06-14-no-native-radix
+[2026-06-14T14:55:02-04:00] stopping active GPU service darwin28b-reason-vllm
+darwin28b-reason-vllm
+[2026-06-14T14:55:03-04:00] waiting for smoke container
+lmcache_ready
+sglang_ready
+[
+  {
+    "label": "first_store",
+    "elapsed_s": 0.8290896415710449,
+    "usage": {
+      "prompt_tokens": 2651,
+      "total_tokens": 2652,
+      "completion_tokens": 1,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 0
+    }
+  },
+  {
+    "label": "second_lmcache_hit_no_flush",
+    "elapsed_s": 0.06426310539245605,
+    "usage": {
+      "prompt_tokens": 2651,
+      "total_tokens": 2652,
+      "completion_tokens": 1,
+      "prompt_tokens_details": {
+        "cached_tokens": 2560
+      },
+      "reasoning_tokens": 0
+    }
+  },
+  {
+    "label": "third_lmcache_hit_no_flush",
+    "elapsed_s": 0.06709742546081543,
+    "usage": {
+      "prompt_tokens": 2651,
+      "total_tokens": 2652,
+      "completion_tokens": 1,
+      "prompt_tokens_details": {
+        "cached_tokens": 2560
+      },
+      "reasoning_tokens": 0
+    }
+  }
+]
+0
+[2026-06-14T14:56:20-04:00] LMCache no-native-radix smoke done status=0

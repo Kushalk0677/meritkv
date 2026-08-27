@@ -36,6 +36,7 @@ except ModuleNotFoundError:
     )
 
 
+# Replay a workflow trace against an external KVFlow service.
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", required=True)

@@ -1,0 +1,52 @@
+/home/kushalkhemani/research/myenv/lib/python3.12/site-packages/torch/cuda/__init__.py:58: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Using the latest cached version of the dataset since knkarthick/samsum couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /home/kushalkhemani/.cache/huggingface/datasets/knkarthick___samsum/default/0.0.0/6b929ff10edec703164e3ddb2e94aae058c9ab5f (last modified on Thu Apr 30 10:11:02 2026).
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.54it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  2.14it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  2.02it/s]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.53it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  2.12it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  2.01it/s]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.56it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  2.15it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  2.03it/s]
+Traceback (most recent call last):
+  File "/home/kushalkhemani/research/shadowkv_p100/src/proactive_kv_cache/models.py", line 252, in __init__
+    self.model.to(device)
+  File "/home/kushalkhemani/research/myenv/lib/python3.12/site-packages/transformers/modeling_utils.py", line 4343, in to
+    return super().to(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kushalkhemani/research/myenv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1174, in to
+    return self._apply(convert)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/kushalkhemani/research/myenv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 780, in _apply
+    module._apply(fn)
+  File "/home/kushalkhemani/research/myenv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 780, in _apply
+    module._apply(fn)
+  File "/home/kushalkhemani/research/myenv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 780, in _apply
+    module._apply(fn)
+  [Previous line repeated 2 more times]
+  File "/home/kushalkhemani/research/myenv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 805, in _apply
+    param_applied = fn(param)
+                    ^^^^^^^^^
+  File "/home/kushalkhemani/research/myenv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1160, in convert
+    return t.to(
+           ^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 54.00 MiB. GPU 0 has a total capacity of 11.90 GiB of which 14.62 MiB is free. Including non-PyTorch memory, this process has 11.88 GiB memory in use. Of the allocated memory 11.55 GiB is allocated by PyTorch, and 53.26 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/kushalkhemani/research/shadowkv_p100/experiments/run_benchmark.py", line 911, in <module>
+    main()
+  File "/home/kushalkhemani/research/shadowkv_p100/experiments/run_benchmark.py", line 776, in main
+    engine = build_engine(args, backend, engine_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kushalkhemani/research/shadowkv_p100/experiments/run_benchmark.py", line 503, in build_engine
+    calibration_backend = load_backend_from_args(args)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kushalkhemani/research/shadowkv_p100/experiments/run_benchmark.py", line 419, in load_backend_from_args
+    return load_backend(
+           ^^^^^^^^^^^^^
+  File "/home/kushalkhemani/research/shadowkv_p100/src/proactive_kv_cache/models.py", line 767, in load_backend
+    return HuggingFaceBackend(model_name=model_name, device=device, dtype=dtype)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kushalkhemani/research/shadowkv_p100/src/proactive_kv_cache/models.py", line 254, in __init__
+    raise RuntimeError(
+RuntimeError: Failed to load Hugging Face model 'microsoft/Phi-3-mini-4k-instruct' on device 'cuda'. Check model access, local dependencies, and device availability.

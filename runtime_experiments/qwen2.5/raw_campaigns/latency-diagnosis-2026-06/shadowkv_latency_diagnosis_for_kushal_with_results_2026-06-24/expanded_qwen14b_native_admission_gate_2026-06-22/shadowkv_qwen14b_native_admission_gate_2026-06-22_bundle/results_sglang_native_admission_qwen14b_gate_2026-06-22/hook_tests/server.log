@@ -1,0 +1,15 @@
+[2026-06-23 00:35:12] INFO:     127.0.0.1:41120 - "GET /v1/models HTTP/1.1" 200 OK
+[2026-06-23 00:35:12] INFO:     127.0.0.1:41128 - "POST /flush_cache?timeout=30 HTTP/1.1" 200 OK
+[2026-06-23 00:35:12] INFO:     127.0.0.1:41144 - "POST /shadowkv_admission_metrics/reset HTTP/1.1" 200 OK
+[2026-06-23 00:35:12] INFO:     127.0.0.1:41166 - "GET /model_info HTTP/1.1" 200 OK
+[2026-06-23 00:35:25] INFO:     127.0.0.1:41154 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-06-23 00:35:29] INFO:     127.0.0.1:49384 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-06-23 00:35:29] INFO:     127.0.0.1:49704 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-06-23 00:35:29] INFO:     127.0.0.1:49706 - "GET /shadowkv_admission_metrics HTTP/1.1" 200 OK
+[2026-06-23 00:35:29] INFO:     127.0.0.1:41178 - "POST /generate HTTP/1.1" 200 OK
+[2026-06-23 00:35:29] INFO:     127.0.0.1:49714 - "POST /flush_cache?timeout=30 HTTP/1.1" 200 OK
+[2026-06-23 00:35:29] INFO:     127.0.0.1:49728 - "POST /shadowkv_admission_metrics/reset HTTP/1.1" 200 OK
+[2026-06-23 00:35:29] INFO:     127.0.0.1:49742 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-06-23 00:35:29] INFO:     127.0.0.1:49752 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-06-23 00:35:29] INFO:     127.0.0.1:49764 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-06-23 00:35:29] INFO:     127.0.0.1:49768 - "GET /shadowkv_admission_metrics HTTP/1.1" 200 OK

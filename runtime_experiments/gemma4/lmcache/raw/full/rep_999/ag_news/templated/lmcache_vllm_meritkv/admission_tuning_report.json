@@ -1,0 +1,12 @@
+{
+  "admission_preset": "balanced",
+  "admission_allow_total": 200,
+  "admission_bypass_total": 56,
+  "admission_write_through_bypass_total": 56,
+  "admission_bypass_store_successes": 0,
+  "admission_selected_preset": "balanced",
+  "admission_warmup_bypasses": 3,
+  "admission_release_bypasses": 0,
+  "tuned_threshold": 0.0,
+  "tuned_skip_probability": 0.0
+}

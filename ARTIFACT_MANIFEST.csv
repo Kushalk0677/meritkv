@@ -8,14 +8,17 @@ process-isolated study,results/realistic_results/summary_by_model_mode.csv,measu
 baseline comparison,results/isolated_baseline_comparison/results_detail.csv,measured cell table,P100,"42;123;456",HF engine path,included
 long-prefix scale study,results/blackwell_longprefix_hf/model_summary.csv,measured aggregate,RTX PRO 6000 Blackwell,"42;123;456;789;999",HF custom-splice path,included
 long-prefix scale study,results/blackwell_longprefix_hf/dataset_results.csv,measured dataset table,RTX PRO 6000 Blackwell,"42;123;456;789;999",HF custom-splice path,included
-fidelity,results/fidelity_examples/,selected per-sample diagnostic,mixed,documented,custom-splice diagnostic,included
+fidelity,results/fidelity_examples/,retained per-sample diagnostic,mixed,documented,custom-splice diagnostic,included
 exact-splice validation,results/exact_splice_validation/,T4 raw JSON reports and validation summary,T4,42,explicit-state HF SDPA continuation,included
 runtime compatibility,runtime_experiments/qwen2.5/,measured compact aggregates,RTX PRO 6000 Blackwell,documented,write-through overlay,included
 runtime compatibility,runtime_experiments/gemma4/,measured compact aggregates,RTX PRO 6000 Blackwell,"42;123;456;789;999",write-through overlay,included
 native balanced admission,runtime_experiments/qwen2.5/sglang/balanced_admission/,complete measured bundle,RTX PRO 6000 Blackwell,20260703,native SGLang skip-lookup/skip-write,included
 native enforcement,runtime_experiments/native_enforcement_blackwell/,complete 414-cell evidence package,RTX PRO 6000 Blackwell,"42;123;456;789;999",native SGLang execute-or-bypass,included
+native enforcement raw,runtime_experiments/native_enforcement_blackwell/evidence_packages/2026-08-20/,complete extracted raw package original archive logs manifests and verifiers,RTX PRO 6000 Blackwell,"42;123;456;789;999",native SGLang execute-or-bypass,included
 native storage admission,runtime_experiments/native_enforcement_blackwell/storage_admission_extension/,curated five-seed summaries counters and frozen code,RTX PRO 6000 Blackwell,"32001;32002;32003;32004;32005",native SGLang skip-write and skip-lookup,included
 native storage admission raw,runtime_experiments/native_enforcement_blackwell/evidence_packages/2026-08-23/,complete extracted raw packages original archives logs manifests and verifiers,RTX PRO 6000 Blackwell,"32001;32002;32003;32004;32005",native SGLang skip-write and skip-lookup,included
+native Qwen storage admission,runtime_experiments/native_enforcement_blackwell/storage_admission_extension_qwen25_32b/,curated five-seed summaries counters and frozen code,RTX PRO 6000 Blackwell,"32001;32002;32003;32004;32005",native SGLang skip-write and skip-lookup,included
+native Qwen storage admission raw,runtime_experiments/native_enforcement_blackwell/evidence_packages/2026-08-24/,complete extracted raw package original archive logs manifests and verifier,RTX PRO 6000 Blackwell,"32001;32002;32003;32004;32005",native SGLang skip-write and skip-lookup,included
 memory pressure,results/memory_bound_trace/,aggregate and reconciled selected per-seed traces,Blackwell and T4,"42;123;456;789;999",admission trace,included
 enforced multiround,results/memory_bound_trace_multiround/,measured compact reports,RTX PRO 6000 Blackwell,"42;123;456;789;999",execute-or-bypass enforced,included
 mixed traffic,results/mixed_traffic/MIXED_TRAFFIC_RESULTS.md,measured compact report,documented,documented,admission comparison,included
@@ -23,3 +26,13 @@ learned baseline,results/learned_admission_baseline/computed_summaries/,measured
 experiment commands,experiments/,source scripts,portable,n/a,depends on script,included
 tests,tests/,test suite,portable,n/a,n/a,included
 memory pressure baselines,results/memory_bound_trace/gemma4/lru_lfu/,measured compact per-seed ledgers and aggregates,RTX PRO 6000 Blackwell,"42;123;456;789;999",controlled-bank admission and eviction policies,included
+Qwen historical runtime,runtime_experiments/qwen2.5/raw_campaigns/,complete retained dated runtime transfer trees,RTX PRO 6000 Blackwell,documented,mixed write-through and diagnostic,included
+reproduction packages,reproduction_packages/,expanded frozen packages notebooks archives and checksums,mixed,documented,package-specific,included
+experiment catalog,docs/EXPERIMENT_CATALOG.md,uniform code data method and environment index,portable,n/a,n/a,included
+hardware catalog,docs/HARDWARE_AND_ENVIRONMENTS.md,measured and modelled platform index,mixed,n/a,n/a,included
+raw completeness,docs/RAW_EVIDENCE_COMPLETENESS.md,content-hash audit and defined exclusions,mixed,n/a,n/a,included
+historical result snapshots,results/archive/,complete retained alternate and unique result trees,mixed,documented,historical provenance,included
+historical transfer packages,reproduction_packages/historical_transfers/,expanded named P100 Blackwell fidelity and policy packages,mixed,documented,package-specific,included
+security redactions,docs/SECURITY_REDACTIONS.md,credential scan and redaction ledger,portable,n/a,n/a,included
+methodology index,docs/METHODOLOGY_INDEX.md,method and protocol navigation,portable,n/a,n/a,included
+dependency index,docs/DEPENDENCIES_AND_PACKAGES.md,maintained and frozen environment navigation,mixed,n/a,n/a,included

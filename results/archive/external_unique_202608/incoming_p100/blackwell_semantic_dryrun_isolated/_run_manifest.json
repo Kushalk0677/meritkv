@@ -1,0 +1,43 @@
+{
+  "created_at_utc": "2026-07-04T15:08:32.845398+00:00",
+  "pipeline": "blackwell_semantic_n128_isolated",
+  "models": [
+    "gpt2"
+  ],
+  "normal_models": [
+    "gpt2",
+    "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "Qwen/Qwen2.5-1.5B-Instruct",
+    "google/gemma-2b-it",
+    "microsoft/Phi-3-mini-4k-instruct"
+  ],
+  "large_models": [
+    "Qwen/Qwen2.5-3B-Instruct",
+    "Qwen/Qwen2.5-7B-Instruct",
+    "Qwen/Qwen2.5-14B-Instruct",
+    "Qwen/Qwen2.5-32B-Instruct"
+  ],
+  "gemma4_models": [
+    "google/gemma-4-12b-it",
+    "google/gemma-4-26b-a4b-it"
+  ],
+  "datasets": [
+    "ag_news"
+  ],
+  "prompt_modes": [
+    "semantic"
+  ],
+  "engines": [
+    "no_cache",
+    "shadow_kv",
+    "shadow_kv_plus"
+  ],
+  "seeds": [
+    42
+  ],
+  "n_requests": 4,
+  "semantic_reuse": "allow_unsafe_semantic_kv_reuse",
+  "isolation": "one_python_subprocess_per_model_dataset_prompt_mode_engine_cell",
+  "total_jobs": 3,
+  "auto_detected_config": {}
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "model": "gpt2",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "ag_news",
+    "engine": "no_cache",
+    "returncode": "dry_run",
+    "elapsed_sec": 0.0,
+    "output_dir": "C:\\shadowkv\\incoming_p100\\blackwell_semantic_fullrepo_dryrun\\gpt2\\semantic\\seed_42\\ag_news\\no_cache"
+  },
+  {
+    "model": "gpt2",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "ag_news",
+    "engine": "shadow_kv",
+    "returncode": "dry_run",
+    "elapsed_sec": 0.0,
+    "output_dir": "C:\\shadowkv\\incoming_p100\\blackwell_semantic_fullrepo_dryrun\\gpt2\\semantic\\seed_42\\ag_news\\shadow_kv"
+  },
+  {
+    "model": "gpt2",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "ag_news",
+    "engine": "shadow_kv_plus",
+    "returncode": "dry_run",
+    "elapsed_sec": 0.0,
+    "output_dir": "C:\\shadowkv\\incoming_p100\\blackwell_semantic_fullrepo_dryrun\\gpt2\\semantic\\seed_42\\ag_news\\shadow_kv_plus"
+  }
+]

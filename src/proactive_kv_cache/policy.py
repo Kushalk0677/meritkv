@@ -6,6 +6,7 @@ from typing import List, Tuple
 from .cache import TieredStateBank
 
 
+# Speculation decision contract.
 @dataclass
 class SpeculationDecision:
     prefix_tokens: Tuple[int, ...]
@@ -20,6 +21,7 @@ class SpeculationPolicy:
         raise NotImplementedError
 
 
+# Frequency-only baseline.
 class FrequencyPolicy(SpeculationPolicy):
     def __init__(self, min_frequency: float = 0.20, min_prefix_len: int = 12, max_prefix_len: int = 64, min_observations: int = 3):
         self.min_frequency = min_frequency
@@ -51,6 +53,7 @@ class FrequencyPolicy(SpeculationPolicy):
         return decisions[:budget_k]
 
 
+# Cost-aware speculative baseline.
 class CostAwareSlackPolicy(SpeculationPolicy):
     """Rank prefixes by expected utility during idle time.
 

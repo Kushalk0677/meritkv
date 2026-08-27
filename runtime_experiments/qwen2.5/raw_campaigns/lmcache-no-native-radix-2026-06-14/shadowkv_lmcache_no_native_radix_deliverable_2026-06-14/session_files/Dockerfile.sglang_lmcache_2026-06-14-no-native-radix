@@ -1,0 +1,192 @@
+FROM shadowkv-sglang-lmcache:2026-06-13-sglang0513-lmcache047
+
+RUN python3 - <<'PY'
+from pathlib import Path
+
+registry = Path("/usr/local/lib/python3.12/dist-packages/sglang/srt/mem_cache/registry.py")
+text = registry.read_text()
+old = '''def default_radix_cache_factory(ctx: TreeCacheBuildContext) -> BasePrefixCache:
+    """Built-in Radix Cache selection chain."""
+    server_args = ctx.server_args
+    params = ctx.params
+
+    if ctx.effective_chunked_prefill_size is not None and ctx.disable_radix_cache:
+'''
+new = '''def default_radix_cache_factory(ctx: TreeCacheBuildContext) -> BasePrefixCache:
+    """Built-in Radix Cache selection chain."""
+    server_args = ctx.server_args
+    params = ctx.params
+
+    if server_args.enable_lmcache:
+        from sglang.srt.mem_cache.storage.lmcache.lmc_radix_cache import (
+            LMCRadixCache,
+        )
+
+        return LMCRadixCache(
+            params=params,
+            model_config=ctx.model_config,
+            tp_size=ctx.tp_size,
+            rank=ctx.tp_rank,
+            tp_group=ctx.tp_group,
+        )
+
+    if ctx.effective_chunked_prefill_size is not None and ctx.disable_radix_cache:
+'''
+if old not in text:
+    raise SystemExit("registry.py patch anchor not found")
+text = text.replace(old, new, 1)
+old_late = '''    if server_args.enable_lmcache:
+        from sglang.srt.mem_cache.storage.lmcache.lmc_radix_cache import (
+            LMCRadixCache,
+        )
+
+        return LMCRadixCache(
+            params=params,
+            model_config=ctx.model_config,
+            tp_size=ctx.tp_size,
+            rank=ctx.tp_rank,
+            tp_group=ctx.tp_group,
+        )
+
+    from sglang.srt.mem_cache.radix_cache import RadixCache
+'''
+new_late = '''    from sglang.srt.mem_cache.radix_cache import RadixCache
+'''
+if old_late not in text:
+    raise SystemExit("registry.py late lmcache block not found")
+registry.write_text(text.replace(old_late, new_late, 1))
+
+lmc = Path("/usr/local/lib/python3.12/dist-packages/sglang/srt/mem_cache/storage/lmcache/lmc_radix_cache.py")
+text = lmc.read_text()
+old = '''        super().__init__(params)
+
+        cli_lmc_cfg = get_global_server_args().lmcache_config_file or ""
+'''
+new = '''        super().__init__(params)
+
+        global_server_args = get_global_server_args()
+        self._lmcache_disable_native_radix = bool(global_server_args.disable_radix_cache)
+        if self._lmcache_disable_native_radix:
+            # Keep the LMCache object active even when SGLang was launched with
+            # --disable-radix-cache. In this mode native Radix lookups/inserts
+            # are suppressed, but LMCache LOOKUP/RETRIEVE/STORE remains active.
+            self.disable = False
+
+        cli_lmc_cfg = global_server_args.lmcache_config_file or ""
+'''
+if old not in text:
+    raise SystemExit("lmc __init__ anchor not found")
+text = text.replace(old, new, 1)
+
+old = '''        base_res = super().match_prefix(params)
+        value: torch.Tensor = base_res.device_indices
+        last_node: TreeNode = base_res.last_device_node
+'''
+new = '''        if self._lmcache_disable_native_radix:
+            base_res = self._empty_match_result
+        else:
+            base_res = super().match_prefix(params)
+        value: torch.Tensor = base_res.device_indices
+        last_node: TreeNode = base_res.last_device_node
+'''
+if old not in text:
+    raise SystemExit("lmc match_prefix anchor not found")
+text = text.replace(old, new, 1)
+
+old = '''    def cache_finished_req(self, req: Req, is_insert: bool = True) -> None:
+        """On request completion, insert device KV into radix and store to LMCache."""
+
+        super().cache_finished_req(req, is_insert=is_insert)
+        if not is_insert:
+            if self._mode is LMCacheMode.MP:
+                self._mp_load_back_markers.pop(req.rid, None)
+                self.lmcache_connector.end_session(req.rid)
+            return
+'''
+new = '''    def cache_unfinished_req(self, req: Req, chunked=False):
+        if self._lmcache_disable_native_radix:
+            # This experiment disables native Radix residency. Avoid partial
+            # chunk inserts; benchmark launches should also keep chunked prefill
+            # disabled for this mode.
+            return
+        return super().cache_unfinished_req(req, chunked=chunked)
+
+    def _evict_no_radix_resident_nodes(self) -> None:
+        # Host-loaded chunks are temporarily attached to the inherited radix tree
+        # so SGLang can consume their device slots for the current request. They
+        # must not remain available for a later native Radix hit.
+        if self.evictable_size_ > 0:
+            self.evict(EvictParams(num_tokens=self.evictable_size_))
+
+    def _cache_finished_req_lmcache_no_radix(self, req: Req, is_insert: bool = True) -> None:
+        global_server_args = get_global_server_args()
+        topk = global_server_args.speculative_eagle_topk
+        enable_kv_committed_len = topk is None or topk == 1
+        if enable_kv_committed_len:
+            store_len = req.kv_committed_len
+        else:
+            store_len = len(req.origin_input_ids) + max(len(req.output_ids) - 1, 0)
+
+        if is_insert and store_len > 0:
+            token_ids_for_store = (req.origin_input_ids + req.output_ids)[:store_len]
+            kv_indices_for_store = self.req_to_token_pool.req_to_token[
+                req.req_pool_idx, :store_len
+            ]
+            store_md = StoreMetadata(
+                last_node=self.root_node,
+                token_ids=token_ids_for_store,
+                kv_indices=kv_indices_for_store,
+                offset=0,
+                request_id=req.rid,
+            )
+            with torch.cuda.stream(self.store_stream):
+                self.lmcache_connector.store_kv(store_md)
+
+        kv_committed_len = req.pop_committed_kv_cache()
+        token_ids = (req.origin_input_ids + req.output_ids)[:kv_committed_len]
+        kv_indices = self.req_to_token_pool.req_to_token[
+            req.req_pool_idx, :kv_committed_len
+        ]
+        radix_key = RadixKey(
+            token_ids, req.extra_key, is_bigram=self.is_eagle
+        ).page_aligned(self.page_size)
+        key_len = len(radix_key)
+        protected_len = min(int(getattr(req, "cache_protected_len", 0) or 0), key_len)
+
+        if key_len > protected_len:
+            self.token_to_kv_pool_allocator.free(kv_indices[protected_len:key_len])
+        if kv_committed_len > key_len:
+            self.token_to_kv_pool_allocator.free(kv_indices[key_len:kv_committed_len])
+
+        if self._mode is LMCacheMode.MP:
+            self._mp_load_back_markers.pop(req.rid, None)
+            self.lmcache_connector.end_session(req.rid)
+
+        self._evict_no_radix_resident_nodes()
+
+    def cache_finished_req(self, req: Req, is_insert: bool = True) -> None:
+        """On request completion, insert device KV into radix and store to LMCache."""
+
+        if self._lmcache_disable_native_radix:
+            return self._cache_finished_req_lmcache_no_radix(req, is_insert=is_insert)
+
+        super().cache_finished_req(req, is_insert=is_insert)
+        if not is_insert:
+            if self._mode is LMCacheMode.MP:
+                self._mp_load_back_markers.pop(req.rid, None)
+                self.lmcache_connector.end_session(req.rid)
+            return
+'''
+if old not in text:
+    raise SystemExit("lmc cache_finished_req anchor not found")
+text = text.replace(old, new, 1)
+lmc.write_text(text)
+
+print("patched sglang LMCache no-native-radix runtime")
+PY
+
+ENV PYTHONPATH=/workspace/shadowkv/src:${PYTHONPATH}
+ENV USE_HUB_KERNELS=NO
+ENV FLASHINFER_DISABLE_VERSION_CHECK=1
+ENV PYTHONHASHSEED=0
+WORKDIR /workspace/shadowkv

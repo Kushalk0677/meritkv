@@ -7,6 +7,7 @@ from .config_loader import CONFIG
 from .utility_policy import UtilityPolicyController
 
 
+# Online utility decision and waste-feedback state.
 class AdaptiveReuseController:
     """Compatibility wrapper around the pluggable utility policy."""
 

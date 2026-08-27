@@ -1,0 +1,1 @@
+{"timestamp": 1781675744.8528707, "request_id": "7859c3934ef74f4c83f59ac74d28ace7", "model_name": "Qwen/Qwen2.5-1.5B-Instruct", "chunk_size": 256, "seq_len": 319, "dtypes": ["torch.float16"], "shapes": [[2, 28, 256, 256]], "chunk_hashes": ["0x133acfb1046d8d7155ae5e6c44ff895e3c6f9221a3f62a857464d6c85184932a"]}

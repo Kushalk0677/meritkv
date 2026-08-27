@@ -1,0 +1,8 @@
+Command:
+docker run --rm --entrypoint /usr/bin/python3 -v PROJECT:/workspace -w /workspace shadowkv-hf-blackwell:20260706 -m pytest -q tests/test_blackwell_semantic_runner.py tests/test_backend_regressions.py tests/test_engine_regressions.py
+
+Result:
+22 passed, 1 skipped in 5.58s
+
+Skipped test:
+tests/test_backend_regressions.py:92 requires RUN_HF_KV_CORRECTNESS=1 for the slow Hugging Face KV correctness check.

@@ -1,0 +1,10 @@
+{
+  "mode": "templated",
+  "n_requests": 256,
+  "seed": 20262622,
+  "class_counts": {
+    "one_off_cache_pressure": 154,
+    "hot_reusable_prefix": 102
+  },
+  "output": "/home/jade_hand/research/shadowkv/results_sglang_native_admission_qwen14b_gate_2026-06-22/traces/rep_2_templated.jsonl"
+}

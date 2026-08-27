@@ -42,6 +42,7 @@ from proactive_kv_cache.models import load_backend
 from proactive_kv_cache.utils import set_seed
 
 
+# Execute the offline future-reuse upper-bound sweep.
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--backend", choices=["fake", "hf"], default="hf")

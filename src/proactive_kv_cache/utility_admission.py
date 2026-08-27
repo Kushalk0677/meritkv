@@ -4,6 +4,7 @@ from dataclasses import dataclass, field
 from typing import Dict, Tuple
 
 
+# Online bucketed utility statistics.
 def prefix_length_bucket(prefix_tokens: int) -> str:
     n = max(int(prefix_tokens), 0)
     for upper in (64, 128, 256, 512, 1024, 2048, 4096):
@@ -58,6 +59,7 @@ class UtilityDecision:
 
 
 @dataclass
+# Convert observed reuse outcomes into admission estimates.
 class OnlineUtilityEstimator:
     """Low-overhead bucketed estimator for exact-prefix admission.
 

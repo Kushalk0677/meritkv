@@ -121,6 +121,7 @@ SHADOWKV_POLICY_ENGINE_NAMES = {
 }
 
 
+# Workload and request preparation.
 def resolve_model(model: str | None) -> str | None:
     if model is None:
         return None
@@ -177,6 +178,7 @@ def prepare_request_metadata(backend, req, tokens, shared_prefix_token_cache: di
     return metadata
 
 
+# Hardware-aware calibration and policy presets.
 def _profile_shadowkv_costs(backend) -> dict:
     max_len = 96 if backend.device.startswith('cuda') else 64
     candidate_lengths = [length for length in (8, 16, 32, 48, 64, 96) if length <= max_len]
@@ -416,6 +418,7 @@ def _build_shadowkv_policy_kwargs(backend, prompt_mode: str = 'raw', preset: str
     )
 
 
+# Backend and engine construction.
 def load_backend_from_args(args):
     return load_backend(
         args.backend,
@@ -564,6 +567,7 @@ def build_engine(args, backend, engine_name: str):
     raise ValueError(f'Unknown engine name: {engine_name}')
 
 
+# Warm-up, tuning, and measured request execution.
 def _warmup_backend(backend, requests) -> None:
     if not requests:
         return
@@ -684,6 +688,7 @@ def _run_shadowkv_policy_tuning(args, requests, output_dir: Path, engine_names: 
     return report
 
 
+# CLI orchestration and artifact emission.
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument('--backend', choices=['fake', 'hf', 'vllm'], default='fake')

@@ -3,7 +3,11 @@
 Raw artifacts keep stable engine IDs: `shadow_kv_plus` displays as MeritKV, `shadow_kv` displays as MeritKV-Sem, and `shadow_kv_plus_lite` displays as MeritKV-Lite.
 
 
-Use `experiments/run_p100_isolated_sweep.py` for a conservative public P100 rerun. The local `p100_transfer/` package remains a transfer artifact and is not needed in this repository.
+Use `experiments/run_p100_isolated_sweep.py` for a conservative P100 rerun. The
+frozen transfer package is expanded at `reproduction_packages/p100_hf/`, and
+its byte-identical archive is retained under `reproduction_packages/archives/`.
+Use the maintained runner for new work and the frozen package to reproduce or
+audit the historical environment.
 
 ## Why This Runner Is Isolated
 

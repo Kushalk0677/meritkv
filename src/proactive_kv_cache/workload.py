@@ -67,6 +67,7 @@ CUSTOMER_CASES = [
 ]
 
 
+# Normalized request schema used by every runner.
 @dataclass
 class Request:
     request_id: int
@@ -75,6 +76,7 @@ class Request:
     metadata: Optional[dict] = None
 
 
+# Seeded synthetic locality and arrival generator.
 class SyntheticWorkloadGenerator:
     def __init__(
         self,
@@ -217,6 +219,7 @@ def make_synthetic_workload(variant: str, n_requests: int, seed: int = 42, mean_
     return generator.generate(n_requests)
 
 
+# Public-dataset request construction.
 def make_public_dataset_workload(
     dataset_name: str,
     split: str,

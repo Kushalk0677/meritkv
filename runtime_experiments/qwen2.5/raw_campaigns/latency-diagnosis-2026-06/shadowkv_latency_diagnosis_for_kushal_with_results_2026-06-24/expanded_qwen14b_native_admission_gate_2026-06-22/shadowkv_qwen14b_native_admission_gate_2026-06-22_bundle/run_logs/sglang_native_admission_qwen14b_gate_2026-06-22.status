@@ -1,0 +1,9 @@
+state=completed
+mode=full
+run_id=sglang_native_admission_qwen14b_gate_2026-06-22
+updated_at=2026-06-22T20:48:17-04:00
+result_root=/home/jade_hand/research/shadowkv/results_sglang_native_admission_qwen14b_gate_2026-06-22
+log=/home/jade_hand/research/shadowkv/run_logs/sglang_native_admission_qwen14b_gate_2026-06-22.log
+image=shadowkv-sglang-native-admission:2026-06-22-counters
+total_jobs=12
+completed_at=2026-06-22T20:48:17-04:00

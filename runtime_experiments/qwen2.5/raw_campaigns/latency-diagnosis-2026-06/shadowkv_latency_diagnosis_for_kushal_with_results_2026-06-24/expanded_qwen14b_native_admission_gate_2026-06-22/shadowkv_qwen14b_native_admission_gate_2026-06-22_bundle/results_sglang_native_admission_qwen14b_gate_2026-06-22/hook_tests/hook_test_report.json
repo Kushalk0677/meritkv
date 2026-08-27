@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "api_base": "http://127.0.0.1:30000",
+  "model": "Qwen/Qwen2.5-14B-Instruct",
+  "failures": [],
+  "tests": {
+    "skip_lookup": {
+      "warm": {
+        "latency_ms": 13176.433112937957,
+        "wall_ms": 13176.445476012304,
+        "prompt_tokens": 1354,
+        "cached_tokens": 0,
+        "extra_key": null
+      },
+      "repeat_control": {
+        "latency_ms": 3921.81926604826,
+        "wall_ms": 3921.8298469204456,
+        "prompt_tokens": 1354,
+        "cached_tokens": 1353,
+        "extra_key": null
+      },
+      "skip_lookup_request": {
+        "latency_ms": 145.15206299256533,
+        "wall_ms": 145.1582049485296,
+        "prompt_tokens": 1354,
+        "cached_tokens": 0,
+        "extra_key": "__shadowkv_admission__:lookup=0;write=1;tag=deterministic_skip_lookup"
+      },
+      "server_metrics": {
+        "available": true,
+        "error": null,
+        "values": {
+          "extra_key_controls_total": 1,
+          "radix_skip_lookup_total": 1,
+          "skip_lookup_requested_total": 1
+        }
+      }
+    },
+    "skip_write": {
+      "skip_write_first": {
+        "latency_ms": 138.3582620183006,
+        "wall_ms": 138.37062497623265,
+        "prompt_tokens": 1353,
+        "cached_tokens": 0,
+        "extra_key": "__shadowkv_admission__:lookup=1;write=0;tag=deterministic_skip_write"
+      },
+      "repeat_after_skip_write": {
+        "latency_ms": 132.1395670529455,
+        "wall_ms": 132.14659004006535,
+        "prompt_tokens": 1353,
+        "cached_tokens": 0,
+        "extra_key": null
+      },
+      "repeat_after_normal_write": {
+        "latency_ms": 45.17054697498679,
+        "wall_ms": 45.17995496280491,
+        "prompt_tokens": 1353,
+        "cached_tokens": 1352,
+        "extra_key": null
+      },
+      "server_metrics": {
+        "available": true,
+        "error": null,
+        "values": {
+          "extra_key_controls_total": 1,
+          "radix_skip_write_finished_total": 1,
+          "skip_write_requested_total": 1
+        }
+      }
+    }
+  }
+}

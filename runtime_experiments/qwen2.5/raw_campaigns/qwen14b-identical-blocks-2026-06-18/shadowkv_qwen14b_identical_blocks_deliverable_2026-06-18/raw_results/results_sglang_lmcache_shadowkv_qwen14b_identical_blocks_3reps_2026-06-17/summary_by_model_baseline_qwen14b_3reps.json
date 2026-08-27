@@ -1,0 +1,50 @@
+[
+  {
+    "model_slug": "qwen25_14b",
+    "baseline": "lmcache_no_native_radix",
+    "cells": 30,
+    "mean_latency_ms": 52.306953285869895,
+    "mean_p95_latency_ms": 64.10581973032095,
+    "mean_throughput_rps": 19.362195768619458,
+    "mean_idle_adjusted_joules_per_request": 24.747881240178287,
+    "prompt_tokens_total": 2023650,
+    "cached_tokens_total": 23808,
+    "admission_plans_total": 0,
+    "admission_allow_total": 0,
+    "admission_bypass_total": 0,
+    "lmcache_retrieve_events": 88,
+    "lmcache_store_events": 2902
+  },
+  {
+    "model_slug": "qwen25_14b",
+    "baseline": "sglang_radix_attention",
+    "cells": 30,
+    "mean_latency_ms": 46.300800194861345,
+    "mean_p95_latency_ms": 52.570994826965034,
+    "mean_throughput_rps": 21.75345285762412,
+    "mean_idle_adjusted_joules_per_request": 19.388023141248546,
+    "prompt_tokens_total": 2023650,
+    "cached_tokens_total": 1055310,
+    "admission_plans_total": 0,
+    "admission_allow_total": 0,
+    "admission_bypass_total": 0,
+    "lmcache_retrieve_events": 0,
+    "lmcache_store_events": 0
+  },
+  {
+    "model_slug": "qwen25_14b",
+    "baseline": "sglang_radix_attention_shadowkv_plus",
+    "cells": 30,
+    "mean_latency_ms": 45.48998852542354,
+    "mean_p95_latency_ms": 51.467932751984335,
+    "mean_throughput_rps": 22.132780892556674,
+    "mean_idle_adjusted_joules_per_request": 19.363397965960473,
+    "prompt_tokens_total": 2023650,
+    "cached_tokens_total": 1055310,
+    "admission_plans_total": 7680,
+    "admission_allow_total": 7650,
+    "admission_bypass_total": 30,
+    "lmcache_retrieve_events": 0,
+    "lmcache_store_events": 0
+  }
+]

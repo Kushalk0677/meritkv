@@ -1,0 +1,126 @@
+{
+  "raw": {
+    "no_cache": {
+      "cells": 75,
+      "mean_latency_ms": 99.05581748601283,
+      "mean_speedup": 1.0,
+      "mean_waste": 0.0,
+      "mean_hit_rate": 0.0,
+      "requests_seen": 9600,
+      "learned_policy_admit_total": 0,
+      "learned_policy_bypass_total": 0,
+      "learned_policy_flip_to_admit_total": 0,
+      "learned_policy_flip_to_bypass_total": 0
+    },
+    "shadow_kv": {
+      "cells": 75,
+      "mean_latency_ms": 91.00614061690673,
+      "mean_speedup": 1.1071746821461803,
+      "mean_waste": 0.1250829540981632,
+      "mean_hit_rate": 0.6760416666666667,
+      "requests_seen": 9600,
+      "learned_policy_admit_total": 0,
+      "learned_policy_bypass_total": 0,
+      "learned_policy_flip_to_admit_total": 0,
+      "learned_policy_flip_to_bypass_total": 0
+    },
+    "shadow_kv_plus_lite": {
+      "cells": 75,
+      "mean_latency_ms": 94.17517912235174,
+      "mean_speedup": 1.0512552634518784,
+      "mean_waste": 0.0,
+      "mean_hit_rate": 0.1984375,
+      "requests_seen": 9600,
+      "learned_policy_admit_total": 0,
+      "learned_policy_bypass_total": 0,
+      "learned_policy_flip_to_admit_total": 0,
+      "learned_policy_flip_to_bypass_total": 0
+    },
+    "shadow_kv_plus": {
+      "cells": 75,
+      "mean_latency_ms": 91.35980341353086,
+      "mean_speedup": 1.1049554585739176,
+      "mean_waste": 0.013333333333333334,
+      "mean_hit_rate": 0.44375,
+      "requests_seen": 9600,
+      "learned_policy_admit_total": 0,
+      "learned_policy_bypass_total": 0,
+      "learned_policy_flip_to_admit_total": 0,
+      "learned_policy_flip_to_bypass_total": 0
+    },
+    "shadow_kv_plus_learned": {
+      "cells": 75,
+      "mean_latency_ms": 92.10222055014583,
+      "mean_speedup": 1.0878647060693072,
+      "mean_waste": 0.0,
+      "mean_hit_rate": 0.3307291666666667,
+      "requests_seen": 9600,
+      "learned_policy_admit_total": 3963,
+      "learned_policy_bypass_total": 2437,
+      "learned_policy_flip_to_admit_total": 0,
+      "learned_policy_flip_to_bypass_total": 2336
+    }
+  },
+  "utility": {
+    "no_cache": {
+      "cells": 75,
+      "mean_latency_ms": 98.95319080354056,
+      "mean_speedup": 1.0,
+      "mean_waste": 0.0,
+      "mean_hit_rate": 0.0,
+      "requests_seen": 9600,
+      "learned_policy_admit_total": 0,
+      "learned_policy_bypass_total": 0,
+      "learned_policy_flip_to_admit_total": 0,
+      "learned_policy_flip_to_bypass_total": 0
+    },
+    "shadow_kv": {
+      "cells": 75,
+      "mean_latency_ms": 90.08621514329964,
+      "mean_speedup": 1.125855022023188,
+      "mean_waste": 0.17392551016693367,
+      "mean_hit_rate": 0.6988541666666667,
+      "requests_seen": 9600,
+      "learned_policy_admit_total": 0,
+      "learned_policy_bypass_total": 0,
+      "learned_policy_flip_to_admit_total": 0,
+      "learned_policy_flip_to_bypass_total": 0
+    },
+    "shadow_kv_plus_lite": {
+      "cells": 75,
+      "mean_latency_ms": 93.9828226106177,
+      "mean_speedup": 1.052719331431566,
+      "mean_waste": 0.0,
+      "mean_hit_rate": 0.1984375,
+      "requests_seen": 9600,
+      "learned_policy_admit_total": 0,
+      "learned_policy_bypass_total": 0,
+      "learned_policy_flip_to_admit_total": 0,
+      "learned_policy_flip_to_bypass_total": 0
+    },
+    "shadow_kv_plus": {
+      "cells": 75,
+      "mean_latency_ms": 90.60119393325597,
+      "mean_speedup": 1.1209041710593388,
+      "mean_waste": 0.013333333333333334,
+      "mean_hit_rate": 0.44375,
+      "requests_seen": 9600,
+      "learned_policy_admit_total": 0,
+      "learned_policy_bypass_total": 0,
+      "learned_policy_flip_to_admit_total": 0,
+      "learned_policy_flip_to_bypass_total": 0
+    },
+    "shadow_kv_plus_learned": {
+      "cells": 75,
+      "mean_latency_ms": 91.21292302972961,
+      "mean_speedup": 1.1087854134862398,
+      "mean_waste": 0.0,
+      "mean_hit_rate": 0.3307291666666667,
+      "requests_seen": 9600,
+      "learned_policy_admit_total": 3175,
+      "learned_policy_bypass_total": 3225,
+      "learned_policy_flip_to_admit_total": 0,
+      "learned_policy_flip_to_bypass_total": 3124
+    }
+  }
+}

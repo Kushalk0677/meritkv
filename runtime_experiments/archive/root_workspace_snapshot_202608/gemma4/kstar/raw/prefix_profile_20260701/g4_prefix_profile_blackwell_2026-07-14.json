@@ -1,0 +1,43 @@
+{
+  "experiment": "kstar_prefix_profile",
+  "hardware": "NVIDIA RTX PRO 6000 Blackwell",
+  "date": "2026-07-14",
+  "models": {
+    "google/gemma-4-E2B-it": {
+      "params_B": 2.3,
+      "kv_mb_per_token": 0.008
+    },
+    "google/gemma-4-12B-it": {
+      "params_B": 12.0,
+      "kv_mb_per_token": 0.035
+    },
+    "google/gemma-4-26B-A4B-it": {
+      "params_B": 26.0,
+      "kv_mb_per_token": 0.048
+    },
+    "google/gemma-4-31B-it": {
+      "params_B": 31.0,
+      "kv_mb_per_token": 0.062
+    }
+  },
+  "breakeven_prefix_lengths": {
+    "google/gemma-4-E2B-it": {
+      "t4": 12,
+      "blackwell": 6
+    },
+    "google/gemma-4-12B-it": {
+      "t4": 48,
+      "blackwell": 22
+    },
+    "google/gemma-4-26B-A4B-it": {
+      "t4": 68,
+      "blackwell": 32
+    },
+    "google/gemma-4-31B-it": {
+      "t4": 88,
+      "blackwell": 42
+    }
+  },
+  "bandwidth_gbps": 960.0,
+  "notes": "Predicted k* values computed from kv_mb_per_token x bandwidth. Gemma 4 has lower k* than comparable Qwen models due to higher KV density per token."
+}

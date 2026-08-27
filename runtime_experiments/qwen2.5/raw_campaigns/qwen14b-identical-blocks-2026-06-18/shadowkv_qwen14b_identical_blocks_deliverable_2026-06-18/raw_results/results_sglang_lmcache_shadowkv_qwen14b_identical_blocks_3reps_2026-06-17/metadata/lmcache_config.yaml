@@ -1,0 +1,7 @@
+chunk_size: 256
+local_cpu: true
+max_local_cpu_size: 20.0
+use_layerwise: false
+save_decode_cache: false
+mp_host: 127.0.0.1
+mp_port: 5555

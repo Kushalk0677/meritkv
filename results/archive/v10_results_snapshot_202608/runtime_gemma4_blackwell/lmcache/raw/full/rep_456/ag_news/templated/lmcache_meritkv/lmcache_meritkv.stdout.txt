@@ -1,0 +1,2 @@
+Benchmark lmcache_meritkv for google/gemma-4-31B-it ag_news templated seed=456
+Latency: 55.88ms, Throughput: 17.90 rps

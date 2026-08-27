@@ -1,6 +1,6 @@
 # Qwen2.5 Runtime Experiments
 
-This folder contains measured Qwen2.5 runtime aggregates and selected raw
+This folder contains measured Qwen2.5 runtime aggregates and all retained raw
 Blackwell campaign records. The current paper-facing aggregation is in
 `summary.md`.
 
@@ -27,19 +27,22 @@ Qwen2.5 1.5B, 3B, 7B, 14B, and 32B appear in the curated tables. The included vL
 | `kstar/raw/response_usage_probe_20260701/` | Response-usage probe for the k-star run. |
 | `kstar/raw/run_logs_20260701/` | Logs for the k-star and vLLM runtime runs. |
 | `summary.md` | Cross-runtime Qwen2.5 summary. |
+| `raw_campaigns/` | Complete preserved June 2026 transfer bundles for Qwen-14B/32B, three-model SGLang/LMCache, no-native-radix, policy-overlay, energy, and diagnostics. |
 
 ## Notes
 
 - The top-level CSVs are compact paper-aligned measured aggregates, not
   reconstructed per-dataset or per-seed tables.
-- Every reported table row is a direct measurement. The checked-in raw bundles
-  are selected audit artifacts, with the most complete coverage for Qwen2.5-32B.
+- Every reported table row is a direct measurement. All campaign files retained
+  in the project workspace are included; the broad scale CSVs remain compact
+  aggregates when the original handoff supplied only an aggregate for a cell.
 - The production integration is write-through. Overlay differences are
   compatibility/overhead observations, not MeritKV-caused acceleration.
 - The balanced-admission folder is a separately scoped native SGLang
   enforcement experiment. It demonstrates lookup/waste avoidance with an
   explicit latency cost and does not change the interpretation of the broad
   write-through scale study.
-- The `raw/` subfolders keep the run files needed to audit or regenerate selected values without cluttering the top-level runtime folders.
+- The `raw/` and `raw_campaigns/` subfolders keep original run files, transfer
+  layouts, and historical summaries without cluttering the paper-facing level.
 - The July 1 vLLM aggregate contains all five replicates. The June 3 vLLM run is retained as an additional full run tree.
 

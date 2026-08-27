@@ -1,0 +1,4289 @@
+{
+  "environment": {
+    "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "torch": "2.11.0+cpu",
+    "transformers": "5.7.0",
+    "cuda_available": false,
+    "cuda_version": null
+  },
+  "configuration": {
+    "model_id": null,
+    "tiny_model": "tiny-llama",
+    "revision": null,
+    "device": "cpu",
+    "dtype": "float32",
+    "attention_implementation": "eager",
+    "sequence_length": 32,
+    "shared_ratios": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "samples": 3,
+    "max_new_tokens": 8,
+    "seed": 42,
+    "atol": 1e-05,
+    "rtol": 1e-05,
+    "passes_cache_position": true,
+    "passes_position_ids": true
+  },
+  "summary": {
+    "cases": 9,
+    "strict_passes": 9,
+    "cache_passes": 9,
+    "native_token_passes": 9,
+    "splice_token_passes": 9,
+    "all_strict_pass": true
+  },
+  "cases": [
+    {
+      "shared_tokens": 8,
+      "total_tokens": 32,
+      "cache_length_before_continuation": {
+        "clean": 8,
+        "spliced": 8
+      },
+      "prefix_cache": {
+        "clean_layers": 2,
+        "spliced_layers": 2,
+        "layer_count_equal": true,
+        "allclose": true,
+        "layers": [
+          {
+            "layer": 0,
+            "key": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                8,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            },
+            "value": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                8,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            }
+          },
+          {
+            "layer": 1,
+            "key": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                8,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            },
+            "value": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                8,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            }
+          }
+        ]
+      },
+      "suffix_logits": {
+        "native_vs_full": {
+          "same_shape": true,
+          "shape": [
+            1,
+            24,
+            257
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 0.0
+        },
+        "splice_vs_full": {
+          "same_shape": true,
+          "shape": [
+            1,
+            24,
+            257
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 0.0
+        },
+        "splice_vs_native": {
+          "same_shape": true,
+          "shape": [
+            1,
+            24,
+            257
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 0.0
+        }
+      },
+      "generation": {
+        "steps": [
+          {
+            "step": 0,
+            "reference_token": 205,
+            "native_token": 205,
+            "splice_token": 205,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 1,
+            "reference_token": 254,
+            "native_token": 254,
+            "splice_token": 254,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.4662835329536392e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.1874362826347351e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.4662835329536392e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.1874362826347351e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 2,
+            "reference_token": 50,
+            "native_token": 50,
+            "splice_token": 50,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.5208050757896672e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.3515895009040833e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.5208050757896672e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.3515895009040833e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 3,
+            "reference_token": 35,
+            "native_token": 35,
+            "splice_token": 35,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.043081283569336e-07,
+              "mean_abs": 2.5373104506343225e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 4.470348358154297e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.043081283569336e-07,
+              "mean_abs": 2.5373104506343225e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 4.470348358154297e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 4,
+            "reference_token": 14,
+            "native_token": 14,
+            "splice_token": 14,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 8.940696716308594e-08,
+              "mean_abs": 2.3250237290994846e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.0372681319713593e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 8.940696716308594e-08,
+              "mean_abs": 2.3250237290994846e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.0372681319713593e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 5,
+            "reference_token": 192,
+            "native_token": 192,
+            "splice_token": 192,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.421098876936867e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 3.003515303134918e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.421098876936867e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 3.003515303134918e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 6,
+            "reference_token": 143,
+            "native_token": 143,
+            "splice_token": 143,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 8.940696716308594e-08,
+              "mean_abs": 2.1746677347778132e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 3.5390257835388184e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 8.940696716308594e-08,
+              "mean_abs": 2.1746677347778132e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 3.5390257835388184e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 7,
+            "reference_token": 120,
+            "native_token": 120,
+            "splice_token": 120,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.7881393432617188e-07,
+              "mean_abs": 2.464290460579832e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 4.9243681132793427e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.7881393432617188e-07,
+              "mean_abs": 2.464290460579832e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 4.9243681132793427e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          }
+        ],
+        "native_token_pass": true,
+        "splice_token_pass": true
+      },
+      "strict_pass": true,
+      "sample": 0,
+      "shared_ratio": 0.25
+    },
+    {
+      "shared_tokens": 16,
+      "total_tokens": 32,
+      "cache_length_before_continuation": {
+        "clean": 16,
+        "spliced": 16
+      },
+      "prefix_cache": {
+        "clean_layers": 2,
+        "spliced_layers": 2,
+        "layer_count_equal": true,
+        "allclose": true,
+        "layers": [
+          {
+            "layer": 0,
+            "key": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                16,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            },
+            "value": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                16,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            }
+          },
+          {
+            "layer": 1,
+            "key": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                16,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            },
+            "value": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                16,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            }
+          }
+        ]
+      },
+      "suffix_logits": {
+        "native_vs_full": {
+          "same_shape": true,
+          "shape": [
+            1,
+            16,
+            257
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 0.0
+        },
+        "splice_vs_full": {
+          "same_shape": true,
+          "shape": [
+            1,
+            16,
+            257
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 0.0
+        },
+        "splice_vs_native": {
+          "same_shape": true,
+          "shape": [
+            1,
+            16,
+            257
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 0.0
+        }
+      },
+      "generation": {
+        "steps": [
+          {
+            "step": 0,
+            "reference_token": 214,
+            "native_token": 214,
+            "splice_token": 214,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 1,
+            "reference_token": 201,
+            "native_token": 201,
+            "splice_token": 201,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.341104507446289e-07,
+              "mean_abs": 2.935115617219708e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.5494955480098724e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.341104507446289e-07,
+              "mean_abs": 2.935115617219708e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.5494955480098724e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 2,
+            "reference_token": 153,
+            "native_token": 153,
+            "splice_token": 153,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 8.940696716308594e-08,
+              "mean_abs": 2.263173826122511e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.8044374883174896e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 8.940696716308594e-08,
+              "mean_abs": 2.263173826122511e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.8044374883174896e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 3,
+            "reference_token": 256,
+            "native_token": 256,
+            "splice_token": 256,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.7175049766015036e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.1874362826347351e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.7175049766015036e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.1874362826347351e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 4,
+            "reference_token": 12,
+            "native_token": 12,
+            "splice_token": 12,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 8.940696716308594e-08,
+              "mean_abs": 2.4676952037339106e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.7811544239521027e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 8.940696716308594e-08,
+              "mean_abs": 2.4676952037339106e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.7811544239521027e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 5,
+            "reference_token": 191,
+            "native_token": 191,
+            "splice_token": 191,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 8.940696716308594e-08,
+              "mean_abs": 2.365677076454631e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.9907020032405853e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 8.940696716308594e-08,
+              "mean_abs": 2.365677076454631e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.9907020032405853e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 6,
+            "reference_token": 38,
+            "native_token": 38,
+            "splice_token": 38,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.5744377296632592e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 6.915070116519928e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.5744377296632592e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 6.915070116519928e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 7,
+            "reference_token": 23,
+            "native_token": 23,
+            "splice_token": 23,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.285046996064466e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 3.387685865163803e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.285046996064466e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 3.387685865163803e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          }
+        ],
+        "native_token_pass": true,
+        "splice_token_pass": true
+      },
+      "strict_pass": true,
+      "sample": 0,
+      "shared_ratio": 0.5
+    },
+    {
+      "shared_tokens": 24,
+      "total_tokens": 32,
+      "cache_length_before_continuation": {
+        "clean": 24,
+        "spliced": 24
+      },
+      "prefix_cache": {
+        "clean_layers": 2,
+        "spliced_layers": 2,
+        "layer_count_equal": true,
+        "allclose": true,
+        "layers": [
+          {
+            "layer": 0,
+            "key": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                24,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            },
+            "value": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                24,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            }
+          },
+          {
+            "layer": 1,
+            "key": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                24,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            },
+            "value": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                24,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            }
+          }
+        ]
+      },
+      "suffix_logits": {
+        "native_vs_full": {
+          "same_shape": true,
+          "shape": [
+            1,
+            8,
+            257
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 0.0
+        },
+        "splice_vs_full": {
+          "same_shape": true,
+          "shape": [
+            1,
+            8,
+            257
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 0.0
+        },
+        "splice_vs_native": {
+          "same_shape": true,
+          "shape": [
+            1,
+            8,
+            257
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 0.0
+        }
+      },
+      "generation": {
+        "steps": [
+          {
+            "step": 0,
+            "reference_token": 161,
+            "native_token": 161,
+            "splice_token": 161,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 1,
+            "reference_token": 122,
+            "native_token": 122,
+            "splice_token": 122,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 3.0164251541009435e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.5133991837501526e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 3.0164251541009435e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.5133991837501526e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 2,
+            "reference_token": 122,
+            "native_token": 122,
+            "splice_token": 122,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.49507028371454e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 5.6228600442409515e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.49507028371454e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 5.6228600442409515e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 3,
+            "reference_token": 122,
+            "native_token": 122,
+            "splice_token": 122,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.043081283569336e-07,
+              "mean_abs": 2.350162553454993e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.210719347000122e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.043081283569336e-07,
+              "mean_abs": 2.350162553454993e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.210719347000122e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 4,
+            "reference_token": 122,
+            "native_token": 122,
+            "splice_token": 122,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.7881393432617188e-07,
+              "mean_abs": 2.604260629368582e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.7008354663848877e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.7881393432617188e-07,
+              "mean_abs": 2.604260629368582e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.7008354663848877e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 5,
+            "reference_token": 122,
+            "native_token": 122,
+            "splice_token": 122,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.5239701884061105e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 4.132743924856186e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.5239701884061105e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 4.132743924856186e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 6,
+            "reference_token": 122,
+            "native_token": 122,
+            "splice_token": 122,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.043081283569336e-07,
+              "mean_abs": 2.415660382837359e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.4668330550193787e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.043081283569336e-07,
+              "mean_abs": 2.415660382837359e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.4668330550193787e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 7,
+            "reference_token": 122,
+            "native_token": 122,
+            "splice_token": 122,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 8.195638656616211e-08,
+              "mean_abs": 2.1848936881951886e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 7.997732609510422e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 8.195638656616211e-08,
+              "mean_abs": 2.1848936881951886e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 7.997732609510422e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          }
+        ],
+        "native_token_pass": true,
+        "splice_token_pass": true
+      },
+      "strict_pass": true,
+      "sample": 0,
+      "shared_ratio": 0.75
+    },
+    {
+      "shared_tokens": 8,
+      "total_tokens": 32,
+      "cache_length_before_continuation": {
+        "clean": 8,
+        "spliced": 8
+      },
+      "prefix_cache": {
+        "clean_layers": 2,
+        "spliced_layers": 2,
+        "layer_count_equal": true,
+        "allclose": true,
+        "layers": [
+          {
+            "layer": 0,
+            "key": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                8,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            },
+            "value": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                8,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            }
+          },
+          {
+            "layer": 1,
+            "key": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                8,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            },
+            "value": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                8,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            }
+          }
+        ]
+      },
+      "suffix_logits": {
+        "native_vs_full": {
+          "same_shape": true,
+          "shape": [
+            1,
+            24,
+            257
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 0.0
+        },
+        "splice_vs_full": {
+          "same_shape": true,
+          "shape": [
+            1,
+            24,
+            257
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 0.0
+        },
+        "splice_vs_native": {
+          "same_shape": true,
+          "shape": [
+            1,
+            24,
+            257
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 0.0
+        }
+      },
+      "generation": {
+        "steps": [
+          {
+            "step": 0,
+            "reference_token": 196,
+            "native_token": 196,
+            "splice_token": 196,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 1,
+            "reference_token": 110,
+            "native_token": 110,
+            "splice_token": 110,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.8117245420844483e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.4086253941059113e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.8117245420844483e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.4086253941059113e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 2,
+            "reference_token": 176,
+            "native_token": 176,
+            "splice_token": 176,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.3252487935110366e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 9.19681042432785e-09
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.3252487935110366e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 9.19681042432785e-09
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 3,
+            "reference_token": 239,
+            "native_token": 239,
+            "splice_token": 239,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.9267695822454698e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 3.899913281202316e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.9267695822454698e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 3.899913281202316e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 4,
+            "reference_token": 196,
+            "native_token": 196,
+            "splice_token": 196,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.7881393432617188e-07,
+              "mean_abs": 2.983618330176796e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.7345882952213287e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.7881393432617188e-07,
+              "mean_abs": 2.983618330176796e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.7345882952213287e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 5,
+            "reference_token": 110,
+            "native_token": 110,
+            "splice_token": 110,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.808689458788649e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 4.260800778865814e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.808689458788649e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 4.260800778865814e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 6,
+            "reference_token": 176,
+            "native_token": 176,
+            "splice_token": 176,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.341104507446289e-07,
+              "mean_abs": 2.781669294904532e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.3399479687213898e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.341104507446289e-07,
+              "mean_abs": 2.781669294904532e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.3399479687213898e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 7,
+            "reference_token": 239,
+            "native_token": 239,
+            "splice_token": 239,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 3.002201509616498e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.421438694000244e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 3.002201509616498e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.421438694000244e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          }
+        ],
+        "native_token_pass": true,
+        "splice_token_pass": true
+      },
+      "strict_pass": true,
+      "sample": 1,
+      "shared_ratio": 0.25
+    },
+    {
+      "shared_tokens": 16,
+      "total_tokens": 32,
+      "cache_length_before_continuation": {
+        "clean": 16,
+        "spliced": 16
+      },
+      "prefix_cache": {
+        "clean_layers": 2,
+        "spliced_layers": 2,
+        "layer_count_equal": true,
+        "allclose": true,
+        "layers": [
+          {
+            "layer": 0,
+            "key": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                16,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            },
+            "value": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                16,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            }
+          },
+          {
+            "layer": 1,
+            "key": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                16,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            },
+            "value": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                16,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            }
+          }
+        ]
+      },
+      "suffix_logits": {
+        "native_vs_full": {
+          "same_shape": true,
+          "shape": [
+            1,
+            16,
+            257
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 0.0
+        },
+        "splice_vs_full": {
+          "same_shape": true,
+          "shape": [
+            1,
+            16,
+            257
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 0.0
+        },
+        "splice_vs_native": {
+          "same_shape": true,
+          "shape": [
+            1,
+            16,
+            257
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 0.0
+        }
+      },
+      "generation": {
+        "steps": [
+          {
+            "step": 0,
+            "reference_token": 212,
+            "native_token": 212,
+            "splice_token": 212,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 1,
+            "reference_token": 27,
+            "native_token": 27,
+            "splice_token": 27,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.8567050947003736e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 8.766073733568192e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.8567050947003736e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 8.766073733568192e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 2,
+            "reference_token": 160,
+            "native_token": 160,
+            "splice_token": 160,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.043081283569336e-07,
+              "mean_abs": 2.150600408867831e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.3166649043560028e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.043081283569336e-07,
+              "mean_abs": 2.150600408867831e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.3166649043560028e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 3,
+            "reference_token": 168,
+            "native_token": 168,
+            "splice_token": 168,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.6793870233632333e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.1990778148174286e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.6793870233632333e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.1990778148174286e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 4,
+            "reference_token": 182,
+            "native_token": 182,
+            "splice_token": 182,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.4879131643729124e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.8742866814136505e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.4879131643729124e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.8742866814136505e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 5,
+            "reference_token": 109,
+            "native_token": 109,
+            "splice_token": 109,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.668266319005852e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.6065314412117004e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.668266319005852e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.6065314412117004e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 6,
+            "reference_token": 120,
+            "native_token": 120,
+            "splice_token": 120,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.3516630420772344e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 3.8067810237407684e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.3516630420772344e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 3.8067810237407684e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 7,
+            "reference_token": 211,
+            "native_token": 211,
+            "splice_token": 211,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.7881393432617188e-07,
+              "mean_abs": 2.7779323730214855e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.3620592653751373e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.7881393432617188e-07,
+              "mean_abs": 2.7779323730214855e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.3620592653751373e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          }
+        ],
+        "native_token_pass": true,
+        "splice_token_pass": true
+      },
+      "strict_pass": true,
+      "sample": 1,
+      "shared_ratio": 0.5
+    },
+    {
+      "shared_tokens": 24,
+      "total_tokens": 32,
+      "cache_length_before_continuation": {
+        "clean": 24,
+        "spliced": 24
+      },
+      "prefix_cache": {
+        "clean_layers": 2,
+        "spliced_layers": 2,
+        "layer_count_equal": true,
+        "allclose": true,
+        "layers": [
+          {
+            "layer": 0,
+            "key": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                24,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            },
+            "value": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                24,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            }
+          },
+          {
+            "layer": 1,
+            "key": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                24,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            },
+            "value": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                24,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            }
+          }
+        ]
+      },
+      "suffix_logits": {
+        "native_vs_full": {
+          "same_shape": true,
+          "shape": [
+            1,
+            8,
+            257
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 0.0
+        },
+        "splice_vs_full": {
+          "same_shape": true,
+          "shape": [
+            1,
+            8,
+            257
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 0.0
+        },
+        "splice_vs_native": {
+          "same_shape": true,
+          "shape": [
+            1,
+            8,
+            257
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 0.0
+        }
+      },
+      "generation": {
+        "steps": [
+          {
+            "step": 0,
+            "reference_token": 145,
+            "native_token": 145,
+            "splice_token": 145,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 1,
+            "reference_token": 75,
+            "native_token": 75,
+            "splice_token": 75,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.7881393432617188e-07,
+              "mean_abs": 2.525023390376191e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.0826624929904938e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.7881393432617188e-07,
+              "mean_abs": 2.525023390376191e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.0826624929904938e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 2,
+            "reference_token": 19,
+            "native_token": 19,
+            "splice_token": 19,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.4770304918320107e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.130400389432907e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.4770304918320107e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.130400389432907e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 3,
+            "reference_token": 188,
+            "native_token": 188,
+            "splice_token": 188,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 2.086162567138672e-07,
+              "mean_abs": 2.7460426821335204e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.9103830456733704e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 2.086162567138672e-07,
+              "mean_abs": 2.7460426821335204e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.9103830456733704e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 4,
+            "reference_token": 188,
+            "native_token": 188,
+            "splice_token": 188,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.341104507446289e-07,
+              "mean_abs": 2.84723800092479e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.3399479687213898e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.341104507446289e-07,
+              "mean_abs": 2.84723800092479e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.3399479687213898e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 5,
+            "reference_token": 188,
+            "native_token": 188,
+            "splice_token": 188,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 9.313225746154785e-08,
+              "mean_abs": 2.4343485449662694e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.4097971618175507e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 9.313225746154785e-08,
+              "mean_abs": 2.4343485449662694e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.4097971618175507e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 6,
+            "reference_token": 188,
+            "native_token": 188,
+            "splice_token": 188,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.6279966647280162e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.1641532182693481e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.6279966647280162e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.1641532182693481e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 7,
+            "reference_token": 188,
+            "native_token": 188,
+            "splice_token": 188,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.846603841533124e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 4.3888576328754425e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.846603841533124e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 4.3888576328754425e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          }
+        ],
+        "native_token_pass": true,
+        "splice_token_pass": true
+      },
+      "strict_pass": true,
+      "sample": 1,
+      "shared_ratio": 0.75
+    },
+    {
+      "shared_tokens": 8,
+      "total_tokens": 32,
+      "cache_length_before_continuation": {
+        "clean": 8,
+        "spliced": 8
+      },
+      "prefix_cache": {
+        "clean_layers": 2,
+        "spliced_layers": 2,
+        "layer_count_equal": true,
+        "allclose": true,
+        "layers": [
+          {
+            "layer": 0,
+            "key": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                8,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            },
+            "value": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                8,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            }
+          },
+          {
+            "layer": 1,
+            "key": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                8,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            },
+            "value": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                8,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            }
+          }
+        ]
+      },
+      "suffix_logits": {
+        "native_vs_full": {
+          "same_shape": true,
+          "shape": [
+            1,
+            24,
+            257
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 0.0
+        },
+        "splice_vs_full": {
+          "same_shape": true,
+          "shape": [
+            1,
+            24,
+            257
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 0.0
+        },
+        "splice_vs_native": {
+          "same_shape": true,
+          "shape": [
+            1,
+            24,
+            257
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 0.0
+        }
+      },
+      "generation": {
+        "steps": [
+          {
+            "step": 0,
+            "reference_token": 130,
+            "native_token": 130,
+            "splice_token": 130,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 1,
+            "reference_token": 52,
+            "native_token": 52,
+            "splice_token": 52,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.541070109884913e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 3.457535058259964e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.541070109884913e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 3.457535058259964e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 2,
+            "reference_token": 54,
+            "native_token": 54,
+            "splice_token": 54,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.7207665453943264e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.3748725652694702e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.7207665453943264e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.3748725652694702e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 3,
+            "reference_token": 96,
+            "native_token": 96,
+            "splice_token": 96,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.0942300338333553e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.1059455573558807e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.0942300338333553e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.1059455573558807e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 4,
+            "reference_token": 97,
+            "native_token": 97,
+            "splice_token": 97,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 8.940696716308594e-08,
+              "mean_abs": 2.2132500276939027e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.805609256029129e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 8.940696716308594e-08,
+              "mean_abs": 2.2132500276939027e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.805609256029129e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 5,
+            "reference_token": 26,
+            "native_token": 26,
+            "splice_token": 26,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.3408992078088886e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 5.296897143125534e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.3408992078088886e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 5.296897143125534e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 6,
+            "reference_token": 92,
+            "native_token": 92,
+            "splice_token": 92,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.896431361421037e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 3.562308847904205e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.896431361421037e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 3.562308847904205e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 7,
+            "reference_token": 92,
+            "native_token": 92,
+            "splice_token": 92,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.5895840138900894e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 6.274785846471786e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.5895840138900894e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 6.274785846471786e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          }
+        ],
+        "native_token_pass": true,
+        "splice_token_pass": true
+      },
+      "strict_pass": true,
+      "sample": 2,
+      "shared_ratio": 0.25
+    },
+    {
+      "shared_tokens": 16,
+      "total_tokens": 32,
+      "cache_length_before_continuation": {
+        "clean": 16,
+        "spliced": 16
+      },
+      "prefix_cache": {
+        "clean_layers": 2,
+        "spliced_layers": 2,
+        "layer_count_equal": true,
+        "allclose": true,
+        "layers": [
+          {
+            "layer": 0,
+            "key": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                16,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            },
+            "value": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                16,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            }
+          },
+          {
+            "layer": 1,
+            "key": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                16,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            },
+            "value": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                16,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            }
+          }
+        ]
+      },
+      "suffix_logits": {
+        "native_vs_full": {
+          "same_shape": true,
+          "shape": [
+            1,
+            16,
+            257
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 0.0
+        },
+        "splice_vs_full": {
+          "same_shape": true,
+          "shape": [
+            1,
+            16,
+            257
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 0.0
+        },
+        "splice_vs_native": {
+          "same_shape": true,
+          "shape": [
+            1,
+            16,
+            257
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 0.0
+        }
+      },
+      "generation": {
+        "steps": [
+          {
+            "step": 0,
+            "reference_token": 177,
+            "native_token": 177,
+            "splice_token": 177,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 1,
+            "reference_token": 208,
+            "native_token": 208,
+            "splice_token": 208,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 7.450580596923828e-08,
+              "mean_abs": 2.614452654370325e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.1420419216156006e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 7.450580596923828e-08,
+              "mean_abs": 2.614452654370325e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.1420419216156006e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 2,
+            "reference_token": 122,
+            "native_token": 122,
+            "splice_token": 122,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.9157961378700747e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 3.282912075519562e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.9157961378700747e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 3.282912075519562e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 3,
+            "reference_token": 122,
+            "native_token": 122,
+            "splice_token": 122,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.5032464989749315e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.4086253941059113e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.5032464989749315e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.4086253941059113e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 4,
+            "reference_token": 122,
+            "native_token": 122,
+            "splice_token": 122,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 8.940696716308594e-08,
+              "mean_abs": 2.631054307755676e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.223532646894455e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 8.940696716308594e-08,
+              "mean_abs": 2.631054307755676e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.223532646894455e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 5,
+            "reference_token": 122,
+            "native_token": 122,
+            "splice_token": 122,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.019284828236323e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.0943040251731873e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.019284828236323e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.0943040251731873e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 6,
+            "reference_token": 122,
+            "native_token": 122,
+            "splice_token": 122,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.7881393432617188e-07,
+              "mean_abs": 2.901051665560317e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 3.434251993894577e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.7881393432617188e-07,
+              "mean_abs": 2.901051665560317e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 3.434251993894577e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 7,
+            "reference_token": 122,
+            "native_token": 122,
+            "splice_token": 122,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4156103134155273e-07,
+              "mean_abs": 2.476602922740767e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 4.260800778865814e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4156103134155273e-07,
+              "mean_abs": 2.476602922740767e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 4.260800778865814e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          }
+        ],
+        "native_token_pass": true,
+        "splice_token_pass": true
+      },
+      "strict_pass": true,
+      "sample": 2,
+      "shared_ratio": 0.5
+    },
+    {
+      "shared_tokens": 24,
+      "total_tokens": 32,
+      "cache_length_before_continuation": {
+        "clean": 24,
+        "spliced": 24
+      },
+      "prefix_cache": {
+        "clean_layers": 2,
+        "spliced_layers": 2,
+        "layer_count_equal": true,
+        "allclose": true,
+        "layers": [
+          {
+            "layer": 0,
+            "key": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                24,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            },
+            "value": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                24,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            }
+          },
+          {
+            "layer": 1,
+            "key": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                24,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            },
+            "value": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                24,
+                16
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            }
+          }
+        ]
+      },
+      "suffix_logits": {
+        "native_vs_full": {
+          "same_shape": true,
+          "shape": [
+            1,
+            8,
+            257
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 0.0
+        },
+        "splice_vs_full": {
+          "same_shape": true,
+          "shape": [
+            1,
+            8,
+            257
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 0.0
+        },
+        "splice_vs_native": {
+          "same_shape": true,
+          "shape": [
+            1,
+            8,
+            257
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 0.0
+        }
+      },
+      "generation": {
+        "steps": [
+          {
+            "step": 0,
+            "reference_token": 32,
+            "native_token": 32,
+            "splice_token": 32,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 1,
+            "reference_token": 225,
+            "native_token": 225,
+            "splice_token": 225,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 8.940696716308594e-08,
+              "mean_abs": 2.5260312952468666e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.6763806343078613e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 8.940696716308594e-08,
+              "mean_abs": 2.5260312952468666e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.6763806343078613e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 2,
+            "reference_token": 246,
+            "native_token": 246,
+            "splice_token": 246,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.2671091670645183e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 6.030313670635223e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.2671091670645183e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 6.030313670635223e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 3,
+            "reference_token": 102,
+            "native_token": 102,
+            "splice_token": 102,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.341104507446289e-07,
+              "mean_abs": 2.8393108308932824e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.618172973394394e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.341104507446289e-07,
+              "mean_abs": 2.8393108308932824e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.618172973394394e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 4,
+            "reference_token": 252,
+            "native_token": 252,
+            "splice_token": 252,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.9371509552001953e-07,
+              "mean_abs": 2.6954223741881833e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 3.294553607702255e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.9371509552001953e-07,
+              "mean_abs": 2.6954223741881833e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 3.294553607702255e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 5,
+            "reference_token": 139,
+            "native_token": 139,
+            "splice_token": 139,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 3.1022530322388775e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 3.725290298461914e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 3.1022530322388775e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 3.725290298461914e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 6,
+            "reference_token": 14,
+            "native_token": 14,
+            "splice_token": 14,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.5063719988338562e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 7.834751158952713e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.5063719988338562e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 7.834751158952713e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          },
+          {
+            "step": 7,
+            "reference_token": 192,
+            "native_token": 192,
+            "splice_token": 192,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.8862110923455475e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.6542693376541138e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.8862110923455475e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.6542693376541138e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            }
+          }
+        ],
+        "native_token_pass": true,
+        "splice_token_pass": true
+      },
+      "strict_pass": true,
+      "sample": 2,
+      "shared_ratio": 0.75
+    }
+  ]
+}

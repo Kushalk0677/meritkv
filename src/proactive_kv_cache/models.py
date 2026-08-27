@@ -24,6 +24,7 @@ class PrefillResult:
     prepared_past_length: int = 0
 
 
+# Backend contract shared by synthetic and model runtimes.
 class Backend:
     device: str = 'cpu'
     backend_name: str = 'base'
@@ -92,6 +93,7 @@ class Backend:
         return int(max(token_count, 0) * 1024)
 
 
+# Deterministic synthetic backend for policy isolation.
 class FakeBackend(Backend):
     backend_name = 'fake'
     default_min_reuse_prefix_tokens = 3
@@ -217,6 +219,7 @@ class FakeBackend(Backend):
         return past_key_values
 
 
+# Hugging Face execution and explicit cache continuation.
 class HuggingFaceBackend(Backend):
     backend_name = 'hf'
     default_min_reuse_prefix_tokens = 16
@@ -530,6 +533,7 @@ class HuggingFaceBackend(Backend):
         )
 
 
+# vLLM-compatible generation wrapper.
 class VLLMBackend(Backend):
     """INLINE DEPRECATED — use the external HTTP adapter for benchmarks.
 
@@ -672,6 +676,7 @@ def _read_gpu_utilization(nvml_state: Any) -> float | None:
         return None
 
 
+# Hybrid routing between measured and synthetic paths.
 class HybridBackend(Backend):
     """A backend that can delegate to multiple backends with fallback support."""
 
@@ -750,6 +755,7 @@ def supports_gpu() -> bool:
         return False
 
 
+# Backend construction from benchmark arguments.
 def load_backend(
     backend: str,
     model_name: str | None = None,

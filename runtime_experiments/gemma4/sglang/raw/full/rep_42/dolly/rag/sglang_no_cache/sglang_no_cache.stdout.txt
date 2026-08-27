@@ -1,0 +1,2 @@
+Benchmark sglang_no_cache for google/gemma-4-31B-it dolly rag seed=42
+Latency: 115.92ms, Throughput: 8.63 rps

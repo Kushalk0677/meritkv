@@ -1,0 +1,29 @@
+{
+  "experiment": "Memory-bound LRU/LFU baseline comparison (Gemma-4-31B)",
+  "model": "google/gemma-4-31B-it",
+  "hardware": "Blackwell RTX PRO 6000",
+  "trace": "20+[15+15]x4=140 requests",
+  "seeds": [
+    42,
+    123,
+    456,
+    789,
+    999
+  ],
+  "budgets": [
+    "28 GB (high_pressure)",
+    "56 GB (moderate_pressure)"
+  ],
+  "arms": [
+    "native_apc (internal key for controlled-bank admit-all)",
+    "fifo_cap",
+    "lru",
+    "lfu",
+    "meritkv"
+  ],
+  "cache_layer": "TieredStateBank (all policies on same layer)",
+  "paired_protocol": "fresh cache per seed; identical request ordering per seed across arms",
+  "recovery_definition": "final-round token-level shared-prefix reuse fraction",
+  "artifact_scope": "compact per-seed ledgers, summaries, aggregates, run-status logs, metadata, and checksums",
+  "new_runs": "LRU+LFU x 2 budgets x 5 seeds = 20"
+}

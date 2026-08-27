@@ -1,0 +1,2 @@
+Benchmark sglang_no_cache for google/gemma-4-31B-it ag_news rag seed=999
+Latency: 111.79ms, Throughput: 8.95 rps

@@ -1,0 +1,4 @@
+FROM vllm/vllm-openai:v0.20.1
+
+RUN pip install --no-cache-dir --upgrade "lmcache==0.5.1" \
+    && python3 -c "import importlib.metadata as m; assert m.version('vllm') == '0.20.1'; assert m.version('lmcache') == '0.5.1'"

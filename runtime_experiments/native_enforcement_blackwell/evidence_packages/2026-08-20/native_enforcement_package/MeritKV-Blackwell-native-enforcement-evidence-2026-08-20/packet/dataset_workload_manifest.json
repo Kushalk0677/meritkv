@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "frozen_config_sha256": "0a35f52a0930276f019b73ab2c51eed0bbbc7ba0c09afdd9bc9da3552d982e32",
+  "core_sha256": "942f41f4df4fb3379fd51e29a1c6b3e61b8459bb442edc8e9a73f796b1a8f20b",
+  "datasets": [
+    {
+      "dataset": "daily_dialog",
+      "hf_name": "DeepPavlov/daily_dialog",
+      "split": "train",
+      "rows": 87170,
+      "fingerprint": "f3e877abdbff64c7",
+      "prepared_revision": "12f30df52a776875c2e334d9d051fa67afd15756"
+    },
+    {
+      "dataset": "samsum",
+      "hf_name": "knkarthick/samsum",
+      "split": "train",
+      "rows": 14731,
+      "fingerprint": "c0968f141bef547e",
+      "prepared_revision": "6b929ff10edec703164e3ddb2e94aae058c9ab5f"
+    },
+    {
+      "dataset": "ag_news",
+      "hf_name": "fancyzhx/ag_news",
+      "split": "train",
+      "rows": 120000,
+      "fingerprint": "2bc1e2be15d7f2ee",
+      "prepared_revision": "eb185aade064a813bc0b7f42de02595523103ca4"
+    },
+    {
+      "dataset": "dolly",
+      "hf_name": "databricks/databricks-dolly-15k",
+      "split": "train",
+      "rows": 15011,
+      "fingerprint": "2537fb912ac88184",
+      "prepared_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a"
+    },
+    {
+      "dataset": "xsum",
+      "hf_name": "EdinburghNLP/xsum",
+      "split": "train",
+      "rows": 204045,
+      "fingerprint": "5a1b0a50e80b133b",
+      "prepared_revision": "7d4d486c2f8ef850b1a11aead99b894ff3dd7da9"
+    }
+  ]
+}

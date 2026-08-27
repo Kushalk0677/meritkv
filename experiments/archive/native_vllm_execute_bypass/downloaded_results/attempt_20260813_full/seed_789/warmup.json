@@ -1,0 +1,1262 @@
+[
+  {
+    "prefix_length": 16,
+    "arm": "native_apc",
+    "warm": {
+      "latency_ms": 230.13633899995511,
+      "prompt_tokens": 28,
+      "completion_tokens": 8,
+      "cached_tokens": 0,
+      "text": " The warmup continuation is used to\n",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        41171,
+        374,
+        1483,
+        311,
+        198
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:41171",
+        "token_id:374",
+        "token_id:1483",
+        "token_id:311",
+        "token_id:198"
+      ],
+      "finish_reason": "length"
+    },
+    "verify": {
+      "latency_ms": 237.97908599999573,
+      "prompt_tokens": 28,
+      "completion_tokens": 8,
+      "cached_tokens": 16,
+      "text": " The warmup continuation is used to\n",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        41171,
+        374,
+        1483,
+        311,
+        198
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:41171",
+        "token_id:374",
+        "token_id:1483",
+        "token_id:311",
+        "token_id:198"
+      ],
+      "finish_reason": "length"
+    }
+  },
+  {
+    "prefix_length": 16,
+    "arm": "meritkv_write_through",
+    "warm": {
+      "latency_ms": 246.7203950000112,
+      "prompt_tokens": 28,
+      "completion_tokens": 8,
+      "cached_tokens": 0,
+      "text": " The warmup continuation is used to\n",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        41171,
+        374,
+        1483,
+        311,
+        198
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:41171",
+        "token_id:374",
+        "token_id:1483",
+        "token_id:311",
+        "token_id:198"
+      ],
+      "finish_reason": "length"
+    },
+    "verify": {
+      "latency_ms": 232.77535400006855,
+      "prompt_tokens": 28,
+      "completion_tokens": 8,
+      "cached_tokens": 16,
+      "text": " The warmup continuation is used to\n",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        41171,
+        374,
+        1483,
+        311,
+        198
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:41171",
+        "token_id:374",
+        "token_id:1483",
+        "token_id:311",
+        "token_id:198"
+      ],
+      "finish_reason": "length"
+    }
+  },
+  {
+    "prefix_length": 16,
+    "arm": "meritkv_enforced",
+    "warm": {
+      "latency_ms": 241.97832999993807,
+      "prompt_tokens": 28,
+      "completion_tokens": 8,
+      "cached_tokens": 0,
+      "text": " The warmup continuation is used to\n",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        41171,
+        374,
+        1483,
+        311,
+        198
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:41171",
+        "token_id:374",
+        "token_id:1483",
+        "token_id:311",
+        "token_id:198"
+      ],
+      "finish_reason": "length"
+    },
+    "verify": {
+      "latency_ms": 244.52141599999777,
+      "prompt_tokens": 28,
+      "completion_tokens": 8,
+      "cached_tokens": 16,
+      "text": " The warmup continuation is used to\n",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        41171,
+        374,
+        1483,
+        311,
+        198
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:41171",
+        "token_id:374",
+        "token_id:1483",
+        "token_id:311",
+        "token_id:198"
+      ],
+      "finish_reason": "length"
+    }
+  },
+  {
+    "prefix_length": 32,
+    "arm": "native_apc",
+    "warm": {
+      "latency_ms": 254.60686399992483,
+      "prompt_tokens": 44,
+      "completion_tokens": 8,
+      "cached_tokens": 0,
+      "text": " The next section will discuss the benefits of",
+      "token_ids": [
+        576,
+        1790,
+        3772,
+        686,
+        4263,
+        279,
+        7567,
+        315
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:1790",
+        "token_id:3772",
+        "token_id:686",
+        "token_id:4263",
+        "token_id:279",
+        "token_id:7567",
+        "token_id:315"
+      ],
+      "finish_reason": "length"
+    },
+    "verify": {
+      "latency_ms": 239.22593299994332,
+      "prompt_tokens": 44,
+      "completion_tokens": 8,
+      "cached_tokens": 32,
+      "text": " The purpose of this warmup is to",
+      "token_ids": [
+        576,
+        7428,
+        315,
+        419,
+        8205,
+        454,
+        374,
+        311
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:7428",
+        "token_id:315",
+        "token_id:419",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:374",
+        "token_id:311"
+      ],
+      "finish_reason": "length"
+    }
+  },
+  {
+    "prefix_length": 32,
+    "arm": "meritkv_write_through",
+    "warm": {
+      "latency_ms": 239.29348199999367,
+      "prompt_tokens": 44,
+      "completion_tokens": 8,
+      "cached_tokens": 0,
+      "text": " The next section will discuss the benefits of",
+      "token_ids": [
+        576,
+        1790,
+        3772,
+        686,
+        4263,
+        279,
+        7567,
+        315
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:1790",
+        "token_id:3772",
+        "token_id:686",
+        "token_id:4263",
+        "token_id:279",
+        "token_id:7567",
+        "token_id:315"
+      ],
+      "finish_reason": "length"
+    },
+    "verify": {
+      "latency_ms": 245.69678100010606,
+      "prompt_tokens": 44,
+      "completion_tokens": 8,
+      "cached_tokens": 32,
+      "text": " The purpose of this warmup is to",
+      "token_ids": [
+        576,
+        7428,
+        315,
+        419,
+        8205,
+        454,
+        374,
+        311
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:7428",
+        "token_id:315",
+        "token_id:419",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:374",
+        "token_id:311"
+      ],
+      "finish_reason": "length"
+    }
+  },
+  {
+    "prefix_length": 32,
+    "arm": "meritkv_enforced",
+    "warm": {
+      "latency_ms": 249.3434369998795,
+      "prompt_tokens": 44,
+      "completion_tokens": 8,
+      "cached_tokens": 0,
+      "text": " The next section will discuss the benefits of",
+      "token_ids": [
+        576,
+        1790,
+        3772,
+        686,
+        4263,
+        279,
+        7567,
+        315
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:1790",
+        "token_id:3772",
+        "token_id:686",
+        "token_id:4263",
+        "token_id:279",
+        "token_id:7567",
+        "token_id:315"
+      ],
+      "finish_reason": "length"
+    },
+    "verify": {
+      "latency_ms": 237.20362900007785,
+      "prompt_tokens": 44,
+      "completion_tokens": 8,
+      "cached_tokens": 32,
+      "text": " The purpose of this warmup is to",
+      "token_ids": [
+        576,
+        7428,
+        315,
+        419,
+        8205,
+        454,
+        374,
+        311
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:7428",
+        "token_id:315",
+        "token_id:419",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:374",
+        "token_id:311"
+      ],
+      "finish_reason": "length"
+    }
+  },
+  {
+    "prefix_length": 64,
+    "arm": "native_apc",
+    "warm": {
+      "latency_ms": 245.0115200001619,
+      "prompt_tokens": 76,
+      "completion_tokens": 8,
+      "cached_tokens": 0,
+      "text": " The automatic prefix caching mechanism in Merit",
+      "token_ids": [
+        576,
+        16962,
+        9252,
+        47430,
+        16953,
+        304,
+        8755,
+        275
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:16962",
+        "token_id:9252",
+        "token_id:47430",
+        "token_id:16953",
+        "token_id:304",
+        "token_id:8755",
+        "token_id:275"
+      ],
+      "finish_reason": "length"
+    },
+    "verify": {
+      "latency_ms": 236.54748499984635,
+      "prompt_tokens": 76,
+      "completion_tokens": 8,
+      "cached_tokens": 64,
+      "text": " The warmup phase of the experiment involves",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        10262,
+        315,
+        279,
+        9342,
+        17601
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:10262",
+        "token_id:315",
+        "token_id:279",
+        "token_id:9342",
+        "token_id:17601"
+      ],
+      "finish_reason": "length"
+    }
+  },
+  {
+    "prefix_length": 64,
+    "arm": "meritkv_write_through",
+    "warm": {
+      "latency_ms": 247.83060200002183,
+      "prompt_tokens": 76,
+      "completion_tokens": 8,
+      "cached_tokens": 0,
+      "text": " The automatic prefix caching mechanism in Merit",
+      "token_ids": [
+        576,
+        16962,
+        9252,
+        47430,
+        16953,
+        304,
+        8755,
+        275
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:16962",
+        "token_id:9252",
+        "token_id:47430",
+        "token_id:16953",
+        "token_id:304",
+        "token_id:8755",
+        "token_id:275"
+      ],
+      "finish_reason": "length"
+    },
+    "verify": {
+      "latency_ms": 229.46124600002804,
+      "prompt_tokens": 76,
+      "completion_tokens": 8,
+      "cached_tokens": 64,
+      "text": " The warmup phase of the experiment involves",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        10262,
+        315,
+        279,
+        9342,
+        17601
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:10262",
+        "token_id:315",
+        "token_id:279",
+        "token_id:9342",
+        "token_id:17601"
+      ],
+      "finish_reason": "length"
+    }
+  },
+  {
+    "prefix_length": 64,
+    "arm": "meritkv_enforced",
+    "warm": {
+      "latency_ms": 231.30793699988317,
+      "prompt_tokens": 76,
+      "completion_tokens": 8,
+      "cached_tokens": 0,
+      "text": " The automatic prefix caching mechanism in Merit",
+      "token_ids": [
+        576,
+        16962,
+        9252,
+        47430,
+        16953,
+        304,
+        8755,
+        275
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:16962",
+        "token_id:9252",
+        "token_id:47430",
+        "token_id:16953",
+        "token_id:304",
+        "token_id:8755",
+        "token_id:275"
+      ],
+      "finish_reason": "length"
+    },
+    "verify": {
+      "latency_ms": 244.89893999998458,
+      "prompt_tokens": 76,
+      "completion_tokens": 8,
+      "cached_tokens": 64,
+      "text": " The warmup phase of the experiment involves",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        10262,
+        315,
+        279,
+        9342,
+        17601
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:10262",
+        "token_id:315",
+        "token_id:279",
+        "token_id:9342",
+        "token_id:17601"
+      ],
+      "finish_reason": "length"
+    }
+  },
+  {
+    "prefix_length": 128,
+    "arm": "native_apc",
+    "warm": {
+      "latency_ms": 239.7351179999987,
+      "prompt_tokens": 141,
+      "completion_tokens": 8,
+      "cached_tokens": 0,
+      "text": " The warmup phase involves initializing the system",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        10262,
+        17601,
+        57060,
+        279,
+        1849
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:10262",
+        "token_id:17601",
+        "token_id:57060",
+        "token_id:279",
+        "token_id:1849"
+      ],
+      "finish_reason": "length"
+    },
+    "verify": {
+      "latency_ms": 241.27052699986962,
+      "prompt_tokens": 141,
+      "completion_tokens": 8,
+      "cached_tokens": 128,
+      "text": " The warmup phase involves initializing the system",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        10262,
+        17601,
+        57060,
+        279,
+        1849
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:10262",
+        "token_id:17601",
+        "token_id:57060",
+        "token_id:279",
+        "token_id:1849"
+      ],
+      "finish_reason": "length"
+    }
+  },
+  {
+    "prefix_length": 128,
+    "arm": "meritkv_write_through",
+    "warm": {
+      "latency_ms": 236.67867000017395,
+      "prompt_tokens": 141,
+      "completion_tokens": 8,
+      "cached_tokens": 0,
+      "text": " The warmup phase involves initializing the system",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        10262,
+        17601,
+        57060,
+        279,
+        1849
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:10262",
+        "token_id:17601",
+        "token_id:57060",
+        "token_id:279",
+        "token_id:1849"
+      ],
+      "finish_reason": "length"
+    },
+    "verify": {
+      "latency_ms": 236.9101540000429,
+      "prompt_tokens": 141,
+      "completion_tokens": 8,
+      "cached_tokens": 128,
+      "text": " The warmup phase involves initializing the system",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        10262,
+        17601,
+        57060,
+        279,
+        1849
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:10262",
+        "token_id:17601",
+        "token_id:57060",
+        "token_id:279",
+        "token_id:1849"
+      ],
+      "finish_reason": "length"
+    }
+  },
+  {
+    "prefix_length": 128,
+    "arm": "meritkv_enforced",
+    "warm": {
+      "latency_ms": 235.63706599998113,
+      "prompt_tokens": 141,
+      "completion_tokens": 8,
+      "cached_tokens": 0,
+      "text": " The warmup phase involves initializing the system",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        10262,
+        17601,
+        57060,
+        279,
+        1849
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:10262",
+        "token_id:17601",
+        "token_id:57060",
+        "token_id:279",
+        "token_id:1849"
+      ],
+      "finish_reason": "length"
+    },
+    "verify": {
+      "latency_ms": 242.99503100019137,
+      "prompt_tokens": 141,
+      "completion_tokens": 8,
+      "cached_tokens": 128,
+      "text": " The warmup phase involves initializing the system",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        10262,
+        17601,
+        57060,
+        279,
+        1849
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:10262",
+        "token_id:17601",
+        "token_id:57060",
+        "token_id:279",
+        "token_id:1849"
+      ],
+      "finish_reason": "length"
+    }
+  },
+  {
+    "prefix_length": 256,
+    "arm": "native_apc",
+    "warm": {
+      "latency_ms": 274.9134350001441,
+      "prompt_tokens": 269,
+      "completion_tokens": 8,
+      "cached_tokens": 0,
+      "text": " The warmup phase of the experiment involves",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        10262,
+        315,
+        279,
+        9342,
+        17601
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:10262",
+        "token_id:315",
+        "token_id:279",
+        "token_id:9342",
+        "token_id:17601"
+      ],
+      "finish_reason": "length"
+    },
+    "verify": {
+      "latency_ms": 238.6642919998394,
+      "prompt_tokens": 269,
+      "completion_tokens": 8,
+      "cached_tokens": 256,
+      "text": " Warmup continuation C for prefix length ",
+      "token_ids": [
+        45763,
+        454,
+        41171,
+        356,
+        369,
+        9252,
+        3084,
+        220
+      ],
+      "logprob_tokens": [
+        "token_id:45763",
+        "token_id:454",
+        "token_id:41171",
+        "token_id:356",
+        "token_id:369",
+        "token_id:9252",
+        "token_id:3084",
+        "token_id:220"
+      ],
+      "finish_reason": "length"
+    }
+  },
+  {
+    "prefix_length": 256,
+    "arm": "meritkv_write_through",
+    "warm": {
+      "latency_ms": 283.58613599993987,
+      "prompt_tokens": 269,
+      "completion_tokens": 8,
+      "cached_tokens": 0,
+      "text": " The warmup phase of the experiment involves",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        10262,
+        315,
+        279,
+        9342,
+        17601
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:10262",
+        "token_id:315",
+        "token_id:279",
+        "token_id:9342",
+        "token_id:17601"
+      ],
+      "finish_reason": "length"
+    },
+    "verify": {
+      "latency_ms": 251.45140800009358,
+      "prompt_tokens": 269,
+      "completion_tokens": 8,
+      "cached_tokens": 256,
+      "text": " Warmup continuation C for prefix length ",
+      "token_ids": [
+        45763,
+        454,
+        41171,
+        356,
+        369,
+        9252,
+        3084,
+        220
+      ],
+      "logprob_tokens": [
+        "token_id:45763",
+        "token_id:454",
+        "token_id:41171",
+        "token_id:356",
+        "token_id:369",
+        "token_id:9252",
+        "token_id:3084",
+        "token_id:220"
+      ],
+      "finish_reason": "length"
+    }
+  },
+  {
+    "prefix_length": 256,
+    "arm": "meritkv_enforced",
+    "warm": {
+      "latency_ms": 272.51021400002173,
+      "prompt_tokens": 269,
+      "completion_tokens": 8,
+      "cached_tokens": 0,
+      "text": " The warmup phase of the experiment involves",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        10262,
+        315,
+        279,
+        9342,
+        17601
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:10262",
+        "token_id:315",
+        "token_id:279",
+        "token_id:9342",
+        "token_id:17601"
+      ],
+      "finish_reason": "length"
+    },
+    "verify": {
+      "latency_ms": 234.71948999986125,
+      "prompt_tokens": 269,
+      "completion_tokens": 8,
+      "cached_tokens": 256,
+      "text": " Warmup continuation C for prefix length ",
+      "token_ids": [
+        45763,
+        454,
+        41171,
+        356,
+        369,
+        9252,
+        3084,
+        220
+      ],
+      "logprob_tokens": [
+        "token_id:45763",
+        "token_id:454",
+        "token_id:41171",
+        "token_id:356",
+        "token_id:369",
+        "token_id:9252",
+        "token_id:3084",
+        "token_id:220"
+      ],
+      "finish_reason": "length"
+    }
+  },
+  {
+    "prefix_length": 512,
+    "arm": "native_apc",
+    "warm": {
+      "latency_ms": 337.07566399993993,
+      "prompt_tokens": 525,
+      "completion_tokens": 8,
+      "cached_tokens": 0,
+      "text": " The warmup phase of the experiment involves",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        10262,
+        315,
+        279,
+        9342,
+        17601
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:10262",
+        "token_id:315",
+        "token_id:279",
+        "token_id:9342",
+        "token_id:17601"
+      ],
+      "finish_reason": "length"
+    },
+    "verify": {
+      "latency_ms": 246.71046200001,
+      "prompt_tokens": 525,
+      "completion_tokens": 8,
+      "cached_tokens": 512,
+      "text": " The warmup phase of the experiment involves",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        10262,
+        315,
+        279,
+        9342,
+        17601
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:10262",
+        "token_id:315",
+        "token_id:279",
+        "token_id:9342",
+        "token_id:17601"
+      ],
+      "finish_reason": "length"
+    }
+  },
+  {
+    "prefix_length": 512,
+    "arm": "meritkv_write_through",
+    "warm": {
+      "latency_ms": 340.4383150000285,
+      "prompt_tokens": 525,
+      "completion_tokens": 8,
+      "cached_tokens": 0,
+      "text": " The warmup phase of the experiment involves",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        10262,
+        315,
+        279,
+        9342,
+        17601
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:10262",
+        "token_id:315",
+        "token_id:279",
+        "token_id:9342",
+        "token_id:17601"
+      ],
+      "finish_reason": "length"
+    },
+    "verify": {
+      "latency_ms": 238.1849289999991,
+      "prompt_tokens": 525,
+      "completion_tokens": 8,
+      "cached_tokens": 512,
+      "text": " The warmup phase of the experiment involves",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        10262,
+        315,
+        279,
+        9342,
+        17601
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:10262",
+        "token_id:315",
+        "token_id:279",
+        "token_id:9342",
+        "token_id:17601"
+      ],
+      "finish_reason": "length"
+    }
+  },
+  {
+    "prefix_length": 512,
+    "arm": "meritkv_enforced",
+    "warm": {
+      "latency_ms": 353.8574439999138,
+      "prompt_tokens": 525,
+      "completion_tokens": 8,
+      "cached_tokens": 0,
+      "text": " The warmup phase of the experiment involves",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        10262,
+        315,
+        279,
+        9342,
+        17601
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:10262",
+        "token_id:315",
+        "token_id:279",
+        "token_id:9342",
+        "token_id:17601"
+      ],
+      "finish_reason": "length"
+    },
+    "verify": {
+      "latency_ms": 232.61475799995424,
+      "prompt_tokens": 525,
+      "completion_tokens": 8,
+      "cached_tokens": 512,
+      "text": " The warmup phase of the experiment involves",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        10262,
+        315,
+        279,
+        9342,
+        17601
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:10262",
+        "token_id:315",
+        "token_id:279",
+        "token_id:9342",
+        "token_id:17601"
+      ],
+      "finish_reason": "length"
+    }
+  },
+  {
+    "prefix_length": 1024,
+    "arm": "native_apc",
+    "warm": {
+      "latency_ms": 588.5490979999304,
+      "prompt_tokens": 1038,
+      "completion_tokens": 8,
+      "cached_tokens": 0,
+      "text": " The warmup phase of the experiment involves",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        10262,
+        315,
+        279,
+        9342,
+        17601
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:10262",
+        "token_id:315",
+        "token_id:279",
+        "token_id:9342",
+        "token_id:17601"
+      ],
+      "finish_reason": "length"
+    },
+    "verify": {
+      "latency_ms": 301.847066000164,
+      "prompt_tokens": 1038,
+      "completion_tokens": 8,
+      "cached_tokens": 1024,
+      "text": " The warmup phase of the experiment was",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        10262,
+        315,
+        279,
+        9342,
+        572
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:10262",
+        "token_id:315",
+        "token_id:279",
+        "token_id:9342",
+        "token_id:572"
+      ],
+      "finish_reason": "length"
+    }
+  },
+  {
+    "prefix_length": 1024,
+    "arm": "meritkv_write_through",
+    "warm": {
+      "latency_ms": 547.2011189999648,
+      "prompt_tokens": 1038,
+      "completion_tokens": 8,
+      "cached_tokens": 0,
+      "text": " The warmup phase of the experiment involves",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        10262,
+        315,
+        279,
+        9342,
+        17601
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:10262",
+        "token_id:315",
+        "token_id:279",
+        "token_id:9342",
+        "token_id:17601"
+      ],
+      "finish_reason": "length"
+    },
+    "verify": {
+      "latency_ms": 303.90783000007104,
+      "prompt_tokens": 1038,
+      "completion_tokens": 8,
+      "cached_tokens": 1024,
+      "text": " The warmup phase of the experiment was",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        10262,
+        315,
+        279,
+        9342,
+        572
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:10262",
+        "token_id:315",
+        "token_id:279",
+        "token_id:9342",
+        "token_id:572"
+      ],
+      "finish_reason": "length"
+    }
+  },
+  {
+    "prefix_length": 1024,
+    "arm": "meritkv_enforced",
+    "warm": {
+      "latency_ms": 592.2127549999914,
+      "prompt_tokens": 1038,
+      "completion_tokens": 8,
+      "cached_tokens": 0,
+      "text": " The warmup phase of the experiment involves",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        10262,
+        315,
+        279,
+        9342,
+        17601
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:10262",
+        "token_id:315",
+        "token_id:279",
+        "token_id:9342",
+        "token_id:17601"
+      ],
+      "finish_reason": "length"
+    },
+    "verify": {
+      "latency_ms": 336.72709999996187,
+      "prompt_tokens": 1038,
+      "completion_tokens": 8,
+      "cached_tokens": 1024,
+      "text": " The warmup phase of the experiment was",
+      "token_ids": [
+        576,
+        8205,
+        454,
+        10262,
+        315,
+        279,
+        9342,
+        572
+      ],
+      "logprob_tokens": [
+        "token_id:576",
+        "token_id:8205",
+        "token_id:454",
+        "token_id:10262",
+        "token_id:315",
+        "token_id:279",
+        "token_id:9342",
+        "token_id:572"
+      ],
+      "finish_reason": "length"
+    }
+  }
+]

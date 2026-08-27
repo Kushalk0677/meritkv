@@ -1,0 +1,2 @@
+Benchmark lmcache_vllm for google/gemma-4-31B-it dolly templated seed=789
+Latency: 58.38ms, Throughput: 16.95 rps

@@ -1,0 +1,8 @@
+Starting one vLLM server with APC enabled...
+Traceback (most recent call last):
+  File "/content/meritkv_native_bypass/run_native_execute_bypass.py", line 693, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/content/meritkv_native_bypass/run_native_execute_bypass.py", line 593, in main
+    raise RuntimeError(f"Stable prefix L{length}/{warm_arm} did not produce a native APC hit")
+RuntimeError: Stable prefix L16/native_apc did not produce a native APC hit

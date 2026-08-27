@@ -1,0 +1,17 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+
+Loading weights:   0%|          | 0/677 [00:00<?, ?it/s]
+Loading weights:   0%|          | 3/677 [00:00<00:38, 17.40it/s]
+Loading weights:  12%|█▏        | 84/677 [00:00<00:01, 373.90it/s]
+Loading weights:  21%|██        | 141/677 [00:00<00:01, 421.21it/s]
+Loading weights:  28%|██▊       | 189/677 [00:00<00:01, 436.66it/s]
+Loading weights:  36%|███▌      | 243/677 [00:00<00:00, 460.54it/s]
+Loading weights:  44%|████▍     | 297/677 [00:00<00:00, 475.50it/s]
+Loading weights:  52%|█████▏    | 352/677 [00:00<00:00, 480.66it/s]
+Loading weights:  60%|██████    | 408/677 [00:00<00:00, 486.64it/s]
+Loading weights:  68%|██████▊   | 463/677 [00:01<00:00, 484.89it/s]
+Loading weights:  76%|███████▌  | 515/677 [00:01<00:00, 489.26it/s]
+Loading weights:  83%|████████▎ | 565/677 [00:01<00:00, 490.27it/s]
+Loading weights:  91%|█████████ | 615/677 [00:01<00:00, 471.09it/s]
+Loading weights: 100%|██████████| 677/677 [00:01<00:00, 464.60it/s]

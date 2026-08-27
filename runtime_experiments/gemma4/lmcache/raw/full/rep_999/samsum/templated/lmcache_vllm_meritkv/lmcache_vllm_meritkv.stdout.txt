@@ -1,0 +1,2 @@
+Benchmark lmcache_vllm_meritkv for google/gemma-4-31B-it samsum templated seed=999
+Latency: 70.72ms, Throughput: 14.14 rps

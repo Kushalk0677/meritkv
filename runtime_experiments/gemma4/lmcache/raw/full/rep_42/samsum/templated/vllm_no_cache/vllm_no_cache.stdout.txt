@@ -1,0 +1,2 @@
+Benchmark vllm_no_cache for google/gemma-4-31B-it samsum templated seed=42
+Latency: 88.47ms, Throughput: 11.30 rps

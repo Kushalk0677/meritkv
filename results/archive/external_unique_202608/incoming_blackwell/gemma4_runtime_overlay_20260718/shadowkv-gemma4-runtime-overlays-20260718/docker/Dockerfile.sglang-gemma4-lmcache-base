@@ -1,0 +1,42 @@
+FROM lmsysorg/sglang:cu13-gemma4@sha256:9567db0b468abeaaf92bc840ec54b48e1cc7eb3390ebc9e31b17fb348a9d75d4
+
+# Keep the Gemma 4 image's tested CUDA 13 / PyTorch stack intact. LMCache's
+# generic dependency resolver otherwise attempts to replace core CUDA wheels.
+RUN python3 -m pip install --no-cache-dir --no-deps \
+        aiofile==3.11.1 \
+        aiofiles==25.1.0 \
+        awscrt==0.36.0 \
+        blake3==1.0.9 \
+        caio==0.9.25 \
+        cufile-python==0.2.0 \
+        cupy-cuda13x==14.1.1 \
+        httptools==0.8.0 \
+        llvmlite==0.48.0 \
+        numba==0.66.0 \
+        nvtx==0.2.15 \
+        opentelemetry-exporter-prometheus==0.61b0 \
+        py-cpuinfo==9.0.0 \
+        redis==8.0.1 \
+        setuptools==80.10.2 \
+        setuptools-scm==10.2.0 \
+        sortedcontainers==2.4.0 \
+        vcs-versioning==2.2.2 \
+        numpy==2.2.6 \
+        lmcache==0.4.5 \
+    && python3 - <<'PY'
+import importlib.metadata as md
+import lmcache
+from lmcache.integration.sglang.sglang_adapter import (
+    LMCacheLayerwiseConnector,
+    LoadMetadata,
+    StoreMetadata,
+)
+
+print(f"lmcache=={md.version('lmcache')}")
+print(f"sglang=={md.version('sglang')}")
+print("LMCache SGLang adapter import: ok")
+PY
+
+ENV USE_HUB_KERNELS=NO
+ENV FLASHINFER_DISABLE_VERSION_CHECK=1
+ENV PYTHONHASHSEED=0

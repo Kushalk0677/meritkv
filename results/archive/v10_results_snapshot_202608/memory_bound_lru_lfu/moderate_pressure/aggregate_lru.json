@@ -1,0 +1,20 @@
+{
+  "lru": {
+    "seeds": 5,
+    "seeds_list": [
+      42,
+      123,
+      456,
+      789,
+      999
+    ],
+    "mean_latency_ms": 70.842,
+    "mean_latency_ms_ci95": 0.8082,
+    "final_round_recovery": 0.4948,
+    "final_round_recovery_ci95": 0.0081,
+    "total_evictions": 30.0,
+    "total_evictions_ci95": 1.7557,
+    "declined_admissions_phase1": 0.0,
+    "declined_admissions_phase1_ci95": 0.0
+  }
+}

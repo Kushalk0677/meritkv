@@ -1,0 +1,2 @@
+Benchmark vllm_apc_meritkv for google/gemma-4-31B-it daily_dialog rag seed=42
+Latency: 49.03ms, Throughput: 20.40 rps

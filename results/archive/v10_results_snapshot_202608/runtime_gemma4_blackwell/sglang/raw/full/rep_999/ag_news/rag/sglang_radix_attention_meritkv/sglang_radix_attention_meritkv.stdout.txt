@@ -1,0 +1,2 @@
+Benchmark sglang_radix_attention_meritkv for google/gemma-4-31B-it ag_news rag seed=999
+Latency: 85.99ms, Throughput: 11.63 rps

@@ -1,0 +1,33 @@
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+Fetching 2 files:  50%|█████     | 1/2 [00:52<00:52, 52.38s/it]
+Fetching 2 files: 100%|██████████| 2/2 [00:52<00:00, 26.19s/it]
+
+Loading weights:   0%|          | 0/164 [00:00<?, ?it/s]
+Loading weights:   1%|          | 1/164 [00:07<19:46,  7.28s/it]
+Loading weights:  68%|██████▊   | 112/164 [00:07<00:02, 20.68it/s]
+Loading weights:  82%|████████▏ | 134/164 [00:09<00:01, 17.54it/s]
+Loading weights:  90%|████████▉ | 147/164 [00:10<00:01, 15.94it/s]
+Loading weights:  95%|█████████▍| 155/164 [00:11<00:00, 15.83it/s]
+Loading weights:  98%|█████████▊| 161/164 [00:12<00:00, 13.96it/s]
+Loading weights: 100%|██████████| 164/164 [00:12<00:00, 13.57it/s]
+sample=0 mode=natural ratio=0.79 shared=50/63
+sample=1 mode=natural ratio=0.82 shared=55/67
+sample=2 mode=natural ratio=0.84 shared=52/62
+sample=3 mode=natural ratio=0.82 shared=55/67
+sample=4 mode=natural ratio=0.78 shared=58/74
+sample=5 mode=natural ratio=0.84 shared=52/62
+sample=6 mode=natural ratio=0.83 shared=65/78
+sample=7 mode=natural ratio=0.88 shared=51/58
+{
+  "cases": 8,
+  "strict_passes": 0,
+  "token_semantic_passes": 8,
+  "cache_passes": 1,
+  "native_token_passes": 8,
+  "splice_token_passes": 8,
+  "all_strict_pass": false,
+  "all_token_semantic_pass": true
+}
+wrote /content/meritkv_exact_splice_followup_outputs/gemma2b_t4_f16_sdpa_natural.json

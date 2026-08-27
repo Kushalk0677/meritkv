@@ -1,0 +1,2 @@
+Benchmark sglang_no_cache for google/gemma-4-31B-it daily_dialog templated seed=123
+Latency: 111.27ms, Throughput: 8.99 rps

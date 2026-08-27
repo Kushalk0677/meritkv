@@ -1,0 +1,2 @@
+Benchmark sglang_radix_attention_meritkv for google/gemma-4-31B-it samsum templated seed=999
+Latency: 94.33ms, Throughput: 10.60 rps

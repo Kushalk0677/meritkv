@@ -1,0 +1,306 @@
+{
+  "pass": true,
+  "issues": [],
+  "result_cells": 300,
+  "expected_cells": 300,
+  "native_overlay_pairs": 150,
+  "total_requests": 76800,
+  "idle_stabilization_timeouts": 0,
+  "zero_cache_cells": 20,
+  "zero_cache_groups": {
+    "lmcache/ag_news": 10,
+    "lmcache_shadowkv_plus/ag_news": 10
+  },
+  "pair_summary": [
+    {
+      "runtime": "vllm_apc",
+      "pairs": 50,
+      "mean_latency_delta_pct": 2.613187803979078,
+      "mean_p95_delta_pct": 3.1928260965790933,
+      "mean_throughput_delta_pct": -2.0827015323614972,
+      "mean_energy_delta_pct": 0.028494418483937523,
+      "latency_wins": 19,
+      "p95_wins": 16,
+      "total_allows": 12750,
+      "total_bypasses": 50
+    },
+    {
+      "runtime": "sglang_radix_attention",
+      "pairs": 50,
+      "mean_latency_delta_pct": -2.1877364455507586,
+      "mean_p95_delta_pct": -1.745632036619893,
+      "mean_throughput_delta_pct": 2.360483567352012,
+      "mean_energy_delta_pct": -1.6917368533491461,
+      "latency_wins": 32,
+      "p95_wins": 32,
+      "total_allows": 12750,
+      "total_bypasses": 50
+    },
+    {
+      "runtime": "lmcache",
+      "pairs": 50,
+      "mean_latency_delta_pct": 2.146319196812252,
+      "mean_p95_delta_pct": 3.3510196706416417,
+      "mean_throughput_delta_pct": -1.8167169072988099,
+      "mean_energy_delta_pct": 0.8350481154495881,
+      "latency_wins": 11,
+      "p95_wins": 10,
+      "total_allows": 12750,
+      "total_bypasses": 50
+    }
+  ],
+  "lmcache_log_evidence": [
+    {
+      "log": "15_gemma4_26b_a4b_lmcache_shadowkv_plus.lmcache.log",
+      "store_events": 855,
+      "stored_tokens": 223232,
+      "retrieve_events": 52,
+      "retrieved_tokens": 13312
+    },
+    {
+      "log": "17_gemma4_12b_lmcache.lmcache.log",
+      "store_events": 855,
+      "stored_tokens": 223232,
+      "retrieve_events": 52,
+      "retrieved_tokens": 13312
+    },
+    {
+      "log": "18_gemma4_e2b_lmcache.lmcache.log",
+      "store_events": 855,
+      "stored_tokens": 223232,
+      "retrieve_events": 52,
+      "retrieved_tokens": 13312
+    },
+    {
+      "log": "1_gemma4_12b_lmcache_shadowkv_plus.lmcache.log",
+      "store_events": 855,
+      "stored_tokens": 223232,
+      "retrieve_events": 52,
+      "retrieved_tokens": 13312
+    },
+    {
+      "log": "20_gemma4_e2b_lmcache_shadowkv_plus.lmcache.log",
+      "store_events": 855,
+      "stored_tokens": 223232,
+      "retrieve_events": 52,
+      "retrieved_tokens": 13312
+    },
+    {
+      "log": "21_gemma4_31b_lmcache.lmcache.log",
+      "store_events": 855,
+      "stored_tokens": 223232,
+      "retrieve_events": 52,
+      "retrieved_tokens": 13312
+    },
+    {
+      "log": "26_gemma4_e4b_lmcache_shadowkv_plus.lmcache.log",
+      "store_events": 855,
+      "stored_tokens": 223232,
+      "retrieve_events": 52,
+      "retrieved_tokens": 13312
+    },
+    {
+      "log": "2_gemma4_26b_a4b_lmcache.lmcache.log",
+      "store_events": 855,
+      "stored_tokens": 223232,
+      "retrieve_events": 52,
+      "retrieved_tokens": 13312
+    },
+    {
+      "log": "30_gemma4_e4b_lmcache.lmcache.log",
+      "store_events": 855,
+      "stored_tokens": 223232,
+      "retrieve_events": 52,
+      "retrieved_tokens": 13312
+    },
+    {
+      "log": "9_gemma4_31b_lmcache_shadowkv_plus.lmcache.log",
+      "store_events": 855,
+      "stored_tokens": 223232,
+      "retrieve_events": 52,
+      "retrieved_tokens": 13312
+    }
+  ],
+  "block_plan": [
+    {
+      "index": 1,
+      "arm": "lmcache_shadowkv_plus",
+      "model_slug": "gemma4_12b",
+      "model": "google/gemma-4-12B-it"
+    },
+    {
+      "index": 2,
+      "arm": "lmcache",
+      "model_slug": "gemma4_26b_a4b",
+      "model": "google/gemma-4-26B-A4B-it"
+    },
+    {
+      "index": 3,
+      "arm": "vllm_apc",
+      "model_slug": "gemma4_e2b",
+      "model": "google/gemma-4-E2B-it"
+    },
+    {
+      "index": 4,
+      "arm": "sglang_radix_attention",
+      "model_slug": "gemma4_31b",
+      "model": "google/gemma-4-31B-it"
+    },
+    {
+      "index": 5,
+      "arm": "vllm_apc_shadowkv_plus",
+      "model_slug": "gemma4_12b",
+      "model": "google/gemma-4-12B-it"
+    },
+    {
+      "index": 6,
+      "arm": "sglang_radix_attention_shadowkv_plus",
+      "model_slug": "gemma4_e2b",
+      "model": "google/gemma-4-E2B-it"
+    },
+    {
+      "index": 7,
+      "arm": "vllm_apc_shadowkv_plus",
+      "model_slug": "gemma4_26b_a4b",
+      "model": "google/gemma-4-26B-A4B-it"
+    },
+    {
+      "index": 8,
+      "arm": "sglang_radix_attention_shadowkv_plus",
+      "model_slug": "gemma4_31b",
+      "model": "google/gemma-4-31B-it"
+    },
+    {
+      "index": 9,
+      "arm": "lmcache_shadowkv_plus",
+      "model_slug": "gemma4_31b",
+      "model": "google/gemma-4-31B-it"
+    },
+    {
+      "index": 10,
+      "arm": "vllm_apc",
+      "model_slug": "gemma4_e4b",
+      "model": "google/gemma-4-E4B-it"
+    },
+    {
+      "index": 11,
+      "arm": "sglang_radix_attention_shadowkv_plus",
+      "model_slug": "gemma4_12b",
+      "model": "google/gemma-4-12B-it"
+    },
+    {
+      "index": 12,
+      "arm": "vllm_apc_shadowkv_plus",
+      "model_slug": "gemma4_e4b",
+      "model": "google/gemma-4-E4B-it"
+    },
+    {
+      "index": 13,
+      "arm": "sglang_radix_attention_shadowkv_plus",
+      "model_slug": "gemma4_26b_a4b",
+      "model": "google/gemma-4-26B-A4B-it"
+    },
+    {
+      "index": 14,
+      "arm": "sglang_radix_attention_shadowkv_plus",
+      "model_slug": "gemma4_e4b",
+      "model": "google/gemma-4-E4B-it"
+    },
+    {
+      "index": 15,
+      "arm": "lmcache_shadowkv_plus",
+      "model_slug": "gemma4_26b_a4b",
+      "model": "google/gemma-4-26B-A4B-it"
+    },
+    {
+      "index": 16,
+      "arm": "sglang_radix_attention",
+      "model_slug": "gemma4_26b_a4b",
+      "model": "google/gemma-4-26B-A4B-it"
+    },
+    {
+      "index": 17,
+      "arm": "lmcache",
+      "model_slug": "gemma4_12b",
+      "model": "google/gemma-4-12B-it"
+    },
+    {
+      "index": 18,
+      "arm": "lmcache",
+      "model_slug": "gemma4_e2b",
+      "model": "google/gemma-4-E2B-it"
+    },
+    {
+      "index": 19,
+      "arm": "sglang_radix_attention",
+      "model_slug": "gemma4_12b",
+      "model": "google/gemma-4-12B-it"
+    },
+    {
+      "index": 20,
+      "arm": "lmcache_shadowkv_plus",
+      "model_slug": "gemma4_e2b",
+      "model": "google/gemma-4-E2B-it"
+    },
+    {
+      "index": 21,
+      "arm": "lmcache",
+      "model_slug": "gemma4_31b",
+      "model": "google/gemma-4-31B-it"
+    },
+    {
+      "index": 22,
+      "arm": "vllm_apc_shadowkv_plus",
+      "model_slug": "gemma4_31b",
+      "model": "google/gemma-4-31B-it"
+    },
+    {
+      "index": 23,
+      "arm": "sglang_radix_attention",
+      "model_slug": "gemma4_e2b",
+      "model": "google/gemma-4-E2B-it"
+    },
+    {
+      "index": 24,
+      "arm": "vllm_apc",
+      "model_slug": "gemma4_26b_a4b",
+      "model": "google/gemma-4-26B-A4B-it"
+    },
+    {
+      "index": 25,
+      "arm": "vllm_apc",
+      "model_slug": "gemma4_31b",
+      "model": "google/gemma-4-31B-it"
+    },
+    {
+      "index": 26,
+      "arm": "lmcache_shadowkv_plus",
+      "model_slug": "gemma4_e4b",
+      "model": "google/gemma-4-E4B-it"
+    },
+    {
+      "index": 27,
+      "arm": "sglang_radix_attention",
+      "model_slug": "gemma4_e4b",
+      "model": "google/gemma-4-E4B-it"
+    },
+    {
+      "index": 28,
+      "arm": "vllm_apc",
+      "model_slug": "gemma4_12b",
+      "model": "google/gemma-4-12B-it"
+    },
+    {
+      "index": 29,
+      "arm": "vllm_apc_shadowkv_plus",
+      "model_slug": "gemma4_e2b",
+      "model": "google/gemma-4-E2B-it"
+    },
+    {
+      "index": 30,
+      "arm": "lmcache",
+      "model_slug": "gemma4_e4b",
+      "model": "google/gemma-4-E4B-it"
+    }
+  ]
+}

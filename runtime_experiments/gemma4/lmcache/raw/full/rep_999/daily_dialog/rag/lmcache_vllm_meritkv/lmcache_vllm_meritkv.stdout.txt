@@ -1,0 +1,2 @@
+Benchmark lmcache_vllm_meritkv for google/gemma-4-31B-it daily_dialog rag seed=999
+Latency: 61.91ms, Throughput: 16.15 rps

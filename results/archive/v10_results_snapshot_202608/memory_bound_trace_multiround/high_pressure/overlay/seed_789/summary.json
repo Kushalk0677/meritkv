@@ -1,0 +1,12 @@
+{
+  "overlay": {
+    "mean_latency_ms": 78.36,
+    "p95_latency_ms": 91.91,
+    "throughput_rps": 12.76,
+    "gpu_energy_j": 3072.5,
+    "hit_rate": 0.6159,
+    "evictions": 49,
+    "declined_admissions": 44,
+    "final_round_recovery": 0.1989
+  }
+}

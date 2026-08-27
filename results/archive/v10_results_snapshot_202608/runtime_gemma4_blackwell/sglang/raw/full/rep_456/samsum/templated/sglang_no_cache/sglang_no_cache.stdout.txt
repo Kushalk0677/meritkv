@@ -1,0 +1,2 @@
+Benchmark sglang_no_cache for google/gemma-4-31B-it samsum templated seed=456
+Latency: 117.55ms, Throughput: 8.51 rps

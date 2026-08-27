@@ -1,0 +1,11 @@
+{
+  "command": [
+    "bash",
+    "/content/meritkv_native_bypass/run_experiment.sh"
+  ],
+  "environment_overrides": {
+    "MERITKV_OUTPUT_DIR": "/content/meritkv_native_bypass/results/final",
+    "MERITKV_SOURCE_ROOT": "/content/meritkv_native_bypass/source_snapshot/v10/src",
+    "SHADOWKV_CONFIG": "/content/meritkv_native_bypass/source_snapshot/v10/config/config.yaml"
+  }
+}

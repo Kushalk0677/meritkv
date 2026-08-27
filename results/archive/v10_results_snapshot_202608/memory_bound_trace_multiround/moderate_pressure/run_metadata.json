@@ -1,0 +1,19 @@
+{
+  "experiment": "Multi-round four-arm enforcement (moderate_pressure)",
+  "hardware": "NVIDIA RTX PRO 6000 Blackwell",
+  "model": "google/gemma-4-31B-it",
+  "cache_budget_gb": 56,
+  "seeds": [
+    42,
+    123,
+    456,
+    789,
+    999
+  ],
+  "admission_modes": {
+    "no_cache": "disabled",
+    "native": "disabled",
+    "overlay": "write_through_admission",
+    "enforced": "native_enforced_skip_lookup_skip_write"
+  }
+}

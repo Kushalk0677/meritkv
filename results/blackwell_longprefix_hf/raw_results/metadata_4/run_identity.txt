@@ -1,0 +1,4 @@
+run_id=gemma4_31b_26b_a4b_longprefix_n128_clean_20260711
+project=/home/jade_hand/research/shadowkv/hf_blackwell_semantic_n128_longprefix_20260710
+results=/home/jade_hand/research/shadowkv/hf_blackwell_semantic_n128_longprefix_20260710/results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711
+image=shadowkv-hf-blackwell:20260706

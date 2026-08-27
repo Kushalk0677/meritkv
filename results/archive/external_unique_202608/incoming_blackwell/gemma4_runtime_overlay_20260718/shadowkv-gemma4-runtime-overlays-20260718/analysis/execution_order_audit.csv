@@ -1,0 +1,16 @@
+model,runtime,native_block_index,overlay_block_index,first_arm
+google/gemma-4-E2B-it,vllm_apc,3,29,vllm_apc
+google/gemma-4-E2B-it,sglang_radix_attention,23,6,sglang_radix_attention_shadowkv_plus
+google/gemma-4-E2B-it,lmcache,18,20,lmcache
+google/gemma-4-E4B-it,vllm_apc,10,12,vllm_apc
+google/gemma-4-E4B-it,sglang_radix_attention,27,14,sglang_radix_attention_shadowkv_plus
+google/gemma-4-E4B-it,lmcache,30,26,lmcache_shadowkv_plus
+google/gemma-4-12B-it,vllm_apc,28,5,vllm_apc_shadowkv_plus
+google/gemma-4-12B-it,sglang_radix_attention,19,11,sglang_radix_attention_shadowkv_plus
+google/gemma-4-12B-it,lmcache,17,1,lmcache_shadowkv_plus
+google/gemma-4-26B-A4B-it,vllm_apc,24,7,vllm_apc_shadowkv_plus
+google/gemma-4-26B-A4B-it,sglang_radix_attention,16,13,sglang_radix_attention_shadowkv_plus
+google/gemma-4-26B-A4B-it,lmcache,2,15,lmcache
+google/gemma-4-31B-it,vllm_apc,25,22,vllm_apc_shadowkv_plus
+google/gemma-4-31B-it,sglang_radix_attention,4,8,sglang_radix_attention
+google/gemma-4-31B-it,lmcache,21,9,lmcache_shadowkv_plus

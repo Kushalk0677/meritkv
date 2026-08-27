@@ -1,0 +1,21 @@
+FROM lmsysorg/sglang:dev-gemma-4-12B@sha256:91a1e452dc3e4a5e5bf3bbc658f395fd2270aaf95d059a21b14239690722b93b
+
+# SGLang's Gemma 4 unified implementation is present in the upstream image,
+# but this image revision shipped with an older Transformers checkout. Pin the
+# exact Transformers commit required by the official Gemma 4 deployment guide.
+RUN python3 -m pip install --no-cache-dir --no-deps --force-reinstall \
+      'git+https://github.com/huggingface/transformers.git@1423d22f7a3b62e8c70ad67b58ec25cd9b675897' \
+    && python3 - <<'PY'
+from pathlib import Path
+from transformers.models.auto.configuration_auto import CONFIG_MAPPING_NAMES
+
+assert "gemma4_unified" in CONFIG_MAPPING_NAMES
+assert Path(
+    "/sgl-workspace/sglang/python/sglang/srt/models/gemma4_unified.py"
+).is_file()
+print("Gemma 4 unified runtime support: ok")
+PY
+
+ENV USE_HUB_KERNELS=NO
+ENV FLASHINFER_DISABLE_VERSION_CHECK=1
+ENV PYTHONHASHSEED=0

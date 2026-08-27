@@ -1,0 +1,2 @@
+Benchmark sglang_radix_attention for google/gemma-4-31B-it daily_dialog rag seed=999
+Latency: 93.14ms, Throughput: 10.57 rps

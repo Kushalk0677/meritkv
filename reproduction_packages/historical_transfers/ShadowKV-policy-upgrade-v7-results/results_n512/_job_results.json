@@ -1,0 +1,98 @@
+{
+  "results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/daily_dialog/main_hf": {
+    "returncode": 0,
+    "elapsed_sec": 130.7
+  },
+  "results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/daily_dialog/runtime/vllm_apc": {
+    "returncode": 0,
+    "elapsed_sec": 125.0
+  },
+  "results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/daily_dialog/runtime/vllm_apc_shadowkv_plus": {
+    "returncode": 0,
+    "elapsed_sec": 143.4
+  },
+  "results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/ultrachat/main_hf": {
+    "returncode": 0,
+    "elapsed_sec": 161.5
+  },
+  "results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/ultrachat/runtime/vllm_apc": {
+    "returncode": 0,
+    "elapsed_sec": 129.6
+  },
+  "results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/ultrachat/runtime/vllm_apc_shadowkv_plus": {
+    "returncode": 0,
+    "elapsed_sec": 147.2
+  },
+  "results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/oasst1/main_hf": {
+    "returncode": 0,
+    "elapsed_sec": 151.0
+  },
+  "results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/oasst1/runtime/vllm_apc": {
+    "returncode": 0,
+    "elapsed_sec": 129.7
+  },
+  "results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/oasst1/runtime/vllm_apc_shadowkv_plus": {
+    "returncode": 0,
+    "elapsed_sec": 142.4
+  },
+  "results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/samsum/main_hf": {
+    "returncode": 0,
+    "elapsed_sec": 154.2
+  },
+  "results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/samsum/runtime/vllm_apc": {
+    "returncode": 0,
+    "elapsed_sec": 130.1
+  },
+  "results_n512/Qwen_Qwen2_5-1_5B-Instruct/templated/seed_42/samsum/runtime/vllm_apc_shadowkv_plus": {
+    "returncode": 0,
+    "elapsed_sec": 143.4
+  },
+  "results_n512/Qwen_Qwen2_5-1_5B-Instruct/rag/seed_42/daily_dialog/main_hf": {
+    "returncode": 0,
+    "elapsed_sec": 150.4
+  },
+  "results_n512/Qwen_Qwen2_5-1_5B-Instruct/rag/seed_42/daily_dialog/runtime/vllm_apc": {
+    "returncode": 0,
+    "elapsed_sec": 129.3
+  },
+  "results_n512/Qwen_Qwen2_5-1_5B-Instruct/rag/seed_42/daily_dialog/runtime/vllm_apc_shadowkv_plus": {
+    "returncode": 0,
+    "elapsed_sec": 145.8
+  },
+  "results_n512/Qwen_Qwen2_5-1_5B-Instruct/rag/seed_42/ultrachat/main_hf": {
+    "returncode": 0,
+    "elapsed_sec": 160.7
+  },
+  "results_n512/Qwen_Qwen2_5-1_5B-Instruct/rag/seed_42/ultrachat/runtime/vllm_apc": {
+    "returncode": 0,
+    "elapsed_sec": 128.8
+  },
+  "results_n512/Qwen_Qwen2_5-1_5B-Instruct/rag/seed_42/ultrachat/runtime/vllm_apc_shadowkv_plus": {
+    "returncode": 0,
+    "elapsed_sec": 149.3
+  },
+  "results_n512/Qwen_Qwen2_5-1_5B-Instruct/rag/seed_42/oasst1/main_hf": {
+    "returncode": 0,
+    "elapsed_sec": 149.6
+  },
+  "results_n512/Qwen_Qwen2_5-1_5B-Instruct/rag/seed_42/oasst1/runtime/vllm_apc": {
+    "returncode": 0,
+    "elapsed_sec": 129.0
+  },
+  "results_n512/Qwen_Qwen2_5-1_5B-Instruct/rag/seed_42/oasst1/runtime/vllm_apc_shadowkv_plus": {
+    "returncode": 0,
+    "elapsed_sec": 142.0
+  },
+  "results_n512/Qwen_Qwen2_5-1_5B-Instruct/rag/seed_42/samsum/main_hf": {
+    "returncode": 0,
+    "elapsed_sec": 153.2
+  },
+  "results_n512/Qwen_Qwen2_5-1_5B-Instruct/rag/seed_42/samsum/runtime/vllm_apc": {
+    "returncode": 0,
+    "elapsed_sec": 126.6
+  },
+  "results_n512/Qwen_Qwen2_5-1_5B-Instruct/rag/seed_42/samsum/runtime/vllm_apc_shadowkv_plus": {
+    "returncode": 0,
+    "elapsed_sec": 139.4
+  }
+}

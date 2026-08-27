@@ -1,0 +1,18 @@
+Bootstrap iterations: 200
+Bootstrap time: 74.9s
+Fitted latency exponent: 0.271 (was 0.7, change -0.429)
+Fitted cached-tokens exponent: 0.769 (was 0.5, change +0.269)
+
+Top-10 most uncertain estimates (by 95% CI width on latency):
+Model           Dataset            Mode       Engine                                    Latency   CI_width
+---------------------------------------------------------------------------------------------------------
+qwen25_32b      samsum             templated  sglang_radix_attention_shadowkv_plus         95.9        2.0
+qwen25_32b      xsum               templated  sglang_radix_attention_shadowkv_plus        115.5        1.8
+qwen25_32b      ag_news            templated  sglang_radix_attention_shadowkv_plus         89.6        1.6
+qwen25_32b      samsum             rag        sglang_radix_attention_shadowkv_plus         96.5        1.2
+qwen25_32b      ag_news            rag        sglang_radix_attention_shadowkv_plus         89.5        1.2
+qwen25_32b      dolly              rag        sglang_radix_attention_shadowkv_plus         91.4        1.2
+qwen25_14b      xsum               templated  lmcache_no_native_radix                      63.5        1.1
+qwen25_14b      samsum             rag        lmcache_no_native_radix                      53.5        0.9
+qwen25_32b      dolly              templated  sglang_radix_attention_shadowkv_plus         91.7        0.9
+qwen25_14b      xsum               rag        lmcache_no_native_radix                      64.6        0.9

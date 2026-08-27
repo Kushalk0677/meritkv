@@ -1,0 +1,2 @@
+Benchmark lmcache for google/gemma-4-31B-it ag_news templated seed=123
+Latency: 56.17ms, Throughput: 17.42 rps

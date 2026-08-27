@@ -1,0 +1,7 @@
+Experiment: memory_bound_lru_lfu_moderate_pressure
+Arm: lfu
+Seed: 789
+Model: google/gemma-4-31B-it
+Cache: 56 GB, layer TieredStateBank, fresh cache
+Requests: 140
+Status: completed

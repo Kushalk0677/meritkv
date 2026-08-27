@@ -1,0 +1,9 @@
+smoke_id	model_slug	model_id	arm	seed	dataset	prompt_mode	requests
+1	qwen25_32b	Qwen/Qwen2.5-32B-Instruct	native_baseline	1	samsum	templated	16
+2	qwen25_32b	Qwen/Qwen2.5-32B-Instruct	meritkv_write_through	1	samsum	templated	16
+3	qwen25_32b	Qwen/Qwen2.5-32B-Instruct	meritkv_enforced	1	samsum	templated	16
+4	qwen25_32b	Qwen/Qwen2.5-32B-Instruct	forced_recompute	1	samsum	templated	16
+5	gemma4_31b	google/gemma-4-31B-it	native_baseline	1	samsum	templated	16
+6	gemma4_31b	google/gemma-4-31B-it	meritkv_write_through	1	samsum	templated	16
+7	gemma4_31b	google/gemma-4-31B-it	meritkv_enforced	1	samsum	templated	16
+8	gemma4_31b	google/gemma-4-31B-it	forced_recompute	1	samsum	templated	16

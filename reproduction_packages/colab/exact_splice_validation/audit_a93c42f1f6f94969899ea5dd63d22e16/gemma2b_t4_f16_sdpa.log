@@ -1,0 +1,42 @@
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+Fetching 2 files:  50%|█████     | 1/2 [00:40<00:40, 40.96s/it]
+Fetching 2 files: 100%|██████████| 2/2 [00:40<00:00, 20.48s/it]
+
+Loading weights:   0%|          | 0/164 [00:00<?, ?it/s]
+Loading weights:   1%|          | 1/164 [00:05<15:49,  5.82s/it]
+Loading weights:  46%|████▌     | 75/164 [00:06<00:05, 17.40it/s]
+Loading weights:  58%|█████▊    | 95/164 [00:07<00:04, 15.83it/s]
+Loading weights:  65%|██████▌   | 107/164 [00:08<00:03, 15.69it/s]
+Loading weights:  70%|███████   | 115/164 [00:09<00:03, 14.28it/s]
+Loading weights:  74%|███████▍  | 121/164 [00:09<00:03, 13.76it/s]
+Loading weights:  76%|███████▌  | 125/164 [00:10<00:02, 13.54it/s]
+Loading weights:  79%|███████▊  | 129/164 [00:10<00:02, 13.15it/s]
+Loading weights:  80%|████████  | 132/164 [00:10<00:02, 11.12it/s]
+Loading weights:  84%|████████▍ | 138/164 [00:11<00:02, 12.50it/s]
+Loading weights:  85%|████████▌ | 140/164 [00:11<00:02,  9.82it/s]
+Loading weights:  90%|████████▉ | 147/164 [00:12<00:01, 12.10it/s]
+Loading weights:  91%|█████████ | 149/164 [00:12<00:01,  9.39it/s]
+Loading weights:  95%|█████████▌| 156/164 [00:13<00:00, 11.92it/s]
+Loading weights:  96%|█████████▋| 158/164 [00:13<00:00,  9.74it/s]
+Loading weights: 100%|██████████| 164/164 [00:13<00:00, 12.14it/s]
+sample=0 ratio=0.50 shared=64/128
+sample=0 ratio=0.75 shared=96/128
+sample=1 ratio=0.50 shared=64/128
+sample=1 ratio=0.75 shared=96/128
+sample=2 ratio=0.50 shared=64/128
+sample=2 ratio=0.75 shared=96/128
+sample=3 ratio=0.50 shared=64/128
+sample=3 ratio=0.75 shared=96/128
+{
+  "cases": 8,
+  "strict_passes": 0,
+  "token_semantic_passes": 8,
+  "cache_passes": 4,
+  "native_token_passes": 8,
+  "splice_token_passes": 8,
+  "all_strict_pass": false,
+  "all_token_semantic_pass": true
+}
+wrote /content/meritkv_exact_splice_validation_outputs/gemma2b_t4_f16_sdpa.json

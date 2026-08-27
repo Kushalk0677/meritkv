@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from typing import Any, Optional
 
 
+# NVML energy samples and interval accounting.
 @dataclass(frozen=True)
 class EnergySnapshot:
     """Single low-overhead energy/power snapshot.
@@ -132,6 +133,7 @@ class NvidiaEnergyMeter:
         }
 
 
+# Idle-power calibration.
 def measure_idle_baseline(meter: NvidiaEnergyMeter, duration_s: float) -> dict[str, Any]:
     """Measure idle GPU energy over a short window.
 

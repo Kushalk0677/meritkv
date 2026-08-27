@@ -1,0 +1,602 @@
+[
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "ag_news",
+    "engine": "no_cache",
+    "returncode": 0,
+    "elapsed_sec": 72.369,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/ag_news/no_cache"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "ag_news",
+    "engine": "shadow_kv",
+    "returncode": 0,
+    "elapsed_sec": 71.379,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/ag_news/shadow_kv"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "ag_news",
+    "engine": "shadow_kv_plus",
+    "returncode": 0,
+    "elapsed_sec": 68.109,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/ag_news/shadow_kv_plus"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "alpaca_eval",
+    "engine": "no_cache",
+    "returncode": 0,
+    "elapsed_sec": 68.863,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/alpaca_eval/no_cache"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "alpaca_eval",
+    "engine": "shadow_kv",
+    "returncode": 0,
+    "elapsed_sec": 72.522,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/alpaca_eval/shadow_kv"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "alpaca_eval",
+    "engine": "shadow_kv_plus",
+    "returncode": 0,
+    "elapsed_sec": 68.735,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/alpaca_eval/shadow_kv_plus"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "banking77",
+    "engine": "no_cache",
+    "returncode": 0,
+    "elapsed_sec": 70.889,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/banking77/no_cache"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "banking77",
+    "engine": "shadow_kv",
+    "returncode": 0,
+    "elapsed_sec": 71.771,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/banking77/shadow_kv"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "banking77",
+    "engine": "shadow_kv_plus",
+    "returncode": 0,
+    "elapsed_sec": 70.14,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/banking77/shadow_kv_plus"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "cnn_dailymail",
+    "engine": "no_cache",
+    "returncode": 0,
+    "elapsed_sec": 79.392,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/cnn_dailymail/no_cache"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "cnn_dailymail",
+    "engine": "shadow_kv",
+    "returncode": 0,
+    "elapsed_sec": 82.476,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/cnn_dailymail/shadow_kv"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "cnn_dailymail",
+    "engine": "shadow_kv_plus",
+    "returncode": 0,
+    "elapsed_sec": 63.946,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/cnn_dailymail/shadow_kv_plus"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "daily_dialog",
+    "engine": "no_cache",
+    "returncode": 0,
+    "elapsed_sec": 70.906,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/daily_dialog/no_cache"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "daily_dialog",
+    "engine": "shadow_kv",
+    "returncode": 0,
+    "elapsed_sec": 71.636,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/daily_dialog/shadow_kv"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "daily_dialog",
+    "engine": "shadow_kv_plus",
+    "returncode": 0,
+    "elapsed_sec": 68.426,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/daily_dialog/shadow_kv_plus"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "dolly",
+    "engine": "no_cache",
+    "returncode": 0,
+    "elapsed_sec": 71.509,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/dolly/no_cache"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "dolly",
+    "engine": "shadow_kv",
+    "returncode": 0,
+    "elapsed_sec": 71.904,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/dolly/shadow_kv"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "dolly",
+    "engine": "shadow_kv_plus",
+    "returncode": 0,
+    "elapsed_sec": 68.483,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/dolly/shadow_kv_plus"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "oasst1",
+    "engine": "no_cache",
+    "returncode": 0,
+    "elapsed_sec": 70.711,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/oasst1/no_cache"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "oasst1",
+    "engine": "shadow_kv",
+    "returncode": 0,
+    "elapsed_sec": 72.527,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/oasst1/shadow_kv"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "oasst1",
+    "engine": "shadow_kv_plus",
+    "returncode": 0,
+    "elapsed_sec": 69.594,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/oasst1/shadow_kv_plus"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "samsum",
+    "engine": "no_cache",
+    "returncode": 0,
+    "elapsed_sec": 73.734,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/samsum/no_cache"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "samsum",
+    "engine": "shadow_kv",
+    "returncode": 0,
+    "elapsed_sec": 73.442,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/samsum/shadow_kv"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "samsum",
+    "engine": "shadow_kv_plus",
+    "returncode": 0,
+    "elapsed_sec": 65.323,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/samsum/shadow_kv_plus"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "ultrachat",
+    "engine": "no_cache",
+    "returncode": 0,
+    "elapsed_sec": 76.717,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/ultrachat/no_cache"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "ultrachat",
+    "engine": "shadow_kv",
+    "returncode": 0,
+    "elapsed_sec": 79.127,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/ultrachat/shadow_kv"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "ultrachat",
+    "engine": "shadow_kv_plus",
+    "returncode": 0,
+    "elapsed_sec": 66.147,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/ultrachat/shadow_kv_plus"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "xsum",
+    "engine": "no_cache",
+    "returncode": 0,
+    "elapsed_sec": 76.9,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/xsum/no_cache"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "xsum",
+    "engine": "shadow_kv",
+    "returncode": 0,
+    "elapsed_sec": 79.172,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/xsum/shadow_kv"
+  },
+  {
+    "model": "google/gemma-4-31B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "xsum",
+    "engine": "shadow_kv_plus",
+    "returncode": 0,
+    "elapsed_sec": 62.311,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-31B-it/semantic/seed_42/xsum/shadow_kv_plus"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "ag_news",
+    "engine": "no_cache",
+    "returncode": 0,
+    "elapsed_sec": 58.082,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/ag_news/no_cache"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "ag_news",
+    "engine": "shadow_kv",
+    "returncode": 0,
+    "elapsed_sec": 59.478,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/ag_news/shadow_kv"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "ag_news",
+    "engine": "shadow_kv_plus",
+    "returncode": 0,
+    "elapsed_sec": 61.763,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/ag_news/shadow_kv_plus"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "alpaca_eval",
+    "engine": "no_cache",
+    "returncode": 0,
+    "elapsed_sec": 57.404,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/alpaca_eval/no_cache"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "alpaca_eval",
+    "engine": "shadow_kv",
+    "returncode": 0,
+    "elapsed_sec": 58.11,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/alpaca_eval/shadow_kv"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "alpaca_eval",
+    "engine": "shadow_kv_plus",
+    "returncode": 0,
+    "elapsed_sec": 59.025,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/alpaca_eval/shadow_kv_plus"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "banking77",
+    "engine": "no_cache",
+    "returncode": 0,
+    "elapsed_sec": 56.635,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/banking77/no_cache"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "banking77",
+    "engine": "shadow_kv",
+    "returncode": 0,
+    "elapsed_sec": 57.72,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/banking77/shadow_kv"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "banking77",
+    "engine": "shadow_kv_plus",
+    "returncode": 0,
+    "elapsed_sec": 56.234,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/banking77/shadow_kv_plus"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "cnn_dailymail",
+    "engine": "no_cache",
+    "returncode": 0,
+    "elapsed_sec": 58.677,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/cnn_dailymail/no_cache"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "cnn_dailymail",
+    "engine": "shadow_kv",
+    "returncode": 0,
+    "elapsed_sec": 54.117,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/cnn_dailymail/shadow_kv"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "cnn_dailymail",
+    "engine": "shadow_kv_plus",
+    "returncode": 0,
+    "elapsed_sec": 53.333,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/cnn_dailymail/shadow_kv_plus"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "daily_dialog",
+    "engine": "no_cache",
+    "returncode": 0,
+    "elapsed_sec": 54.711,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/daily_dialog/no_cache"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "daily_dialog",
+    "engine": "shadow_kv",
+    "returncode": 0,
+    "elapsed_sec": 55.013,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/daily_dialog/shadow_kv"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "daily_dialog",
+    "engine": "shadow_kv_plus",
+    "returncode": 0,
+    "elapsed_sec": 56.974,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/daily_dialog/shadow_kv_plus"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "dolly",
+    "engine": "no_cache",
+    "returncode": 0,
+    "elapsed_sec": 56.921,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/dolly/no_cache"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "dolly",
+    "engine": "shadow_kv",
+    "returncode": 0,
+    "elapsed_sec": 56.325,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/dolly/shadow_kv"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "dolly",
+    "engine": "shadow_kv_plus",
+    "returncode": 0,
+    "elapsed_sec": 58.483,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/dolly/shadow_kv_plus"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "oasst1",
+    "engine": "no_cache",
+    "returncode": 0,
+    "elapsed_sec": 53.979,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/oasst1/no_cache"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "oasst1",
+    "engine": "shadow_kv",
+    "returncode": 0,
+    "elapsed_sec": 57.818,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/oasst1/shadow_kv"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "oasst1",
+    "engine": "shadow_kv_plus",
+    "returncode": 0,
+    "elapsed_sec": 55.758,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/oasst1/shadow_kv_plus"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "samsum",
+    "engine": "no_cache",
+    "returncode": 0,
+    "elapsed_sec": 58.493,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/samsum/no_cache"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "samsum",
+    "engine": "shadow_kv",
+    "returncode": 0,
+    "elapsed_sec": 59.136,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/samsum/shadow_kv"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "samsum",
+    "engine": "shadow_kv_plus",
+    "returncode": 0,
+    "elapsed_sec": 55.075,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/samsum/shadow_kv_plus"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "ultrachat",
+    "engine": "no_cache",
+    "returncode": 0,
+    "elapsed_sec": 59.162,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/ultrachat/no_cache"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "ultrachat",
+    "engine": "shadow_kv",
+    "returncode": 0,
+    "elapsed_sec": 59.413,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/ultrachat/shadow_kv"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "ultrachat",
+    "engine": "shadow_kv_plus",
+    "returncode": 0,
+    "elapsed_sec": 54.924,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/ultrachat/shadow_kv_plus"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "xsum",
+    "engine": "no_cache",
+    "returncode": 0,
+    "elapsed_sec": 57.003,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/xsum/no_cache"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "xsum",
+    "engine": "shadow_kv",
+    "returncode": 0,
+    "elapsed_sec": 54.948,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/xsum/shadow_kv"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "seed": 42,
+    "prompt_mode": "semantic",
+    "dataset": "xsum",
+    "engine": "shadow_kv_plus",
+    "returncode": 0,
+    "elapsed_sec": 53.047,
+    "output_dir": "results_blackwell_semantic_gemma4_31b_26b_a4b_longprefix_n128_clean_20260711/google_gemma-4-26B-A4B-it/semantic/seed_42/xsum/shadow_kv_plus"
+  }
+]

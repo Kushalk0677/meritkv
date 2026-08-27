@@ -81,6 +81,7 @@ DEFAULT_ADMISSION_TUNING_PRESETS = (
 )
 
 
+# Runtime selection and admission-controller setup.
 def _runtime_kind(args: argparse.Namespace) -> str:
     if args.baseline.startswith("sglang"):
         return "sglang"
@@ -155,6 +156,7 @@ def _prepare_admission_metadata(admission: ExternalAdmissionController, req, sha
     return metadata
 
 
+# Server readiness and benchmark orchestration.
 def _wait_until_ready_or_server_exit(client: OpenAICompatClient, server: ManagedServer | None, timeout_s: float) -> None:
     deadline = time.time() + timeout_s
     last_error: str | None = None

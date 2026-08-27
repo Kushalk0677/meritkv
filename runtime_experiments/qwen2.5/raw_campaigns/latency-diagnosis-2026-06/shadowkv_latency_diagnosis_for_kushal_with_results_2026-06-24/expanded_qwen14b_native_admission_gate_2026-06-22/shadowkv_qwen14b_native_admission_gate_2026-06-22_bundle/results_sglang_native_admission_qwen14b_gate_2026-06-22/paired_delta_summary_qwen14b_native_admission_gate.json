@@ -1,0 +1,9 @@
+{
+  "paired_cells": 6,
+  "mean_end_to_end_latency_delta_pct": 10.378722924579703,
+  "mean_end_to_end_p95_delta_pct": 19.556402211668633,
+  "mean_end_to_end_throughput_delta_pct": -9.227502959190666,
+  "cached_token_delta_total": -53546,
+  "skip_lookup_total": 1048,
+  "skip_write_total": 1028
+}

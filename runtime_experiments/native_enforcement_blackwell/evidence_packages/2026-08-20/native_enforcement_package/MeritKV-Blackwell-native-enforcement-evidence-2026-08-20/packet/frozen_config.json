@@ -1,0 +1,140 @@
+{
+  "schema_version": 2,
+  "experiment": "meritkv_blackwell_enforced_20260820",
+  "request_source": {
+    "stakeholder": "Kushal Khemani",
+    "subject": "Blackwell enforced MeritKV experiment",
+    "received_at": "2026-08-14T08:30:43+05:30",
+    "acceptance_target": "make the existing logged reuse-or-bypass decision control native cache consumption"
+  },
+  "freeze_policy": "no_retuning_from_results",
+  "outage_not_before": "2026-08-20T02:00:00-04:00",
+  "timezone": "America/New_York",
+  "completion_policy": "continue through verified completion; restore immediately after completion or on any failed attempt; resume from verified checkpoints after failure",
+  "production": {
+    "container": "qwen38-27b-fp8-sglang",
+    "served_model": "qwen38-27b-fp8",
+    "endpoint": "http://127.0.0.1:8017",
+    "compose": "/home/jade_hand/active/services/qwen38-27b-fp8-sglang/docker-compose.yml"
+  },
+  "runtime": {
+    "image": "shadowkv-sglang-native-admission:2026-08-20-swa-counters",
+    "image_id": "sha256:f4593e56ec7f7858f465a62f36dfc42ba8a2d9e91b7700cba50e8b21809e4d3f",
+    "sglang_version": "0.5.13",
+    "port": 30000,
+    "context_length": 4096,
+    "mem_fraction_static": 0.88,
+    "dtype": "float16",
+    "attention_backend": "triton",
+    "sampling_backend": "pytorch",
+    "disable_cuda_graph": true,
+    "disable_piecewise_cuda_graph": true,
+    "forced_recompute_disable_radix_cache": true,
+    "chunked_prefill": "runtime_default_matching_existing_blackwell_sglang_matrix",
+    "enable_cache_report": true,
+    "enable_metrics": true,
+    "native_hook_delta": "immutable derivative of sha256:5734af3b7592b0f4d082101330e8190f55c31ca90911302023c839479aa05caf adds per-request skip_lookup and skip_write execution counters to both RadixCache and Gemma SWARadixCache",
+    "swa_radix_source_sha256": "e9079e6f4acc169bf2448073ee344d80107870fde8a19d771aebf48fb7543be9",
+    "server_launch_timeout_seconds": 1500,
+    "cell_timeout_seconds": 2400
+  },
+  "models": [
+    {
+      "slug": "qwen25_32b",
+      "id": "Qwen/Qwen2.5-32B-Instruct",
+      "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+      "snapshot": "/datapool/cache/huggingface/hub/models--Qwen--Qwen2.5-32B-Instruct/snapshots/5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+      "config_sha256": "9c6772f138ef9e5b3d1c18f2c87e451bbc01f5f1a4eabb36f9bf4f53829b903e",
+      "weight_index_sha256": "0183543f2e6e40d3d1e863ed0b2a8c9cdaf2ee4045ce724a45cea30e9995a0af",
+      "tokenizer_manifest_sha256": "a28a1734767030cbbdc1588ea53965c763bae58e47596a4f03b237ac15b2c8b0",
+      "tokenizer_files": {
+        "tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+        "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+        "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    },
+    {
+      "slug": "gemma4_31b",
+      "id": "google/gemma-4-31B-it",
+      "revision": "b9ea41a2887d8607f594846523f94c6cc75ac8a4",
+      "snapshot": "/datapool/cache/huggingface/hub/models--google--gemma-4-31B-it/snapshots/b9ea41a2887d8607f594846523f94c6cc75ac8a4",
+      "config_sha256": "e967dd38bc5cfd38bd09a995a7bf4a754075df2b46aba68f7fbb5a791e6d8dd1",
+      "weight_index_sha256": "d4aff3b976d69c123a29d1c085d7ba4de1ac3f4ca1726a7f81e1b11462a64ea2",
+      "tokenizer_manifest_sha256": "202cc4cc84e68aa6ec005e5b35a0627b4de805cfe1df61d5c5fc5b1f25fcca0e",
+      "tokenizer_files": {
+        "tokenizer_config.json": "90c3a3ba5bf53818383a58e1a776cbcacd2a038d4812eaa373e1522f2d06f3df",
+        "tokenizer.json": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f",
+        "chat_template.jinja": "ae53464bf3be25802b3a5b37def7fd89667067d7577049b3b2d74c4d8de4c6d4",
+        "processor_config.json": "32bdf45d2ad4cc29a0822ddd157a182de76644f0419a6228d151495256e9813c"
+      }
+    }
+  ],
+  "arms": [
+    "native_baseline",
+    "meritkv_write_through",
+    "meritkv_enforced",
+    "forced_recompute"
+  ],
+  "admission": {
+    "preset": "balanced",
+    "tuning_enabled": false,
+    "policy_state_mode": "frozen_arm_independent",
+    "write_through_mode": "write_through_admission",
+    "enforced_mode": "native_sglang_hook",
+    "enforced_bypass": {
+      "skip_lookup": true,
+      "skip_write": true,
+      "allow_store_after_bypass": false
+    },
+    "tokenizer": "pinned local snapshot, offline-only, fail-closed; whitespace fallback forbidden"
+  },
+  "workload": {
+    "datasets": ["daily_dialog", "samsum", "ag_news", "dolly", "xsum"],
+    "prompt_modes": ["templated", "rag"],
+    "seeds": [1, 2, 3, 4, 5],
+    "full_requests_per_cell": 256,
+    "smoke_requests_per_cell": 16,
+    "proof_requests_per_cell": 64,
+    "full_warmup_requests_per_cell": 16,
+    "smoke_warmup_requests_per_cell": 2,
+    "proof_warmup_requests_per_cell": 2,
+    "max_tokens": 1,
+    "temperature": 0.0,
+    "arrival_simulation": false,
+    "cell_reset_endpoints": ["/flush_cache", "/shadowkv_admission_metrics/reset"]
+  },
+  "energy": {
+    "enabled": true,
+    "source": "NVML",
+    "full_idle_baseline_seconds": 10,
+    "full_idle_stabilization_seconds": 30,
+    "smoke_and_proof_idle_baseline_seconds": 5,
+    "smoke_and_proof_idle_stabilization_seconds": 5,
+    "stabilization_tolerance_watts": 3
+  },
+  "plans": {
+    "full_server_blocks": 40,
+    "full_cells": 400,
+    "smoke_cells": 8,
+    "proof_cells": 6,
+    "full_measured_requests": 102400,
+    "all_measured_requests": 102912,
+    "full_warmup_requests": 6400,
+    "cell_order_source": "cell_plan_400.tsv"
+  },
+  "required_telemetry": [
+    "server_action_counters",
+    "policy_decision_and_full_utility_breakdown",
+    "pinned_tokenizer_provenance",
+    "native_cached_tokens",
+    "ttft_mean_and_p95_ms",
+    "end_to_end_latency_mean_and_p95_ms",
+    "output_text_and_sha256",
+    "NVML_energy",
+    "raw_config",
+    "raw_command",
+    "exact_request_trace"
+  ],
+  "result_root": "/datapool/experiments/meritkv/blackwell_enforced_20260820"
+}

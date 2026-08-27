@@ -1,0 +1,12 @@
+{
+  "no_cache": {
+    "mean_latency_ms": 85.71,
+    "p95_latency_ms": 108.09,
+    "throughput_rps": 11.67,
+    "gpu_energy_j": 3441.7,
+    "hit_rate": 0.1436,
+    "evictions": 58,
+    "declined_admissions": 0,
+    "final_round_recovery": 0.0
+  }
+}

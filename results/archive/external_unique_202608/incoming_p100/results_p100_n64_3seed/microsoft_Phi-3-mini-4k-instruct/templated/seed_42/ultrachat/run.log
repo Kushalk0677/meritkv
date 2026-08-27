@@ -1,0 +1,25 @@
+/home/kushalkhemani/research/myenv/lib/python3.12/site-packages/torch/cuda/__init__.py:58: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Using the latest cached version of the dataset since HuggingFaceH4/ultrachat_200k couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /home/kushalkhemani/.cache/huggingface/datasets/HuggingFaceH4___ultrachat_200k/default/0.0.0/8049631c405ae6576f93f445c6b8166f76f5505a (last modified on Thu Apr 30 10:11:47 2026).
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.52it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  2.12it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  2.00it/s]
+Traceback (most recent call last):
+  File "/home/kushalkhemani/research/shadowkv_p100/experiments/run_benchmark.py", line 911, in <module>
+    main()
+  File "/home/kushalkhemani/research/shadowkv_p100/experiments/run_benchmark.py", line 782, in main
+    _run_engine_requests(args, backend, engine, requests, simulate_arrivals=args.simulate_arrivals)
+  File "/home/kushalkhemani/research/shadowkv_p100/experiments/run_benchmark.py", line 601, in _run_engine_requests
+    engine.serve_tokens(req.request_id, tokens, metadata=metadata)
+  File "/home/kushalkhemani/research/shadowkv_p100/src/proactive_kv_cache/engines.py", line 801, in serve_tokens
+    out = self._prefill_full(tokens)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kushalkhemani/research/shadowkv_p100/src/proactive_kv_cache/engines.py", line 752, in _prefill_full
+    out = self.backend.prefill(tokens)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kushalkhemani/research/shadowkv_p100/src/proactive_kv_cache/models.py", line 512, in prefill
+    self.torch.cuda.synchronize()
+  File "/home/kushalkhemani/research/myenv/lib/python3.12/site-packages/torch/cuda/__init__.py", line 892, in synchronize
+    return torch._C._cuda_synchronize()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

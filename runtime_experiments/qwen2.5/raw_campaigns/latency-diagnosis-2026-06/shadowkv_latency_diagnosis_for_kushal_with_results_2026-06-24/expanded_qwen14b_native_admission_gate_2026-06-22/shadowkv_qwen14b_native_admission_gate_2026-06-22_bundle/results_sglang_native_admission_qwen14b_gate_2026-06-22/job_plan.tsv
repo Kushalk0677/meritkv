@@ -1,0 +1,13 @@
+job_index	rep	mode	baseline	seed	baseline_position	block_index	block_key
+1	3	rag	sglang_radix_attention_shadowkv_plus	20263722	1	1	block_01:rep_3:rag
+2	3	rag	sglang_radix_attention	20263722	2	1	block_01:rep_3:rag
+3	2	templated	sglang_radix_attention	20262622	1	2	block_02:rep_2:templated
+4	2	templated	sglang_radix_attention_shadowkv_plus	20262622	2	2	block_02:rep_2:templated
+5	2	rag	sglang_radix_attention	20262722	1	3	block_03:rep_2:rag
+6	2	rag	sglang_radix_attention_shadowkv_plus	20262722	2	3	block_03:rep_2:rag
+7	3	templated	sglang_radix_attention_shadowkv_plus	20263622	1	4	block_04:rep_3:templated
+8	3	templated	sglang_radix_attention	20263622	2	4	block_04:rep_3:templated
+9	1	rag	sglang_radix_attention	20261722	1	5	block_05:rep_1:rag
+10	1	rag	sglang_radix_attention_shadowkv_plus	20261722	2	5	block_05:rep_1:rag
+11	1	templated	sglang_radix_attention	20261622	1	6	block_06:rep_1:templated
+12	1	templated	sglang_radix_attention_shadowkv_plus	20261622	2	6	block_06:rep_1:templated

@@ -1,0 +1,7 @@
+gpt2
+TinyLlama/TinyLlama-1.1B-Chat-v1.0
+Qwen/Qwen2.5-1.5B-Instruct
+google/gemma-4-E2B-it
+microsoft/Phi-3-mini-4k-instruct
+Qwen/Qwen2.5-3B-Instruct
+google/gemma-4-12B-it

@@ -1,0 +1,30 @@
+2026-07-04 20:24:38  ================================================================================
+2026-07-04 20:24:38  BLACKWELL SEMANTIC N128 START models=1 datasets=1 modes=1 n=4
+2026-07-04 20:24:38  ================================================================================
+2026-07-04 20:24:38  MODEL WORKER 1/1 gpt2
+2026-07-04 20:24:38  DRY RUN CMD C:\shadowkv\.venv\Scripts\python.exe C:\shadowkv\v10\experiments\run_blackwell_semantic_n128.py --worker_model gpt2 --results_root C:\shadowkv\incoming_p100\blackwell_semantic_dryrun --device cuda --dtype float16 --n_requests 4 --mean_inter_arrival_ms 50.0 --max_arrival_sleep_ms 500.0 --max_memory_mb 512 --speculative_k 2 --idle_threshold_ms 30.0 --gpu_index 0 --idle_baseline_seconds 5.0 --policy_preset balanced --early_layer_reuse_ratio 0.35 --logit_guard_threshold 0.08 --datasets ag_news --prompt_modes semantic --seeds 42
+2026-07-04 20:24:38  ================================================================================
+2026-07-04 20:24:38  DONE model_failures=0/1
+2026-07-04 20:24:38  Saved C:\shadowkv\incoming_p100\blackwell_semantic_dryrun\all_results.csv
+2026-07-04 20:24:38  Saved C:\shadowkv\incoming_p100\blackwell_semantic_dryrun\comparisons_vs_no_cache.csv
+2026-07-04 20:24:38  ================================================================================
+2026-07-04 20:30:43  ================================================================================
+2026-07-04 20:30:43  BLACKWELL SEMANTIC N128 START models=1 datasets=1 modes=1 n=4
+2026-07-04 20:30:43  ================================================================================
+2026-07-04 20:30:43  MODEL WORKER 1/1 gpt2
+2026-07-04 20:30:43  DRY RUN CMD C:\shadowkv\.venv\Scripts\python.exe C:\shadowkv\v10\blackwell_semantic_n128\run_blackwell_semantic_n128.py --worker_model gpt2 --results_root C:\shadowkv\incoming_p100\blackwell_semantic_dryrun --device cuda --dtype float16 --n_requests 4 --mean_inter_arrival_ms 50.0 --max_arrival_sleep_ms 500.0 --max_memory_mb 512 --speculative_k 2 --idle_threshold_ms 30.0 --gpu_index 0 --idle_baseline_seconds 5.0 --policy_preset balanced --early_layer_reuse_ratio 0.35 --logit_guard_threshold 0.08 --datasets ag_news --prompt_modes semantic --seeds 42
+2026-07-04 20:30:43  ================================================================================
+2026-07-04 20:30:43  DONE model_failures=0/1
+2026-07-04 20:30:43  Saved C:\shadowkv\incoming_p100\blackwell_semantic_dryrun\all_results.csv
+2026-07-04 20:30:43  Saved C:\shadowkv\incoming_p100\blackwell_semantic_dryrun\comparisons_vs_no_cache.csv
+2026-07-04 20:30:43  ================================================================================
+2026-07-04 20:33:07  ================================================================================
+2026-07-04 20:33:07  BLACKWELL SEMANTIC N128 START models=1 datasets=1 modes=1 n=4
+2026-07-04 20:33:07  ================================================================================
+2026-07-04 20:33:07  MODEL WORKER 1/1 gpt2
+2026-07-04 20:33:07  DRY RUN CMD C:\shadowkv\.venv\Scripts\python.exe C:\shadowkv\v10\blackwell_semantic_n128\run_blackwell_semantic_n128.py --worker_model gpt2 --results_root C:\shadowkv\incoming_p100\blackwell_semantic_dryrun --device cuda --dtype float16 --n_requests 4 --mean_inter_arrival_ms 50.0 --max_arrival_sleep_ms 500.0 --max_memory_mb 512 --speculative_k 2 --idle_threshold_ms 30.0 --gpu_index 0 --idle_baseline_seconds 5.0 --policy_preset balanced --early_layer_reuse_ratio 0.35 --logit_guard_threshold 0.08 --datasets ag_news --prompt_modes semantic --seeds 42
+2026-07-04 20:33:07  ================================================================================
+2026-07-04 20:33:07  DONE model_failures=0/1
+2026-07-04 20:33:07  Saved C:\shadowkv\incoming_p100\blackwell_semantic_dryrun\all_results.csv
+2026-07-04 20:33:07  Saved C:\shadowkv\incoming_p100\blackwell_semantic_dryrun\comparisons_vs_no_cache.csv
+2026-07-04 20:33:07  ================================================================================

@@ -1,0 +1,2 @@
+Benchmark lmcache_no_cache for google/gemma-4-31B-it dolly rag seed=789
+Latency: 76.59ms, Throughput: 13.06 rps

@@ -1,0 +1,4 @@
+model_slug,baseline,cells,mean_latency_ms,mean_p95_latency_ms,mean_throughput_rps,mean_idle_adjusted_joules_per_request,prompt_tokens_total,cached_tokens_total,admission_plans_total,admission_allow_total,admission_bypass_total,lmcache_retrieve_events,lmcache_store_events
+qwen25_14b,lmcache_no_native_radix,30,52.306953285869895,64.10581973032095,19.362195768619458,24.747881240178287,2023650,23808,0,0,0,88,2902
+qwen25_14b,sglang_radix_attention,30,46.300800194861345,52.570994826965034,21.75345285762412,19.388023141248546,2023650,1055310,0,0,0,0,0
+qwen25_14b,sglang_radix_attention_shadowkv_plus,30,45.48998852542354,51.467932751984335,22.132780892556674,19.363397965960473,2023650,1055310,7680,7650,30,0,0

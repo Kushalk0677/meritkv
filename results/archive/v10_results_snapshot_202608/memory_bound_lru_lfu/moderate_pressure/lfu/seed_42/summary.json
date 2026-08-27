@@ -1,0 +1,8 @@
+{
+  "lfu": {
+    "mean_latency_ms": 65.31,
+    "final_round_recovery": 0.7197,
+    "total_evictions": 19,
+    "declined_admissions_phase1": 0
+  }
+}

@@ -1,0 +1,390 @@
+{
+  "environment": {
+    "python": "3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]",
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+    "torch": "2.11.0+cu128",
+    "transformers": "5.10.2",
+    "cuda_available": true,
+    "cuda_version": "12.8"
+  },
+  "configuration": {
+    "model_id": null,
+    "tiny_model": "tiny-qwen2",
+    "revision": null,
+    "device": "cpu",
+    "dtype": "float32",
+    "attention_implementation": "eager",
+    "sequence_length": 24,
+    "shared_ratios": [
+      0.5
+    ],
+    "samples": 1,
+    "max_new_tokens": 4,
+    "seed": 42,
+    "atol": 1e-05,
+    "rtol": 1e-05,
+    "passes_cache_position": true,
+    "passes_position_ids": true
+  },
+  "summary": {
+    "cases": 1,
+    "strict_passes": 1,
+    "token_semantic_passes": 1,
+    "cache_passes": 1,
+    "native_token_passes": 1,
+    "splice_token_passes": 1,
+    "all_strict_pass": true,
+    "all_token_semantic_pass": true
+  },
+  "cases": [
+    {
+      "shared_tokens": 12,
+      "total_tokens": 24,
+      "cache_length_before_continuation": {
+        "clean": 12,
+        "spliced": 12
+      },
+      "prefix_cache": {
+        "clean_layers": 2,
+        "spliced_layers": 2,
+        "layer_count_equal": true,
+        "active_length": 12,
+        "allclose": true,
+        "layers": [
+          {
+            "layer": 0,
+            "key": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                12,
+                16
+              ],
+              "left_finite": true,
+              "right_finite": true,
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            },
+            "value": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                12,
+                16
+              ],
+              "left_finite": true,
+              "right_finite": true,
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true
+            }
+          },
+          {
+            "layer": 1,
+            "key": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                12,
+                16
+              ],
+              "left_finite": true,
+              "right_finite": true,
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 1.0912724057732248e-08,
+              "allclose": true
+            },
+            "value": {
+              "same_shape": true,
+              "shape": [
+                1,
+                2,
+                12,
+                16
+              ],
+              "left_finite": true,
+              "right_finite": true,
+              "max_abs": 8.940696716308594e-08,
+              "mean_abs": 1.08623980921152e-08,
+              "allclose": true
+            }
+          }
+        ]
+      },
+      "suffix_logits": {
+        "native_vs_full": {
+          "same_shape": true,
+          "shape": [
+            1,
+            12,
+            257
+          ],
+          "left_finite": true,
+          "right_finite": true,
+          "max_abs": 1.1920928955078125e-07,
+          "mean_abs": 1.8726666439761175e-08,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 2.5494955480098724e-08
+        },
+        "splice_vs_full": {
+          "same_shape": true,
+          "shape": [
+            1,
+            12,
+            257
+          ],
+          "left_finite": true,
+          "right_finite": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 0.0
+        },
+        "splice_vs_native": {
+          "same_shape": true,
+          "shape": [
+            1,
+            12,
+            257
+          ],
+          "left_finite": true,
+          "right_finite": true,
+          "max_abs": 1.1920928955078125e-07,
+          "mean_abs": 1.8726666439761175e-08,
+          "allclose": true,
+          "top1_match_rate": 1.0,
+          "mean_total_variation": 2.5494955480098724e-08
+        }
+      },
+      "generation": {
+        "steps": [
+          {
+            "step": 0,
+            "reference_token": 200,
+            "native_token": 200,
+            "splice_token": 200,
+            "reference_logits_finite": true,
+            "native_logits_finite": true,
+            "splice_logits_finite": true,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "left_finite": true,
+              "right_finite": true,
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.5505826783955854e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 4.2957253754138947e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "left_finite": true,
+              "right_finite": true,
+              "max_abs": 0.0,
+              "mean_abs": 0.0,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 0.0
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "left_finite": true,
+              "right_finite": true,
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.5505826783955854e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 4.2957253754138947e-08
+            }
+          },
+          {
+            "step": 1,
+            "reference_token": 25,
+            "native_token": 25,
+            "splice_token": 25,
+            "reference_logits_finite": true,
+            "native_logits_finite": true,
+            "splice_logits_finite": true,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "left_finite": true,
+              "right_finite": true,
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.5515339174830842e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 3.504101186990738e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "left_finite": true,
+              "right_finite": true,
+              "max_abs": 1.1920928955078125e-07,
+              "mean_abs": 2.5149333282570296e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 3.213062882423401e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "left_finite": true,
+              "right_finite": true,
+              "max_abs": 8.940696716308594e-08,
+              "mean_abs": 1.6307204475651815e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.664739102125168e-08
+            }
+          },
+          {
+            "step": 2,
+            "reference_token": 105,
+            "native_token": 105,
+            "splice_token": 105,
+            "reference_logits_finite": true,
+            "native_logits_finite": true,
+            "splice_logits_finite": true,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "left_finite": true,
+              "right_finite": true,
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.70278324165929e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 8.66129994392395e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "left_finite": true,
+              "right_finite": true,
+              "max_abs": 1.4901161193847656e-07,
+              "mean_abs": 2.7620327358590657e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 8.533243089914322e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "left_finite": true,
+              "right_finite": true,
+              "max_abs": 6.705522537231445e-08,
+              "mean_abs": 1.33157387338656e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 6.170012056827545e-09
+            }
+          },
+          {
+            "step": 3,
+            "reference_token": 184,
+            "native_token": 184,
+            "splice_token": 184,
+            "reference_logits_finite": true,
+            "native_logits_finite": true,
+            "splice_logits_finite": true,
+            "native_token_match": true,
+            "splice_token_match": true,
+            "native_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "left_finite": true,
+              "right_finite": true,
+              "max_abs": 8.940696716308594e-08,
+              "mean_abs": 2.3768656376432773e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 1.1990778148174286e-08
+            },
+            "splice_vs_full": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "left_finite": true,
+              "right_finite": true,
+              "max_abs": 8.940696716308594e-08,
+              "mean_abs": 2.486486394559506e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.1420419216156006e-08
+            },
+            "splice_vs_native": {
+              "same_shape": true,
+              "shape": [
+                1,
+                257
+              ],
+              "left_finite": true,
+              "right_finite": true,
+              "max_abs": 5.960464477539063e-08,
+              "mean_abs": 1.3777776253220964e-08,
+              "allclose": true,
+              "top1_match_rate": 1.0,
+              "mean_total_variation": 2.0605511963367462e-08
+            }
+          }
+        ],
+        "native_token_pass": true,
+        "splice_token_pass": true
+      },
+      "suffix_logits_finite": true,
+      "token_semantic_pass": true,
+      "strict_pass": true,
+      "sample": 0,
+      "shared_ratio": 0.5
+    }
+  ]
+}

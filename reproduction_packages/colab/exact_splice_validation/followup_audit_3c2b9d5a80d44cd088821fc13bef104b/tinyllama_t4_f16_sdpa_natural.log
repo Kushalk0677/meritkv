@@ -1,0 +1,43 @@
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/201 [00:00<00:46,  4.27it/s]
+Loading weights:   1%|          | 2/201 [00:00<00:33,  5.99it/s]
+Loading weights:   6%|▋         | 13/201 [00:00<00:05, 33.08it/s]
+Loading weights:  12%|█▏        | 24/201 [00:00<00:03, 48.98it/s]
+Loading weights:  20%|█▉        | 40/201 [00:00<00:02, 71.00it/s]
+Loading weights:  24%|██▍       | 49/201 [00:00<00:02, 71.91it/s]
+Loading weights:  29%|██▉       | 58/201 [00:01<00:02, 70.48it/s]
+Loading weights:  33%|███▎      | 67/201 [00:01<00:01, 71.55it/s]
+Loading weights:  38%|███▊      | 76/201 [00:01<00:01, 69.07it/s]
+Loading weights:  42%|████▏     | 85/201 [00:01<00:01, 68.94it/s]
+Loading weights:  47%|████▋     | 95/201 [00:01<00:01, 71.59it/s]
+Loading weights:  52%|█████▏    | 104/201 [00:01<00:01, 68.88it/s]
+Loading weights:  57%|█████▋    | 114/201 [00:01<00:01, 66.44it/s]
+Loading weights:  63%|██████▎   | 127/201 [00:02<00:00, 77.92it/s]
+Loading weights:  68%|██████▊   | 136/201 [00:02<00:00, 75.81it/s]
+Loading weights:  74%|███████▎  | 148/201 [00:02<00:00, 78.82it/s]
+Loading weights:  78%|███████▊  | 157/201 [00:02<00:00, 79.58it/s]
+Loading weights:  83%|████████▎ | 167/201 [00:02<00:00, 72.60it/s]
+Loading weights:  91%|█████████ | 182/201 [00:02<00:00, 90.78it/s]
+Loading weights:  96%|█████████▌| 192/201 [00:02<00:00, 92.64it/s]
+Loading weights: 100%|██████████| 201/201 [00:02<00:00, 70.45it/s]
+sample=0 mode=natural ratio=0.79 shared=59/75
+sample=1 mode=natural ratio=0.82 shared=64/78
+sample=2 mode=natural ratio=0.84 shared=62/74
+sample=3 mode=natural ratio=0.81 shared=60/74
+sample=4 mode=natural ratio=0.79 shared=65/82
+sample=5 mode=natural ratio=0.83 shared=60/72
+sample=6 mode=natural ratio=0.83 shared=72/87
+sample=7 mode=natural ratio=0.89 shared=64/72
+{
+  "cases": 8,
+  "strict_passes": 0,
+  "token_semantic_passes": 7,
+  "cache_passes": 2,
+  "native_token_passes": 8,
+  "splice_token_passes": 7,
+  "all_strict_pass": false,
+  "all_token_semantic_pass": false
+}
+wrote /content/meritkv_exact_splice_followup_outputs/tinyllama_t4_f16_sdpa_natural.json

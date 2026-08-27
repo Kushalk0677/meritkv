@@ -57,6 +57,7 @@ DATASETS = [
 ENGINES = ["no_cache", "shadow_kv", "shadow_kv_plus"]
 
 
+# Stable paths and restart-safe completion checks.
 def model_tag(model: str) -> str:
     return model.replace("/", "_").replace(":", "_").replace(".", "_")
 
@@ -83,6 +84,7 @@ def completed(path: Path, engine: str) -> bool:
     return isinstance(data.get(engine), dict) and "mean_latency_ms" in data[engine]
 
 
+# Subprocess command construction.
 def build_command(args: argparse.Namespace, model: str, dataset: str, prompt_mode: str, seed: int, engine: str, out: Path) -> list[str]:
     cmd = [
         args.python,
@@ -120,6 +122,7 @@ def build_command(args: argparse.Namespace, model: str, dataset: str, prompt_mod
     return cmd
 
 
+# Aggregate completed cell JSONs.
 def collect_rows(results_root: Path) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     for path in sorted(results_root.rglob("benchmark_*.json")):

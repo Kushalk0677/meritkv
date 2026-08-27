@@ -1,0 +1,7 @@
+model_slug,comparison,paired_cells,mean_latency_delta_pct,mean_p95_delta_pct,mean_throughput_delta_pct,cached_token_delta_total
+qwen25_15b,lmcache_no_native_radix_vs_sglang_radix_attention,30,9.327844870704633,15.761124905296402,-8.244946973014068,-1031758
+qwen25_15b,sglang_radix_attention_shadowkv_plus_vs_sglang_radix_attention,30,1.1398733120805928,1.5370872557140816,-1.0973895893223509,0
+qwen25_3b,lmcache_no_native_radix_vs_sglang_radix_attention,30,10.354205862094215,17.05509737595611,-9.128741591776349,-1031758
+qwen25_3b,sglang_radix_attention_shadowkv_plus_vs_sglang_radix_attention,30,0.7964409461391018,0.8187511575753571,-0.7816796577524259,0
+qwen25_7b,lmcache_no_native_radix_vs_sglang_radix_attention,30,15.474149624992652,30.180983489446223,-13.207221143523208,-1031758
+qwen25_7b,sglang_radix_attention_shadowkv_plus_vs_sglang_radix_attention,30,-2.8942332613586514,-2.7499775776934428,2.98301161327486,0

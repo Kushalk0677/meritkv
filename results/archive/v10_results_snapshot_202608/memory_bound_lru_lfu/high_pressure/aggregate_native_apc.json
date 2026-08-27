@@ -1,0 +1,20 @@
+{
+  "native_apc": {
+    "seeds": 5,
+    "seeds_list": [
+      42,
+      123,
+      456,
+      789,
+      999
+    ],
+    "mean_latency_ms": 78.172,
+    "mean_latency_ms_ci95": 0.6456,
+    "final_round_recovery": 0.2079,
+    "final_round_recovery_ci95": 0.0131,
+    "total_evictions": 47.4,
+    "total_evictions_ci95": 1.8828,
+    "declined_admissions_phase1": 0.0,
+    "declined_admissions_phase1_ci95": 0.0
+  }
+}

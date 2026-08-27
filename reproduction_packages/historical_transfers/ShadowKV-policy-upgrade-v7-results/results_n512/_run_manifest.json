@@ -1,0 +1,46 @@
+{
+  "models": [
+    "Qwen/Qwen2.5-1.5B-Instruct"
+  ],
+  "device": "cuda",
+  "dtype": "float16",
+  "n_requests": 64,
+  "prompt_modes": [
+    "templated",
+    "rag"
+  ],
+  "datasets": [
+    "daily_dialog",
+    "ultrachat",
+    "oasst1",
+    "samsum"
+  ],
+  "seeds": [
+    42
+  ],
+  "run_main_hf_baselines": true,
+  "run_runtime_baselines": true,
+  "runtime_baselines": [
+    "vllm_apc",
+    "vllm_apc_shadowkv_plus"
+  ],
+  "runtime_admission_mode": "write_through_admission",
+  "enable_policy_tuning": true,
+  "policy_tuning_requests": "24",
+  "policy_tuning_presets": [
+    "balanced",
+    "aggressive_prefix",
+    "aggressive_gpu"
+  ],
+  "enable_runtime_admission_tuning": true,
+  "admission_tuning_requests": "16",
+  "admission_tuning_presets": [
+    "balanced",
+    "aggressive_prefix",
+    "low_latency"
+  ],
+  "launch_runtime_server_per_job": true,
+  "total_jobs": 24,
+  "total_wall_seconds": 3392.3,
+  "failed_jobs": []
+}

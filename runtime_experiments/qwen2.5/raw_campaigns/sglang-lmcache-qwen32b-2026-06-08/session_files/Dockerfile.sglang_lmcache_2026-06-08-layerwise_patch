@@ -1,0 +1,36 @@
+FROM shadowkv-sglang-lmcache:2026-06-05-fixed
+
+RUN python3 -m pip install --no-cache-dir nvidia-cuda-runtime-cu12
+
+RUN python3 - <<'PY'
+from pathlib import Path
+
+path = Path("/usr/local/lib/python3.12/dist-packages/lmcache/v1/gpu_connector/gpu_connectors.py")
+text = path.read_text()
+needle = """        self.use_gpu = use_gpu
+        self.gpu_buffer_allocator: Optional[GPUMemoryAllocator] = None
+
+    def _lazy_initialize_buffer(self, kv_caches):
+"""
+replacement = """        self.use_gpu = use_gpu
+        self.gpu_buffer_allocator: Optional[GPUMemoryAllocator] = None
+
+    def initialize_kvcaches_ptr(self, **kwargs):
+        if "kvcaches" in kwargs:
+            # SGLang passes split K/V pools as [k_pool, v_pool]. The inherited
+            # vLLM initializer assumes a flat list of tensors and tries to call
+            # .is_contiguous() on k_pool itself, which crashes LMCache storage.
+            self.kvcaches = kwargs["kvcaches"]
+
+    def _lazy_initialize_buffer(self, kv_caches):
+"""
+if needle not in text:
+    raise SystemExit("Patch target not found for SGLangLayerwiseGPUConnector")
+path.write_text(text.replace(needle, replacement, 1))
+PY
+
+ENV LD_LIBRARY_PATH=/usr/local/lib/python3.12/dist-packages/nvidia/cuda_runtime/lib:/usr/local/lib/python3.12/dist-packages/torch/lib:${LD_LIBRARY_PATH}
+ENV USE_HUB_KERNELS=NO
+ENV FLASHINFER_DISABLE_VERSION_CHECK=1
+ENV PYTHONHASHSEED=0
+WORKDIR /workspace/shadowkv

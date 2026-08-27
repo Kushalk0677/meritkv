@@ -16,8 +16,10 @@ This folder contains cache-pressure traces for MeritKV. The trace is a three-pha
   and MeritKV at two cache budgets over five paired seeds.
 
 
-- Qwen2.5 Blackwell artifacts include aggregate and selected per-seed JSON
-  traces.
+- The canonical Qwen2.5 Blackwell folder includes the aggregate and the
+  campaign's curated per-seed JSON traces. Additional retained historical trace
+  trees are preserved under `../archive/v10_results_snapshot_202608/` and
+  `../archive/external_unique_202608/`.
 - Gemma-4 per-seed JSONs are retained as legacy provenance; paper-facing claims
   use the aggregate because some derived seed fields do not reconcile.
 - The T4/Phi rows are currently summary-only in this public folder.

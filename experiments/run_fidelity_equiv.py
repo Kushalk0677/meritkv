@@ -39,6 +39,7 @@ PARQUET_DATASETS = {
 }
 
 
+# Model loading and generation paths.
 def load_model(model_name, device):
     print(f'Loading {model_name} on {device}...')
     tokenizer = AutoTokenizer.from_pretrained(model_name)
@@ -100,6 +101,7 @@ def generate_with_reuse(model, prompt_ids_orig, prompt_ids_mod, shared, max_new,
     return torch.tensor(gen_ids)
 
 
+# Controlled token-different prefix construction.
 def make_shuffled_ids(ids, ratio=0.75):
     split = int(len(ids) * ratio)
     if len(ids) - split < 4:
@@ -137,6 +139,7 @@ def extract(row, key):
     return str(row.get(list(row.keys())[0], ''))
 
 
+# Dataset sampling and per-ratio evaluation.
 def load_dataset_samples(dk, n_samples):
     """Load samples from a dataset, handling script-based datasets.
     Loads extra rows to ensure n_samples valid samples are returned."""

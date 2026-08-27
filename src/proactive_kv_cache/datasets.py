@@ -298,6 +298,7 @@ SEMANTIC_EQUIVALENCE_KEYS = {
     'generic': 'semantic_task_generic_assistant',
 }
 
+# Dataset registry and prompt normalization.
 def list_datasets() -> List[str]:
     return sorted(DATASET_REGISTRY.keys())
 
@@ -364,6 +365,7 @@ def _extract_chat_messages(example: Dict, max_turns: int = 8) -> str:
     return ''
 
 
+# Dataset-specific row conversion.
 def _row_to_prompt(dataset_type: str, example: Dict) -> str:
     if dataset_type == 'dialogue_summary':
         dialog = _clip(_join_dialogue(example), max_chars=1200)
@@ -468,6 +470,7 @@ def _resolve_prompt_mode(prompt_mode: str) -> str:
     return prompt_mode
 
 
+# Raw, templated, RAG, and semantic prompt construction.
 def _apply_prompt_mode(dataset_name: str, dataset_type: str, base_prompt: str, prompt_mode: str, request_index: int = 0) -> Tuple[str, str, Dict[str, object]]:
     prompt_mode = _resolve_prompt_mode(prompt_mode)
     if prompt_mode == 'raw':

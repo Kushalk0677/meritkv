@@ -1,0 +1,279 @@
+{
+  "reports": [
+    {
+      "file": "gemma2b_t4_f16_sdpa.json",
+      "environment": {
+        "python": "3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]",
+        "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+        "torch": "2.11.0+cu128",
+        "transformers": "5.10.2",
+        "cuda_available": true,
+        "cuda_version": "12.8"
+      },
+      "configuration": {
+        "model_id": "google/gemma-2b-it",
+        "tiny_model": null,
+        "revision": "96988410cbdaeb8d5093d1ebdc5a8fb563e02bad",
+        "device": "cuda:0",
+        "dtype": "float16",
+        "attention_implementation": "sdpa",
+        "sequence_length": 128,
+        "shared_ratios": [
+          0.5,
+          0.75
+        ],
+        "samples": 4,
+        "max_new_tokens": 8,
+        "seed": 42,
+        "atol": 0.001,
+        "rtol": 0.001,
+        "passes_cache_position": true,
+        "passes_position_ids": true
+      },
+      "summary": {
+        "cases": 8,
+        "strict_passes": 0,
+        "token_semantic_passes": 8,
+        "cache_passes": 4,
+        "native_token_passes": 8,
+        "splice_token_passes": 8,
+        "all_strict_pass": false,
+        "all_token_semantic_pass": true
+      },
+      "max_abs": {
+        "prefix_cache": 0.03948974609375,
+        "suffix_native_vs_full": 0.2109375,
+        "suffix_splice_vs_full": 0.203125,
+        "suffix_splice_vs_native": 0.1875,
+        "generation_native_vs_full": 0.140625,
+        "generation_splice_vs_full": 0.125,
+        "generation_splice_vs_native": 0.15625
+      },
+      "first_native_token_mismatch": null,
+      "first_splice_token_mismatch": null
+    },
+    {
+      "file": "gpt2_t4_f16_sdpa.json",
+      "environment": {
+        "python": "3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]",
+        "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+        "torch": "2.11.0+cu128",
+        "transformers": "5.10.2",
+        "cuda_available": true,
+        "cuda_version": "12.8"
+      },
+      "configuration": {
+        "model_id": "gpt2",
+        "tiny_model": null,
+        "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+        "device": "cuda:0",
+        "dtype": "float16",
+        "attention_implementation": "sdpa",
+        "sequence_length": 128,
+        "shared_ratios": [
+          0.5,
+          0.75
+        ],
+        "samples": 4,
+        "max_new_tokens": 8,
+        "seed": 42,
+        "atol": 0.001,
+        "rtol": 0.001,
+        "passes_cache_position": true,
+        "passes_position_ids": true
+      },
+      "summary": {
+        "cases": 8,
+        "strict_passes": 0,
+        "token_semantic_passes": 5,
+        "cache_passes": 0,
+        "native_token_passes": 6,
+        "splice_token_passes": 6,
+        "all_strict_pass": false,
+        "all_token_semantic_pass": false
+      },
+      "max_abs": {
+        "prefix_cache": 0.0546875,
+        "suffix_native_vs_full": 0.25,
+        "suffix_splice_vs_full": 0.1875,
+        "suffix_splice_vs_native": 0.25,
+        "generation_native_vs_full": 0.125,
+        "generation_splice_vs_full": 0.125,
+        "generation_splice_vs_native": 0.125
+      },
+      "first_native_token_mismatch": {
+        "case": 2,
+        "step": 1
+      },
+      "first_splice_token_mismatch": {
+        "case": 5,
+        "step": 4
+      }
+    },
+    {
+      "file": "phi3mini_t4_f16_sdpa.json",
+      "environment": {
+        "python": "3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]",
+        "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+        "torch": "2.11.0+cu128",
+        "transformers": "5.10.2",
+        "cuda_available": true,
+        "cuda_version": "12.8"
+      },
+      "configuration": {
+        "model_id": "microsoft/Phi-3-mini-4k-instruct",
+        "tiny_model": null,
+        "revision": "f39ac1d28e925b323eae81227eaba4464caced4e",
+        "device": "cuda:0",
+        "dtype": "float16",
+        "attention_implementation": "sdpa",
+        "sequence_length": 128,
+        "shared_ratios": [
+          0.5,
+          0.75
+        ],
+        "samples": 4,
+        "max_new_tokens": 8,
+        "seed": 42,
+        "atol": 0.001,
+        "rtol": 0.001,
+        "passes_cache_position": true,
+        "passes_position_ids": true
+      },
+      "summary": {
+        "cases": 8,
+        "strict_passes": 0,
+        "token_semantic_passes": 7,
+        "cache_passes": 4,
+        "native_token_passes": 7,
+        "splice_token_passes": 7,
+        "all_strict_pass": false,
+        "all_token_semantic_pass": false
+      },
+      "max_abs": {
+        "prefix_cache": 0.046875,
+        "suffix_native_vs_full": 0.125,
+        "suffix_splice_vs_full": 0.09375,
+        "suffix_splice_vs_native": 0.1171875,
+        "generation_native_vs_full": 0.0703125,
+        "generation_splice_vs_full": 0.0703125,
+        "generation_splice_vs_native": 0.05078125
+      },
+      "first_native_token_mismatch": {
+        "case": 3,
+        "step": 1
+      },
+      "first_splice_token_mismatch": {
+        "case": 3,
+        "step": 1
+      }
+    },
+    {
+      "file": "qwen25_15b_t4_f16_sdpa.json",
+      "environment": {
+        "python": "3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]",
+        "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+        "torch": "2.11.0+cu128",
+        "transformers": "5.10.2",
+        "cuda_available": true,
+        "cuda_version": "12.8"
+      },
+      "configuration": {
+        "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+        "tiny_model": null,
+        "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+        "device": "cuda:0",
+        "dtype": "float16",
+        "attention_implementation": "sdpa",
+        "sequence_length": 128,
+        "shared_ratios": [
+          0.5,
+          0.75
+        ],
+        "samples": 4,
+        "max_new_tokens": 8,
+        "seed": 42,
+        "atol": 0.001,
+        "rtol": 0.001,
+        "passes_cache_position": true,
+        "passes_position_ids": true
+      },
+      "summary": {
+        "cases": 8,
+        "strict_passes": 0,
+        "token_semantic_passes": 8,
+        "cache_passes": 4,
+        "native_token_passes": 8,
+        "splice_token_passes": 8,
+        "all_strict_pass": false,
+        "all_token_semantic_pass": true
+      },
+      "max_abs": {
+        "prefix_cache": 0.125,
+        "suffix_native_vs_full": 0.109375,
+        "suffix_splice_vs_full": 0.109375,
+        "suffix_splice_vs_native": 0.060546875,
+        "generation_native_vs_full": 0.35546875,
+        "generation_splice_vs_full": 0.353515625,
+        "generation_splice_vs_native": 0.028228759765625
+      },
+      "first_native_token_mismatch": null,
+      "first_splice_token_mismatch": null
+    },
+    {
+      "file": "tinyllama_t4_f16_sdpa.json",
+      "environment": {
+        "python": "3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]",
+        "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+        "torch": "2.11.0+cu128",
+        "transformers": "5.10.2",
+        "cuda_available": true,
+        "cuda_version": "12.8"
+      },
+      "configuration": {
+        "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+        "tiny_model": null,
+        "revision": "fe8a4ea1ffedaf415f4da2f062534de366a451e6",
+        "device": "cuda:0",
+        "dtype": "float16",
+        "attention_implementation": "sdpa",
+        "sequence_length": 128,
+        "shared_ratios": [
+          0.5,
+          0.75
+        ],
+        "samples": 4,
+        "max_new_tokens": 8,
+        "seed": 42,
+        "atol": 0.001,
+        "rtol": 0.001,
+        "passes_cache_position": true,
+        "passes_position_ids": true
+      },
+      "summary": {
+        "cases": 8,
+        "strict_passes": 0,
+        "token_semantic_passes": 8,
+        "cache_passes": 4,
+        "native_token_passes": 8,
+        "splice_token_passes": 8,
+        "all_strict_pass": false,
+        "all_token_semantic_pass": true
+      },
+      "max_abs": {
+        "prefix_cache": 0.03125,
+        "suffix_native_vs_full": 0.0478515625,
+        "suffix_splice_vs_full": 0.037109375,
+        "suffix_splice_vs_native": 0.03515625,
+        "generation_native_vs_full": 0.03125,
+        "generation_splice_vs_full": 0.03125,
+        "generation_splice_vs_native": 0.01953125
+      },
+      "first_native_token_mismatch": null,
+      "first_splice_token_mismatch": null
+    }
+  ],
+  "all_reports_strict_pass": false,
+  "all_reports_token_pass": false,
+  "all_reports_token_semantic_pass": false
+}

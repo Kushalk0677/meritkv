@@ -1,0 +1,7 @@
+rep,mode,comparison,end_to_end_latency_delta_pct,end_to_end_p95_delta_pct,end_to_end_throughput_delta_pct,cached_token_delta,skip_lookup_delta,skip_write_delta
+1,rag,sglang_radix_attention_shadowkv_plus_vs_sglang_radix_attention,9.044755995046854,14.519058463200137,-8.294132868693197,-9949,183,180
+1,templated,sglang_radix_attention_shadowkv_plus_vs_sglang_radix_attention,4.302163574600169,17.758019109084636,-4.123637475371984,-7160,158,154
+2,rag,sglang_radix_attention_shadowkv_plus_vs_sglang_radix_attention,16.791945203571206,31.81111266020761,-14.376791854686116,-7782,158,154
+2,templated,sglang_radix_attention_shadowkv_plus_vs_sglang_radix_attention,17.167994861933046,25.254974419005467,-14.65159833388351,-11487,208,206
+3,rag,sglang_radix_attention_shadowkv_plus_vs_sglang_radix_attention,6.9876288654492855,13.601759675716925,-6.530201555225959,-7782,158,154
+3,templated,sglang_radix_attention_shadowkv_plus_vs_sglang_radix_attention,7.977849046877659,14.393488942797028,-7.388655667283235,-9386,183,180

@@ -1,0 +1,62 @@
+{
+  "no_cache": {
+    "cells": 75,
+    "mean_latency_ms": 17.028955199392232,
+    "mean_speedup": 1.0,
+    "mean_waste": 0.0,
+    "mean_hit_rate": 0.0,
+    "requests_seen": 9600,
+    "learned_policy_admit_total": 0,
+    "learned_policy_bypass_total": 0,
+    "learned_policy_flip_to_admit_total": 0,
+    "learned_policy_flip_to_bypass_total": 0
+  },
+  "shadow_kv": {
+    "cells": 75,
+    "mean_latency_ms": 17.938438547863978,
+    "mean_speedup": 0.947800963688875,
+    "mean_waste": 0.0,
+    "mean_hit_rate": 0.6386458333333334,
+    "requests_seen": 9600,
+    "learned_policy_admit_total": 0,
+    "learned_policy_bypass_total": 0,
+    "learned_policy_flip_to_admit_total": 0,
+    "learned_policy_flip_to_bypass_total": 0
+  },
+  "shadow_kv_plus_lite": {
+    "cells": 75,
+    "mean_latency_ms": 16.975748822692367,
+    "mean_speedup": 1.0020019141149659,
+    "mean_waste": 0.0,
+    "mean_hit_rate": 0.13229166666666667,
+    "requests_seen": 9600,
+    "learned_policy_admit_total": 0,
+    "learned_policy_bypass_total": 0,
+    "learned_policy_flip_to_admit_total": 0,
+    "learned_policy_flip_to_bypass_total": 0
+  },
+  "shadow_kv_plus": {
+    "cells": 75,
+    "mean_latency_ms": 16.968025072527173,
+    "mean_speedup": 1.003286342702998,
+    "mean_waste": 0.0,
+    "mean_hit_rate": 0.3307291666666667,
+    "requests_seen": 9600,
+    "learned_policy_admit_total": 0,
+    "learned_policy_bypass_total": 0,
+    "learned_policy_flip_to_admit_total": 0,
+    "learned_policy_flip_to_bypass_total": 0
+  },
+  "shadow_kv_plus_learned": {
+    "cells": 75,
+    "mean_latency_ms": 16.835257706760178,
+    "mean_speedup": 1.011962460577132,
+    "mean_waste": 0.0,
+    "mean_hit_rate": 0.23302083333333334,
+    "requests_seen": 9600,
+    "learned_policy_admit_total": 2287,
+    "learned_policy_bypass_total": 4113,
+    "learned_policy_flip_to_admit_total": 0,
+    "learned_policy_flip_to_bypass_total": 4038
+  }
+}

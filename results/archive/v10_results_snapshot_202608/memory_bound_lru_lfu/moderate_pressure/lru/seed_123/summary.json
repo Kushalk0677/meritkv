@@ -1,0 +1,8 @@
+{
+  "lru": {
+    "mean_latency_ms": 71.61,
+    "final_round_recovery": 0.4845,
+    "total_evictions": 31,
+    "declined_admissions_phase1": 0
+  }
+}

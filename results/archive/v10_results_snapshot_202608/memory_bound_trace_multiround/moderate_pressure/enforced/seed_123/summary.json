@@ -1,0 +1,12 @@
+{
+  "enforced": {
+    "mean_latency_ms": 63.1,
+    "p95_latency_ms": 73.28,
+    "throughput_rps": 15.85,
+    "gpu_energy_j": 2548.6,
+    "hit_rate": 0.7634,
+    "evictions": 6,
+    "declined_admissions": 30,
+    "final_round_recovery": 0.9062
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "model_slug": "qwen25_14b",
+    "comparison": "lmcache_no_native_radix_vs_sglang_radix_attention",
+    "paired_cells": 30,
+    "mean_latency_delta_pct": 12.701505744513012,
+    "mean_p95_delta_pct": 21.81301133690091,
+    "mean_throughput_delta_pct": -11.18439879433723,
+    "cached_token_delta_total": -1031502
+  },
+  {
+    "model_slug": "qwen25_14b",
+    "comparison": "sglang_radix_attention_shadowkv_plus_vs_sglang_radix_attention",
+    "paired_cells": 30,
+    "mean_latency_delta_pct": -1.7312500297345628,
+    "mean_p95_delta_pct": -2.0744842796472276,
+    "mean_throughput_delta_pct": 1.7624671830858811,
+    "cached_token_delta_total": 0
+  }
+]

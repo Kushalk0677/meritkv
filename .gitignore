@@ -20,6 +20,10 @@ dist/
 # Local scratch outputs
 tmp*/
 *.log
+!results/**/*.log
+!runtime_experiments/**/*.log
+!reproduction_packages/**/*.log
+!experiments/archive/**/*.log
 !runtime_experiments/qwen2.5/sglang/balanced_admission/**/*.log
 
 # OS/editor noise
@@ -29,27 +33,36 @@ Thumbs.db
 .idea/
 .qodo/
 
-# Keep canonical result JSONs, but avoid accidental large local dumps.
-results/**/policy_trace.jsonl
-results/**/decision_log.jsonl
-experiments/fidelity_equiv_colab.ipynb
+# Raw result ledgers and the maintained Colab notebooks are release artifacts.
+!results/**/policy_trace.jsonl
+!results/**/decision_log.jsonl
+!experiments/**/*.ipynb
 
-# Local transfer packages and raw artifact archives
+# Local transfer packages are ignored by default. Named, documented release
+# archives are explicitly retained alongside their extracted trees.
 *.zip
 *.tgz
 *.tar.gz
+!reproduction_packages/archives/*.zip
+!reproduction_packages/**/*.zip
+!reproduction_packages/**/*.tgz
+!reproduction_packages/**/*.tar.gz
+!experiments/archive/native_vllm_execute_bypass/**/*.zip
+!experiments/archive/v10_snapshot_202608/*.zip
+!runtime_experiments/qwen2.5/raw_campaigns/**/*.zip
+!results/blackwell_longprefix_hf/extensions/*/*.zip
 !runtime_experiments/native_enforcement_blackwell/evidence_packages/2026-08-23/archives/*.zip
+!runtime_experiments/native_enforcement_blackwell/evidence_packages/2026-08-24/archives/*.zip
 !runtime_experiments/native_enforcement_blackwell/evidence_packages/2026-08-23/**/*.log
 !runtime_experiments/native_enforcement_blackwell/evidence_packages/2026-08-23/**
-.stratum/
-v10/
-p100_transfer/
-incoming_p100*/
-results_blackwell_*/
-results_p100_*/
+!runtime_experiments/native_enforcement_blackwell/evidence_packages/2026-08-24/**/proactive_kv_cache.egg-info/
+!runtime_experiments/native_enforcement_blackwell/evidence_packages/2026-08-24/**/proactive_kv_cache.egg-info/**
+/.stratum/
+/v10/
+/p100_transfer/
+/incoming_p100*/
+/results_blackwell_*/
+/results_p100_*/
 
-# Large local evidence trees kept on disk but not tracked
-results/learned_admission_baseline/phase3_partial/
-results/blackwell_longprefix_hf/raw_results/
-results/blackwell_longprefix_hf/extensions/*/artifact/
-runtime_experiments/gemma4/*/raw/
+# Raw evidence under results/ and runtime_experiments/ is intentionally tracked.
+# Only transient caches, environments, and unnamed transfer dumps are excluded.

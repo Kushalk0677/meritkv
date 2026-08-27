@@ -1,0 +1,2 @@
+Benchmark sglang_radix_attention for google/gemma-4-31B-it dolly templated seed=123
+Latency: 90.43ms, Throughput: 10.70 rps

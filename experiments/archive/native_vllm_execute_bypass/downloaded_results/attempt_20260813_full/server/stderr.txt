@@ -1,0 +1,15 @@
+2026-08-13 04:27:31.436559: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[1;36m(APIServer pid=1910)[0;0m `torch_dtype` is deprecated! Use `dtype` instead!
+[W813 04:28:24.999959678 ProcessGroupNCCL.cpp:981] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+[1;36m(EngineCore_DP0 pid=2153)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+[1;36m(EngineCore_DP0 pid=2153)[0;0m Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:02<00:00,  2.76s/it]
+[1;36m(EngineCore_DP0 pid=2153)[0;0m Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:02<00:00,  2.76s/it]
+[1;36m(EngineCore_DP0 pid=2153)[0;0m 
+[1;36m(APIServer pid=1910)[0;0m INFO:     Started server process [1910]
+[1;36m(APIServer pid=1910)[0;0m INFO:     Waiting for application startup.
+[1;36m(APIServer pid=1910)[0;0m INFO:     Application startup complete.
+[rank0]:[W813 04:41:26.937960302 ProcessGroupNCCL.cpp:1538] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[1;36m(APIServer pid=1910)[0;0m INFO:     Shutting down
+[1;36m(APIServer pid=1910)[0;0m INFO:     Waiting for application shutdown.
+[1;36m(APIServer pid=1910)[0;0m INFO:     Application shutdown complete.

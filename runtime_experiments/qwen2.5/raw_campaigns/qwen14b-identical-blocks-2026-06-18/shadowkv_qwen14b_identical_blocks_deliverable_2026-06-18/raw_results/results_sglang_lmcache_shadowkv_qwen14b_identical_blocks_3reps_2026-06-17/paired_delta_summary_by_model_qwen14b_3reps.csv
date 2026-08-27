@@ -1,0 +1,3 @@
+model_slug,comparison,paired_cells,mean_latency_delta_pct,mean_p95_delta_pct,mean_throughput_delta_pct,cached_token_delta_total
+qwen25_14b,lmcache_no_native_radix_vs_sglang_radix_attention,30,12.701505744513012,21.81301133690091,-11.18439879433723,-1031502
+qwen25_14b,sglang_radix_attention_shadowkv_plus_vs_sglang_radix_attention,30,-1.7312500297345628,-2.0744842796472276,1.7624671830858811,0

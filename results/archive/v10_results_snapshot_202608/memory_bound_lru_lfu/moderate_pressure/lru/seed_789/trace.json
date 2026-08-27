@@ -1,0 +1,51 @@
+{
+  "config": {
+    "model": "google/gemma-4-31B-it",
+    "backend": "vllm",
+    "policy": "lru",
+    "eviction_policy": "lru",
+    "admission": "admit_all",
+    "cache_budget_gb": 56,
+    "seed": 789,
+    "n_fill": 20,
+    "n_churn": 15,
+    "n_rec": 15,
+    "n_rounds": 4,
+    "cache_layer": "TieredStateBank",
+    "fresh_cache": true
+  },
+  "ledger": {
+    "lru": {
+      "mean_latency_ms": 70.12,
+      "p95_latency_ms": 86.87,
+      "throughput_rps": 14.26,
+      "gpu_energy_j": 2806.5,
+      "requests_seen": 140,
+      "final_round_recovery": 0.4954,
+      "total_evictions": 29,
+      "declined_admissions_phase1": 0,
+      "rounds": [
+        {
+          "round": 1,
+          "rec_rate": 0.6878,
+          "declined": 0
+        },
+        {
+          "round": 2,
+          "rec_rate": 0.604,
+          "declined": 0
+        },
+        {
+          "round": 3,
+          "rec_rate": 0.5545,
+          "declined": 0
+        },
+        {
+          "round": 4,
+          "rec_rate": 0.4954,
+          "declined": 0
+        }
+      ]
+    }
+  }
+}

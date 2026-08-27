@@ -10,6 +10,7 @@ from functools import lru_cache
 
 
 @dataclass
+# Stored prefix state and online statistics.
 class CacheEntry:
     prefix_tokens: Tuple[int, ...]
     kv_cache: Any
@@ -36,6 +37,7 @@ class CacheEntry:
         return (1.0 - recency_weight) * savings_density + recency_weight * recency + tier_bonus + short_prefix_bonus - speculative_penalty
 
 
+# Prefix lookup, admission, migration, and eviction.
 class TieredStateBank:
     def __init__(
         self,

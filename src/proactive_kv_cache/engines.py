@@ -47,6 +47,7 @@ class EngineTuning:
     gpu_promotion_max_prefix_tokens: int
 
 
+# Shared accounting and cache-cost estimation.
 class BaseEngine:
     def __init__(self, backend: Backend, max_memory_mb: int = 256, name: str = 'base'):
         self.backend = backend
@@ -790,6 +791,7 @@ class BaseEngine:
         return out, recomputed_tokens, True, actual_match_len
 
 
+# Reference and native runtime engines.
 class NoCacheEngine(BaseEngine):
     def __init__(self, backend: Backend, max_memory_mb: int = 256):
         super().__init__(backend=backend, max_memory_mb=max_memory_mb, name='no_cache')
@@ -918,6 +920,7 @@ class RuntimeNativeCacheEngine(NativePrefixCachingEngine):
         )
 
 
+# Runtime admission hook with executed-action accounting.
 class AdmissionControlledRuntimeCacheEngine(RuntimeNativeCacheEngine):
     """Native runtime cache baseline gated by the MeritKV admission policy."""
 
@@ -1088,6 +1091,7 @@ class AdmissionControlledRuntimeCacheEngine(RuntimeNativeCacheEngine):
             match=match,
         )
 
+# Standard reactive and speculative baselines.
 class ReactivePrefixCacheEngine(BaseEngine):
     def __init__(self, backend: Backend, max_memory_mb: int = 256):
         super().__init__(backend=backend, max_memory_mb=max_memory_mb, name='reactive_prefix_cache')
@@ -1349,6 +1353,7 @@ class FrequencySpeculativeEngine(ReactivePrefixCacheEngine):
         self.finalize()
 
 
+# MeritKV-Sem opportunity and speculative-reuse path.
 class ShadowKVEngine(ReactivePrefixCacheEngine):
     """Reactive prefix caching plus idle-time precompute."""
 
@@ -1720,6 +1725,7 @@ class ShadowKVEngine(ReactivePrefixCacheEngine):
 
 
 
+# MeritKV utility-gated admission controller.
 class ShadowKVPlusEngine(ShadowKVEngine):
     """MeritKV: policy-driven, semantic, fine-grained KV reuse.
 
@@ -2513,6 +2519,7 @@ class ShadowKVPlusEngine(ShadowKVEngine):
 
 
 
+# Lightweight controller variant.
 class ShadowKVPlusLiteEngine(ShadowKVPlusEngine):
     """MeritKV Lite: low-overhead exact-prefix serving path.
 
@@ -2793,6 +2800,7 @@ class ShadowKVPlusLiteEngine(ShadowKVPlusEngine):
             gpu_utilization_pct=out.gpu_utilization_pct,
         ), match=match)
 
+# Result and lifecycle helpers.
 def maybe_shutdown(engine: BaseEngine) -> None:
     if hasattr(engine, 'shutdown'):
         engine.shutdown()  # type: ignore[attr-defined]

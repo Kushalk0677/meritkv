@@ -1,0 +1,2 @@
+Benchmark sglang_no_cache for google/gemma-4-31B-it xsum rag seed=789
+Latency: 155.05ms, Throughput: 6.45 rps

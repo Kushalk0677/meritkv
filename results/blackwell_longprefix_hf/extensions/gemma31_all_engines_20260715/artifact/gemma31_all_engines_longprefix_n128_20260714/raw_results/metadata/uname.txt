@@ -1,0 +1,1 @@
+Linux first-light 6.12.76 #1-NixOS SMP PREEMPT_DYNAMIC Thu Mar  5 15:04:32 UTC 2026 x86_64 GNU/Linux

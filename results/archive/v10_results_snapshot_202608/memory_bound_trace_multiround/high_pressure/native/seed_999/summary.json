@@ -1,0 +1,12 @@
+{
+  "native": {
+    "mean_latency_ms": 78.14,
+    "p95_latency_ms": 98.03,
+    "throughput_rps": 12.8,
+    "gpu_energy_j": 3149.6,
+    "hit_rate": 0.3,
+    "evictions": 47,
+    "declined_admissions": 0,
+    "final_round_recovery": 0.2093
+  }
+}

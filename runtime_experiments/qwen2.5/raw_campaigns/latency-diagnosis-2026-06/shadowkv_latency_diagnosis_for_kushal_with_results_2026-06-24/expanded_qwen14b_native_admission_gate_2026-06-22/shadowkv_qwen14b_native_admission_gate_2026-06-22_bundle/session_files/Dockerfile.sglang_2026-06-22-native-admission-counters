@@ -1,0 +1,263 @@
+FROM shadowkv-sglang-native-admission:2026-06-21
+
+RUN python3 - <<'PY'
+from pathlib import Path
+
+metrics = Path("/usr/local/lib/python3.12/dist-packages/sglang/srt/shadowkv_admission_metrics.py")
+metrics.write_text(
+    r'''
+import json
+import os
+import time
+from pathlib import Path
+
+try:
+    import fcntl
+except Exception:  # pragma: no cover
+    fcntl = None
+
+
+def _path() -> Path:
+    return Path(os.environ.get("SHADOWKV_ADMISSION_METRICS_PATH", "/tmp/shadowkv_admission_metrics.json"))
+
+
+def _locked_update(mutator):
+    path = _path()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("a+", encoding="utf-8") as handle:
+        if fcntl is not None:
+            fcntl.flock(handle.fileno(), fcntl.LOCK_EX)
+        handle.seek(0)
+        raw = handle.read().strip()
+        try:
+            payload = json.loads(raw) if raw else {}
+        except Exception:
+            payload = {}
+        counters = dict(payload.get("counters") or {})
+        result = mutator(counters)
+        payload = {
+            "path": str(path),
+            "updated_at": time.time(),
+            "counters": counters,
+        }
+        handle.seek(0)
+        handle.truncate()
+        handle.write(json.dumps(payload, sort_keys=True))
+        handle.flush()
+        os.fsync(handle.fileno())
+        if fcntl is not None:
+            fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
+        return result if result is not None else payload
+
+
+def inc(name: str, amount: int | float = 1):
+    def mutate(counters):
+        counters[name] = counters.get(name, 0) + amount
+    return _locked_update(mutate)
+
+
+def snapshot():
+    path = _path()
+    if not path.exists():
+        return {"path": str(path), "updated_at": None, "counters": {}}
+    with path.open("r", encoding="utf-8") as handle:
+        if fcntl is not None:
+            fcntl.flock(handle.fileno(), fcntl.LOCK_SH)
+        raw = handle.read().strip()
+        if fcntl is not None:
+            fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
+    try:
+        payload = json.loads(raw) if raw else {}
+    except Exception:
+        payload = {}
+    payload.setdefault("path", str(path))
+    payload.setdefault("updated_at", None)
+    payload.setdefault("counters", {})
+    return payload
+
+
+def reset():
+    def mutate(counters):
+        counters.clear()
+    return _locked_update(mutate)
+'''.lstrip()
+)
+
+schedule_batch = Path("/usr/local/lib/python3.12/dist-packages/sglang/srt/managers/schedule_batch.py")
+text = schedule_batch.read_text()
+if "shadowkv_admission_metrics import inc as _shadowkv_metric_inc" not in text:
+    marker = 'SHADOWKV_ADMISSION_EXTRA_KEY_PREFIX = "__shadowkv_admission__:"\n'
+    if marker not in text:
+        raise SystemExit("schedule_batch ShadowKV prefix marker not found")
+    text = text.replace(
+        marker,
+        marker + "from sglang.srt.shadowkv_admission_metrics import inc as _shadowkv_metric_inc\n",
+        1,
+    )
+old = """    normalized_extra_key = fields.get("key") or None
+    skip_lookup = fields.get("lookup", "1") == "0"
+    skip_write = fields.get("write", "1") == "0"
+    tag = fields.get("tag") or None
+    return normalized_extra_key, skip_lookup, skip_write, tag
+"""
+new = """    normalized_extra_key = fields.get("key") or None
+    skip_lookup = fields.get("lookup", "1") == "0"
+    skip_write = fields.get("write", "1") == "0"
+    tag = fields.get("tag") or None
+    _shadowkv_metric_inc("extra_key_controls_total")
+    if skip_lookup:
+        _shadowkv_metric_inc("skip_lookup_requested_total")
+    if skip_write:
+        _shadowkv_metric_inc("skip_write_requested_total")
+    return normalized_extra_key, skip_lookup, skip_write, tag
+"""
+if old not in text:
+    raise SystemExit("schedule_batch parse counter anchor not found")
+text = text.replace(old, new, 1)
+schedule_batch.write_text(text)
+
+schedule_policy = Path("/usr/local/lib/python3.12/dist-packages/sglang/srt/managers/schedule_policy.py")
+text = schedule_policy.read_text()
+if "shadowkv_admission_metrics import inc as _shadowkv_metric_inc" not in text:
+    import_anchor = "from sglang.srt.managers.schedule_batch import Req, ScheduleBatch\n"
+    if import_anchor not in text:
+        raise SystemExit("schedule_policy import anchor not found")
+    text = text.replace(
+        import_anchor,
+        import_anchor + "from sglang.srt.shadowkv_admission_metrics import inc as _shadowkv_metric_inc\n",
+        1,
+    )
+old = """    if getattr(req, "shadowkv_skip_cache_lookup", False):
+        token_ids = array("q")
+"""
+new = """    if getattr(req, "shadowkv_skip_cache_lookup", False):
+        _shadowkv_metric_inc("scheduler_skip_lookup_total")
+        token_ids = array("q")
+"""
+if old not in text:
+    raise SystemExit("schedule_policy skip lookup anchor not found")
+text = text.replace(old, new, 1)
+schedule_policy.write_text(text)
+
+radix = Path("/usr/local/lib/python3.12/dist-packages/sglang/srt/mem_cache/radix_cache.py")
+text = radix.read_text()
+if "shadowkv_admission_metrics import inc as _shadowkv_metric_inc" not in text:
+    import_anchor = "from sglang.srt.mem_cache.cache_init_params import CacheInitParams\n"
+    if import_anchor not in text:
+        raise SystemExit("radix import anchor not found")
+    text = text.replace(
+        import_anchor,
+        import_anchor + "from sglang.srt.shadowkv_admission_metrics import inc as _shadowkv_metric_inc\n",
+        1,
+    )
+old = """        if params.req is not None and getattr(params.req, "shadowkv_skip_cache_lookup", False):
+            return self._empty_match_result
+"""
+new = """        if params.req is not None and getattr(params.req, "shadowkv_skip_cache_lookup", False):
+            _shadowkv_metric_inc("radix_skip_lookup_total")
+            return self._empty_match_result
+"""
+if old not in text:
+    raise SystemExit("radix match_prefix counter anchor not found")
+text = text.replace(old, new, 1)
+old = """        if getattr(req, "shadowkv_skip_cache_write", False):
+            is_insert = False
+"""
+new = """        if getattr(req, "shadowkv_skip_cache_write", False):
+            _shadowkv_metric_inc("radix_skip_write_finished_total")
+            is_insert = False
+"""
+if old not in text:
+    raise SystemExit("radix finished write counter anchor not found")
+text = text.replace(old, new, 1)
+old = """        if self.disable or getattr(req, "shadowkv_skip_cache_write", False):
+            return
+"""
+new = """        if self.disable:
+            return
+        if getattr(req, "shadowkv_skip_cache_write", False):
+            _shadowkv_metric_inc("radix_skip_write_unfinished_total")
+            return
+"""
+if old not in text:
+    raise SystemExit("radix unfinished write counter anchor not found")
+text = text.replace(old, new, 1)
+radix.write_text(text)
+
+lmc = Path("/usr/local/lib/python3.12/dist-packages/sglang/srt/mem_cache/storage/lmcache/lmc_radix_cache.py")
+text = lmc.read_text()
+if "shadowkv_admission_metrics import inc as _shadowkv_metric_inc" not in text:
+    import_anchor = "from sglang.srt.server_args import get_global_server_args\n"
+    if import_anchor not in text:
+        raise SystemExit("lmc import anchor not found")
+    text = text.replace(
+        import_anchor,
+        import_anchor + "from sglang.srt.shadowkv_admission_metrics import inc as _shadowkv_metric_inc\n",
+        1,
+    )
+old = """    def cache_unfinished_req(self, req: Req, chunked=False):
+        if getattr(req, "shadowkv_skip_cache_write", False):
+            return
+"""
+new = """    def cache_unfinished_req(self, req: Req, chunked=False):
+        if getattr(req, "shadowkv_skip_cache_write", False):
+            _shadowkv_metric_inc("lmcache_skip_write_unfinished_total")
+            return
+"""
+if old not in text:
+    raise SystemExit("lmc unfinished write counter anchor not found")
+text = text.replace(old, new, 1)
+old = """        if getattr(req, "shadowkv_skip_cache_write", False):
+            is_insert = False
+"""
+new = """        if getattr(req, "shadowkv_skip_cache_write", False):
+            _shadowkv_metric_inc("lmcache_skip_write_finished_total")
+            is_insert = False
+"""
+if old not in text:
+    raise SystemExit("lmc finished write counter anchor not found")
+text = text.replace(old, new, 1)
+lmc.write_text(text)
+
+http_server = Path("/usr/local/lib/python3.12/dist-packages/sglang/srt/entrypoints/http_server.py")
+text = http_server.read_text()
+if "shadowkv_admission_metrics" not in text:
+    import_anchor = "from fastapi.responses import ORJSONResponse, Response, StreamingResponse\n"
+    if import_anchor not in text:
+        raise SystemExit("http_server import anchor not found")
+    text = text.replace(
+        import_anchor,
+        import_anchor + "from sglang.srt import shadowkv_admission_metrics\n",
+        1,
+    )
+    endpoint_anchor = '\n\n@app.get("/get_load")\n'
+    endpoints = '''
+
+@app.get("/shadowkv_admission_metrics")
+async def shadowkv_admission_metrics():
+    return shadowkv_admission_metrics_module.snapshot()
+
+
+@app.api_route("/shadowkv_admission_metrics/reset", methods=["GET", "POST"])
+async def shadowkv_admission_metrics_reset():
+    return shadowkv_admission_metrics_module.reset()
+'''
+    # Avoid shadowing the endpoint function name with the imported module.
+    text = text.replace(
+        "from sglang.srt import shadowkv_admission_metrics\n",
+        "from sglang.srt import shadowkv_admission_metrics as shadowkv_admission_metrics_module\n",
+        1,
+    )
+    if endpoint_anchor not in text:
+        raise SystemExit("http_server endpoint anchor not found")
+    text = text.replace(endpoint_anchor, endpoints + endpoint_anchor, 1)
+http_server.write_text(text)
+
+print("patched SGLang native admission counters and metrics endpoint")
+PY
+
+ENV PYTHONPATH=/workspace/shadowkv/src:${PYTHONPATH}
+ENV USE_HUB_KERNELS=NO
+ENV FLASHINFER_DISABLE_VERSION_CHECK=1
+ENV PYTHONHASHSEED=0
+WORKDIR /workspace/shadowkv

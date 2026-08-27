@@ -1,0 +1,18 @@
+Experiment: multiround_four_arm_high_pressure
+Timestamp: 2026-07-23 15:59:06
+Host: blackwell-bench-01
+GPU: NVIDIA RTX PRO 6000
+CUDA version: 12.8
+vLLM version: 0.23.1
+Arm: no_cache
+Seed: 789
+Model: google/gemma-4-31B-it
+Cache budget: 28 GB
+Admission mode: disabled
+Requests: 140
+Mean latency: 85.86 ms
+Throughput: 11.65 req/s
+GPU energy: 3426.6 J
+Bypasses: 0
+Skip-writes: 0
+Status: completed

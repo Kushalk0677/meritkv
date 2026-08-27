@@ -1,0 +1,2 @@
+Benchmark vllm_apc_meritkv for google/gemma-4-31B-it dolly templated seed=123
+Latency: 48.83ms, Throughput: 20.48 rps

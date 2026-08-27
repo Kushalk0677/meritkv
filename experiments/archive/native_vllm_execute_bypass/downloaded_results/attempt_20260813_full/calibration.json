@@ -1,0 +1,1827 @@
+{
+  "per_length": [
+    {
+      "prefix_length_target": 16,
+      "prompt_tokens": 26,
+      "cached_tokens": 16,
+      "cached_latency_median_ms": 243.2339150000189,
+      "forced_recompute_latency_median_ms": 235.51906399995914,
+      "cached_runs": [
+        {
+          "latency_ms": 363.2101560000365,
+          "prompt_tokens": 26,
+          "completion_tokens": 8,
+          "cached_tokens": 16,
+          "text": " Yes\n\nThe automatic prefix caching system in",
+          "token_ids": [
+            7414,
+            271,
+            785,
+            16962,
+            9252,
+            47430,
+            1849,
+            304
+          ],
+          "logprob_tokens": [
+            "token_id:7414",
+            "token_id:271",
+            "token_id:785",
+            "token_id:16962",
+            "token_id:9252",
+            "token_id:47430",
+            "token_id:1849",
+            "token_id:304"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 327.55371200005357,
+          "prompt_tokens": 26,
+          "completion_tokens": 8,
+          "cached_tokens": 16,
+          "text": " Yes\n\nThe automatic prefix caching system in",
+          "token_ids": [
+            7414,
+            271,
+            785,
+            16962,
+            9252,
+            47430,
+            1849,
+            304
+          ],
+          "logprob_tokens": [
+            "token_id:7414",
+            "token_id:271",
+            "token_id:785",
+            "token_id:16962",
+            "token_id:9252",
+            "token_id:47430",
+            "token_id:1849",
+            "token_id:304"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 243.2339150000189,
+          "prompt_tokens": 26,
+          "completion_tokens": 8,
+          "cached_tokens": 16,
+          "text": " Yes\n\nThe automatic prefix caching system in",
+          "token_ids": [
+            7414,
+            271,
+            785,
+            16962,
+            9252,
+            47430,
+            1849,
+            304
+          ],
+          "logprob_tokens": [
+            "token_id:7414",
+            "token_id:271",
+            "token_id:785",
+            "token_id:16962",
+            "token_id:9252",
+            "token_id:47430",
+            "token_id:1849",
+            "token_id:304"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 220.79494599995542,
+          "prompt_tokens": 26,
+          "completion_tokens": 8,
+          "cached_tokens": 16,
+          "text": " Yes\n\nThe automatic prefix caching system in",
+          "token_ids": [
+            7414,
+            271,
+            785,
+            16962,
+            9252,
+            47430,
+            1849,
+            304
+          ],
+          "logprob_tokens": [
+            "token_id:7414",
+            "token_id:271",
+            "token_id:785",
+            "token_id:16962",
+            "token_id:9252",
+            "token_id:47430",
+            "token_id:1849",
+            "token_id:304"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 223.2860519999349,
+          "prompt_tokens": 26,
+          "completion_tokens": 8,
+          "cached_tokens": 16,
+          "text": " Yes\n\nThe automatic prefix caching system in",
+          "token_ids": [
+            7414,
+            271,
+            785,
+            16962,
+            9252,
+            47430,
+            1849,
+            304
+          ],
+          "logprob_tokens": [
+            "token_id:7414",
+            "token_id:271",
+            "token_id:785",
+            "token_id:16962",
+            "token_id:9252",
+            "token_id:47430",
+            "token_id:1849",
+            "token_id:304"
+          ],
+          "finish_reason": "length"
+        }
+      ],
+      "forced_recompute_runs": [
+        {
+          "latency_ms": 407.78102999991006,
+          "prompt_tokens": 26,
+          "completion_tokens": 8,
+          "cached_tokens": 0,
+          "text": " Yes\n\nThe automatic prefix caching system in",
+          "token_ids": [
+            7414,
+            271,
+            785,
+            16962,
+            9252,
+            47430,
+            1849,
+            304
+          ],
+          "logprob_tokens": [
+            "token_id:7414",
+            "token_id:271",
+            "token_id:785",
+            "token_id:16962",
+            "token_id:9252",
+            "token_id:47430",
+            "token_id:1849",
+            "token_id:304"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 262.80098699999144,
+          "prompt_tokens": 26,
+          "completion_tokens": 8,
+          "cached_tokens": 0,
+          "text": " Yes\n\nThe automatic prefix caching system in",
+          "token_ids": [
+            7414,
+            271,
+            785,
+            16962,
+            9252,
+            47430,
+            1849,
+            304
+          ],
+          "logprob_tokens": [
+            "token_id:7414",
+            "token_id:271",
+            "token_id:785",
+            "token_id:16962",
+            "token_id:9252",
+            "token_id:47430",
+            "token_id:1849",
+            "token_id:304"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 232.70131900005708,
+          "prompt_tokens": 26,
+          "completion_tokens": 8,
+          "cached_tokens": 0,
+          "text": " Yes\n\nThe automatic prefix caching system in",
+          "token_ids": [
+            7414,
+            271,
+            785,
+            16962,
+            9252,
+            47430,
+            1849,
+            304
+          ],
+          "logprob_tokens": [
+            "token_id:7414",
+            "token_id:271",
+            "token_id:785",
+            "token_id:16962",
+            "token_id:9252",
+            "token_id:47430",
+            "token_id:1849",
+            "token_id:304"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 220.65249600007064,
+          "prompt_tokens": 26,
+          "completion_tokens": 8,
+          "cached_tokens": 0,
+          "text": " Yes\n\nThe automatic prefix caching system in",
+          "token_ids": [
+            7414,
+            271,
+            785,
+            16962,
+            9252,
+            47430,
+            1849,
+            304
+          ],
+          "logprob_tokens": [
+            "token_id:7414",
+            "token_id:271",
+            "token_id:785",
+            "token_id:16962",
+            "token_id:9252",
+            "token_id:47430",
+            "token_id:1849",
+            "token_id:304"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 235.51906399995914,
+          "prompt_tokens": 26,
+          "completion_tokens": 8,
+          "cached_tokens": 0,
+          "text": " Yes\n\nThe automatic prefix caching system in",
+          "token_ids": [
+            7414,
+            271,
+            785,
+            16962,
+            9252,
+            47430,
+            1849,
+            304
+          ],
+          "logprob_tokens": [
+            "token_id:7414",
+            "token_id:271",
+            "token_id:785",
+            "token_id:16962",
+            "token_id:9252",
+            "token_id:47430",
+            "token_id:1849",
+            "token_id:304"
+          ],
+          "finish_reason": "length"
+        }
+      ],
+      "observed_saved_ms": -7.7148510000597526,
+      "saved_ms_per_cached_token": -0.48217818750373453,
+      "incremental_reuse_cost_ms": 102.63163752300892
+    },
+    {
+      "prefix_length_target": 32,
+      "prompt_tokens": 42,
+      "cached_tokens": 32,
+      "cached_latency_median_ms": 60.457585999984076,
+      "forced_recompute_latency_median_ms": 59.67640300002586,
+      "cached_runs": [
+        {
+          "latency_ms": 60.81249999999727,
+          "prompt_tokens": 42,
+          "completion_tokens": 2,
+          "cached_tokens": 32,
+          "text": " automatic",
+          "token_ids": [
+            16962,
+            151643
+          ],
+          "logprob_tokens": [
+            "token_id:16962",
+            "token_id:151643"
+          ],
+          "finish_reason": "stop"
+        },
+        {
+          "latency_ms": 61.04034700001648,
+          "prompt_tokens": 42,
+          "completion_tokens": 2,
+          "cached_tokens": 32,
+          "text": " automatic",
+          "token_ids": [
+            16962,
+            151643
+          ],
+          "logprob_tokens": [
+            "token_id:16962",
+            "token_id:151643"
+          ],
+          "finish_reason": "stop"
+        },
+        {
+          "latency_ms": 60.457585999984076,
+          "prompt_tokens": 42,
+          "completion_tokens": 2,
+          "cached_tokens": 32,
+          "text": " automatic",
+          "token_ids": [
+            16962,
+            151643
+          ],
+          "logprob_tokens": [
+            "token_id:16962",
+            "token_id:151643"
+          ],
+          "finish_reason": "stop"
+        },
+        {
+          "latency_ms": 58.99745499993969,
+          "prompt_tokens": 42,
+          "completion_tokens": 2,
+          "cached_tokens": 32,
+          "text": " automatic",
+          "token_ids": [
+            16962,
+            151643
+          ],
+          "logprob_tokens": [
+            "token_id:16962",
+            "token_id:151643"
+          ],
+          "finish_reason": "stop"
+        },
+        {
+          "latency_ms": 59.40132400007769,
+          "prompt_tokens": 42,
+          "completion_tokens": 2,
+          "cached_tokens": 32,
+          "text": " automatic",
+          "token_ids": [
+            16962,
+            151643
+          ],
+          "logprob_tokens": [
+            "token_id:16962",
+            "token_id:151643"
+          ],
+          "finish_reason": "stop"
+        }
+      ],
+      "forced_recompute_runs": [
+        {
+          "latency_ms": 121.6707389999101,
+          "prompt_tokens": 42,
+          "completion_tokens": 2,
+          "cached_tokens": 0,
+          "text": " automatic",
+          "token_ids": [
+            16962,
+            151643
+          ],
+          "logprob_tokens": [
+            "token_id:16962",
+            "token_id:151643"
+          ],
+          "finish_reason": "stop"
+        },
+        {
+          "latency_ms": 60.29726099995969,
+          "prompt_tokens": 42,
+          "completion_tokens": 2,
+          "cached_tokens": 0,
+          "text": " automatic",
+          "token_ids": [
+            16962,
+            151643
+          ],
+          "logprob_tokens": [
+            "token_id:16962",
+            "token_id:151643"
+          ],
+          "finish_reason": "stop"
+        },
+        {
+          "latency_ms": 59.67640300002586,
+          "prompt_tokens": 42,
+          "completion_tokens": 2,
+          "cached_tokens": 0,
+          "text": " automatic",
+          "token_ids": [
+            16962,
+            151643
+          ],
+          "logprob_tokens": [
+            "token_id:16962",
+            "token_id:151643"
+          ],
+          "finish_reason": "stop"
+        },
+        {
+          "latency_ms": 58.30146200003128,
+          "prompt_tokens": 42,
+          "completion_tokens": 2,
+          "cached_tokens": 0,
+          "text": " automatic",
+          "token_ids": [
+            16962,
+            151643
+          ],
+          "logprob_tokens": [
+            "token_id:16962",
+            "token_id:151643"
+          ],
+          "finish_reason": "stop"
+        },
+        {
+          "latency_ms": 59.596295999995164,
+          "prompt_tokens": 42,
+          "completion_tokens": 2,
+          "cached_tokens": 0,
+          "text": " automatic",
+          "token_ids": [
+            16962,
+            151643
+          ],
+          "logprob_tokens": [
+            "token_id:16962",
+            "token_id:151643"
+          ],
+          "finish_reason": "stop"
+        }
+      ],
+      "observed_saved_ms": -0.7811829999582187,
+      "saved_ms_per_cached_token": -0.024411968748694335,
+      "incremental_reuse_cost_ms": -80.1446914770259
+    },
+    {
+      "prefix_length_target": 64,
+      "prompt_tokens": 74,
+      "cached_tokens": 64,
+      "cached_latency_median_ms": 60.32563700000537,
+      "forced_recompute_latency_median_ms": 61.13335600002756,
+      "cached_runs": [
+        {
+          "latency_ms": 58.954623999966316,
+          "prompt_tokens": 74,
+          "completion_tokens": 2,
+          "cached_tokens": 64,
+          "text": " automatic",
+          "token_ids": [
+            16962,
+            151643
+          ],
+          "logprob_tokens": [
+            "token_id:16962",
+            "token_id:151643"
+          ],
+          "finish_reason": "stop"
+        },
+        {
+          "latency_ms": 68.22690700005296,
+          "prompt_tokens": 74,
+          "completion_tokens": 2,
+          "cached_tokens": 64,
+          "text": " automatic",
+          "token_ids": [
+            16962,
+            151643
+          ],
+          "logprob_tokens": [
+            "token_id:16962",
+            "token_id:151643"
+          ],
+          "finish_reason": "stop"
+        },
+        {
+          "latency_ms": 60.32563700000537,
+          "prompt_tokens": 74,
+          "completion_tokens": 2,
+          "cached_tokens": 64,
+          "text": " automatic",
+          "token_ids": [
+            16962,
+            151643
+          ],
+          "logprob_tokens": [
+            "token_id:16962",
+            "token_id:151643"
+          ],
+          "finish_reason": "stop"
+        },
+        {
+          "latency_ms": 60.46730100001696,
+          "prompt_tokens": 74,
+          "completion_tokens": 2,
+          "cached_tokens": 64,
+          "text": " automatic",
+          "token_ids": [
+            16962,
+            151643
+          ],
+          "logprob_tokens": [
+            "token_id:16962",
+            "token_id:151643"
+          ],
+          "finish_reason": "stop"
+        },
+        {
+          "latency_ms": 58.71231200001148,
+          "prompt_tokens": 74,
+          "completion_tokens": 2,
+          "cached_tokens": 64,
+          "text": " automatic",
+          "token_ids": [
+            16962,
+            151643
+          ],
+          "logprob_tokens": [
+            "token_id:16962",
+            "token_id:151643"
+          ],
+          "finish_reason": "stop"
+        }
+      ],
+      "forced_recompute_runs": [
+        {
+          "latency_ms": 130.45333599995956,
+          "prompt_tokens": 74,
+          "completion_tokens": 2,
+          "cached_tokens": 0,
+          "text": " automatic",
+          "token_ids": [
+            16962,
+            151643
+          ],
+          "logprob_tokens": [
+            "token_id:16962",
+            "token_id:151643"
+          ],
+          "finish_reason": "stop"
+        },
+        {
+          "latency_ms": 61.13335600002756,
+          "prompt_tokens": 74,
+          "completion_tokens": 2,
+          "cached_tokens": 0,
+          "text": " automatic",
+          "token_ids": [
+            16962,
+            151643
+          ],
+          "logprob_tokens": [
+            "token_id:16962",
+            "token_id:151643"
+          ],
+          "finish_reason": "stop"
+        },
+        {
+          "latency_ms": 58.838072999947144,
+          "prompt_tokens": 74,
+          "completion_tokens": 2,
+          "cached_tokens": 0,
+          "text": " automatic",
+          "token_ids": [
+            16962,
+            151643
+          ],
+          "logprob_tokens": [
+            "token_id:16962",
+            "token_id:151643"
+          ],
+          "finish_reason": "stop"
+        },
+        {
+          "latency_ms": 62.802826999927674,
+          "prompt_tokens": 74,
+          "completion_tokens": 2,
+          "cached_tokens": 0,
+          "text": " automatic",
+          "token_ids": [
+            16962,
+            151643
+          ],
+          "logprob_tokens": [
+            "token_id:16962",
+            "token_id:151643"
+          ],
+          "finish_reason": "stop"
+        },
+        {
+          "latency_ms": 58.828776999916954,
+          "prompt_tokens": 74,
+          "completion_tokens": 2,
+          "cached_tokens": 0,
+          "text": " automatic",
+          "token_ids": [
+            16962,
+            151643
+          ],
+          "logprob_tokens": [
+            "token_id:16962",
+            "token_id:151643"
+          ],
+          "finish_reason": "stop"
+        }
+      ],
+      "observed_saved_ms": 0.807719000022189,
+      "saved_ms_per_cached_token": 0.012620609375346703,
+      "incremental_reuse_cost_ms": -80.2766404770046
+    },
+    {
+      "prefix_length_target": 128,
+      "prompt_tokens": 138,
+      "cached_tokens": 128,
+      "cached_latency_median_ms": 240.70313500010343,
+      "forced_recompute_latency_median_ms": 255.1298419999739,
+      "cached_runs": [
+        {
+          "latency_ms": 240.70313500010343,
+          "prompt_tokens": 138,
+          "completion_tokens": 8,
+          "cached_tokens": 128,
+          "text": " L128\n\nThe automatic prefix",
+          "token_ids": [
+            444,
+            16,
+            17,
+            23,
+            271,
+            785,
+            16962,
+            9252
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:16",
+            "token_id:17",
+            "token_id:23",
+            "token_id:271",
+            "token_id:785",
+            "token_id:16962",
+            "token_id:9252"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 242.62903299995742,
+          "prompt_tokens": 138,
+          "completion_tokens": 8,
+          "cached_tokens": 128,
+          "text": " L128\n\nThe automatic prefix",
+          "token_ids": [
+            444,
+            16,
+            17,
+            23,
+            271,
+            785,
+            16962,
+            9252
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:16",
+            "token_id:17",
+            "token_id:23",
+            "token_id:271",
+            "token_id:785",
+            "token_id:16962",
+            "token_id:9252"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 246.72345299995868,
+          "prompt_tokens": 138,
+          "completion_tokens": 8,
+          "cached_tokens": 128,
+          "text": " L128\n\nThe automatic prefix",
+          "token_ids": [
+            444,
+            16,
+            17,
+            23,
+            271,
+            785,
+            16962,
+            9252
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:16",
+            "token_id:17",
+            "token_id:23",
+            "token_id:271",
+            "token_id:785",
+            "token_id:16962",
+            "token_id:9252"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 233.9475600000469,
+          "prompt_tokens": 138,
+          "completion_tokens": 8,
+          "cached_tokens": 128,
+          "text": " L128\n\nThe automatic prefix",
+          "token_ids": [
+            444,
+            16,
+            17,
+            23,
+            271,
+            785,
+            16962,
+            9252
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:16",
+            "token_id:17",
+            "token_id:23",
+            "token_id:271",
+            "token_id:785",
+            "token_id:16962",
+            "token_id:9252"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 237.30381400002898,
+          "prompt_tokens": 138,
+          "completion_tokens": 8,
+          "cached_tokens": 128,
+          "text": " L128\n\nThe automatic prefix",
+          "token_ids": [
+            444,
+            16,
+            17,
+            23,
+            271,
+            785,
+            16962,
+            9252
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:16",
+            "token_id:17",
+            "token_id:23",
+            "token_id:271",
+            "token_id:785",
+            "token_id:16962",
+            "token_id:9252"
+          ],
+          "finish_reason": "length"
+        }
+      ],
+      "forced_recompute_runs": [
+        {
+          "latency_ms": 334.81234500004575,
+          "prompt_tokens": 138,
+          "completion_tokens": 8,
+          "cached_tokens": 0,
+          "text": " L128\n\nThe automatic prefix",
+          "token_ids": [
+            444,
+            16,
+            17,
+            23,
+            271,
+            785,
+            16962,
+            9252
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:16",
+            "token_id:17",
+            "token_id:23",
+            "token_id:271",
+            "token_id:785",
+            "token_id:16962",
+            "token_id:9252"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 237.77412900005856,
+          "prompt_tokens": 138,
+          "completion_tokens": 8,
+          "cached_tokens": 0,
+          "text": " L128\n\nThe automatic prefix",
+          "token_ids": [
+            444,
+            16,
+            17,
+            23,
+            271,
+            785,
+            16962,
+            9252
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:16",
+            "token_id:17",
+            "token_id:23",
+            "token_id:271",
+            "token_id:785",
+            "token_id:16962",
+            "token_id:9252"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 242.80877800003964,
+          "prompt_tokens": 138,
+          "completion_tokens": 8,
+          "cached_tokens": 0,
+          "text": " L128\n\nThe automatic prefix",
+          "token_ids": [
+            444,
+            16,
+            17,
+            23,
+            271,
+            785,
+            16962,
+            9252
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:16",
+            "token_id:17",
+            "token_id:23",
+            "token_id:271",
+            "token_id:785",
+            "token_id:16962",
+            "token_id:9252"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 255.1298419999739,
+          "prompt_tokens": 138,
+          "completion_tokens": 8,
+          "cached_tokens": 0,
+          "text": " L128\n\nThe automatic prefix",
+          "token_ids": [
+            444,
+            16,
+            17,
+            23,
+            271,
+            785,
+            16962,
+            9252
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:16",
+            "token_id:17",
+            "token_id:23",
+            "token_id:271",
+            "token_id:785",
+            "token_id:16962",
+            "token_id:9252"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 255.91833500004668,
+          "prompt_tokens": 138,
+          "completion_tokens": 8,
+          "cached_tokens": 0,
+          "text": " L128\n\nThe automatic prefix",
+          "token_ids": [
+            444,
+            16,
+            17,
+            23,
+            271,
+            785,
+            16962,
+            9252
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:16",
+            "token_id:17",
+            "token_id:23",
+            "token_id:271",
+            "token_id:785",
+            "token_id:16962",
+            "token_id:9252"
+          ],
+          "finish_reason": "length"
+        }
+      ],
+      "observed_saved_ms": 14.426706999870476,
+      "saved_ms_per_cached_token": 0.11270864843648809,
+      "incremental_reuse_cost_ms": 100.10085752309345
+    },
+    {
+      "prefix_length_target": 256,
+      "prompt_tokens": 266,
+      "cached_tokens": 256,
+      "cached_latency_median_ms": 243.6820140000009,
+      "forced_recompute_latency_median_ms": 289.7457540000232,
+      "cached_runs": [
+        {
+          "latency_ms": 258.9251880000347,
+          "prompt_tokens": 266,
+          "completion_tokens": 8,
+          "cached_tokens": 256,
+          "text": " L256\n\nThis passage describes",
+          "token_ids": [
+            444,
+            17,
+            20,
+            21,
+            271,
+            1986,
+            21085,
+            16555
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:17",
+            "token_id:20",
+            "token_id:21",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085",
+            "token_id:16555"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 241.88263700000334,
+          "prompt_tokens": 266,
+          "completion_tokens": 8,
+          "cached_tokens": 256,
+          "text": " L256\n\nThis passage describes",
+          "token_ids": [
+            444,
+            17,
+            20,
+            21,
+            271,
+            1986,
+            21085,
+            16555
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:17",
+            "token_id:20",
+            "token_id:21",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085",
+            "token_id:16555"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 243.6820140000009,
+          "prompt_tokens": 266,
+          "completion_tokens": 8,
+          "cached_tokens": 256,
+          "text": " L256\n\nThis passage describes",
+          "token_ids": [
+            444,
+            17,
+            20,
+            21,
+            271,
+            1986,
+            21085,
+            16555
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:17",
+            "token_id:20",
+            "token_id:21",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085",
+            "token_id:16555"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 242.6023409999516,
+          "prompt_tokens": 266,
+          "completion_tokens": 8,
+          "cached_tokens": 256,
+          "text": " L256\n\nThis passage describes",
+          "token_ids": [
+            444,
+            17,
+            20,
+            21,
+            271,
+            1986,
+            21085,
+            16555
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:17",
+            "token_id:20",
+            "token_id:21",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085",
+            "token_id:16555"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 245.32485600002474,
+          "prompt_tokens": 266,
+          "completion_tokens": 8,
+          "cached_tokens": 256,
+          "text": " L256\n\nThis passage describes",
+          "token_ids": [
+            444,
+            17,
+            20,
+            21,
+            271,
+            1986,
+            21085,
+            16555
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:17",
+            "token_id:20",
+            "token_id:21",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085",
+            "token_id:16555"
+          ],
+          "finish_reason": "length"
+        }
+      ],
+      "forced_recompute_runs": [
+        {
+          "latency_ms": 364.7499809999317,
+          "prompt_tokens": 266,
+          "completion_tokens": 8,
+          "cached_tokens": 0,
+          "text": " L256\n\nThis passage describes",
+          "token_ids": [
+            444,
+            17,
+            20,
+            21,
+            271,
+            1986,
+            21085,
+            16555
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:17",
+            "token_id:20",
+            "token_id:21",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085",
+            "token_id:16555"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 289.7457540000232,
+          "prompt_tokens": 266,
+          "completion_tokens": 8,
+          "cached_tokens": 0,
+          "text": " L256\n\nThis passage describes",
+          "token_ids": [
+            444,
+            17,
+            20,
+            21,
+            271,
+            1986,
+            21085,
+            16555
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:17",
+            "token_id:20",
+            "token_id:21",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085",
+            "token_id:16555"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 284.2558579999377,
+          "prompt_tokens": 266,
+          "completion_tokens": 8,
+          "cached_tokens": 0,
+          "text": " L256\n\nThis passage describes",
+          "token_ids": [
+            444,
+            17,
+            20,
+            21,
+            271,
+            1986,
+            21085,
+            16555
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:17",
+            "token_id:20",
+            "token_id:21",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085",
+            "token_id:16555"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 300.41488200004096,
+          "prompt_tokens": 266,
+          "completion_tokens": 8,
+          "cached_tokens": 0,
+          "text": " L256\n\nThis passage describes",
+          "token_ids": [
+            444,
+            17,
+            20,
+            21,
+            271,
+            1986,
+            21085,
+            16555
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:17",
+            "token_id:20",
+            "token_id:21",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085",
+            "token_id:16555"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 283.6328750000803,
+          "prompt_tokens": 266,
+          "completion_tokens": 8,
+          "cached_tokens": 0,
+          "text": " L256\n\nThis passage describes",
+          "token_ids": [
+            444,
+            17,
+            20,
+            21,
+            271,
+            1986,
+            21085,
+            16555
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:17",
+            "token_id:20",
+            "token_id:21",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085",
+            "token_id:16555"
+          ],
+          "finish_reason": "length"
+        }
+      ],
+      "observed_saved_ms": 46.063740000022335,
+      "saved_ms_per_cached_token": 0.17993648437508725,
+      "incremental_reuse_cost_ms": 103.07973652299091
+    },
+    {
+      "prefix_length_target": 512,
+      "prompt_tokens": 522,
+      "cached_tokens": 512,
+      "cached_latency_median_ms": 239.97673100006978,
+      "forced_recompute_latency_median_ms": 338.9633589999903,
+      "cached_runs": [
+        {
+          "latency_ms": 254.8635570000215,
+          "prompt_tokens": 522,
+          "completion_tokens": 8,
+          "cached_tokens": 512,
+          "text": " L512\n\nThis passage describes",
+          "token_ids": [
+            444,
+            20,
+            16,
+            17,
+            271,
+            1986,
+            21085,
+            16555
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:20",
+            "token_id:16",
+            "token_id:17",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085",
+            "token_id:16555"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 233.3766659999128,
+          "prompt_tokens": 522,
+          "completion_tokens": 8,
+          "cached_tokens": 512,
+          "text": " L512\n\nThis passage describes",
+          "token_ids": [
+            444,
+            20,
+            16,
+            17,
+            271,
+            1986,
+            21085,
+            16555
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:20",
+            "token_id:16",
+            "token_id:17",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085",
+            "token_id:16555"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 231.6492920000428,
+          "prompt_tokens": 522,
+          "completion_tokens": 8,
+          "cached_tokens": 512,
+          "text": " L512\n\nThis passage describes",
+          "token_ids": [
+            444,
+            20,
+            16,
+            17,
+            271,
+            1986,
+            21085,
+            16555
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:20",
+            "token_id:16",
+            "token_id:17",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085",
+            "token_id:16555"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 239.97673100006978,
+          "prompt_tokens": 522,
+          "completion_tokens": 8,
+          "cached_tokens": 512,
+          "text": " L512\n\nThis passage describes",
+          "token_ids": [
+            444,
+            20,
+            16,
+            17,
+            271,
+            1986,
+            21085,
+            16555
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:20",
+            "token_id:16",
+            "token_id:17",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085",
+            "token_id:16555"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 252.51184400008242,
+          "prompt_tokens": 522,
+          "completion_tokens": 8,
+          "cached_tokens": 512,
+          "text": " L512\n\nThis passage describes",
+          "token_ids": [
+            444,
+            20,
+            16,
+            17,
+            271,
+            1986,
+            21085,
+            16555
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:20",
+            "token_id:16",
+            "token_id:17",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085",
+            "token_id:16555"
+          ],
+          "finish_reason": "length"
+        }
+      ],
+      "forced_recompute_runs": [
+        {
+          "latency_ms": 404.0524590000132,
+          "prompt_tokens": 522,
+          "completion_tokens": 8,
+          "cached_tokens": 0,
+          "text": " L512\n\nThis passage describes",
+          "token_ids": [
+            444,
+            20,
+            16,
+            17,
+            271,
+            1986,
+            21085,
+            16555
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:20",
+            "token_id:16",
+            "token_id:17",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085",
+            "token_id:16555"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 338.9633589999903,
+          "prompt_tokens": 522,
+          "completion_tokens": 8,
+          "cached_tokens": 0,
+          "text": " L512\n\nThis passage describes",
+          "token_ids": [
+            444,
+            20,
+            16,
+            17,
+            271,
+            1986,
+            21085,
+            16555
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:20",
+            "token_id:16",
+            "token_id:17",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085",
+            "token_id:16555"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 327.053529000068,
+          "prompt_tokens": 522,
+          "completion_tokens": 8,
+          "cached_tokens": 0,
+          "text": " L512\n\nThis passage describes",
+          "token_ids": [
+            444,
+            20,
+            16,
+            17,
+            271,
+            1986,
+            21085,
+            16555
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:20",
+            "token_id:16",
+            "token_id:17",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085",
+            "token_id:16555"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 334.0844049999987,
+          "prompt_tokens": 522,
+          "completion_tokens": 8,
+          "cached_tokens": 0,
+          "text": " L512\n\nThis passage describes",
+          "token_ids": [
+            444,
+            20,
+            16,
+            17,
+            271,
+            1986,
+            21085,
+            16555
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:20",
+            "token_id:16",
+            "token_id:17",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085",
+            "token_id:16555"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 425.76692099999036,
+          "prompt_tokens": 522,
+          "completion_tokens": 8,
+          "cached_tokens": 0,
+          "text": " L512\n\nThis passage describes",
+          "token_ids": [
+            444,
+            20,
+            16,
+            17,
+            271,
+            1986,
+            21085,
+            16555
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:20",
+            "token_id:16",
+            "token_id:17",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085",
+            "token_id:16555"
+          ],
+          "finish_reason": "length"
+        }
+      ],
+      "observed_saved_ms": 98.98662799992053,
+      "saved_ms_per_cached_token": 0.19333325781234478,
+      "incremental_reuse_cost_ms": 99.3744535230598
+    },
+    {
+      "prefix_length_target": 1024,
+      "prompt_tokens": 1034,
+      "cached_tokens": 1024,
+      "cached_latency_median_ms": 269.506535000005,
+      "forced_recompute_latency_median_ms": 511.39117100001386,
+      "cached_runs": [
+        {
+          "latency_ms": 281.4135510000142,
+          "prompt_tokens": 1034,
+          "completion_tokens": 8,
+          "cached_tokens": 1024,
+          "text": " L1024\n\nThis passage",
+          "token_ids": [
+            444,
+            16,
+            15,
+            17,
+            19,
+            271,
+            1986,
+            21085
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:16",
+            "token_id:15",
+            "token_id:17",
+            "token_id:19",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 331.51900799998657,
+          "prompt_tokens": 1034,
+          "completion_tokens": 8,
+          "cached_tokens": 1024,
+          "text": " L1024\n\nThis passage",
+          "token_ids": [
+            444,
+            16,
+            15,
+            17,
+            19,
+            271,
+            1986,
+            21085
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:16",
+            "token_id:15",
+            "token_id:17",
+            "token_id:19",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 264.4197429999622,
+          "prompt_tokens": 1034,
+          "completion_tokens": 8,
+          "cached_tokens": 1024,
+          "text": " L1024\n\nThis passage",
+          "token_ids": [
+            444,
+            16,
+            15,
+            17,
+            19,
+            271,
+            1986,
+            21085
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:16",
+            "token_id:15",
+            "token_id:17",
+            "token_id:19",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 269.506535000005,
+          "prompt_tokens": 1034,
+          "completion_tokens": 8,
+          "cached_tokens": 1024,
+          "text": " L1024\n\nThis passage",
+          "token_ids": [
+            444,
+            16,
+            15,
+            17,
+            19,
+            271,
+            1986,
+            21085
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:16",
+            "token_id:15",
+            "token_id:17",
+            "token_id:19",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 264.7472270000435,
+          "prompt_tokens": 1034,
+          "completion_tokens": 8,
+          "cached_tokens": 1024,
+          "text": " L1024\n\nThis passage",
+          "token_ids": [
+            444,
+            16,
+            15,
+            17,
+            19,
+            271,
+            1986,
+            21085
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:16",
+            "token_id:15",
+            "token_id:17",
+            "token_id:19",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085"
+          ],
+          "finish_reason": "length"
+        }
+      ],
+      "forced_recompute_runs": [
+        {
+          "latency_ms": 629.6441279999954,
+          "prompt_tokens": 1034,
+          "completion_tokens": 8,
+          "cached_tokens": 0,
+          "text": " L1024\n\nThis passage",
+          "token_ids": [
+            444,
+            16,
+            15,
+            17,
+            19,
+            271,
+            1986,
+            21085
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:16",
+            "token_id:15",
+            "token_id:17",
+            "token_id:19",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 570.7877339999641,
+          "prompt_tokens": 1034,
+          "completion_tokens": 8,
+          "cached_tokens": 0,
+          "text": " L1024\n\nThis passage",
+          "token_ids": [
+            444,
+            16,
+            15,
+            17,
+            19,
+            271,
+            1986,
+            21085
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:16",
+            "token_id:15",
+            "token_id:17",
+            "token_id:19",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 510.45921100001124,
+          "prompt_tokens": 1034,
+          "completion_tokens": 8,
+          "cached_tokens": 0,
+          "text": " L1024\n\nThis passage",
+          "token_ids": [
+            444,
+            16,
+            15,
+            17,
+            19,
+            271,
+            1986,
+            21085
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:16",
+            "token_id:15",
+            "token_id:17",
+            "token_id:19",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 511.39117100001386,
+          "prompt_tokens": 1034,
+          "completion_tokens": 8,
+          "cached_tokens": 0,
+          "text": " L1024\n\nThis passage",
+          "token_ids": [
+            444,
+            16,
+            15,
+            17,
+            19,
+            271,
+            1986,
+            21085
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:16",
+            "token_id:15",
+            "token_id:17",
+            "token_id:19",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085"
+          ],
+          "finish_reason": "length"
+        },
+        {
+          "latency_ms": 509.9622070000578,
+          "prompt_tokens": 1034,
+          "completion_tokens": 8,
+          "cached_tokens": 0,
+          "text": " L1024\n\nThis passage",
+          "token_ids": [
+            444,
+            16,
+            15,
+            17,
+            19,
+            271,
+            1986,
+            21085
+          ],
+          "logprob_tokens": [
+            "token_id:444",
+            "token_id:16",
+            "token_id:15",
+            "token_id:17",
+            "token_id:19",
+            "token_id:271",
+            "token_id:1986",
+            "token_id:21085"
+          ],
+          "finish_reason": "length"
+        }
+      ],
+      "observed_saved_ms": 241.88463600000887,
+      "saved_ms_per_cached_token": 0.23621546484375866,
+      "incremental_reuse_cost_ms": 128.904257522995
+    }
+  ],
+  "full_ms_per_token": 0.3776294324118819,
+  "reuse_overhead_ms": 100.10085752309345,
+  "forced_recompute_fit_intercept_ms": 136.82598315289115,
+  "repetitions_per_length": 5,
+  "excluded_from_measured_run": true
+}

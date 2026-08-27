@@ -1,0 +1,2 @@
+# Frozen evidence packages must remain byte-identical to their source archives.
+runtime_experiments/native_enforcement_blackwell/evidence_packages/** -text

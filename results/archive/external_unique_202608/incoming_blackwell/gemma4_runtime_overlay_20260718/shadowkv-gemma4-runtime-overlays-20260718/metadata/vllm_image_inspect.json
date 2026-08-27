@@ -1,0 +1,115 @@
+[
+    {
+        "Id": "sha256:c37d5322996dc69c7bca26a4d718d23cbf4d6be0ba538a6fd16752bcc55bb020",
+        "RepoTags": [
+            "vllm/vllm-openai:nightly"
+        ],
+        "RepoDigests": [
+            "vllm/vllm-openai@sha256:0eb4c29337c727adb36d88e96b109f1fd262f0e5708bc77dc8e65c02fa89acdc"
+        ],
+        "Parent": "",
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-07-16T05:20:04.74855985Z",
+        "DockerVersion": "",
+        "Author": "",
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 18711616232,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/c91edd6c2f4c412eb26103e85090ede129636e8a131eeae0ca869d9036417239/diff:/var/lib/docker/overlay2/fa61fd7015114aa3691bdaab95e8cb6d1f7d52b568d4f97b4d316441150b529a/diff:/var/lib/docker/overlay2/b35b72a6964bc06075801bd034507736fa1e5ce0f362c4e1a234451116b087bc/diff:/var/lib/docker/overlay2/f2b1cf1619703d13ddabe0faf71ee3965231ded344e9950dbd60bed8de4be497/diff:/var/lib/docker/overlay2/8f6fa1bf2f103c48d344bbb4d956f46944866aedbfbd8f30292f309c89ab074d/diff:/var/lib/docker/overlay2/64478c3b76fc3875da2ae3de81c19376c419061e15232fa3a7f650516c8debd0/diff:/var/lib/docker/overlay2/2b9af6b365adbab4118b2141fca802ffbbb2de9aa0f6c5259fa46c3e236ef11d/diff:/var/lib/docker/overlay2/9debdb869d7e7b9e5065960defc15b3780706d546ad6d785afe2463dbd19bab2/diff:/var/lib/docker/overlay2/49a1e10324c2f5aeb8aaf637a3748f502ff7d127f8a05ce37cdddee91f4d59ed/diff:/var/lib/docker/overlay2/5e165be1e4b3d0cfbe44b7e9d0ec36ce943bdeba7de6954d56ea0f8acb0bdf5e/diff:/var/lib/docker/overlay2/d59fe393032af64b96f95ad9078eb00c7e7bbaa8106253937c07a539d7345141/diff:/var/lib/docker/overlay2/6eefee707754b09c5b18d23e8fdf8055863b40dcd60637055e8e08f970906f09/diff:/var/lib/docker/overlay2/20101be6c32b02e5aec44a19493785466e6aa2766177d08bc245622b25c63ada/diff:/var/lib/docker/overlay2/e0fbaeeb8eaf76878db348ca2d18ca4421625c96c44d86f268cf3623644705cb/diff:/var/lib/docker/overlay2/5c854323e6cab279c964601f36feb9b755e728d935f4bc67e03febd133e6e2de/diff:/var/lib/docker/overlay2/d2cf07eb39969cf6b3cdf875feb26e5e8fe6bfb4b72054644144f951c6fa7680/diff:/var/lib/docker/overlay2/f20599b198146bd4b27c1d8148fb6301fd26ea40af9e729b3484c658b56f3a2f/diff:/var/lib/docker/overlay2/2e9ff1820fa85ca0758ceb78ec718b569f24a7ec06959dad3eddb9263adeacd3/diff:/var/lib/docker/overlay2/73b47e644339ebbacc875e6cf75a9c3a998675855fb786a4747ce836e5afde10/diff:/var/lib/docker/overlay2/9376fc23d4d63c2b3cf40490ca67bf3205b24600a364463ce770db70de70acfd/diff:/var/lib/docker/overlay2/5f0e0e1a3660db30b06b07652e76a46562b1a4188b8c294ce6041352c33c0bfa/diff:/var/lib/docker/overlay2/fe7a9e1d9bd9c1fd36605a52e6d48fb06b88617a644a432e438a5f253945ce63/diff:/var/lib/docker/overlay2/c37c0c14c6f9626405b89e86841267cc19d14eaeebe280aecb0535da66df9c02/diff:/var/lib/docker/overlay2/276a24e9da5ddff20a5c1953424a77150c639fa6af66accbf7e8336ebcb082f0/diff:/var/lib/docker/overlay2/baf5388cc867efd6fa12c3cb1b53137a8c6d62fac708ce7282d04001cd22212c/diff:/var/lib/docker/overlay2/bc84564a59a69d56121dc9b724dc8ef0608f5286956995517fc764eb6cf04cd5/diff:/var/lib/docker/overlay2/f092d4836d836a4893c6b3242c114a29a955f5f0d3e14f7cb46c67a6394b2edb/diff:/var/lib/docker/overlay2/cc7bc66a2599dcc2c3dfc796ec41d306e8b5bb407f57df616453dd72e904f8ea/diff:/var/lib/docker/overlay2/9610627a0f6853cf2dc690234e8e79bf5225d5daa2a9b3019dfee745a02e32b4/diff:/var/lib/docker/overlay2/28d84617b584b5bab6a785c4844fbca8bb66c2a7026512cc691aca2f828cdb8b/diff:/var/lib/docker/overlay2/05d2753640d1222168308af25888fd2519e16d2a2e2c7bae3b46ec20d907ae12/diff:/var/lib/docker/overlay2/f6078d88903c243a098b49893468355852e2edf0f77678bbf61005efc891999d/diff",
+                "MergedDir": "/var/lib/docker/overlay2/0da4dcbe06a6eff0220c022ac4580d1dd79a0a57ebe7ff79f8eb7c2b54d8860b/merged",
+                "UpperDir": "/var/lib/docker/overlay2/0da4dcbe06a6eff0220c022ac4580d1dd79a0a57ebe7ff79f8eb7c2b54d8860b/diff",
+                "WorkDir": "/var/lib/docker/overlay2/0da4dcbe06a6eff0220c022ac4580d1dd79a0a57ebe7ff79f8eb7c2b54d8860b/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:767e56ba346ae714b6e6b816baa839051145ed78cfa0e4524a86cc287b0c4b00",
+                "sha256:a34bd8b26cb282b40938915d45732d898d4d09459cd3be508617c2b02e5f9b39",
+                "sha256:0f09a2d797f7f8a8a702ccc542c861cf6bc25831172c34974865c8387e1d9a20",
+                "sha256:50a43a0352744fd68e68cb9fafee74db9b087024b86ebbc29ba287f40672c319",
+                "sha256:b7ec8fd7c485bbedbe64cbc5a7a810ceabb9156e95c83ba60596ddb9b4955d48",
+                "sha256:56bafebde0c73c5c34017a069a92f27a9f200625d28c9827b178a79cf90890a2",
+                "sha256:77ad6c19dfa5a0d8087baaa044d0f0ea449188433ce965face5f2dc4a7396bdc",
+                "sha256:2323402a48f9d3d174fddd17a229b301e4dfe301376ddeef95b07b7feffb35ef",
+                "sha256:ed2826328fa4bd815c77c2b50efa4d29b1de9f526dd65f8fffe850c4a3a3cf02",
+                "sha256:904936ef55335350d404472833d21071d8aeeec2fd9161e444f6d0db8617b547",
+                "sha256:ba15159b6cd6af3a14ec3f564184a69a2c63bdce7b72807a1c9ee18675d02c50",
+                "sha256:0d6ee09a7164cf82961d8d4ee70ccd3b71595c83096bc462c56273bcd07a8029",
+                "sha256:5ef0880ddce8d0c3ae68f7d2c48ec487f011c6f800f8915263bfafc336ad85c1",
+                "sha256:5ef0880ddce8d0c3ae68f7d2c48ec487f011c6f800f8915263bfafc336ad85c1",
+                "sha256:293483ac8440ba287f74d472d76643c5b2ec2f85c2ebba9780179f9f773692e2",
+                "sha256:d09b4324c0b965c58cf5145a9417e1a27dc621c98277965885bc579d1a974a91",
+                "sha256:6be434687ea8c80dab479ec744157b836cc57a2d8e6d4e9ff35386d4e1d0ab18",
+                "sha256:5727e36419cfdb82c57cad10313270f95ff536d17ba6507cdf0b7518dba41fd3",
+                "sha256:fac09a9eb5bff462a2e18da2ee96318df4b70d0886f4139a64308079971bdf50",
+                "sha256:7a29cc148b0991d143266d2cfb5a0a81b2813d0b458e06f02bb3225894afa423",
+                "sha256:1bbb6db992f4ff00b36f5f19e76860717e5abfc581ac96aad89f89c096257ec2",
+                "sha256:e73eecd5a9540517294bdb1be15446b41f5c6c84cac24de2994b9353ada1569b",
+                "sha256:6f9e2a25f0862cfcc5606416f8eb08717869da2197d0dcc9b74facd229755be5",
+                "sha256:d8b8d3056d7c1aa973a2d5c3329086e30e5bb204d643f2ee18a0ee63004e91f6",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:cb18cf57cca7d4b71adf0261bada4d867027801960878072a6a464e00620062c",
+                "sha256:34f82d7213f4fe02edeb89e988bc48caa7e00ed4a3e24700b48231afcfdc381e",
+                "sha256:c19479742cf7c671a82360d68c54919592e134ecda44653f28fd6623e47dd278",
+                "sha256:f84d70fe93a24641c739f5f454d140718aae8e7d826c2c832354620149c1cdd4",
+                "sha256:486fddb974d7c27e71c47f8127ee3f2b63d404aceade16e9bb37fbee23138696",
+                "sha256:0924018476bfbc934b428e8ceacf24ba8c6059ee5e68739903f1229731cd7596",
+                "sha256:7584bcabb1ac23c56765ce08674e2ac77b10fa7a30d44771624cfec0beb3a79e",
+                "sha256:3042c99ecf8d9e47d96b43397dd6b339b8a7abc8fad78d678513b09f48289130"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "0001-01-01T00:00:00Z"
+        },
+        "Config": {
+            "Cmd": null,
+            "Entrypoint": [
+                "vllm",
+                "serve"
+            ],
+            "Env": [
+                "PATH=/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "NVARCH=x86_64",
+                "NVIDIA_REQUIRE_CUDA=cuda\u003e=13.0 brand=unknown,driver\u003e=535,driver\u003c536 brand=grid,driver\u003e=535,driver\u003c536 brand=tesla,driver\u003e=535,driver\u003c536 brand=nvidia,driver\u003e=535,driver\u003c536 brand=quadro,driver\u003e=535,driver\u003c536 brand=quadrortx,driver\u003e=535,driver\u003c536 brand=nvidiartx,driver\u003e=535,driver\u003c536 brand=vapps,driver\u003e=535,driver\u003c536 brand=vpc,driver\u003e=535,driver\u003c536 brand=vcs,driver\u003e=535,driver\u003c536 brand=vws,driver\u003e=535,driver\u003c536 brand=cloudgaming,driver\u003e=535,driver\u003c536 brand=unknown,driver\u003e=550,driver\u003c551 brand=grid,driver\u003e=550,driver\u003c551 brand=tesla,driver\u003e=550,driver\u003c551 brand=nvidia,driver\u003e=550,driver\u003c551 brand=quadro,driver\u003e=550,driver\u003c551 brand=quadrortx,driver\u003e=550,driver\u003c551 brand=nvidiartx,driver\u003e=550,driver\u003c551 brand=vapps,driver\u003e=550,driver\u003c551 brand=vpc,driver\u003e=550,driver\u003c551 brand=vcs,driver\u003e=550,driver\u003c551 brand=vws,driver\u003e=550,driver\u003c551 brand=cloudgaming,driver\u003e=550,driver\u003c551 brand=unknown,driver\u003e=565,driver\u003c566 brand=grid,driver\u003e=565,driver\u003c566 brand=tesla,driver\u003e=565,driver\u003c566 brand=nvidia,driver\u003e=565,driver\u003c566 brand=quadro,driver\u003e=565,driver\u003c566 brand=quadrortx,driver\u003e=565,driver\u003c566 brand=nvidiartx,driver\u003e=565,driver\u003c566 brand=vapps,driver\u003e=565,driver\u003c566 brand=vpc,driver\u003e=565,driver\u003c566 brand=vcs,driver\u003e=565,driver\u003c566 brand=vws,driver\u003e=565,driver\u003c566 brand=cloudgaming,driver\u003e=565,driver\u003c566 brand=unknown,driver\u003e=570,driver\u003c571 brand=grid,driver\u003e=570,driver\u003c571 brand=tesla,driver\u003e=570,driver\u003c571 brand=nvidia,driver\u003e=570,driver\u003c571 brand=quadro,driver\u003e=570,driver\u003c571 brand=quadrortx,driver\u003e=570,driver\u003c571 brand=nvidiartx,driver\u003e=570,driver\u003c571 brand=vapps,driver\u003e=570,driver\u003c571 brand=vpc,driver\u003e=570,driver\u003c571 brand=vcs,driver\u003e=570,driver\u003c571 brand=vws,driver\u003e=570,driver\u003c571 brand=cloudgaming,driver\u003e=570,driver\u003c571 brand=unknown,driver\u003e=575,driver\u003c576 brand=grid,driver\u003e=575,driver\u003c576 brand=tesla,driver\u003e=575,driver\u003c576 brand=nvidia,driver\u003e=575,driver\u003c576 brand=quadro,driver\u003e=575,driver\u003c576 brand=quadrortx,driver\u003e=575,driver\u003c576 brand=nvidiartx,driver\u003e=575,driver\u003c576 brand=vapps,driver\u003e=575,driver\u003c576 brand=vpc,driver\u003e=575,driver\u003c576 brand=vcs,driver\u003e=575,driver\u003c576 brand=vws,driver\u003e=575,driver\u003c576 brand=cloudgaming,driver\u003e=575,driver\u003c576",
+                "NV_CUDA_CUDART_VERSION=13.0.96-1",
+                "CUDA_VERSION=13.0.2",
+                "LD_LIBRARY_PATH=/usr/local/nvidia/lib64:/usr/local/cuda/lib64:/usr/local/nvidia/lib:/usr/local/nvidia/lib64:/usr/local/cuda/lib64",
+                "NVIDIA_VISIBLE_DEVICES=all",
+                "NVIDIA_DRIVER_CAPABILITIES=compute,utility",
+                "DEBIAN_FRONTEND=noninteractive",
+                "UV_HTTP_TIMEOUT=500",
+                "UV_INDEX_STRATEGY=unsafe-best-match",
+                "UV_LINK_MODE=copy",
+                "UV_PYTHON_INSTALL_DIR=/opt/uv/python",
+                "UV_CACHE_DIR=/opt/uv/cache",
+                "VLLM_ENABLE_CUDA_COMPATIBILITY=0",
+                "TORCH_CUDA_ARCH_LIST=7.5 8.0 8.6 8.9 9.0 10.0 12.0",
+                "VLLM_USAGE_SOURCE=production-docker-image",
+                "VLLM_BUILD_COMMIT=6a9f24aa8cb856235528d01a829a4ba85fc1c19d",
+                "VLLM_BUILD_PIPELINE=019d130e-464e-4ff7-b84b-492992c0c06b",
+                "VLLM_BUILD_URL=https://buildkite.com/vllm/release-v2/builds/3942",
+                "VLLM_IMAGE_TAG=vllm/vllm-openai:nightly-6a9f24aa8cb856235528d01a829a4ba85fc1c19d"
+            ],
+            "Labels": {
+                "ai.vllm.build.commit": "6a9f24aa8cb856235528d01a829a4ba85fc1c19d",
+                "ai.vllm.build.pipeline": "019d130e-464e-4ff7-b84b-492992c0c06b",
+                "ai.vllm.build.url": "https://buildkite.com/vllm/release-v2/builds/3942",
+                "ai.vllm.image.tag": "vllm/vllm-openai:nightly-6a9f24aa8cb856235528d01a829a4ba85fc1c19d",
+                "maintainer": "NVIDIA CORPORATION \u003ccudatools@nvidia.com\u003e",
+                "org.opencontainers.image.ref.name": "ubuntu",
+                "org.opencontainers.image.revision": "6a9f24aa8cb856235528d01a829a4ba85fc1c19d",
+                "org.opencontainers.image.source": "https://github.com/vllm-project/vllm",
+                "org.opencontainers.image.url": "https://buildkite.com/vllm/release-v2/builds/3942",
+                "org.opencontainers.image.version": "vllm/vllm-openai:nightly-6a9f24aa8cb856235528d01a829a4ba85fc1c19d"
+            },
+            "OnBuild": null,
+            "User": "",
+            "Volumes": null,
+            "WorkingDir": "/vllm-workspace"
+        }
+    }
+]

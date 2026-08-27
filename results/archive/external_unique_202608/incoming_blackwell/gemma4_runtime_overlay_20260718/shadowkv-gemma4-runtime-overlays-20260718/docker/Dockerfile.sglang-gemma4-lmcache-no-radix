@@ -1,0 +1,204 @@
+FROM shadowkv-sglang-gemma4-lmcache-base:20260716
+
+RUN python3 - <<'PY'
+from pathlib import Path
+
+scheduler = Path("/sgl-workspace/sglang/python/sglang/srt/managers/scheduler.py")
+text = scheduler.read_text()
+old = '''        if (
+            server_args.chunked_prefill_size is not None
+            and server_args.disable_radix_cache
+        ):
+'''
+new = '''        if server_args.enable_lmcache:
+            from sglang.srt.mem_cache.storage.lmcache.lmc_radix_cache import (
+                LMCRadixCache,
+            )
+
+            self.tree_cache = LMCRadixCache(
+                params=params,
+                model_config=self.model_config,
+                tp_size=self.tp_size,
+                rank=self.tp_rank,
+                tp_group=self.tp_group,
+            )
+        elif (
+            server_args.chunked_prefill_size is not None
+            and server_args.disable_radix_cache
+        ):
+'''
+if old not in text:
+    raise SystemExit("scheduler early LMCache patch anchor not found")
+text = text.replace(old, new, 1)
+
+old = '''            elif server_args.enable_lmcache:
+                from sglang.srt.mem_cache.storage.lmcache.lmc_radix_cache import (
+                    LMCRadixCache,
+                )
+
+                self.tree_cache = LMCRadixCache(
+                    params=params,
+                    model_config=self.model_config,
+                    tp_size=self.tp_size,
+                    rank=self.tp_rank,
+                    tp_group=self.tp_group,
+                )
+            else:
+'''
+if old not in text:
+    raise SystemExit("scheduler late LMCache patch anchor not found")
+text = text.replace(old, '''            else:
+''', 1)
+scheduler.write_text(text)
+
+lmc = Path(
+    "/sgl-workspace/sglang/python/sglang/srt/mem_cache/storage/lmcache/"
+    "lmc_radix_cache.py"
+)
+text = lmc.read_text()
+
+old = '''        super().__init__(params)
+
+        kvcache = self.token_to_kv_pool_allocator.get_kvcache()
+'''
+new = '''        super().__init__(params)
+
+        self._lmcache_disable_native_radix = bool(params.disable)
+        if self._lmcache_disable_native_radix:
+            # Keep LMCache IO enabled while suppressing persistent native
+            # Radix lookup/write residency for this experimental baseline.
+            self.disable = False
+
+        kvcache = self.token_to_kv_pool_allocator.get_kvcache()
+'''
+if old not in text:
+    raise SystemExit("LMCache constructor patch anchor not found")
+text = text.replace(old, new, 1)
+
+old = '''    def reset(self):  # type: ignore[override]
+        super().reset()
+        if hasattr(self, "_in_flight_nodes"):
+            with self._node_lock:
+                self._in_flight_nodes.clear()
+'''
+new = '''    def reset(self):  # type: ignore[override]
+        super().reset()
+        if hasattr(self, "_in_flight_nodes"):
+            with self._node_lock:
+                self._in_flight_nodes.clear()
+        if hasattr(self, "lmcache_connector"):
+            self.lmcache_connector.reset()
+'''
+if old not in text:
+    raise SystemExit("LMCache reset patch anchor not found")
+text = text.replace(old, new, 1)
+
+old = '''        base_res = super().match_prefix(params)
+        value: torch.Tensor = base_res.device_indices
+'''
+new = '''        if self._lmcache_disable_native_radix:
+            base_res = MatchResult(
+                device_indices=torch.empty(
+                    (0,), dtype=torch.int64, device=self.device
+                ),
+                last_device_node=self.root_node,
+                last_host_node=self.root_node,
+            )
+        else:
+            base_res = super().match_prefix(params)
+        value: torch.Tensor = base_res.device_indices
+'''
+if old not in text:
+    raise SystemExit("LMCache match_prefix patch anchor not found")
+text = text.replace(old, new, 1)
+
+old = '''    def cache_finished_req(self, req: Req, is_insert: bool = True) -> None:  # type: ignore[override]
+        """On request completion, insert device KV into radix and store to LMCache."""
+
+        super().cache_finished_req(req, is_insert=is_insert)
+        if not is_insert:
+            return
+'''
+new = '''    def cache_unfinished_req(self, req: Req, chunked=False):
+        if self._lmcache_disable_native_radix:
+            return
+        return super().cache_unfinished_req(req, chunked=chunked)
+
+    def _cache_finished_req_lmcache_no_radix(
+        self, req: Req, is_insert: bool = True
+    ) -> None:
+        kv_committed_len = req.pop_committed_kv_cache()
+        token_ids = (req.origin_input_ids + req.output_ids)[:kv_committed_len]
+        kv_indices = self.req_to_token_pool.req_to_token[
+            req.req_pool_idx, :kv_committed_len
+        ]
+
+        if is_insert and kv_committed_len > 0:
+            with torch.cuda.stream(self.store_stream):
+                self.lmcache_connector.store_kv(
+                    StoreMetadata(
+                        last_node=self.root_node,
+                        token_ids=token_ids,
+                        kv_indices=kv_indices,
+                        offset=0,
+                        request_id=req.rid,
+                    )
+                )
+            self.store_stream.synchronize()
+
+        key_len = len(RadixKey(token_ids, req.extra_key))
+        key_len = key_len // self.page_size * self.page_size
+        protected_len = min(
+            int(getattr(req, "cache_protected_len", 0) or 0), key_len
+        )
+        if key_len > protected_len:
+            self.token_to_kv_pool_allocator.free(
+                kv_indices[protected_len:key_len]
+            )
+        if kv_committed_len > key_len:
+            self.token_to_kv_pool_allocator.free(
+                kv_indices[key_len:kv_committed_len]
+            )
+
+        self.dec_lock_ref(req.last_node)
+        if self.evictable_size_ > 0:
+            self.evict(EvictParams(num_tokens=self.evictable_size_))
+
+    def cache_finished_req(self, req: Req, is_insert: bool = True) -> None:  # type: ignore[override]
+        """On request completion, insert device KV into radix and store to LMCache."""
+
+        if self._lmcache_disable_native_radix:
+            return self._cache_finished_req_lmcache_no_radix(
+                req, is_insert=is_insert
+            )
+
+        super().cache_finished_req(req, is_insert=is_insert)
+        if not is_insert:
+            return
+'''
+if old not in text:
+    raise SystemExit("LMCache cache_finished_req patch anchor not found")
+text = text.replace(old, new, 1)
+
+lmc.write_text(text)
+print("patched Gemma 4 SGLang LMCache no-native-Radix runtime")
+PY
+
+RUN python3 -m py_compile \
+    /sgl-workspace/sglang/python/sglang/srt/managers/scheduler.py \
+    /sgl-workspace/sglang/python/sglang/srt/mem_cache/storage/lmcache/lmc_radix_cache.py \
+    && python3 - <<'PY'
+from pathlib import Path
+
+scheduler = Path("/sgl-workspace/sglang/python/sglang/srt/managers/scheduler.py").read_text()
+lmc = Path(
+    "/sgl-workspace/sglang/python/sglang/srt/mem_cache/storage/lmcache/"
+    "lmc_radix_cache.py"
+).read_text()
+assert scheduler.index("if server_args.enable_lmcache:") < scheduler.index(
+    "server_args.chunked_prefill_size is not None"
+)
+assert "_lmcache_disable_native_radix" in lmc
+assert "_cache_finished_req_lmcache_no_radix" in lmc
+print("static no-native-Radix patch verification: ok")
+PY

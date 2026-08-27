@@ -1,0 +1,93 @@
+{
+  "models": {
+    "gpt2": "gpt2",
+    "tinyllama": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "qwen25_15b": "Qwen/Qwen2.5-1.5B-Instruct",
+    "gemma2b": "google/gemma-2b-it",
+    "phi3mini": "microsoft/Phi-3-mini-4k-instruct"
+  },
+  "attention_implementations": [
+    "sdpa"
+  ],
+  "configuration": {
+    "dtype": "float16",
+    "sequence_length": 128,
+    "shared_ratios": [
+      0.5,
+      0.75
+    ],
+    "samples": 4,
+    "max_new_tokens": 8,
+    "seed": 42,
+    "atol": 0.001,
+    "rtol": 0.001
+  },
+  "environment": {
+    "python": "3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]",
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+    "torch": "2.11.0+cu128",
+    "transformers": "5.10.2",
+    "cuda_available": true,
+    "cuda_version": "12.8",
+    "gpu": "Tesla T4"
+  },
+  "model_revisions": {
+    "gpt2": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "tinyllama": "fe8a4ea1ffedaf415f4da2f062534de366a451e6",
+    "qwen25_15b": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "gemma2b": "96988410cbdaeb8d5093d1ebdc5a8fb563e02bad",
+    "phi3mini": "f39ac1d28e925b323eae81227eaba4464caced4e"
+  },
+  "runs": [
+    {
+      "model": "gpt2",
+      "attention": "sdpa",
+      "validator_return_code": 2,
+      "strict_pass": false,
+      "token_semantic_pass": false,
+      "report": "gpt2_t4_f16_sdpa.json",
+      "log": "gpt2_t4_f16_sdpa.log"
+    },
+    {
+      "model": "tinyllama",
+      "attention": "sdpa",
+      "validator_return_code": 2,
+      "strict_pass": false,
+      "token_semantic_pass": true,
+      "report": "tinyllama_t4_f16_sdpa.json",
+      "log": "tinyllama_t4_f16_sdpa.log"
+    },
+    {
+      "model": "qwen25_15b",
+      "attention": "sdpa",
+      "validator_return_code": 2,
+      "strict_pass": false,
+      "token_semantic_pass": true,
+      "report": "qwen25_15b_t4_f16_sdpa.json",
+      "log": "qwen25_15b_t4_f16_sdpa.log"
+    },
+    {
+      "model": "gemma2b",
+      "attention": "sdpa",
+      "validator_return_code": 2,
+      "strict_pass": false,
+      "token_semantic_pass": true,
+      "report": "gemma2b_t4_f16_sdpa.json",
+      "log": "gemma2b_t4_f16_sdpa.log"
+    },
+    {
+      "model": "phi3mini",
+      "attention": "sdpa",
+      "validator_return_code": 2,
+      "strict_pass": false,
+      "token_semantic_pass": false,
+      "report": "phi3mini_t4_f16_sdpa.json",
+      "log": "phi3mini_t4_f16_sdpa.log"
+    }
+  ],
+  "execution_failures": [],
+  "requested_run_count": 5,
+  "all_requested_runs_completed": true,
+  "all_completed_runs_strict_pass": false,
+  "all_completed_runs_token_semantic_pass": false
+}

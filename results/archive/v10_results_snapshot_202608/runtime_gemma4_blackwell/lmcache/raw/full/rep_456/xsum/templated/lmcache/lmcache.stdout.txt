@@ -1,0 +1,2 @@
+Benchmark lmcache for google/gemma-4-31B-it xsum templated seed=456
+Latency: 98.16ms, Throughput: 9.97 rps

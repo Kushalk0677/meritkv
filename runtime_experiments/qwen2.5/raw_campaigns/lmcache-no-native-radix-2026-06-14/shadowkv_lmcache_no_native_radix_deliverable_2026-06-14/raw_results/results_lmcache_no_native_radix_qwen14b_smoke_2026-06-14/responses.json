@@ -1,0 +1,108 @@
+[
+  {
+    "label": "first_store",
+    "elapsed_s": 0.8290896415710449,
+    "raw": {
+      "id": "497a0149d52644099e41ed05dece7793",
+      "object": "chat.completion",
+      "created": 1781463375,
+      "model": "/cache/huggingface/hub/models--Qwen--Qwen2.5-14B-Instruct/snapshots/cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "The",
+            "reasoning_content": null,
+            "tool_calls": null
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "matched_stop": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2651,
+        "total_tokens": 2652,
+        "completion_tokens": 1,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0
+      },
+      "metadata": {
+        "weight_version": "default"
+      }
+    }
+  },
+  {
+    "label": "second_lmcache_hit_no_flush",
+    "elapsed_s": 0.06426310539245605,
+    "raw": {
+      "id": "ac22a94a023b4da5aa56fcf7ef6dbc34",
+      "object": "chat.completion",
+      "created": 1781463375,
+      "model": "/cache/huggingface/hub/models--Qwen--Qwen2.5-14B-Instruct/snapshots/cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "The",
+            "reasoning_content": null,
+            "tool_calls": null
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "matched_stop": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2651,
+        "total_tokens": 2652,
+        "completion_tokens": 1,
+        "prompt_tokens_details": {
+          "cached_tokens": 2560
+        },
+        "reasoning_tokens": 0
+      },
+      "metadata": {
+        "weight_version": "default"
+      }
+    }
+  },
+  {
+    "label": "third_lmcache_hit_no_flush",
+    "elapsed_s": 0.06709742546081543,
+    "raw": {
+      "id": "73026fa99c8c4f4199f1091b8e7a410c",
+      "object": "chat.completion",
+      "created": 1781463375,
+      "model": "/cache/huggingface/hub/models--Qwen--Qwen2.5-14B-Instruct/snapshots/cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "The",
+            "reasoning_content": null,
+            "tool_calls": null
+          },
+          "logprobs": null,
+          "finish_reason": "length",
+          "matched_stop": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 2651,
+        "total_tokens": 2652,
+        "completion_tokens": 1,
+        "prompt_tokens_details": {
+          "cached_tokens": 2560
+        },
+        "reasoning_tokens": 0
+      },
+      "metadata": {
+        "weight_version": "default"
+      }
+    }
+  }
+]

@@ -1,0 +1,16 @@
+C:\Users\kusha\AppData\Roaming\Python\Python314\site-packages\torch\cuda\__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading Qwen/Qwen2.5-1.5B-Instruct on cpu...
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:   0%|          | 1/338 [00:21<2:01:13, 21.58s/it]Loading weights:   2%|2         | 7/338 [00:21<12:32,  2.27s/it]  Loading weights:  38%|###7      | 128/338 [00:21<00:17, 11.68it/s]Loading weights:  59%|#####9    | 201/338 [00:30<00:14,  9.68it/s]Loading weights:  71%|#######1  | 241/338 [00:36<00:10,  9.00it/s]Loading weights:  79%|#######8  | 266/338 [00:38<00:07,  9.16it/s]Loading weights:  84%|########3 | 283/338 [00:43<00:07,  7.57it/s]Loading weights:  87%|########6 | 294/338 [00:45<00:06,  7.15it/s]Loading weights:  90%|########9 | 303/338 [00:45<00:04,  7.80it/s]Loading weights:  91%|#########1| 309/338 [00:46<00:03,  7.70it/s]Loading weights:  93%|#########3| 315/338 [00:48<00:03,  6.63it/s]Loading weights:  94%|#########4| 318/338 [00:48<00:02,  6.71it/s]Loading weights:  97%|#########6| 327/338 [00:48<00:01,  8.71it/s]Loading weights: 100%|##########| 338/338 [00:48<00:00,  6.91it/s]
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'knkarthick/samsum' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+Using the latest cached version of the dataset since knkarthick/samsum couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at C:\Users\kusha\.cache\huggingface\datasets\knkarthick___samsum\default\0.0.0\6b929ff10edec703164e3ddb2e94aae058c9ab5f (last modified on Mon Jun 29 15:47:18 2026).
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+
+=== qwen25_15b on samsum ===
+  3 samples
+Saved -> _qf32\qwen25_15b_results.json
+Total: 3 -> _qf32\all_results.json

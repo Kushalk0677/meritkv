@@ -7,7 +7,11 @@ Raw artifacts keep stable engine IDs: `shadow_kv_plus` displays as MeritKV, `sha
 > evidence or substituted for the paper's long-prefix, runtime, or fidelity
 > tables.
 
-Use `experiments/run_blackwell_semantic_n128.py` for the RTX PRO 6000 Blackwell semantic-reuse sweep. This is the cleaned public version of the local handoff package; the old zip packages are not required.
+Use `experiments/run_blackwell_semantic_n128.py` for the RTX PRO 6000 Blackwell
+semantic-reuse sweep. The frozen handoff package is expanded at
+`reproduction_packages/blackwell_longprefix_semantic_n128/`, with its
+byte-identical archive under `reproduction_packages/archives/`. Use the
+maintained runner for new work and the frozen package for provenance.
 
 ## Smoke Test
 

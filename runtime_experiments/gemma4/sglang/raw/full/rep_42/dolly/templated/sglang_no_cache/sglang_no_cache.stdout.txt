@@ -1,0 +1,2 @@
+Benchmark sglang_no_cache for google/gemma-4-31B-it dolly templated seed=42
+Latency: 116.20ms, Throughput: 8.61 rps

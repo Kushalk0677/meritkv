@@ -1,0 +1,2 @@
+Benchmark lmcache_vllm for google/gemma-4-31B-it xsum rag seed=999
+Latency: 101.36ms, Throughput: 9.76 rps

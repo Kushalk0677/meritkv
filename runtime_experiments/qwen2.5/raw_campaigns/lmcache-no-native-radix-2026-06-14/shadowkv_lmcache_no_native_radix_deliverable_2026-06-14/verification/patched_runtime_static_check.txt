@@ -1,0 +1,4 @@
+sglang 0.5.13
+lmcache 0.4.7
+/usr/local/lib/python3.12/dist-packages/sglang/srt/mem_cache/registry.py enable_lmcache=True no_native_marker=False
+/usr/local/lib/python3.12/dist-packages/sglang/srt/mem_cache/storage/lmcache/lmc_radix_cache.py enable_lmcache=False no_native_marker=True

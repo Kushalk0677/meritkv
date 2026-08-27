@@ -35,6 +35,7 @@ PROMPT_MODES = ["raw", "templated", "semantic"]
 ENGINES = ["no_cache", "shadow_kv", "shadow_kv_plus"]
 
 
+# Stable cell layout and restart checks.
 def tag(model: str) -> str:
     return model.replace("/", "_").replace(".", "_")
 
@@ -76,6 +77,7 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
+# Isolated subprocess sweep.
 def main() -> int:
     args = parse_args()
     root = Path(args.results_root)

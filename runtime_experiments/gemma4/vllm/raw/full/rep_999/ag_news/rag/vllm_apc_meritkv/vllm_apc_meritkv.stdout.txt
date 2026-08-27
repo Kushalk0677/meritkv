@@ -1,0 +1,2 @@
+Benchmark vllm_apc_meritkv for google/gemma-4-31B-it ag_news rag seed=999
+Latency: 47.54ms, Throughput: 21.03 rps

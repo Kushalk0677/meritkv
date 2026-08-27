@@ -1,0 +1,5 @@
+The six-model runner completed all 180 measured cells and generated all aggregate CSV files with failed=0/180.
+
+After aggregation, the running shell encountered an unexpected-EOF parse error because the script file had been replaced in place while the process was still reading it. The error occurred after all measured jobs and aggregation completed. The EXIT trap still restored qwen36-27b-fp8-vllm successfully.
+
+This is an orchestration-only issue and does not affect the recorded benchmark cells. The Gemma 4 E2B append uses a separate immutable wrapper.

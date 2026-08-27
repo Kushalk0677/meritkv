@@ -161,6 +161,8 @@ experiments/
   analyze_shadowkv_results.py  Result parser and policy-summary generator
   archive/                     Superseded experiment scripts and notebooks
 
+reproduction_packages/        Expanded frozen packages, Colab notebooks, archives
+
 results/
   controlled_results/          T4/P100 controlled benchmark JSONs and CSV summaries
   paper_tables/                Canonical machine-readable paper tables
@@ -178,9 +180,19 @@ results/
 
 runtime_experiments/           SGLang, LMCache, and vLLM result tables
 literature_accurate_baselines/ Runtime-baseline adapters and source notes
-docs/                          Design, reproduction, and analysis documents
+docs/                          Design, methodology, hardware, and experiment catalog
 tests/                         Unit and regression tests
+tools/                         Release inventory and integrity checks
 ```
+
+For a uniform map from every experiment family to its code, raw records,
+aggregates, hardware captures, and reproduction package, see
+[`docs/EXPERIMENT_CATALOG.md`](docs/EXPERIMENT_CATALOG.md). The repository
+contains all project-retained raw evidence; model weights, downloaded datasets,
+framework caches, and virtual environments are intentionally not redistributed.
+Method and dependency entry points are
+[`docs/METHODOLOGY_INDEX.md`](docs/METHODOLOGY_INDEX.md) and
+[`docs/DEPENDENCIES_AND_PACKAGES.md`](docs/DEPENDENCIES_AND_PACKAGES.md).
 
 ---
 

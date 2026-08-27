@@ -1,0 +1,912 @@
+2026-07-04 23:40:16 ================================================================================
+2026-07-04 23:40:16 SWEEP: P100  n=64  seeds=5  OOM-safe (load once per mode)
+2026-07-04 23:40:16   models=5 datasets=10 modes=3 seeds=5
+2026-07-04 23:40:16   engines=no_cache,reactive_prefix_cache,greedy_prefix_cache,strict_reactive_prefix_cache,frequency_speculative,shadow_kv,shadow_kv_plus
+2026-07-04 23:40:16   total=750 jobs
+2026-07-04 23:40:16   IMPORTANT: run_benchmark.py must have share_backend patch applied
+2026-07-04 23:40:16 ================================================================================
+2026-07-04 23:40:16 [1/750] gpt2                 raw        seed=42 ag_news        
+2026-07-04 23:40:58   OK
+2026-07-04 23:40:58 [2/750] gpt2                 raw        seed=123 ag_news        
+2026-07-04 23:41:38   OK
+2026-07-04 23:41:38 [3/750] gpt2                 raw        seed=456 ag_news        
+2026-07-04 23:42:23   OK
+2026-07-04 23:42:23 [4/750] gpt2                 raw        seed=789 ag_news        
+2026-07-04 23:43:08   OK
+2026-07-04 23:43:08 [5/750] gpt2                 raw        seed=999 ag_news        
+2026-07-04 23:43:57   OK
+2026-07-04 23:43:57 [6/750] gpt2                 templated  seed=42 ag_news        
+2026-07-04 23:44:39   OK
+2026-07-04 23:44:39 [7/750] gpt2                 templated  seed=123 ag_news        
+2026-07-04 23:45:19   OK
+2026-07-04 23:45:19 [8/750] gpt2                 templated  seed=456 ag_news        
+2026-07-04 23:46:03   OK
+2026-07-04 23:46:03 [9/750] gpt2                 templated  seed=789 ag_news        
+2026-07-04 23:46:49   OK
+2026-07-04 23:46:49 [10/750] gpt2                 templated  seed=999 ag_news        
+2026-07-04 23:47:38   OK
+2026-07-04 23:47:38 [11/750] gpt2                 semantic   seed=42 ag_news        
+2026-07-04 23:48:19   OK
+2026-07-04 23:48:19 [12/750] gpt2                 semantic   seed=123 ag_news        
+2026-07-04 23:48:59   OK
+2026-07-04 23:48:59 [13/750] gpt2                 semantic   seed=456 ag_news        
+2026-07-04 23:49:44   OK
+2026-07-04 23:49:44 [14/750] gpt2                 semantic   seed=789 ag_news        
+2026-07-04 23:50:30   OK
+2026-07-04 23:50:30 [15/750] gpt2                 semantic   seed=999 ag_news        
+2026-07-04 23:51:19   OK
+2026-07-04 23:51:19 [16/750] gpt2                 raw        seed=42 alpaca_eval    
+2026-07-04 23:51:59   OK
+2026-07-04 23:51:59 [17/750] gpt2                 raw        seed=123 alpaca_eval    
+2026-07-04 23:52:40   OK
+2026-07-04 23:52:40 [18/750] gpt2                 raw        seed=456 alpaca_eval    
+2026-07-04 23:53:25   OK
+2026-07-04 23:53:25 [19/750] gpt2                 raw        seed=789 alpaca_eval    
+2026-07-04 23:54:12   OK
+2026-07-04 23:54:12 [20/750] gpt2                 raw        seed=999 alpaca_eval    
+2026-07-04 23:54:58   OK
+2026-07-04 23:54:58 [21/750] gpt2                 templated  seed=42 alpaca_eval    
+2026-07-04 23:55:40   OK
+2026-07-04 23:55:40 [22/750] gpt2                 templated  seed=123 alpaca_eval    
+2026-07-04 23:56:21   OK
+2026-07-04 23:56:21 [23/750] gpt2                 templated  seed=456 alpaca_eval    
+2026-07-04 23:57:05   OK
+2026-07-04 23:57:05 [24/750] gpt2                 templated  seed=789 alpaca_eval    
+2026-07-04 23:57:51   OK
+2026-07-04 23:57:51 [25/750] gpt2                 templated  seed=999 alpaca_eval    
+2026-07-04 23:58:38   OK
+2026-07-04 23:58:38 [26/750] gpt2                 semantic   seed=42 alpaca_eval    
+2026-07-04 23:59:20   OK
+2026-07-04 23:59:20 [27/750] gpt2                 semantic   seed=123 alpaca_eval    
+2026-07-05 00:00:00   OK
+2026-07-05 00:00:00 [28/750] gpt2                 semantic   seed=456 alpaca_eval    
+2026-07-05 00:00:46   OK
+2026-07-05 00:00:46 [29/750] gpt2                 semantic   seed=789 alpaca_eval    
+2026-07-05 00:01:31   OK
+2026-07-05 00:01:31 [30/750] gpt2                 semantic   seed=999 alpaca_eval    
+2026-07-05 00:02:19   OK
+2026-07-05 00:02:19 [31/750] gpt2                 raw        seed=42 banking77      
+2026-07-05 00:03:01   OK
+2026-07-05 00:03:01 [32/750] gpt2                 raw        seed=123 banking77      
+2026-07-05 00:03:41   OK
+2026-07-05 00:03:41 [33/750] gpt2                 raw        seed=456 banking77      
+2026-07-05 00:04:27   OK
+2026-07-05 00:04:27 [34/750] gpt2                 raw        seed=789 banking77      
+2026-07-05 00:05:12   OK
+2026-07-05 00:05:12 [35/750] gpt2                 raw        seed=999 banking77      
+2026-07-05 00:06:00   OK
+2026-07-05 00:06:00 [36/750] gpt2                 templated  seed=42 banking77      
+2026-07-05 00:06:41   OK
+2026-07-05 00:06:41 [37/750] gpt2                 templated  seed=123 banking77      
+2026-07-05 00:07:21   OK
+2026-07-05 00:07:21 [38/750] gpt2                 templated  seed=456 banking77      
+2026-07-05 00:08:07   OK
+2026-07-05 00:08:07 [39/750] gpt2                 templated  seed=789 banking77      
+2026-07-05 00:08:53   OK
+2026-07-05 00:08:53 [40/750] gpt2                 templated  seed=999 banking77      
+2026-07-05 00:09:42   OK
+2026-07-05 00:09:42 [41/750] gpt2                 semantic   seed=42 banking77      
+2026-07-05 00:10:24   OK
+2026-07-05 00:10:24 [42/750] gpt2                 semantic   seed=123 banking77      
+2026-07-05 00:11:05   OK
+2026-07-05 00:11:05 [43/750] gpt2                 semantic   seed=456 banking77      
+2026-07-05 00:11:50   OK
+2026-07-05 00:11:50 [44/750] gpt2                 semantic   seed=789 banking77      
+2026-07-05 00:12:36   OK
+2026-07-05 00:12:36 [45/750] gpt2                 semantic   seed=999 banking77      
+2026-07-05 00:13:23   OK
+2026-07-05 00:13:23 [46/750] gpt2                 raw        seed=42 cnn_dailymail  
+2026-07-05 00:14:07   OK
+2026-07-05 00:14:07 [47/750] gpt2                 raw        seed=123 cnn_dailymail  
+2026-07-05 00:14:51   OK
+2026-07-05 00:14:51 [48/750] gpt2                 raw        seed=456 cnn_dailymail  
+2026-07-05 00:15:39   OK
+2026-07-05 00:15:39 [49/750] gpt2                 raw        seed=789 cnn_dailymail  
+2026-07-05 00:16:27   OK
+2026-07-05 00:16:27 [50/750] gpt2                 raw        seed=999 cnn_dailymail  
+2026-07-05 00:17:19   OK
+2026-07-05 00:17:19 [51/750] gpt2                 templated  seed=42 cnn_dailymail  
+2026-07-05 00:18:02   OK
+2026-07-05 00:18:02 [52/750] gpt2                 templated  seed=123 cnn_dailymail  
+2026-07-05 00:18:46   OK
+2026-07-05 00:18:46 [53/750] gpt2                 templated  seed=456 cnn_dailymail  
+2026-07-05 00:19:33   OK
+2026-07-05 00:19:33 [54/750] gpt2                 templated  seed=789 cnn_dailymail  
+2026-07-05 00:20:23   OK
+2026-07-05 00:20:23 [55/750] gpt2                 templated  seed=999 cnn_dailymail  
+2026-07-05 00:21:14   OK
+2026-07-05 00:21:14 [56/750] gpt2                 semantic   seed=42 cnn_dailymail  
+2026-07-05 00:21:57   OK
+2026-07-05 00:21:57 [57/750] gpt2                 semantic   seed=123 cnn_dailymail  
+2026-07-05 00:22:40   OK
+2026-07-05 00:22:40 [58/750] gpt2                 semantic   seed=456 cnn_dailymail  
+2026-07-05 00:23:26   OK
+2026-07-05 00:23:26 [59/750] gpt2                 semantic   seed=789 cnn_dailymail  
+2026-07-05 00:24:16   OK
+2026-07-05 00:24:16 [60/750] gpt2                 semantic   seed=999 cnn_dailymail  
+2026-07-05 00:25:06   OK
+2026-07-05 00:25:06 [61/750] gpt2                 raw        seed=42 daily_dialog   
+2026-07-05 00:25:47   OK
+2026-07-05 00:25:47 [62/750] gpt2                 raw        seed=123 daily_dialog   
+2026-07-05 00:26:29   OK
+2026-07-05 00:26:29 [63/750] gpt2                 raw        seed=456 daily_dialog   
+2026-07-05 00:27:14   OK
+2026-07-05 00:27:14 [64/750] gpt2                 raw        seed=789 daily_dialog   
+2026-07-05 00:28:01   OK
+2026-07-05 00:28:01 [65/750] gpt2                 raw        seed=999 daily_dialog   
+2026-07-05 00:28:50   OK
+2026-07-05 00:28:50 [66/750] gpt2                 templated  seed=42 daily_dialog   
+2026-07-05 00:29:32   OK
+2026-07-05 00:29:32 [67/750] gpt2                 templated  seed=123 daily_dialog   
+2026-07-05 00:30:14   OK
+2026-07-05 00:30:14 [68/750] gpt2                 templated  seed=456 daily_dialog   
+2026-07-05 00:30:59   OK
+2026-07-05 00:30:59 [69/750] gpt2                 templated  seed=789 daily_dialog   
+2026-07-05 00:31:45   OK
+2026-07-05 00:31:45 [70/750] gpt2                 templated  seed=999 daily_dialog   
+2026-07-05 00:32:34   OK
+2026-07-05 00:32:34 [71/750] gpt2                 semantic   seed=42 daily_dialog   
+2026-07-05 00:33:17   OK
+2026-07-05 00:33:17 [72/750] gpt2                 semantic   seed=123 daily_dialog   
+2026-07-05 00:33:57   OK
+2026-07-05 00:33:57 [73/750] gpt2                 semantic   seed=456 daily_dialog   
+2026-07-05 00:34:42   OK
+2026-07-05 00:34:42 [74/750] gpt2                 semantic   seed=789 daily_dialog   
+2026-07-05 00:35:28   OK
+2026-07-05 00:35:28 [75/750] gpt2                 semantic   seed=999 daily_dialog   
+2026-07-05 00:36:16   OK
+2026-07-05 00:36:16 [76/750] gpt2                 raw        seed=42 dolly          
+2026-07-05 00:36:58   OK
+2026-07-05 00:36:58 [77/750] gpt2                 raw        seed=123 dolly          
+2026-07-05 00:37:39   OK
+2026-07-05 00:37:39 [78/750] gpt2                 raw        seed=456 dolly          
+2026-07-05 00:38:24   OK
+2026-07-05 00:38:24 [79/750] gpt2                 raw        seed=789 dolly          
+2026-07-05 00:39:13   OK
+2026-07-05 00:39:13 [80/750] gpt2                 raw        seed=999 dolly          
+2026-07-05 00:40:01   OK
+2026-07-05 00:40:01 [81/750] gpt2                 templated  seed=42 dolly          
+2026-07-05 00:40:43   OK
+2026-07-05 00:40:43 [82/750] gpt2                 templated  seed=123 dolly          
+2026-07-05 00:41:24   OK
+2026-07-05 00:41:24 [83/750] gpt2                 templated  seed=456 dolly          
+2026-07-05 00:42:08   OK
+2026-07-05 00:42:08 [84/750] gpt2                 templated  seed=789 dolly          
+2026-07-05 00:42:54   OK
+2026-07-05 00:42:54 [85/750] gpt2                 templated  seed=999 dolly          
+2026-07-05 00:43:43   OK
+2026-07-05 00:43:43 [86/750] gpt2                 semantic   seed=42 dolly          
+2026-07-05 00:44:24   OK
+2026-07-05 00:44:24 [87/750] gpt2                 semantic   seed=123 dolly          
+2026-07-05 00:45:04   OK
+2026-07-05 00:45:04 [88/750] gpt2                 semantic   seed=456 dolly          
+2026-07-05 00:45:48   OK
+2026-07-05 00:45:48 [89/750] gpt2                 semantic   seed=789 dolly          
+2026-07-05 00:46:33   OK
+2026-07-05 00:46:33 [90/750] gpt2                 semantic   seed=999 dolly          
+2026-07-05 00:47:21   OK
+2026-07-05 00:47:21 [91/750] gpt2                 raw        seed=42 oasst1         
+2026-07-05 00:48:03   OK
+2026-07-05 00:48:03 [92/750] gpt2                 raw        seed=123 oasst1         
+2026-07-05 00:48:45   OK
+2026-07-05 00:48:45 [93/750] gpt2                 raw        seed=456 oasst1         
+2026-07-05 00:49:31   OK
+2026-07-05 00:49:31 [94/750] gpt2                 raw        seed=789 oasst1         
+2026-07-05 00:50:18   OK
+2026-07-05 00:50:18 [95/750] gpt2                 raw        seed=999 oasst1         
+2026-07-05 00:51:07   OK
+2026-07-05 00:51:07 [96/750] gpt2                 templated  seed=42 oasst1         
+2026-07-05 00:51:50   OK
+2026-07-05 00:51:50 [97/750] gpt2                 templated  seed=123 oasst1         
+2026-07-05 00:52:32   OK
+2026-07-05 00:52:32 [98/750] gpt2                 templated  seed=456 oasst1         
+2026-07-05 00:53:17   OK
+2026-07-05 00:53:17 [99/750] gpt2                 templated  seed=789 oasst1         
+2026-07-05 00:54:04   OK
+2026-07-05 00:54:04 [100/750] gpt2                 templated  seed=999 oasst1         
+2026-07-05 00:54:54   OK
+2026-07-05 00:54:54 [101/750] gpt2                 semantic   seed=42 oasst1         
+2026-07-05 00:55:35   OK
+2026-07-05 00:55:35 [102/750] gpt2                 semantic   seed=123 oasst1         
+2026-07-05 00:56:16   OK
+2026-07-05 00:56:16 [103/750] gpt2                 semantic   seed=456 oasst1         
+2026-07-05 00:57:02   OK
+2026-07-05 00:57:02 [104/750] gpt2                 semantic   seed=789 oasst1         
+2026-07-05 00:57:49   OK
+2026-07-05 00:57:49 [105/750] gpt2                 semantic   seed=999 oasst1         
+2026-07-05 00:58:39   OK
+2026-07-05 00:58:39 [106/750] gpt2                 raw        seed=42 samsum         
+2026-07-05 00:59:20   OK
+2026-07-05 00:59:20 [107/750] gpt2                 raw        seed=123 samsum         
+2026-07-05 01:00:02   OK
+2026-07-05 01:00:02 [108/750] gpt2                 raw        seed=456 samsum         
+2026-07-05 01:00:48   OK
+2026-07-05 01:00:48 [109/750] gpt2                 raw        seed=789 samsum         
+2026-07-05 01:01:34   OK
+2026-07-05 01:01:34 [110/750] gpt2                 raw        seed=999 samsum         
+2026-07-05 01:02:23   OK
+2026-07-05 01:02:23 [111/750] gpt2                 templated  seed=42 samsum         
+2026-07-05 01:03:04   OK
+2026-07-05 01:03:04 [112/750] gpt2                 templated  seed=123 samsum         
+2026-07-05 01:03:47   OK
+2026-07-05 01:03:47 [113/750] gpt2                 templated  seed=456 samsum         
+2026-07-05 01:04:33   OK
+2026-07-05 01:04:33 [114/750] gpt2                 templated  seed=789 samsum         
+2026-07-05 01:05:18   OK
+2026-07-05 01:05:18 [115/750] gpt2                 templated  seed=999 samsum         
+2026-07-05 01:06:07   OK
+2026-07-05 01:06:07 [116/750] gpt2                 semantic   seed=42 samsum         
+2026-07-05 01:06:47   OK
+2026-07-05 01:06:47 [117/750] gpt2                 semantic   seed=123 samsum         
+2026-07-05 01:07:29   OK
+2026-07-05 01:07:29 [118/750] gpt2                 semantic   seed=456 samsum         
+2026-07-05 01:08:12   OK
+2026-07-05 01:08:12 [119/750] gpt2                 semantic   seed=789 samsum         
+2026-07-05 01:08:58   OK
+2026-07-05 01:08:58 [120/750] gpt2                 semantic   seed=999 samsum         
+2026-07-05 01:09:47   OK
+2026-07-05 01:09:47 [121/750] gpt2                 raw        seed=42 ultrachat      
+2026-07-05 01:10:31   OK
+2026-07-05 01:10:31 [122/750] gpt2                 raw        seed=123 ultrachat      
+2026-07-05 01:11:15   OK
+2026-07-05 01:11:15 [123/750] gpt2                 raw        seed=456 ultrachat      
+2026-07-05 01:12:02   OK
+2026-07-05 01:12:02 [124/750] gpt2                 raw        seed=789 ultrachat      
+2026-07-05 01:12:51   OK
+2026-07-05 01:12:51 [125/750] gpt2                 raw        seed=999 ultrachat      
+2026-07-05 01:13:42   OK
+2026-07-05 01:13:42 [126/750] gpt2                 templated  seed=42 ultrachat      
+2026-07-05 01:14:25   OK
+2026-07-05 01:14:25 [127/750] gpt2                 templated  seed=123 ultrachat      
+2026-07-05 01:15:08   OK
+2026-07-05 01:15:08 [128/750] gpt2                 templated  seed=456 ultrachat      
+2026-07-05 01:15:54   OK
+2026-07-05 01:15:54 [129/750] gpt2                 templated  seed=789 ultrachat      
+2026-07-05 01:16:42   OK
+2026-07-05 01:16:42 [130/750] gpt2                 templated  seed=999 ultrachat      
+2026-07-05 01:17:32   OK
+2026-07-05 01:17:32 [131/750] gpt2                 semantic   seed=42 ultrachat      
+2026-07-05 01:18:15   OK
+2026-07-05 01:18:15 [132/750] gpt2                 semantic   seed=123 ultrachat      
+2026-07-05 01:18:58   OK
+2026-07-05 01:18:58 [133/750] gpt2                 semantic   seed=456 ultrachat      
+2026-07-05 01:19:45   OK
+2026-07-05 01:19:45 [134/750] gpt2                 semantic   seed=789 ultrachat      
+2026-07-05 01:20:33   OK
+2026-07-05 01:20:33 [135/750] gpt2                 semantic   seed=999 ultrachat      
+2026-07-05 01:21:23   OK
+2026-07-05 01:21:23 [136/750] gpt2                 raw        seed=42 xsum           
+2026-07-05 01:22:06   OK
+2026-07-05 01:22:06 [137/750] gpt2                 raw        seed=123 xsum           
+2026-07-05 01:22:50   OK
+2026-07-05 01:22:50 [138/750] gpt2                 raw        seed=456 xsum           
+2026-07-05 01:23:37   OK
+2026-07-05 01:23:37 [139/750] gpt2                 raw        seed=789 xsum           
+2026-07-05 01:24:25   OK
+2026-07-05 01:24:25 [140/750] gpt2                 raw        seed=999 xsum           
+2026-07-05 01:25:16   OK
+2026-07-05 01:25:16 [141/750] gpt2                 templated  seed=42 xsum           
+2026-07-05 01:25:59   OK
+2026-07-05 01:25:59 [142/750] gpt2                 templated  seed=123 xsum           
+2026-07-05 01:26:42   OK
+2026-07-05 01:26:42 [143/750] gpt2                 templated  seed=456 xsum           
+2026-07-05 01:27:29   OK
+2026-07-05 01:27:29 [144/750] gpt2                 templated  seed=789 xsum           
+2026-07-05 01:28:16   OK
+2026-07-05 01:28:16 [145/750] gpt2                 templated  seed=999 xsum           
+2026-07-05 01:29:06   OK
+2026-07-05 01:29:06 [146/750] gpt2                 semantic   seed=42 xsum           
+2026-07-05 01:29:49   OK
+2026-07-05 01:29:49 [147/750] gpt2                 semantic   seed=123 xsum           
+2026-07-05 01:30:32   OK
+2026-07-05 01:30:32 [148/750] gpt2                 semantic   seed=456 xsum           
+2026-07-05 01:31:19   OK
+2026-07-05 01:31:19 [149/750] gpt2                 semantic   seed=789 xsum           
+2026-07-05 01:32:06   OK
+2026-07-05 01:32:06 [150/750] gpt2                 semantic   seed=999 xsum           
+2026-07-05 01:32:56   OK
+2026-07-05 01:32:56 [151/750] TinyLlama-1_1B-Chat- raw        seed=42 ag_news        
+2026-07-05 01:33:57   OK
+2026-07-05 01:33:57 [152/750] TinyLlama-1_1B-Chat- raw        seed=123 ag_news        
+2026-07-05 01:35:02   OK
+2026-07-05 01:35:02 [153/750] TinyLlama-1_1B-Chat- raw        seed=456 ag_news        
+2026-07-05 01:36:10   OK
+2026-07-05 01:36:10 [154/750] TinyLlama-1_1B-Chat- raw        seed=789 ag_news        
+2026-07-05 01:37:19   OK
+2026-07-05 01:37:19 [155/750] TinyLlama-1_1B-Chat- raw        seed=999 ag_news        
+2026-07-05 01:38:30   OK
+2026-07-05 01:38:30 [156/750] TinyLlama-1_1B-Chat- templated  seed=42 ag_news        
+2026-07-05 01:39:34   OK
+2026-07-05 01:39:34 [157/750] TinyLlama-1_1B-Chat- templated  seed=123 ag_news        
+2026-07-05 01:40:39   OK
+2026-07-05 01:40:39 [158/750] TinyLlama-1_1B-Chat- templated  seed=456 ag_news        
+2026-07-05 01:41:48   OK
+2026-07-05 01:41:48 [159/750] TinyLlama-1_1B-Chat- templated  seed=789 ag_news        
+2026-07-05 01:42:58   OK
+2026-07-05 01:42:58 [160/750] TinyLlama-1_1B-Chat- templated  seed=999 ag_news        
+2026-07-05 01:44:10   OK
+2026-07-05 01:44:10 [161/750] TinyLlama-1_1B-Chat- semantic   seed=42 ag_news        
+2026-07-05 01:45:13   OK
+2026-07-05 01:45:13 [162/750] TinyLlama-1_1B-Chat- semantic   seed=123 ag_news        
+2026-07-05 01:46:16   OK
+2026-07-05 01:46:16 [163/750] TinyLlama-1_1B-Chat- semantic   seed=456 ag_news        
+2026-07-05 01:47:23   OK
+2026-07-05 01:47:23 [164/750] TinyLlama-1_1B-Chat- semantic   seed=789 ag_news        
+2026-07-05 01:48:30   OK
+2026-07-05 01:48:30 [165/750] TinyLlama-1_1B-Chat- semantic   seed=999 ag_news        
+2026-07-05 01:49:40   OK
+2026-07-05 01:49:40 [166/750] TinyLlama-1_1B-Chat- raw        seed=42 alpaca_eval    
+2026-07-05 01:50:39   OK
+2026-07-05 01:50:39 [167/750] TinyLlama-1_1B-Chat- raw        seed=123 alpaca_eval    
+2026-07-05 01:51:41   OK
+2026-07-05 01:51:41 [168/750] TinyLlama-1_1B-Chat- raw        seed=456 alpaca_eval    
+2026-07-05 01:52:45   OK
+2026-07-05 01:52:45 [169/750] TinyLlama-1_1B-Chat- raw        seed=789 alpaca_eval    
+2026-07-05 01:53:51   OK
+2026-07-05 01:53:51 [170/750] TinyLlama-1_1B-Chat- raw        seed=999 alpaca_eval    
+2026-07-05 01:54:59   OK
+2026-07-05 01:54:59 [171/750] TinyLlama-1_1B-Chat- templated  seed=42 alpaca_eval    
+2026-07-05 01:56:00   OK
+2026-07-05 01:56:00 [172/750] TinyLlama-1_1B-Chat- templated  seed=123 alpaca_eval    
+2026-07-05 01:57:00   OK
+2026-07-05 01:57:00 [173/750] TinyLlama-1_1B-Chat- templated  seed=456 alpaca_eval    
+2026-07-05 01:58:04   OK
+2026-07-05 01:58:04 [174/750] TinyLlama-1_1B-Chat- templated  seed=789 alpaca_eval    
+2026-07-05 01:59:08   OK
+2026-07-05 01:59:08 [175/750] TinyLlama-1_1B-Chat- templated  seed=999 alpaca_eval    
+2026-07-05 02:00:14   OK
+2026-07-05 02:00:14 [176/750] TinyLlama-1_1B-Chat- semantic   seed=42 alpaca_eval    
+2026-07-05 02:01:11   OK
+2026-07-05 02:01:11 [177/750] TinyLlama-1_1B-Chat- semantic   seed=123 alpaca_eval    
+2026-07-05 02:02:10   OK
+2026-07-05 02:02:10 [178/750] TinyLlama-1_1B-Chat- semantic   seed=456 alpaca_eval    
+2026-07-05 02:03:11   OK
+2026-07-05 02:03:11 [179/750] TinyLlama-1_1B-Chat- semantic   seed=789 alpaca_eval    
+2026-07-05 02:04:14   OK
+2026-07-05 02:04:14 [180/750] TinyLlama-1_1B-Chat- semantic   seed=999 alpaca_eval    
+2026-07-05 02:05:20   OK
+2026-07-05 02:05:20 [181/750] TinyLlama-1_1B-Chat- raw        seed=42 banking77      
+2026-07-05 02:06:19   OK
+2026-07-05 02:06:19 [182/750] TinyLlama-1_1B-Chat- raw        seed=123 banking77      
+2026-07-05 02:07:20   OK
+2026-07-05 02:07:20 [183/750] TinyLlama-1_1B-Chat- raw        seed=456 banking77      
+2026-07-05 02:08:25   OK
+2026-07-05 02:08:25 [184/750] TinyLlama-1_1B-Chat- raw        seed=789 banking77      
+2026-07-05 02:09:28   OK
+2026-07-05 02:09:28 [185/750] TinyLlama-1_1B-Chat- raw        seed=999 banking77      
+2026-07-05 02:10:33   OK
+2026-07-05 02:10:33 [186/750] TinyLlama-1_1B-Chat- templated  seed=42 banking77      
+2026-07-05 02:11:31   OK
+2026-07-05 02:11:31 [187/750] TinyLlama-1_1B-Chat- templated  seed=123 banking77      
+2026-07-05 02:12:31   OK
+2026-07-05 02:12:31 [188/750] TinyLlama-1_1B-Chat- templated  seed=456 banking77      
+2026-07-05 02:13:34   OK
+2026-07-05 02:13:34 [189/750] TinyLlama-1_1B-Chat- templated  seed=789 banking77      
+2026-07-05 02:14:40   OK
+2026-07-05 02:14:40 [190/750] TinyLlama-1_1B-Chat- templated  seed=999 banking77      
+2026-07-05 02:15:47   OK
+2026-07-05 02:15:47 [191/750] TinyLlama-1_1B-Chat- semantic   seed=42 banking77      
+2026-07-05 02:16:48   OK
+2026-07-05 02:16:48 [192/750] TinyLlama-1_1B-Chat- semantic   seed=123 banking77      
+2026-07-05 02:17:47   OK
+2026-07-05 02:17:47 [193/750] TinyLlama-1_1B-Chat- semantic   seed=456 banking77      
+2026-07-05 02:18:49   OK
+2026-07-05 02:18:49 [194/750] TinyLlama-1_1B-Chat- semantic   seed=789 banking77      
+2026-07-05 02:19:54   OK
+2026-07-05 02:19:54 [195/750] TinyLlama-1_1B-Chat- semantic   seed=999 banking77      
+2026-07-05 02:20:57   OK
+2026-07-05 02:20:57 [196/750] TinyLlama-1_1B-Chat- raw        seed=42 cnn_dailymail  
+2026-07-05 02:22:51   OK
+2026-07-05 02:22:51 [197/750] TinyLlama-1_1B-Chat- raw        seed=123 cnn_dailymail  
+2026-07-05 02:24:43   OK
+2026-07-05 02:24:43 [198/750] TinyLlama-1_1B-Chat- raw        seed=456 cnn_dailymail  
+2026-07-05 02:26:39   OK
+2026-07-05 02:26:39 [199/750] TinyLlama-1_1B-Chat- raw        seed=789 cnn_dailymail  
+2026-07-05 02:28:35   OK
+2026-07-05 02:28:35 [200/750] TinyLlama-1_1B-Chat- raw        seed=999 cnn_dailymail  
+2026-07-05 02:30:33   OK
+2026-07-05 02:30:33 [201/750] TinyLlama-1_1B-Chat- templated  seed=42 cnn_dailymail  
+2026-07-05 02:32:30   OK
+2026-07-05 02:32:30 [202/750] TinyLlama-1_1B-Chat- templated  seed=123 cnn_dailymail  
+2026-07-05 02:34:26   OK
+2026-07-05 02:34:26 [203/750] TinyLlama-1_1B-Chat- templated  seed=456 cnn_dailymail  
+2026-07-05 02:36:22   OK
+2026-07-05 02:36:22 [204/750] TinyLlama-1_1B-Chat- templated  seed=789 cnn_dailymail  
+2026-07-05 02:38:22   OK
+2026-07-05 02:38:22 [205/750] TinyLlama-1_1B-Chat- templated  seed=999 cnn_dailymail  
+2026-07-05 02:40:25   OK
+2026-07-05 02:40:25 [206/750] TinyLlama-1_1B-Chat- semantic   seed=42 cnn_dailymail  
+2026-07-05 02:42:20   OK
+2026-07-05 02:42:20 [207/750] TinyLlama-1_1B-Chat- semantic   seed=123 cnn_dailymail  
+2026-07-05 02:44:13   OK
+2026-07-05 02:44:13 [208/750] TinyLlama-1_1B-Chat- semantic   seed=456 cnn_dailymail  
+2026-07-05 02:46:09   OK
+2026-07-05 02:46:09 [209/750] TinyLlama-1_1B-Chat- semantic   seed=789 cnn_dailymail  
+2026-07-05 02:48:07   OK
+2026-07-05 02:48:07 [210/750] TinyLlama-1_1B-Chat- semantic   seed=999 cnn_dailymail  
+2026-07-05 02:50:07   OK
+2026-07-05 02:50:07 [211/750] TinyLlama-1_1B-Chat- raw        seed=42 daily_dialog   
+2026-07-05 02:51:13   OK
+2026-07-05 02:51:13 [212/750] TinyLlama-1_1B-Chat- raw        seed=123 daily_dialog   
+2026-07-05 02:52:19   OK
+2026-07-05 02:52:19 [213/750] TinyLlama-1_1B-Chat- raw        seed=456 daily_dialog   
+2026-07-05 02:53:30   OK
+2026-07-05 02:53:30 [214/750] TinyLlama-1_1B-Chat- raw        seed=789 daily_dialog   
+2026-07-05 02:54:40   OK
+2026-07-05 02:54:40 [215/750] TinyLlama-1_1B-Chat- raw        seed=999 daily_dialog   
+2026-07-05 02:55:52   OK
+2026-07-05 02:55:52 [216/750] TinyLlama-1_1B-Chat- templated  seed=42 daily_dialog   
+2026-07-05 02:57:00   OK
+2026-07-05 02:57:00 [217/750] TinyLlama-1_1B-Chat- templated  seed=123 daily_dialog   
+2026-07-05 02:58:08   OK
+2026-07-05 02:58:08 [218/750] TinyLlama-1_1B-Chat- templated  seed=456 daily_dialog   
+2026-07-05 02:59:20   OK
+2026-07-05 02:59:20 [219/750] TinyLlama-1_1B-Chat- templated  seed=789 daily_dialog   
+2026-07-05 03:00:33   OK
+2026-07-05 03:00:33 [220/750] TinyLlama-1_1B-Chat- templated  seed=999 daily_dialog   
+2026-07-05 03:01:48   OK
+2026-07-05 03:01:48 [221/750] TinyLlama-1_1B-Chat- semantic   seed=42 daily_dialog   
+2026-07-05 03:02:54   OK
+2026-07-05 03:02:54 [222/750] TinyLlama-1_1B-Chat- semantic   seed=123 daily_dialog   
+2026-07-05 03:04:01   OK
+2026-07-05 03:04:01 [223/750] TinyLlama-1_1B-Chat- semantic   seed=456 daily_dialog   
+2026-07-05 03:05:11   OK
+2026-07-05 03:05:11 [224/750] TinyLlama-1_1B-Chat- semantic   seed=789 daily_dialog   
+2026-07-05 03:06:21   OK
+2026-07-05 03:06:21 [225/750] TinyLlama-1_1B-Chat- semantic   seed=999 daily_dialog   
+2026-07-05 03:07:35   OK
+2026-07-05 03:07:35 [226/750] TinyLlama-1_1B-Chat- raw        seed=42 dolly          
+2026-07-05 03:08:40   OK
+2026-07-05 03:08:40 [227/750] TinyLlama-1_1B-Chat- raw        seed=123 dolly          
+2026-07-05 03:09:47   OK
+2026-07-05 03:09:47 [228/750] TinyLlama-1_1B-Chat- raw        seed=456 dolly          
+2026-07-05 03:10:57   OK
+2026-07-05 03:10:57 [229/750] TinyLlama-1_1B-Chat- raw        seed=789 dolly          
+2026-07-05 03:12:09   OK
+2026-07-05 03:12:09 [230/750] TinyLlama-1_1B-Chat- raw        seed=999 dolly          
+2026-07-05 03:13:22   OK
+2026-07-05 03:13:22 [231/750] TinyLlama-1_1B-Chat- templated  seed=42 dolly          
+2026-07-05 03:14:28   OK
+2026-07-05 03:14:28 [232/750] TinyLlama-1_1B-Chat- templated  seed=123 dolly          
+2026-07-05 03:15:37   OK
+2026-07-05 03:15:37 [233/750] TinyLlama-1_1B-Chat- templated  seed=456 dolly          
+2026-07-05 03:16:46   OK
+2026-07-05 03:16:46 [234/750] TinyLlama-1_1B-Chat- templated  seed=789 dolly          
+2026-07-05 03:18:00   OK
+2026-07-05 03:18:00 [235/750] TinyLlama-1_1B-Chat- templated  seed=999 dolly          
+2026-07-05 03:19:15   OK
+2026-07-05 03:19:15 [236/750] TinyLlama-1_1B-Chat- semantic   seed=42 dolly          
+2026-07-05 03:20:20   OK
+2026-07-05 03:20:20 [237/750] TinyLlama-1_1B-Chat- semantic   seed=123 dolly          
+2026-07-05 03:21:28   OK
+2026-07-05 03:21:28 [238/750] TinyLlama-1_1B-Chat- semantic   seed=456 dolly          
+2026-07-05 03:22:37   OK
+2026-07-05 03:22:37 [239/750] TinyLlama-1_1B-Chat- semantic   seed=789 dolly          
+2026-07-05 03:23:49   OK
+2026-07-05 03:23:49 [240/750] TinyLlama-1_1B-Chat- semantic   seed=999 dolly          
+2026-07-05 03:25:02   OK
+2026-07-05 03:25:02 [241/750] TinyLlama-1_1B-Chat- raw        seed=42 oasst1         
+2026-07-05 03:26:13   OK
+2026-07-05 03:26:13 [242/750] TinyLlama-1_1B-Chat- raw        seed=123 oasst1         
+2026-07-05 03:27:29   OK
+2026-07-05 03:27:29 [243/750] TinyLlama-1_1B-Chat- raw        seed=456 oasst1         
+2026-07-05 03:28:44   OK
+2026-07-05 03:28:44 [244/750] TinyLlama-1_1B-Chat- raw        seed=789 oasst1         
+2026-07-05 03:29:57   OK
+2026-07-05 03:29:57 [245/750] TinyLlama-1_1B-Chat- raw        seed=999 oasst1         
+2026-07-05 03:31:15   OK
+2026-07-05 03:31:15 [246/750] TinyLlama-1_1B-Chat- templated  seed=42 oasst1         
+2026-07-05 03:32:26   OK
+2026-07-05 03:32:26 [247/750] TinyLlama-1_1B-Chat- templated  seed=123 oasst1         
+2026-07-05 03:33:41   OK
+2026-07-05 03:33:41 [248/750] TinyLlama-1_1B-Chat- templated  seed=456 oasst1         
+2026-07-05 03:34:54   OK
+2026-07-05 03:34:54 [249/750] TinyLlama-1_1B-Chat- templated  seed=789 oasst1         
+2026-07-05 03:36:10   OK
+2026-07-05 03:36:10 [250/750] TinyLlama-1_1B-Chat- templated  seed=999 oasst1         
+2026-07-05 03:37:28   OK
+2026-07-05 03:37:28 [251/750] TinyLlama-1_1B-Chat- semantic   seed=42 oasst1         
+2026-07-05 03:38:38   OK
+2026-07-05 03:38:38 [252/750] TinyLlama-1_1B-Chat- semantic   seed=123 oasst1         
+2026-07-05 03:39:52   OK
+2026-07-05 03:39:52 [253/750] TinyLlama-1_1B-Chat- semantic   seed=456 oasst1         
+2026-07-05 03:41:07   OK
+2026-07-05 03:41:07 [254/750] TinyLlama-1_1B-Chat- semantic   seed=789 oasst1         
+2026-07-05 03:42:20   OK
+2026-07-05 03:42:20 [255/750] TinyLlama-1_1B-Chat- semantic   seed=999 oasst1         
+2026-07-05 03:43:38   OK
+2026-07-05 03:43:38 [256/750] TinyLlama-1_1B-Chat- raw        seed=42 samsum         
+2026-07-05 03:44:55   OK
+2026-07-05 03:44:55 [257/750] TinyLlama-1_1B-Chat- raw        seed=123 samsum         
+2026-07-05 03:46:12   OK
+2026-07-05 03:46:12 [258/750] TinyLlama-1_1B-Chat- raw        seed=456 samsum         
+2026-07-05 03:47:30   OK
+2026-07-05 03:47:30 [259/750] TinyLlama-1_1B-Chat- raw        seed=789 samsum         
+2026-07-05 03:48:51   OK
+2026-07-05 03:48:51 [260/750] TinyLlama-1_1B-Chat- raw        seed=999 samsum         
+2026-07-05 03:50:14   OK
+2026-07-05 03:50:14 [261/750] TinyLlama-1_1B-Chat- templated  seed=42 samsum         
+2026-07-05 03:51:33   OK
+2026-07-05 03:51:33 [262/750] TinyLlama-1_1B-Chat- templated  seed=123 samsum         
+2026-07-05 03:52:51   OK
+2026-07-05 03:52:51 [263/750] TinyLlama-1_1B-Chat- templated  seed=456 samsum         
+2026-07-05 03:54:12   OK
+2026-07-05 03:54:12 [264/750] TinyLlama-1_1B-Chat- templated  seed=789 samsum         
+2026-07-05 03:55:34   OK
+2026-07-05 03:55:34 [265/750] TinyLlama-1_1B-Chat- templated  seed=999 samsum         
+2026-07-05 03:56:58   OK
+2026-07-05 03:56:58 [266/750] TinyLlama-1_1B-Chat- semantic   seed=42 samsum         
+2026-07-05 03:58:15   OK
+2026-07-05 03:58:15 [267/750] TinyLlama-1_1B-Chat- semantic   seed=123 samsum         
+2026-07-05 03:59:32   OK
+2026-07-05 03:59:32 [268/750] TinyLlama-1_1B-Chat- semantic   seed=456 samsum         
+2026-07-05 04:00:51   OK
+2026-07-05 04:00:51 [269/750] TinyLlama-1_1B-Chat- semantic   seed=789 samsum         
+2026-07-05 04:02:12   OK
+2026-07-05 04:02:12 [270/750] TinyLlama-1_1B-Chat- semantic   seed=999 samsum         
+2026-07-05 04:03:35   OK
+2026-07-05 04:03:35 [271/750] TinyLlama-1_1B-Chat- raw        seed=42 ultrachat      
+2026-07-05 04:05:15   OK
+2026-07-05 04:05:15 [272/750] TinyLlama-1_1B-Chat- raw        seed=123 ultrachat      
+2026-07-05 04:06:57   OK
+2026-07-05 04:06:57 [273/750] TinyLlama-1_1B-Chat- raw        seed=456 ultrachat      
+2026-07-05 04:08:41   OK
+2026-07-05 04:08:41 [274/750] TinyLlama-1_1B-Chat- raw        seed=789 ultrachat      
+2026-07-05 04:10:29   OK
+2026-07-05 04:10:29 [275/750] TinyLlama-1_1B-Chat- raw        seed=999 ultrachat      
+2026-07-05 04:12:18   OK
+2026-07-05 04:12:18 [276/750] TinyLlama-1_1B-Chat- templated  seed=42 ultrachat      
+2026-07-05 04:14:01   OK
+2026-07-05 04:14:01 [277/750] TinyLlama-1_1B-Chat- templated  seed=123 ultrachat      
+2026-07-05 04:15:44   OK
+2026-07-05 04:15:44 [278/750] TinyLlama-1_1B-Chat- templated  seed=456 ultrachat      
+2026-07-05 04:17:30   OK
+2026-07-05 04:17:30 [279/750] TinyLlama-1_1B-Chat- templated  seed=789 ultrachat      
+2026-07-05 04:19:19   OK
+2026-07-05 04:19:19 [280/750] TinyLlama-1_1B-Chat- templated  seed=999 ultrachat      
+2026-07-05 04:21:10   OK
+2026-07-05 04:21:10 [281/750] TinyLlama-1_1B-Chat- semantic   seed=42 ultrachat      
+2026-07-05 04:22:51   OK
+2026-07-05 04:22:51 [282/750] TinyLlama-1_1B-Chat- semantic   seed=123 ultrachat      
+2026-07-05 04:24:32   OK
+2026-07-05 04:24:32 [283/750] TinyLlama-1_1B-Chat- semantic   seed=456 ultrachat      
+2026-07-05 04:26:16   OK
+2026-07-05 04:26:16 [284/750] TinyLlama-1_1B-Chat- semantic   seed=789 ultrachat      
+2026-07-05 04:28:04   OK
+2026-07-05 04:28:04 [285/750] TinyLlama-1_1B-Chat- semantic   seed=999 ultrachat      
+2026-07-05 04:29:52   OK
+2026-07-05 04:29:52 [286/750] TinyLlama-1_1B-Chat- raw        seed=42 xsum           
+2026-07-05 04:31:32   OK
+2026-07-05 04:31:32 [287/750] TinyLlama-1_1B-Chat- raw        seed=123 xsum           
+2026-07-05 04:33:13   OK
+2026-07-05 04:33:13 [288/750] TinyLlama-1_1B-Chat- raw        seed=456 xsum           
+2026-07-05 04:34:55   OK
+2026-07-05 04:34:55 [289/750] TinyLlama-1_1B-Chat- raw        seed=789 xsum           
+2026-07-05 04:36:41   OK
+2026-07-05 04:36:41 [290/750] TinyLlama-1_1B-Chat- raw        seed=999 xsum           
+2026-07-05 04:38:29   OK
+2026-07-05 04:38:29 [291/750] TinyLlama-1_1B-Chat- templated  seed=42 xsum           
+2026-07-05 04:40:11   OK
+2026-07-05 04:40:11 [292/750] TinyLlama-1_1B-Chat- templated  seed=123 xsum           
+2026-07-05 04:41:55   OK
+2026-07-05 04:41:55 [293/750] TinyLlama-1_1B-Chat- templated  seed=456 xsum           
+2026-07-05 04:43:39   OK
+2026-07-05 04:43:39 [294/750] TinyLlama-1_1B-Chat- templated  seed=789 xsum           
+2026-07-05 04:45:28   OK
+2026-07-05 04:45:28 [295/750] TinyLlama-1_1B-Chat- templated  seed=999 xsum           
+2026-07-05 04:47:17   OK
+2026-07-05 04:47:17 [296/750] TinyLlama-1_1B-Chat- semantic   seed=42 xsum           
+2026-07-05 04:48:59   OK
+2026-07-05 04:48:59 [297/750] TinyLlama-1_1B-Chat- semantic   seed=123 xsum           
+2026-07-05 04:50:41   OK
+2026-07-05 04:50:41 [298/750] TinyLlama-1_1B-Chat- semantic   seed=456 xsum           
+2026-07-05 04:52:23   OK
+2026-07-05 04:52:23 [299/750] TinyLlama-1_1B-Chat- semantic   seed=789 xsum           
+2026-07-05 04:54:08   OK
+2026-07-05 04:54:08 [300/750] TinyLlama-1_1B-Chat- semantic   seed=999 xsum           
+2026-07-05 04:55:58   OK
+2026-07-05 04:55:58 [301/750] Qwen2_5-1_5B-Instruc raw        seed=42 ag_news        
+2026-07-05 04:57:15   OK
+2026-07-05 04:57:15 [302/750] Qwen2_5-1_5B-Instruc raw        seed=123 ag_news        
+2026-07-05 04:58:31   OK
+2026-07-05 04:58:31 [303/750] Qwen2_5-1_5B-Instruc raw        seed=456 ag_news        
+2026-07-05 04:59:55   OK
+2026-07-05 04:59:55 [304/750] Qwen2_5-1_5B-Instruc raw        seed=789 ag_news        
+2026-07-05 05:01:16   OK
+2026-07-05 05:01:16 [305/750] Qwen2_5-1_5B-Instruc raw        seed=999 ag_news        
+2026-07-05 05:02:40   OK
+2026-07-05 05:02:40 [306/750] Qwen2_5-1_5B-Instruc templated  seed=42 ag_news        
+2026-07-05 05:04:00   OK
+2026-07-05 05:04:00 [307/750] Qwen2_5-1_5B-Instruc templated  seed=123 ag_news        
+2026-07-05 05:05:19   OK
+2026-07-05 05:05:19 [308/750] Qwen2_5-1_5B-Instruc templated  seed=456 ag_news        
+2026-07-05 05:06:41   OK
+2026-07-05 05:06:41 [309/750] Qwen2_5-1_5B-Instruc templated  seed=789 ag_news        
+2026-07-05 05:08:02   OK
+2026-07-05 05:08:02 [310/750] Qwen2_5-1_5B-Instruc templated  seed=999 ag_news        
+2026-07-05 05:09:28   OK
+2026-07-05 05:09:28 [311/750] Qwen2_5-1_5B-Instruc semantic   seed=42 ag_news        
+2026-07-05 05:10:45   OK
+2026-07-05 05:10:45 [312/750] Qwen2_5-1_5B-Instruc semantic   seed=123 ag_news        
+2026-07-05 05:12:02   OK
+2026-07-05 05:12:02 [313/750] Qwen2_5-1_5B-Instruc semantic   seed=456 ag_news        
+2026-07-05 05:13:21   OK
+2026-07-05 05:13:21 [314/750] Qwen2_5-1_5B-Instruc semantic   seed=789 ag_news        
+2026-07-05 05:14:43   OK
+2026-07-05 05:14:43 [315/750] Qwen2_5-1_5B-Instruc semantic   seed=999 ag_news        
+2026-07-05 05:16:07   OK
+2026-07-05 05:16:07 [316/750] Qwen2_5-1_5B-Instruc raw        seed=42 alpaca_eval    
+2026-07-05 05:17:29   OK
+2026-07-05 05:17:29 [317/750] Qwen2_5-1_5B-Instruc raw        seed=123 alpaca_eval    
+2026-07-05 05:18:50   OK
+2026-07-05 05:18:50 [318/750] Qwen2_5-1_5B-Instruc raw        seed=456 alpaca_eval    
+2026-07-05 05:20:21   OK
+2026-07-05 05:20:21 [319/750] Qwen2_5-1_5B-Instruc raw        seed=789 alpaca_eval    
+2026-07-05 05:21:48   OK
+2026-07-05 05:21:48 [320/750] Qwen2_5-1_5B-Instruc raw        seed=999 alpaca_eval    
+2026-07-05 05:23:22   OK
+2026-07-05 05:23:22 [321/750] Qwen2_5-1_5B-Instruc templated  seed=42 alpaca_eval    
+2026-07-05 05:24:33   OK
+2026-07-05 05:24:33 [322/750] Qwen2_5-1_5B-Instruc templated  seed=123 alpaca_eval    
+2026-07-05 05:25:49   OK
+2026-07-05 05:25:49 [323/750] Qwen2_5-1_5B-Instruc templated  seed=456 alpaca_eval    
+2026-07-05 05:27:08   OK
+2026-07-05 05:27:08 [324/750] Qwen2_5-1_5B-Instruc templated  seed=789 alpaca_eval    
+2026-07-05 05:28:25   OK
+2026-07-05 05:28:25 [325/750] Qwen2_5-1_5B-Instruc templated  seed=999 alpaca_eval    
+2026-07-05 05:29:47   OK
+2026-07-05 05:29:47 [326/750] Qwen2_5-1_5B-Instruc semantic   seed=42 alpaca_eval    
+2026-07-05 05:31:01   OK
+2026-07-05 05:31:01 [327/750] Qwen2_5-1_5B-Instruc semantic   seed=123 alpaca_eval    
+2026-07-05 05:32:15   OK
+2026-07-05 05:32:15 [328/750] Qwen2_5-1_5B-Instruc semantic   seed=456 alpaca_eval    
+2026-07-05 05:33:31   OK
+2026-07-05 05:33:31 [329/750] Qwen2_5-1_5B-Instruc semantic   seed=789 alpaca_eval    
+2026-07-05 05:34:49   OK
+2026-07-05 05:34:49 [330/750] Qwen2_5-1_5B-Instruc semantic   seed=999 alpaca_eval    
+2026-07-05 05:36:08   OK
+2026-07-05 05:36:08 [331/750] Qwen2_5-1_5B-Instruc raw        seed=42 banking77      
+2026-07-05 05:37:20   OK
+2026-07-05 05:37:20 [332/750] Qwen2_5-1_5B-Instruc raw        seed=123 banking77      
+2026-07-05 05:38:36   OK
+2026-07-05 05:38:36 [333/750] Qwen2_5-1_5B-Instruc raw        seed=456 banking77      
+2026-07-05 05:39:52   OK
+2026-07-05 05:39:52 [334/750] Qwen2_5-1_5B-Instruc raw        seed=789 banking77      
+2026-07-05 05:41:10   OK
+2026-07-05 05:41:10 [335/750] Qwen2_5-1_5B-Instruc raw        seed=999 banking77      
+2026-07-05 05:42:32   OK
+2026-07-05 05:42:32 [336/750] Qwen2_5-1_5B-Instruc templated  seed=42 banking77      
+2026-07-05 05:43:48   OK
+2026-07-05 05:43:48 [337/750] Qwen2_5-1_5B-Instruc templated  seed=123 banking77      
+2026-07-05 05:45:03   OK
+2026-07-05 05:45:03 [338/750] Qwen2_5-1_5B-Instruc templated  seed=456 banking77      
+2026-07-05 05:46:21   OK
+2026-07-05 05:46:21 [339/750] Qwen2_5-1_5B-Instruc templated  seed=789 banking77      
+2026-07-05 05:47:38   OK
+2026-07-05 05:47:38 [340/750] Qwen2_5-1_5B-Instruc templated  seed=999 banking77      
+2026-07-05 05:48:59   OK
+2026-07-05 05:48:59 [341/750] Qwen2_5-1_5B-Instruc semantic   seed=42 banking77      
+2026-07-05 05:50:11   OK
+2026-07-05 05:50:11 [342/750] Qwen2_5-1_5B-Instruc semantic   seed=123 banking77      
+2026-07-05 05:51:22   OK
+2026-07-05 05:51:22 [343/750] Qwen2_5-1_5B-Instruc semantic   seed=456 banking77      
+2026-07-05 05:52:39   OK
+2026-07-05 05:52:39 [344/750] Qwen2_5-1_5B-Instruc semantic   seed=789 banking77      
+2026-07-05 05:53:59   OK
+2026-07-05 05:53:59 [345/750] Qwen2_5-1_5B-Instruc semantic   seed=999 banking77      
+2026-07-05 05:55:21   OK
+2026-07-05 05:55:21 [346/750] Qwen2_5-1_5B-Instruc raw        seed=42 cnn_dailymail  
+2026-07-05 05:57:59   OK
+2026-07-05 05:57:59 [347/750] Qwen2_5-1_5B-Instruc raw        seed=123 cnn_dailymail  
+2026-07-05 06:00:36   OK
+2026-07-05 06:00:36 [348/750] Qwen2_5-1_5B-Instruc raw        seed=456 cnn_dailymail  
+2026-07-05 06:03:15   OK
+2026-07-05 06:03:15 [349/750] Qwen2_5-1_5B-Instruc raw        seed=789 cnn_dailymail  
+2026-07-05 06:05:57   OK
+2026-07-05 06:05:57 [350/750] Qwen2_5-1_5B-Instruc raw        seed=999 cnn_dailymail  
+2026-07-05 06:08:40   OK
+2026-07-05 06:08:40 [351/750] Qwen2_5-1_5B-Instruc templated  seed=42 cnn_dailymail  
+2026-07-05 06:11:18   OK
+2026-07-05 06:11:18 [352/750] Qwen2_5-1_5B-Instruc templated  seed=123 cnn_dailymail  
+2026-07-05 06:13:58   OK
+2026-07-05 06:13:58 [353/750] Qwen2_5-1_5B-Instruc templated  seed=456 cnn_dailymail  
+2026-07-05 06:16:39   OK
+2026-07-05 06:16:39 [354/750] Qwen2_5-1_5B-Instruc templated  seed=789 cnn_dailymail  
+2026-07-05 06:19:21   OK
+2026-07-05 06:19:21 [355/750] Qwen2_5-1_5B-Instruc templated  seed=999 cnn_dailymail  
+2026-07-05 06:22:07   OK
+2026-07-05 06:22:07 [356/750] Qwen2_5-1_5B-Instruc semantic   seed=42 cnn_dailymail  
+2026-07-05 06:24:46   OK
+2026-07-05 06:24:46 [357/750] Qwen2_5-1_5B-Instruc semantic   seed=123 cnn_dailymail  
+2026-07-05 06:27:22   OK
+2026-07-05 06:27:22 [358/750] Qwen2_5-1_5B-Instruc semantic   seed=456 cnn_dailymail  
+2026-07-05 06:30:00   OK
+2026-07-05 06:30:00 [359/750] Qwen2_5-1_5B-Instruc semantic   seed=789 cnn_dailymail  
+2026-07-05 06:32:43   OK
+2026-07-05 06:32:43 [360/750] Qwen2_5-1_5B-Instruc semantic   seed=999 cnn_dailymail  
+2026-07-05 06:35:26   OK
+2026-07-05 06:35:26 [361/750] Qwen2_5-1_5B-Instruc raw        seed=42 daily_dialog   
+2026-07-05 06:36:48   OK
+2026-07-05 06:36:48 [362/750] Qwen2_5-1_5B-Instruc raw        seed=123 daily_dialog   
+2026-07-05 06:38:10   OK
+2026-07-05 06:38:10 [363/750] Qwen2_5-1_5B-Instruc raw        seed=456 daily_dialog   
+2026-07-05 06:39:41   OK
+2026-07-05 06:39:41 [364/750] Qwen2_5-1_5B-Instruc raw        seed=789 daily_dialog   
+2026-07-05 06:41:08   OK
+2026-07-05 06:41:08 [365/750] Qwen2_5-1_5B-Instruc raw        seed=999 daily_dialog   
+2026-07-05 06:42:35   OK
+2026-07-05 06:42:35 [366/750] Qwen2_5-1_5B-Instruc templated  seed=42 daily_dialog   
+2026-07-05 06:43:56   OK
+2026-07-05 06:43:56 [367/750] Qwen2_5-1_5B-Instruc templated  seed=123 daily_dialog   
+2026-07-05 06:45:17   OK
+2026-07-05 06:45:17 [368/750] Qwen2_5-1_5B-Instruc templated  seed=456 daily_dialog   
+2026-07-05 06:46:47   OK
+2026-07-05 06:46:47 [369/750] Qwen2_5-1_5B-Instruc templated  seed=789 daily_dialog   
+2026-07-05 06:48:16   OK
+2026-07-05 06:48:16 [370/750] Qwen2_5-1_5B-Instruc templated  seed=999 daily_dialog   
+2026-07-05 06:49:46   OK
+2026-07-05 06:49:46 [371/750] Qwen2_5-1_5B-Instruc semantic   seed=42 daily_dialog   
+2026-07-05 06:51:09   OK
+2026-07-05 06:51:09 [372/750] Qwen2_5-1_5B-Instruc semantic   seed=123 daily_dialog   
+2026-07-05 06:52:28   OK
+2026-07-05 06:52:28 [373/750] Qwen2_5-1_5B-Instruc semantic   seed=456 daily_dialog   
+2026-07-05 06:53:56   OK
+2026-07-05 06:53:56 [374/750] Qwen2_5-1_5B-Instruc semantic   seed=789 daily_dialog   
+2026-07-05 06:55:24   OK
+2026-07-05 06:55:24 [375/750] Qwen2_5-1_5B-Instruc semantic   seed=999 daily_dialog   
+2026-07-05 06:56:52   OK
+2026-07-05 06:56:52 [376/750] Qwen2_5-1_5B-Instruc raw        seed=42 dolly          
+2026-07-05 06:58:15   OK
+2026-07-05 06:58:15 [377/750] Qwen2_5-1_5B-Instruc raw        seed=123 dolly          
+2026-07-05 06:59:40   OK
+2026-07-05 06:59:40 [378/750] Qwen2_5-1_5B-Instruc raw        seed=456 dolly          
+2026-07-05 07:01:03   OK
+2026-07-05 07:01:03 [379/750] Qwen2_5-1_5B-Instruc raw        seed=789 dolly          
+2026-07-05 07:02:35   OK
+2026-07-05 07:02:35 [380/750] Qwen2_5-1_5B-Instruc raw        seed=999 dolly          
+2026-07-05 07:04:06   OK
+2026-07-05 07:04:06 [381/750] Qwen2_5-1_5B-Instruc templated  seed=42 dolly          
+2026-07-05 07:05:31   OK
+2026-07-05 07:05:31 [382/750] Qwen2_5-1_5B-Instruc templated  seed=123 dolly          
+2026-07-05 07:06:56   OK
+2026-07-05 07:06:56 [383/750] Qwen2_5-1_5B-Instruc templated  seed=456 dolly          
+2026-07-05 07:08:21   OK
+2026-07-05 07:08:21 [384/750] Qwen2_5-1_5B-Instruc templated  seed=789 dolly          
+2026-07-05 07:09:54   OK
+2026-07-05 07:09:54 [385/750] Qwen2_5-1_5B-Instruc templated  seed=999 dolly          
+2026-07-05 07:11:26   OK
+2026-07-05 07:11:26 [386/750] Qwen2_5-1_5B-Instruc semantic   seed=42 dolly          
+2026-07-05 07:12:50   OK
+2026-07-05 07:12:50 [387/750] Qwen2_5-1_5B-Instruc semantic   seed=123 dolly          
+2026-07-05 07:14:18   OK
+2026-07-05 07:14:18 [388/750] Qwen2_5-1_5B-Instruc semantic   seed=456 dolly          
+2026-07-05 07:15:43   OK
+2026-07-05 07:15:43 [389/750] Qwen2_5-1_5B-Instruc semantic   seed=789 dolly          
+2026-07-05 07:17:13   OK
+2026-07-05 07:17:13 [390/750] Qwen2_5-1_5B-Instruc semantic   seed=999 dolly          
+2026-07-05 07:18:47   OK
+2026-07-05 07:18:47 [391/750] Qwen2_5-1_5B-Instruc raw        seed=42 oasst1         
+2026-07-05 07:20:16   OK
+2026-07-05 07:20:16 [392/750] Qwen2_5-1_5B-Instruc raw        seed=123 oasst1         
+2026-07-05 07:21:52   OK
+2026-07-05 07:21:52 [393/750] Qwen2_5-1_5B-Instruc raw        seed=456 oasst1         
+2026-07-05 07:23:25   OK
+2026-07-05 07:23:25 [394/750] Qwen2_5-1_5B-Instruc raw        seed=789 oasst1         
+2026-07-05 07:24:59   OK
+2026-07-05 07:24:59 [395/750] Qwen2_5-1_5B-Instruc raw        seed=999 oasst1         
+2026-07-05 07:26:35   OK
+2026-07-05 07:26:35 [396/750] Qwen2_5-1_5B-Instruc templated  seed=42 oasst1         
+2026-07-05 07:28:00   OK
+2026-07-05 07:28:00 [397/750] Qwen2_5-1_5B-Instruc templated  seed=123 oasst1         
+2026-07-05 07:29:35   OK
+2026-07-05 07:29:35 [398/750] Qwen2_5-1_5B-Instruc templated  seed=456 oasst1         
+2026-07-05 07:31:07   OK
+2026-07-05 07:31:07 [399/750] Qwen2_5-1_5B-Instruc templated  seed=789 oasst1         
+2026-07-05 07:32:37   OK
+2026-07-05 07:32:37 [400/750] Qwen2_5-1_5B-Instruc templated  seed=999 oasst1         
+2026-07-05 07:34:12   OK
+2026-07-05 07:34:12 [401/750] Qwen2_5-1_5B-Instruc semantic   seed=42 oasst1         
+2026-07-05 07:35:38   OK
+2026-07-05 07:35:38 [402/750] Qwen2_5-1_5B-Instruc semantic   seed=123 oasst1         
+2026-07-05 07:37:09   OK
+2026-07-05 07:37:09 [403/750] Qwen2_5-1_5B-Instruc semantic   seed=456 oasst1         
+2026-07-05 07:38:39   OK
+2026-07-05 07:38:39 [404/750] Qwen2_5-1_5B-Instruc semantic   seed=789 oasst1         
+2026-07-05 07:40:08   OK
+2026-07-05 07:40:08 [405/750] Qwen2_5-1_5B-Instruc semantic   seed=999 oasst1         
+2026-07-05 07:41:43   OK
+2026-07-05 07:41:43 [406/750] Qwen2_5-1_5B-Instruc raw        seed=42 samsum         
+2026-07-05 07:43:23   OK
+2026-07-05 07:43:23 [407/750] Qwen2_5-1_5B-Instruc raw        seed=123 samsum         
+2026-07-05 07:45:02   OK
+2026-07-05 07:45:02 [408/750] Qwen2_5-1_5B-Instruc raw        seed=456 samsum         
+2026-07-05 07:46:40   OK
+2026-07-05 07:46:40 [409/750] Qwen2_5-1_5B-Instruc raw        seed=789 samsum         
+2026-07-05 07:48:22   OK
+2026-07-05 07:48:22 [410/750] Qwen2_5-1_5B-Instruc raw        seed=999 samsum         
+2026-07-05 07:50:04   OK
+2026-07-05 07:50:04 [411/750] Qwen2_5-1_5B-Instruc templated  seed=42 samsum         
+2026-07-05 07:51:44   OK
+2026-07-05 07:51:44 [412/750] Qwen2_5-1_5B-Instruc templated  seed=123 samsum         
+2026-07-05 07:53:23   OK
+2026-07-05 07:53:23 [413/750] Qwen2_5-1_5B-Instruc templated  seed=456 samsum         
+2026-07-05 07:55:04   OK
+2026-07-05 07:55:04 [414/750] Qwen2_5-1_5B-Instruc templated  seed=789 samsum         
+2026-07-05 07:56:47   OK
+2026-07-05 07:56:47 [415/750] Qwen2_5-1_5B-Instruc templated  seed=999 samsum         
+2026-07-05 07:58:31   OK
+2026-07-05 07:58:31 [416/750] Qwen2_5-1_5B-Instruc semantic   seed=42 samsum         
+2026-07-05 08:00:09   OK
+2026-07-05 08:00:09 [417/750] Qwen2_5-1_5B-Instruc semantic   seed=123 samsum         
+2026-07-05 08:01:46   OK
+2026-07-05 08:01:46 [418/750] Qwen2_5-1_5B-Instruc semantic   seed=456 samsum         
+2026-07-05 08:03:24   OK
+2026-07-05 08:03:24 [419/750] Qwen2_5-1_5B-Instruc semantic   seed=789 samsum         
+2026-07-05 08:05:05   OK
+2026-07-05 08:05:05 [420/750] Qwen2_5-1_5B-Instruc semantic   seed=999 samsum         
+2026-07-05 08:06:46   OK
+2026-07-05 08:06:46 [421/750] Qwen2_5-1_5B-Instruc raw        seed=42 ultrachat      
+2026-07-05 08:09:01   OK
+2026-07-05 08:09:01 [422/750] Qwen2_5-1_5B-Instruc raw        seed=123 ultrachat      
+2026-07-05 08:11:18   OK
+2026-07-05 08:11:18 [423/750] Qwen2_5-1_5B-Instruc raw        seed=456 ultrachat      
+2026-07-05 08:13:38   OK
+2026-07-05 08:13:38 [424/750] Qwen2_5-1_5B-Instruc raw        seed=789 ultrachat      
+2026-07-05 08:16:04   OK
+2026-07-05 08:16:04 [425/750] Qwen2_5-1_5B-Instruc raw        seed=999 ultrachat      
+2026-07-05 08:18:28   OK
+2026-07-05 08:18:28 [426/750] Qwen2_5-1_5B-Instruc templated  seed=42 ultrachat      
+2026-07-05 08:20:46   OK
+2026-07-05 08:20:46 [427/750] Qwen2_5-1_5B-Instruc templated  seed=123 ultrachat      
+2026-07-05 08:23:03   OK
+2026-07-05 08:23:03 [428/750] Qwen2_5-1_5B-Instruc templated  seed=456 ultrachat      
+2026-07-05 08:25:24   OK
+2026-07-05 08:25:24 [429/750] Qwen2_5-1_5B-Instruc templated  seed=789 ultrachat      
+2026-07-05 08:27:51   OK
+2026-07-05 08:27:51 [430/750] Qwen2_5-1_5B-Instruc templated  seed=999 ultrachat      
+2026-07-05 08:30:16   OK
+2026-07-05 08:30:16 [431/750] Qwen2_5-1_5B-Instruc semantic   seed=42 ultrachat      
+2026-07-05 08:32:32   OK
+2026-07-05 08:32:32 [432/750] Qwen2_5-1_5B-Instruc semantic   seed=123 ultrachat      
+2026-07-05 08:34:45   OK
+2026-07-05 08:34:45 [433/750] Qwen2_5-1_5B-Instruc semantic   seed=456 ultrachat      
+2026-07-05 08:37:05   OK
+2026-07-05 08:37:05 [434/750] Qwen2_5-1_5B-Instruc semantic   seed=789 ultrachat      
+2026-07-05 08:39:28   OK
+2026-07-05 08:39:28 [435/750] Qwen2_5-1_5B-Instruc semantic   seed=999 ultrachat      
+2026-07-05 08:41:52   OK
+2026-07-05 08:41:52 [436/750] Qwen2_5-1_5B-Instruc raw        seed=42 xsum           
+2026-07-05 08:44:13   OK
+2026-07-05 08:44:13 [437/750] Qwen2_5-1_5B-Instruc raw        seed=123 xsum           
+2026-07-05 08:46:33   OK
+2026-07-05 08:46:33 [438/750] Qwen2_5-1_5B-Instruc raw        seed=456 xsum           
+2026-07-05 08:48:52   OK
+2026-07-05 08:48:52 [439/750] Qwen2_5-1_5B-Instruc raw        seed=789 xsum           
+2026-07-05 08:51:18   OK
+2026-07-05 08:51:18 [440/750] Qwen2_5-1_5B-Instruc raw        seed=999 xsum           
+2026-07-05 08:53:42   OK
+2026-07-05 08:53:42 [441/750] Qwen2_5-1_5B-Instruc templated  seed=42 xsum           
+2026-07-05 08:56:02   OK
+2026-07-05 08:56:02 [442/750] Qwen2_5-1_5B-Instruc templated  seed=123 xsum           
+2026-07-05 08:58:25   OK
+2026-07-05 08:58:25 [443/750] Qwen2_5-1_5B-Instruc templated  seed=456 xsum           
+2026-07-05 09:00:43   OK
+2026-07-05 09:00:43 [444/750] Qwen2_5-1_5B-Instruc templated  seed=789 xsum           
+2026-07-05 09:03:08   OK
+2026-07-05 09:03:08 [445/750] Qwen2_5-1_5B-Instruc templated  seed=999 xsum           
+2026-07-05 09:05:36   OK
+2026-07-05 09:05:36 [446/750] Qwen2_5-1_5B-Instruc semantic   seed=42 xsum           
+2026-07-05 09:07:54   OK
+2026-07-05 09:07:54 [447/750] Qwen2_5-1_5B-Instruc semantic   seed=123 xsum           
+2026-07-05 09:10:14   OK
+2026-07-05 09:10:14 [448/750] Qwen2_5-1_5B-Instruc semantic   seed=456 xsum           
+2026-07-05 09:12:31   OK
+2026-07-05 09:12:31 [449/750] Qwen2_5-1_5B-Instruc semantic   seed=789 xsum           
+2026-07-05 09:14:56   OK
+2026-07-05 09:14:56 [450/750] Qwen2_5-1_5B-Instruc semantic   seed=999 xsum           
+2026-07-05 09:17:21   OK
+2026-07-05 09:17:21 [451/750] gemma-2b-it          raw        seed=42 ag_news        
+2026-07-05 09:19:01   OK
+2026-07-05 09:19:01 [452/750] gemma-2b-it          raw        seed=123 ag_news        
+2026-07-05 09:20:45   OK
+2026-07-05 09:20:45 [453/750] gemma-2b-it          raw        seed=456 ag_news        

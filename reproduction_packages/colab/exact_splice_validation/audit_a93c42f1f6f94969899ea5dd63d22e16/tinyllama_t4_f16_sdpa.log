@@ -1,0 +1,38 @@
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/201 [00:00<00:42,  4.74it/s]
+Loading weights:   6%|▋         | 13/201 [00:00<00:03, 49.61it/s]
+Loading weights:  12%|█▏        | 24/201 [00:00<00:02, 68.08it/s]
+Loading weights:  20%|█▉        | 40/201 [00:00<00:01, 93.42it/s]
+Loading weights:  25%|██▌       | 51/201 [00:00<00:01, 89.03it/s]
+Loading weights:  33%|███▎      | 67/201 [00:00<00:01, 101.94it/s]
+Loading weights:  39%|███▉      | 78/201 [00:00<00:01, 102.09it/s]
+Loading weights:  47%|████▋     | 94/201 [00:01<00:00, 117.29it/s]
+Loading weights:  53%|█████▎    | 107/201 [00:01<00:00, 118.48it/s]
+Loading weights:  60%|██████    | 121/201 [00:01<00:00, 119.83it/s]
+Loading weights:  67%|██████▋   | 134/201 [00:01<00:00, 117.62it/s]
+Loading weights:  74%|███████▎  | 148/201 [00:01<00:00, 121.10it/s]
+Loading weights:  80%|████████  | 161/201 [00:01<00:00, 118.74it/s]
+Loading weights:  87%|████████▋ | 175/201 [00:01<00:00, 117.80it/s]
+Loading weights:  93%|█████████▎| 187/201 [00:01<00:00, 115.89it/s]
+Loading weights: 100%|██████████| 201/201 [00:01<00:00, 106.30it/s]
+sample=0 ratio=0.50 shared=64/128
+sample=0 ratio=0.75 shared=96/128
+sample=1 ratio=0.50 shared=64/128
+sample=1 ratio=0.75 shared=96/128
+sample=2 ratio=0.50 shared=64/128
+sample=2 ratio=0.75 shared=96/128
+sample=3 ratio=0.50 shared=64/128
+sample=3 ratio=0.75 shared=96/128
+{
+  "cases": 8,
+  "strict_passes": 0,
+  "token_semantic_passes": 8,
+  "cache_passes": 4,
+  "native_token_passes": 8,
+  "splice_token_passes": 8,
+  "all_strict_pass": false,
+  "all_token_semantic_pass": true
+}
+wrote /content/meritkv_exact_splice_validation_outputs/tinyllama_t4_f16_sdpa.json

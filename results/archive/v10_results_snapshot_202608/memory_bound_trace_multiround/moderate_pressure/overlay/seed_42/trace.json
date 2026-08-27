@@ -1,0 +1,588 @@
+{
+  "config": {
+    "model": "google/gemma-4-31B-it",
+    "backend": "vllm",
+    "admission_mode": "write_through_admission",
+    "cache_budget_gb": 56,
+    "seed": 42,
+    "n_fill": 20,
+    "n_churn": 15,
+    "n_rec": 15,
+    "n_rounds": 4
+  },
+  "ledger": {
+    "overlay": {
+      "mean_latency_ms": 71.45,
+      "p95_latency_ms": 91.23,
+      "throughput_rps": 14.0,
+      "gpu_energy_j": 2796.7,
+      "idle_adjusted_gpu_energy_j": 2546.6,
+      "requests_seen": 140,
+      "hit_rate": 0.6341,
+      "admission": {
+        "plans_total": 80,
+        "allow_total": 50,
+        "bypass_total": 30,
+        "write_through_bypass_total": 30,
+        "skip_write_total": 0,
+        "skip_lookup_total": 0,
+        "log": [
+          {
+            "request": 0,
+            "round": 1,
+            "decision": "bypass",
+            "utility": -3.9,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 1,
+            "round": 1,
+            "decision": "bypass",
+            "utility": -4.02,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 2,
+            "round": 1,
+            "decision": "bypass",
+            "utility": -0.06,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 3,
+            "round": 1,
+            "decision": "bypass",
+            "utility": -9.86,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 4,
+            "round": 1,
+            "decision": "bypass",
+            "utility": -1.55,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 5,
+            "round": 1,
+            "decision": "bypass",
+            "utility": -0.54,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 6,
+            "round": 1,
+            "decision": "bypass",
+            "utility": -3.27,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 7,
+            "round": 1,
+            "decision": "bypass",
+            "utility": -16.69,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 8,
+            "round": 1,
+            "decision": "bypass",
+            "utility": -11.66,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 9,
+            "round": 1,
+            "decision": "bypass",
+            "utility": -4.9,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 10,
+            "round": 1,
+            "decision": "bypass",
+            "utility": -20.15,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 11,
+            "round": 1,
+            "decision": "bypass",
+            "utility": -10.77,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 12,
+            "round": 1,
+            "decision": "bypass",
+            "utility": -4.07,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 13,
+            "round": 1,
+            "decision": "bypass",
+            "utility": -1.69,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 14,
+            "round": 1,
+            "decision": "allow",
+            "utility": 6.09,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 15,
+            "round": 1,
+            "decision": "allow",
+            "utility": 8.46,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 16,
+            "round": 1,
+            "decision": "allow",
+            "utility": 2.21,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 17,
+            "round": 1,
+            "decision": "allow",
+            "utility": 11.67,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 18,
+            "round": 1,
+            "decision": "allow",
+            "utility": 10.08,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 19,
+            "round": 1,
+            "decision": "allow",
+            "utility": 8.71,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 35,
+            "round": 2,
+            "decision": "bypass",
+            "utility": -20.69,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 36,
+            "round": 2,
+            "decision": "bypass",
+            "utility": -5.61,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 37,
+            "round": 2,
+            "decision": "bypass",
+            "utility": -7.04,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 38,
+            "round": 2,
+            "decision": "bypass",
+            "utility": -1.44,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 39,
+            "round": 2,
+            "decision": "bypass",
+            "utility": -14.59,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 40,
+            "round": 2,
+            "decision": "bypass",
+            "utility": -0.36,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 41,
+            "round": 2,
+            "decision": "bypass",
+            "utility": -7.73,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 42,
+            "round": 2,
+            "decision": "allow",
+            "utility": 3.39,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 43,
+            "round": 2,
+            "decision": "allow",
+            "utility": 6.23,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 44,
+            "round": 2,
+            "decision": "allow",
+            "utility": 10.08,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 45,
+            "round": 2,
+            "decision": "allow",
+            "utility": 8.37,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 46,
+            "round": 2,
+            "decision": "allow",
+            "utility": 5.42,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 47,
+            "round": 2,
+            "decision": "allow",
+            "utility": 3.01,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 48,
+            "round": 2,
+            "decision": "allow",
+            "utility": 11.4,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 49,
+            "round": 2,
+            "decision": "allow",
+            "utility": 4.32,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 65,
+            "round": 3,
+            "decision": "bypass",
+            "utility": -13.55,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 66,
+            "round": 3,
+            "decision": "bypass",
+            "utility": -4.39,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 67,
+            "round": 3,
+            "decision": "bypass",
+            "utility": -8.04,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 68,
+            "round": 3,
+            "decision": "bypass",
+            "utility": -19.07,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 69,
+            "round": 3,
+            "decision": "bypass",
+            "utility": -2.98,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 70,
+            "round": 3,
+            "decision": "allow",
+            "utility": 6.39,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 71,
+            "round": 3,
+            "decision": "allow",
+            "utility": 8.16,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 72,
+            "round": 3,
+            "decision": "allow",
+            "utility": 11.23,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 73,
+            "round": 3,
+            "decision": "allow",
+            "utility": 9.32,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 74,
+            "round": 3,
+            "decision": "allow",
+            "utility": 4.79,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 75,
+            "round": 3,
+            "decision": "allow",
+            "utility": 2.75,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 76,
+            "round": 3,
+            "decision": "allow",
+            "utility": 4.8,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 77,
+            "round": 3,
+            "decision": "allow",
+            "utility": 5.49,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 78,
+            "round": 3,
+            "decision": "allow",
+            "utility": 7.89,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 79,
+            "round": 3,
+            "decision": "allow",
+            "utility": 9.37,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 95,
+            "round": 4,
+            "decision": "bypass",
+            "utility": -1.53,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 96,
+            "round": 4,
+            "decision": "bypass",
+            "utility": -2.83,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 97,
+            "round": 4,
+            "decision": "bypass",
+            "utility": -4.74,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 98,
+            "round": 4,
+            "decision": "bypass",
+            "utility": -4.89,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 99,
+            "round": 4,
+            "decision": "allow",
+            "utility": 9.3,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 100,
+            "round": 4,
+            "decision": "allow",
+            "utility": 10.9,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 101,
+            "round": 4,
+            "decision": "allow",
+            "utility": 11.75,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 102,
+            "round": 4,
+            "decision": "allow",
+            "utility": 8.71,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 103,
+            "round": 4,
+            "decision": "allow",
+            "utility": 5.44,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 104,
+            "round": 4,
+            "decision": "allow",
+            "utility": 10.08,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 105,
+            "round": 4,
+            "decision": "allow",
+            "utility": 2.93,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 106,
+            "round": 4,
+            "decision": "allow",
+            "utility": 8.6,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 107,
+            "round": 4,
+            "decision": "allow",
+            "utility": 10.66,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 108,
+            "round": 4,
+            "decision": "allow",
+            "utility": 2.4,
+            "skip_write": false,
+            "skip_lookup": false
+          },
+          {
+            "request": 109,
+            "round": 4,
+            "decision": "allow",
+            "utility": 8.74,
+            "skip_write": false,
+            "skip_lookup": false
+          }
+        ]
+      },
+      "rounds": [
+        {
+          "round": 1,
+          "rec_rate": 0.7971,
+          "evictions": 8,
+          "declined": 14,
+          "churn_lat_ms": 78.08,
+          "rec_lat_ms": 62.81
+        },
+        {
+          "round": 2,
+          "rec_rate": 0.6703,
+          "evictions": 9,
+          "declined": 7,
+          "churn_lat_ms": 78.48,
+          "rec_lat_ms": 69.47
+        },
+        {
+          "round": 3,
+          "rec_rate": 0.594,
+          "evictions": 7,
+          "declined": 5,
+          "churn_lat_ms": 77.68,
+          "rec_lat_ms": 72.41
+        },
+        {
+          "round": 4,
+          "rec_rate": 0.5234,
+          "evictions": 7,
+          "declined": 4,
+          "churn_lat_ms": 78.32,
+          "rec_lat_ms": 76.41
+        }
+      ]
+    }
+  }
+}

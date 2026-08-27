@@ -1,0 +1,38 @@
+[
+  {
+    "model": "qwen25_15b",
+    "dataset": "samsum",
+    "sample_idx": 0,
+    "shared_ratio": 0.75,
+    "shared_tokens": 19,
+    "total_tokens_orig": 26,
+    "total_tokens_mod": 26,
+    "exact_text": " \nJerry: Thanks! :-)\n\nWhat was that dialogue about, in two sentences or less? Amanda invited Jerry to come over and eat her cookies tomorrow. Jerry accepted the invitation.",
+    "ref_text": "\nJerry: Thanks! :-)\n\nWhat was that dialogue about, in two sentences or less? Amanda invited Jerry to come over and eat cookies tomorrow.",
+    "reuse_text": "\nJerry: Thanks! I'll be back tomorrow\nAmanda: Great! I'll be waiting for you\nJerry: I'll be back tomorrow\nAmanda: Great! I'll be waiting for you\nJerry: I'll be"
+  },
+  {
+    "model": "qwen25_15b",
+    "dataset": "samsum",
+    "sample_idx": 0,
+    "shared_ratio": 0.75,
+    "shared_tokens": 22,
+    "total_tokens_orig": 30,
+    "total_tokens_mod": 30,
+    "exact_text": ", I'm glad we agree on something. \nOlivia: But why do you think they're the best choice?\nOliver: Well, they have a good track record of helping people and making things better for everyone.\n\nWhat was that",
+    "ref_text": "?\nOliver: Yes, I'm a Liberal. Why do you ask?\nMe Great: Well, it's just that I've never seen anyone vote for the Liberals before.\n\nWhat was that dialogue about, in two sentences or less?\n\n",
+    "reuse_text": "? I'm voting for the Green Party. \nOlivia: Really? I didn't know you were a Green Party supporter. \nMe Great: I am. I've been a Green Party supporter for a long time. \nOlivia"
+  },
+  {
+    "model": "qwen25_15b",
+    "dataset": "samsum",
+    "sample_idx": 0,
+    "shared_ratio": 0.75,
+    "shared_tokens": 101,
+    "total_tokens_orig": 135,
+    "total_tokens_mod": 135,
+    "exact_text": "ar. They help me remember things better\nKim: That sounds cool too\nTim: And if you're not sure about something, just ask me or someone else\nKim: Thanks Tim! You've been super helpful\nTim: No",
+    "ref_text": " 5 minutes every 25 minutes. Kim: That sounds good! Tim: Yeah, it works wonders for me.\nKim: Thanks!\nTim: No problem, just wanted to help out with your bad mood\nKim: You're",
+    "reuse_text": " 5 minutes\nKim: I'm not sure if I can do that\nTim: It's not a big deal, just try it out\nKim: I'll try it out\nTim: Great, I'll be here when you"
+  }
+]

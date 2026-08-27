@@ -1,0 +1,45 @@
+{
+  "warm": {
+    "latency_ms": 15987.27257799999,
+    "prompt_tokens": 522,
+    "completion_tokens": 1,
+    "cached_tokens": 0,
+    "text": " Cache",
+    "token_ids": [
+      19479
+    ],
+    "logprob_tokens": [
+      "token_id:19479"
+    ],
+    "finish_reason": "length"
+  },
+  "hit": {
+    "latency_ms": 10645.054092999999,
+    "prompt_tokens": 522,
+    "completion_tokens": 1,
+    "cached_tokens": 512,
+    "text": " Cache",
+    "token_ids": [
+      19479
+    ],
+    "logprob_tokens": [
+      "token_id:19479"
+    ],
+    "finish_reason": "length"
+  },
+  "bypass": {
+    "latency_ms": 251.42514000003757,
+    "prompt_tokens": 522,
+    "completion_tokens": 1,
+    "cached_tokens": 0,
+    "text": " Cache",
+    "token_ids": [
+      19479
+    ],
+    "logprob_tokens": [
+      "token_id:19479"
+    ],
+    "finish_reason": "length"
+  },
+  "passed": true
+}

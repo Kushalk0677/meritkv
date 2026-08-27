@@ -46,6 +46,7 @@ except ModuleNotFoundError:
     )
 
 
+# Launch and measure the SGLang HiCache baseline.
 def main() -> None:
     parser = argparse.ArgumentParser()
     add_workload_args(parser)

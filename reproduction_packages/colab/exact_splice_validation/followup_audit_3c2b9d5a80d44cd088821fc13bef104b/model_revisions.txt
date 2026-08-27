@@ -1,0 +1,5 @@
+gpt2  gpt2  607a30d783dfa663caf39e06633721c8d4cfcd7e
+tinyllama  TinyLlama/TinyLlama-1.1B-Chat-v1.0  fe8a4ea1ffedaf415f4da2f062534de366a451e6
+qwen25_15b  Qwen/Qwen2.5-1.5B-Instruct  989aa7980e4cf806f80c7fef2b1adb7bc71aa306
+gemma2b  google/gemma-2b-it  96988410cbdaeb8d5093d1ebdc5a8fb563e02bad
+phi3mini  microsoft/Phi-3-mini-4k-instruct  f39ac1d28e925b323eae81227eaba4464caced4e

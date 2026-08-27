@@ -1,0 +1,56 @@
+[
+  {
+    "model_slug": "qwen25_15b",
+    "comparison": "lmcache_no_native_radix_vs_sglang_radix_attention",
+    "paired_cells": 30,
+    "mean_latency_delta_pct": 9.327844870704633,
+    "mean_p95_delta_pct": 15.761124905296402,
+    "mean_throughput_delta_pct": -8.244946973014068,
+    "cached_token_delta_total": -1031758
+  },
+  {
+    "model_slug": "qwen25_15b",
+    "comparison": "sglang_radix_attention_shadowkv_plus_vs_sglang_radix_attention",
+    "paired_cells": 30,
+    "mean_latency_delta_pct": 1.1398733120805928,
+    "mean_p95_delta_pct": 1.5370872557140816,
+    "mean_throughput_delta_pct": -1.0973895893223509,
+    "cached_token_delta_total": 0
+  },
+  {
+    "model_slug": "qwen25_3b",
+    "comparison": "lmcache_no_native_radix_vs_sglang_radix_attention",
+    "paired_cells": 30,
+    "mean_latency_delta_pct": 10.354205862094215,
+    "mean_p95_delta_pct": 17.05509737595611,
+    "mean_throughput_delta_pct": -9.128741591776349,
+    "cached_token_delta_total": -1031758
+  },
+  {
+    "model_slug": "qwen25_3b",
+    "comparison": "sglang_radix_attention_shadowkv_plus_vs_sglang_radix_attention",
+    "paired_cells": 30,
+    "mean_latency_delta_pct": 0.7964409461391018,
+    "mean_p95_delta_pct": 0.8187511575753571,
+    "mean_throughput_delta_pct": -0.7816796577524259,
+    "cached_token_delta_total": 0
+  },
+  {
+    "model_slug": "qwen25_7b",
+    "comparison": "lmcache_no_native_radix_vs_sglang_radix_attention",
+    "paired_cells": 30,
+    "mean_latency_delta_pct": 15.474149624992652,
+    "mean_p95_delta_pct": 30.180983489446223,
+    "mean_throughput_delta_pct": -13.207221143523208,
+    "cached_token_delta_total": -1031758
+  },
+  {
+    "model_slug": "qwen25_7b",
+    "comparison": "sglang_radix_attention_shadowkv_plus_vs_sglang_radix_attention",
+    "paired_cells": 30,
+    "mean_latency_delta_pct": -2.8942332613586514,
+    "mean_p95_delta_pct": -2.7499775776934428,
+    "mean_throughput_delta_pct": 2.98301161327486,
+    "cached_token_delta_total": 0
+  }
+]

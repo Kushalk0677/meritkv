@@ -6,6 +6,7 @@ from typing import Dict, List, Sequence, Tuple
 from proactive_kv_cache.engines import ReactivePrefixCacheEngine
 
 
+# Non-deployable future-reuse upper-bound baseline.
 class OracleFutureReuseEngine(ReactivePrefixCacheEngine):
     """Offline future-aware exact-prefix oracle kept outside the main harness."""
 

@@ -1,0 +1,158 @@
+{
+  "reports": [
+    {
+      "file": "tiny_llama_cpu_f32.json",
+      "environment": {
+        "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+        "platform": "Windows-11-10.0.26200-SP0",
+        "torch": "2.11.0+cpu",
+        "transformers": "5.7.0",
+        "cuda_available": false,
+        "cuda_version": null
+      },
+      "configuration": {
+        "model_id": null,
+        "tiny_model": "tiny-llama",
+        "revision": null,
+        "device": "cpu",
+        "dtype": "float32",
+        "attention_implementation": "eager",
+        "sequence_length": 32,
+        "shared_ratios": [
+          0.25,
+          0.5,
+          0.75
+        ],
+        "samples": 3,
+        "max_new_tokens": 8,
+        "seed": 42,
+        "atol": 1e-05,
+        "rtol": 1e-05,
+        "passes_cache_position": true,
+        "passes_position_ids": true
+      },
+      "summary": {
+        "cases": 9,
+        "strict_passes": 9,
+        "cache_passes": 9,
+        "native_token_passes": 9,
+        "splice_token_passes": 9,
+        "all_strict_pass": true
+      },
+      "max_abs": {
+        "prefix_cache": 0.0,
+        "suffix_native_vs_full": 0.0,
+        "suffix_splice_vs_full": 0.0,
+        "suffix_splice_vs_native": 0.0,
+        "generation_native_vs_full": 2.086162567138672e-07,
+        "generation_splice_vs_full": 2.086162567138672e-07,
+        "generation_splice_vs_native": 0.0
+      },
+      "first_native_token_mismatch": null,
+      "first_splice_token_mismatch": null
+    },
+    {
+      "file": "tiny_qwen2_cpu_bf16.json",
+      "environment": {
+        "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+        "platform": "Windows-11-10.0.26200-SP0",
+        "torch": "2.11.0+cpu",
+        "transformers": "5.7.0",
+        "cuda_available": false,
+        "cuda_version": null
+      },
+      "configuration": {
+        "model_id": null,
+        "tiny_model": "tiny-qwen2",
+        "revision": null,
+        "device": "cpu",
+        "dtype": "bfloat16",
+        "attention_implementation": "eager",
+        "sequence_length": 32,
+        "shared_ratios": [
+          0.25,
+          0.5,
+          0.75
+        ],
+        "samples": 3,
+        "max_new_tokens": 8,
+        "seed": 42,
+        "atol": 0.02,
+        "rtol": 0.02,
+        "passes_cache_position": true,
+        "passes_position_ids": true
+      },
+      "summary": {
+        "cases": 9,
+        "strict_passes": 9,
+        "cache_passes": 9,
+        "native_token_passes": 9,
+        "splice_token_passes": 9,
+        "all_strict_pass": true
+      },
+      "max_abs": {
+        "prefix_cache": 0.0,
+        "suffix_native_vs_full": 0.0,
+        "suffix_splice_vs_full": 0.0,
+        "suffix_splice_vs_native": 0.0,
+        "generation_native_vs_full": 0.001953125,
+        "generation_splice_vs_full": 0.001953125,
+        "generation_splice_vs_native": 0.0
+      },
+      "first_native_token_mismatch": null,
+      "first_splice_token_mismatch": null
+    },
+    {
+      "file": "tiny_qwen2_cpu_f32.json",
+      "environment": {
+        "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+        "platform": "Windows-11-10.0.26200-SP0",
+        "torch": "2.11.0+cpu",
+        "transformers": "5.7.0",
+        "cuda_available": false,
+        "cuda_version": null
+      },
+      "configuration": {
+        "model_id": null,
+        "tiny_model": "tiny-qwen2",
+        "revision": null,
+        "device": "cpu",
+        "dtype": "float32",
+        "attention_implementation": "eager",
+        "sequence_length": 24,
+        "shared_ratios": [
+          0.5,
+          0.75
+        ],
+        "samples": 2,
+        "max_new_tokens": 4,
+        "seed": 42,
+        "atol": 1e-05,
+        "rtol": 1e-05,
+        "passes_cache_position": true,
+        "passes_position_ids": true
+      },
+      "summary": {
+        "cases": 4,
+        "strict_passes": 4,
+        "cache_passes": 4,
+        "native_token_passes": 4,
+        "splice_token_passes": 4,
+        "all_strict_pass": true
+      },
+      "max_abs": {
+        "prefix_cache": 0.0,
+        "suffix_native_vs_full": 0.0,
+        "suffix_splice_vs_full": 0.0,
+        "suffix_splice_vs_native": 0.0,
+        "generation_native_vs_full": 2.384185791015625e-07,
+        "generation_splice_vs_full": 2.384185791015625e-07,
+        "generation_splice_vs_native": 0.0
+      },
+      "first_native_token_mismatch": null,
+      "first_splice_token_mismatch": null
+    }
+  ],
+  "all_reports_strict_pass": true,
+  "all_reports_token_pass": true
+}

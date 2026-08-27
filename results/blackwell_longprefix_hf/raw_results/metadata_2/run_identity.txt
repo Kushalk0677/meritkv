@@ -1,0 +1,4 @@
+run_id=qwen14b_longprefix_n128_20260711
+project=/home/jade_hand/research/shadowkv/hf_blackwell_semantic_n128_longprefix_20260710
+results=/home/jade_hand/research/shadowkv/hf_blackwell_semantic_n128_longprefix_20260710/results_blackwell_semantic_qwen14b_longprefix_n128_20260711
+image=shadowkv-hf-blackwell:20260706

@@ -1,0 +1,50 @@
+{
+  "vllm_apc": {
+    "mean_latency_ms": 5.152905863646601,
+    "p50_latency_ms": 5.0253719535269585,
+    "p95_latency_ms": 5.8727829734183965,
+    "p99_latency_ms": 5.784808129419394,
+    "p999_latency_ms": 6.7139118940348075,
+    "throughput_rps": 200.22461497101528,
+    "service_throughput_rps": 193.0199992570799,
+    "hit_rate": 0.5,
+    "reuse_attempts": 256,
+    "reuse_successes": 128,
+    "reuse_failures": 0,
+    "reuse_backend_fallbacks": 0,
+    "store_attempts": 0,
+    "store_successes": 0,
+    "store_skips": 0,
+    "bypassed_matches": 0,
+    "requests_seen": 256,
+    "reused_prefix_tokens_total": 16640.0,
+    "recompute_tokens_total": 0.0,
+    "cached_tokens_mean": 130.0,
+    "admission_controller_enabled": false,
+    "wasted_compute_ratio": 0.0,
+    "gpu_energy_j": 717.4725197258077,
+    "energy_source": "nvml",
+    "gpu_joules_per_request": 2.8026270301789364,
+    "idle_adjusted_gpu_energy_j": 616.3048088711896
+  },
+  "config": {
+    "model": "google/gemma-4-31B-it",
+    "workload": "public_dataset",
+    "variant": "high_skew",
+    "dataset": "ag_news",
+    "prompt_mode": "rag",
+    "n_requests": 256,
+    "seed": 43,
+    "simulate_arrivals": false,
+    "measure_energy": true,
+    "gpu_index": 0,
+    "idle_baseline_seconds": 5.0,
+    "engine": "vllm"
+  },
+  "runtime": {
+    "runtime_kind": "vllm"
+  },
+  "idle_energy_baseline": {
+    "energy_source": "nvml"
+  }
+}

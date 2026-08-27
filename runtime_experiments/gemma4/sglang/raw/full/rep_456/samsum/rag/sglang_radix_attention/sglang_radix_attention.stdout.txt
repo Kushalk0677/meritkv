@@ -1,0 +1,2 @@
+Benchmark sglang_radix_attention for google/gemma-4-31B-it samsum rag seed=456
+Latency: 99.73ms, Throughput: 9.87 rps

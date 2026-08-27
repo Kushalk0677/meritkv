@@ -1,0 +1,8 @@
+{
+  "native_apc": {
+    "mean_latency_ms": 77.34,
+    "final_round_recovery": 0.2168,
+    "total_evictions": 49,
+    "declined_admissions_phase1": 0
+  }
+}

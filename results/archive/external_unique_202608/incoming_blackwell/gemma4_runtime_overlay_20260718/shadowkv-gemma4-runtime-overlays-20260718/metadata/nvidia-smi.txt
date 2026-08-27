@@ -1,0 +1,35 @@
+Sat Jul 18 14:04:48 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.119.02             Driver Version: 580.119.02     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX PRO 6000 Blac...    Off |   00000000:01:00.0  On |                  Off |
+| 30%   30C    P8             23W /  600W |   87307MiB /  97887MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A             408      C   VLLM::EngineCore                      86500MiB |
+|    0   N/A  N/A            2988      G   ...d2a-xorg-server-21.1.21/bin/X        211MiB |
+|    0   N/A  N/A           25354      G   ...workspace-6.5.5/bin/ksmserver          9MiB |
+|    0   N/A  N/A           25356      G   ...ysndv7f-kded-6.20.0/bin/kded6          9MiB |
+|    0   N/A  N/A           25357      G   ...m-kwin-x11-6.5.5/bin/kwin_x11         32MiB |
+|    0   N/A  N/A           25435      G   ...rkspace-6.5.5/bin/plasmashell         97MiB |
+|    0   N/A  N/A           25499      G   ...sma-desktop-6.5.5/bin/kaccess          9MiB |
+|    0   N/A  N/A           25500      G   ...it-kde-authentication-agent-1          9MiB |
+|    0   N/A  N/A           25678      G   ....5.5/libexec/DiscoverNotifier          9MiB |
+|    0   N/A  N/A           25726      G   ...ibexec/xdg-desktop-portal-kde          9MiB |
+|    0   N/A  N/A          374614      G   ...ace-6.5.5/libexec/baloorunner          9MiB |
+|    0   N/A  N/A          374676      G   ...current-system/sw/bin/konsole          9MiB |
+|    0   N/A  N/A          384105      G   ...share/Steam/ubuntu12_32/steam         19MiB |
+|    0   N/A  N/A          384574      G   ./steamwebhelper                          9MiB |
+|    0   N/A  N/A          384639    C+G   ...am/ubuntu12_64/steamwebhelper         16MiB |
+|    0   N/A  N/A         3836656      G   ...release/linux-unpacked/Hermes         96MiB |
++-----------------------------------------------------------------------------------------+

@@ -1,0 +1,12 @@
+sample=0 ratio=0.50 shared=12/24
+{
+  "cases": 1,
+  "strict_passes": 1,
+  "token_semantic_passes": 1,
+  "cache_passes": 1,
+  "native_token_passes": 1,
+  "splice_token_passes": 1,
+  "all_strict_pass": true,
+  "all_token_semantic_pass": true
+}
+wrote /content/meritkv_exact_splice_validation_outputs/self_test/harness_self_test.json

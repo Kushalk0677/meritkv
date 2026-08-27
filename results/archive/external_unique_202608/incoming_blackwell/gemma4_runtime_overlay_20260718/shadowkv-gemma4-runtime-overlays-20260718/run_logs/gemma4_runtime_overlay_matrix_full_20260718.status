@@ -1,0 +1,7 @@
+state=completed
+mode=full
+updated_at=2026-07-18T18:03:58-04:00
+project=/home/jade_hand/research/shadowkv/gemma4_runtime_overlay_matrix_20260718
+result_root=/home/jade_hand/research/shadowkv/gemma4_runtime_overlay_matrix_20260718/results_full
+log=/home/jade_hand/research/shadowkv/gemma4_runtime_overlay_matrix_20260718/run_logs/gemma4_runtime_overlay_matrix_full_20260718.log
+production_restored=true

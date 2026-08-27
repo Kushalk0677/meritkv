@@ -45,6 +45,8 @@ The private ShadowKV repository retains the frozen configuration, implementation
 
 - Evidence-package SHA-256: `e7943267252fe160afdbbe37c72884eccd029cc66f22419688657d962d5f749b`
 - Completion-receipt SHA-256: `476f33dab27e65e5e9f750fde3e25bd6dbccf085398d7791d1a6395eea9776ee`
+- Original ZIP: `evidence_packages/2026-08-20/archives/MeritKV-Blackwell-native-enforcement-evidence-2026-08-20.zip`
+- Complete byte-verified expansion: `evidence_packages/2026-08-20/native_enforcement_package/`
 
 ## Gemma-4-31B storage-admission extension
 
@@ -74,3 +76,7 @@ all four hot families, so recovery is not a differentiating Qwen outcome.
 - Curated report, per-seed aggregates, and code: `storage_admission_extension_qwen25_32b/`
 - Complete extracted package and original ZIP: `evidence_packages/2026-08-24/`
 - Package SHA-256: `5b2b81fd335ab89266591a94582b43b15bfa07e0037ff1caec5752cd8f242f7c`
+
+The Qwen package's frozen source-closure paths use POSIX separators. Replay its
+bundled verifier under Linux or WSL; native Windows Python reports a path-set
+mismatch even though the files and hashes are identical.

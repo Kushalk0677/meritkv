@@ -1,0 +1,38 @@
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/338 [00:00<04:18,  1.30it/s]
+Loading weights:  19%|█▉        | 65/338 [00:00<00:02, 100.36it/s]
+Loading weights:  30%|██▉       | 100/338 [00:01<00:02, 117.14it/s]
+Loading weights:  37%|███▋      | 126/338 [00:01<00:01, 125.51it/s]
+Loading weights:  44%|████▍     | 148/338 [00:01<00:01, 131.33it/s]
+Loading weights:  50%|████▉     | 168/338 [00:01<00:01, 142.77it/s]
+Loading weights:  56%|█████▌    | 188/338 [00:01<00:01, 137.55it/s]
+Loading weights:  61%|██████    | 207/338 [00:01<00:00, 139.38it/s]
+Loading weights:  66%|██████▋   | 224/338 [00:01<00:00, 131.60it/s]
+Loading weights:  72%|███████▏  | 243/338 [00:02<00:00, 141.50it/s]
+Loading weights:  77%|███████▋  | 259/338 [00:02<00:00, 133.79it/s]
+Loading weights:  83%|████████▎ | 279/338 [00:02<00:00, 147.62it/s]
+Loading weights:  87%|████████▋ | 295/338 [00:02<00:00, 143.55it/s]
+Loading weights:  93%|█████████▎| 315/338 [00:02<00:00, 147.41it/s]
+Loading weights:  98%|█████████▊| 331/338 [00:02<00:00, 137.15it/s]
+Loading weights: 100%|██████████| 338/338 [00:02<00:00, 124.02it/s]
+sample=0 ratio=0.50 shared=64/128
+sample=0 ratio=0.75 shared=96/128
+sample=1 ratio=0.50 shared=64/128
+sample=1 ratio=0.75 shared=96/128
+sample=2 ratio=0.50 shared=64/128
+sample=2 ratio=0.75 shared=96/128
+sample=3 ratio=0.50 shared=64/128
+sample=3 ratio=0.75 shared=96/128
+{
+  "cases": 8,
+  "strict_passes": 0,
+  "token_semantic_passes": 8,
+  "cache_passes": 4,
+  "native_token_passes": 8,
+  "splice_token_passes": 8,
+  "all_strict_pass": false,
+  "all_token_semantic_pass": true
+}
+wrote /content/meritkv_exact_splice_validation_outputs/qwen25_15b_t4_f16_sdpa.json

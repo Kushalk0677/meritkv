@@ -1,0 +1,23 @@
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 148/148 [00:00<00:00, 7980.73it/s]
+sample=0 mode=random ratio=0.50 shared=64/128
+sample=0 mode=random ratio=0.75 shared=96/128
+sample=1 mode=random ratio=0.50 shared=64/128
+sample=1 mode=random ratio=0.75 shared=96/128
+sample=2 mode=random ratio=0.50 shared=64/128
+sample=2 mode=random ratio=0.75 shared=96/128
+sample=3 mode=random ratio=0.50 shared=64/128
+sample=3 mode=random ratio=0.75 shared=96/128
+{
+  "cases": 8,
+  "strict_passes": 4,
+  "token_semantic_passes": 8,
+  "cache_passes": 4,
+  "native_token_passes": 8,
+  "splice_token_passes": 8,
+  "all_strict_pass": false,
+  "all_token_semantic_pass": true
+}
+wrote /content/meritkv_exact_splice_followup_outputs/gpt2_t4_f32_sdpa_random.json
