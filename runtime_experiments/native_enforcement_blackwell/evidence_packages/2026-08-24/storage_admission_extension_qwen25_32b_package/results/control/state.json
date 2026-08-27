@@ -1,0 +1,8 @@
+{
+  "detail": "31 cells and 3344 requests verified; production restored",
+  "experiment": "meritkv_qwen25_capacity_pressure_20260824",
+  "phase": "verified",
+  "pid": 2097380,
+  "status": "complete",
+  "updated_at": "2026-08-24T00:13:50.737449-04:00"
+}

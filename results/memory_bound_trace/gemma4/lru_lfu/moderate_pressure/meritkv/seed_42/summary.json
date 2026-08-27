@@ -1,0 +1,8 @@
+{
+  "meritkv": {
+    "mean_latency_ms": 62.67,
+    "final_round_recovery": 0.8808,
+    "total_evictions": 5,
+    "declined_admissions_phase1": 15
+  }
+}

@@ -1,5 +1,9 @@
 # Raw-Mode Conservative Gate Patch
 
+> **Historical implementation report:** Retained for development provenance.
+> Its patch-level observations are not paper-facing aggregate evidence; the
+> manuscript is the sole authority for current claims.
+
 This patch makes MeritKV more conservative on raw prompt workloads.
 
 ## Problem

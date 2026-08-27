@@ -1,0 +1,1 @@
+{"counters": {"extra_key_controls_total": 68, "radix_skip_lookup_total": 68, "radix_skip_write_finished_total": 68, "skip_lookup_requested_total": 68, "skip_write_requested_total": 68}, "path": "/workspace/results/control/evaluation_position_6_lru_action_counters.json", "updated_at": 1787543363.0520988}

@@ -1,0 +1,7 @@
+vllm==0.19.2rc1.dev107+g4eafc7292.cu130
+sglang=unavailable (No package metadata was found for sglang)
+torch==2.11.0+cu130
+transformers==5.5.4
+datasets==4.8.5
+numpy==2.2.6
+flashinfer-python==0.6.8.post1

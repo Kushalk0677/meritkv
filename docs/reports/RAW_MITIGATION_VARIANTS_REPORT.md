@@ -1,5 +1,9 @@
 # Raw-mode Mitigation Variants
 
+> **Historical implementation report:** Retained for development provenance.
+> Its ablation results are not paper-facing aggregate evidence; the manuscript
+> is the sole authority for current claims.
+
 ## Engine Name Aliases
 
 Raw artifacts keep stable engine IDs: `shadow_kv_plus` displays as MeritKV, `shadow_kv` displays as MeritKV-Sem, and `shadow_kv_plus_lite` displays as MeritKV-Lite.

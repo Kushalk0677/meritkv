@@ -1,0 +1,1 @@
+{"content": "Red", "elapsed_seconds": 0.137, "model": "qwen38-27b-fp8", "ok": true, "status": 200, "usage": {"completion_tokens": 2, "prompt_tokens": 86, "prompt_tokens_details": {"cached_tokens": 0, "image_tokens": 64}, "reasoning_tokens": 0, "total_tokens": 88}}

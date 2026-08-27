@@ -1,0 +1,209 @@
+{
+  "arms": [
+    "native_admit_all_lru",
+    "meritkv_write_through_lru",
+    "meritkv_skip_write_only_lru",
+    "meritkv_joint_skip_write_skip_lookup_lru",
+    "native_admit_all_lfu"
+  ],
+  "cache_topology": "Qwen RadixCache for every arm; hybrid_swa=False",
+  "calibration_seed": 32000,
+  "evaluation_design": {
+    "balance_rule": "five cyclic Latin rows; over five seeds every arm appears once per seed and exactly once in each chronological position",
+    "cells": 25,
+    "chronological_execution_required": true,
+    "plan": "evaluation_plan_25.tsv",
+    "plan_sha256": "58904932f13be76a7d13bc0d2bbe7e252ec52d5feef50b7272a791ff9fbcdb54",
+    "position_counts_by_arm": {
+      "meritkv_joint_skip_write_skip_lookup_lru": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1
+      },
+      "meritkv_skip_write_only_lru": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1
+      },
+      "meritkv_write_through_lru": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1
+      },
+      "native_admit_all_lfu": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1
+      },
+      "native_admit_all_lru": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1
+      }
+    }
+  },
+  "evaluation_seeds": [
+    32001,
+    32002,
+    32003,
+    32004,
+    32005
+  ],
+  "generator_sha256": "f74de1c8bc40b763bdfa54aa6914ccf6977a53f994540cf5f312d6dd7d38897a",
+  "lfu_frequency_aware_baseline": {
+    "gate": "feasibility/lfu_feasibility_gate.json",
+    "gate_sha256": "4dcc0c73a41f43693c3a4e16d05a3375a48d60ec2104a47636fb93a4e760138f",
+    "scientific_disposition": "abort_extension_if_gate_fails",
+    "status": "included_fail_closed_pending_gpu_preflight"
+  },
+  "schema_version": 1,
+  "smoke_design": {
+    "cells": 5,
+    "plan": "smoke_plan_5.tsv",
+    "plan_sha256": "e1c6128335062a65c846e53a9ebff138eac1a7c8d78643fc2c54d02cdc8da769"
+  },
+  "smoke_seed": 32010,
+  "traces": {
+    "traces/calibration_seed_32000.jsonl": {
+      "class_counts": {
+        "hot_bootstrap": 4,
+        "hot_established_probe": 4,
+        "hot_post_pressure_probe": 4,
+        "hot_pressure_probe": 16,
+        "hot_recovery_probe": 4,
+        "long_one_off_prefix": 32
+      },
+      "phase_counts": {
+        "bootstrap_hot_set": 4,
+        "capacity_pressure_with_hot_probes": 48,
+        "establish_hot_hits": 4,
+        "post_pressure_probe": 4,
+        "recovery": 4
+      },
+      "requests": 64,
+      "sha256": "eff3a518a54c15f164ee96fcfe535765255e1d3354dc4572c092a2eb03fdcf75"
+    },
+    "traces/evaluation_seed_32001.jsonl": {
+      "class_counts": {
+        "hot_bootstrap": 4,
+        "hot_established_probe": 8,
+        "hot_post_pressure_probe": 4,
+        "hot_pressure_probe": 32,
+        "hot_recovery_probe": 12,
+        "long_one_off_prefix": 64
+      },
+      "phase_counts": {
+        "bootstrap_hot_set": 4,
+        "capacity_pressure_with_hot_probes": 96,
+        "establish_hot_hits": 8,
+        "post_pressure_probe": 4,
+        "recovery": 12
+      },
+      "requests": 124,
+      "sha256": "f18df913b67c0d0db12d2e69c69e938b1ea244e471bc4b7aeb6fa4f7f24eef5f"
+    },
+    "traces/evaluation_seed_32002.jsonl": {
+      "class_counts": {
+        "hot_bootstrap": 4,
+        "hot_established_probe": 8,
+        "hot_post_pressure_probe": 4,
+        "hot_pressure_probe": 32,
+        "hot_recovery_probe": 12,
+        "long_one_off_prefix": 64
+      },
+      "phase_counts": {
+        "bootstrap_hot_set": 4,
+        "capacity_pressure_with_hot_probes": 96,
+        "establish_hot_hits": 8,
+        "post_pressure_probe": 4,
+        "recovery": 12
+      },
+      "requests": 124,
+      "sha256": "53ad53bdad3f318f3d4c747daad514f525c0b20255acb2fb93dc18ba0da3866b"
+    },
+    "traces/evaluation_seed_32003.jsonl": {
+      "class_counts": {
+        "hot_bootstrap": 4,
+        "hot_established_probe": 8,
+        "hot_post_pressure_probe": 4,
+        "hot_pressure_probe": 32,
+        "hot_recovery_probe": 12,
+        "long_one_off_prefix": 64
+      },
+      "phase_counts": {
+        "bootstrap_hot_set": 4,
+        "capacity_pressure_with_hot_probes": 96,
+        "establish_hot_hits": 8,
+        "post_pressure_probe": 4,
+        "recovery": 12
+      },
+      "requests": 124,
+      "sha256": "f1beb2c241fc24d0c9188eca8984dc4472f3edcb728c0a1f9ac26e946c9fdd26"
+    },
+    "traces/evaluation_seed_32004.jsonl": {
+      "class_counts": {
+        "hot_bootstrap": 4,
+        "hot_established_probe": 8,
+        "hot_post_pressure_probe": 4,
+        "hot_pressure_probe": 32,
+        "hot_recovery_probe": 12,
+        "long_one_off_prefix": 64
+      },
+      "phase_counts": {
+        "bootstrap_hot_set": 4,
+        "capacity_pressure_with_hot_probes": 96,
+        "establish_hot_hits": 8,
+        "post_pressure_probe": 4,
+        "recovery": 12
+      },
+      "requests": 124,
+      "sha256": "0d0a7abadcf8c32c41b1e05e549c0e9eb8e9a6f75ba7e7af5f3869c625153c8b"
+    },
+    "traces/evaluation_seed_32005.jsonl": {
+      "class_counts": {
+        "hot_bootstrap": 4,
+        "hot_established_probe": 8,
+        "hot_post_pressure_probe": 4,
+        "hot_pressure_probe": 32,
+        "hot_recovery_probe": 12,
+        "long_one_off_prefix": 64
+      },
+      "phase_counts": {
+        "bootstrap_hot_set": 4,
+        "capacity_pressure_with_hot_probes": 96,
+        "establish_hot_hits": 8,
+        "post_pressure_probe": 4,
+        "recovery": 12
+      },
+      "requests": 124,
+      "sha256": "655a2ccc7fea49aeef5146afdfbdb2c30774e54f1d58c4d3004e453c4b2b4f59"
+    },
+    "traces/smoke_seed_32010.jsonl": {
+      "class_counts": {
+        "hot_bootstrap": 4,
+        "hot_established_probe": 4,
+        "hot_post_pressure_probe": 4,
+        "hot_pressure_probe": 8,
+        "long_one_off_prefix": 16
+      },
+      "phase_counts": {
+        "bootstrap_hot_set": 4,
+        "capacity_pressure_with_hot_probes": 24,
+        "establish_hot_hits": 4,
+        "post_pressure_probe": 4
+      },
+      "requests": 36,
+      "sha256": "17dcb2f617c7330e0d3d2f491330425328e26cb1d457583fef3073b23faa69a3"
+    }
+  }
+}

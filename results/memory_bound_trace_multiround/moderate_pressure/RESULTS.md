@@ -1,4 +1,4 @@
-# Four-Arm Multi-Round Admission Enforcement (56 GB budget (moderate pressure))
+# Four-Arm Multi-Round Admission Enforcement (56 GB, Moderate Pressure)
 
 **Model**: google/gemma-4-31B-it on Blackwell RTX PRO 6000
 **Trace**: 20 fill + [15 churn + 15] recovery x 4 rounds = 140 requests
@@ -21,9 +21,12 @@
 
 ### Table 2: Pairwise Decomposition
 
-| Overlay - Native | +0.0 ms (+0.0\\%) | 0.0 pp | Controller overhead |
-| Enforced - Overlay | -8.3 ms (-11.6\\%) | 41.0 pp | Enforcement benefit |
-| Enforced - Native | -8.3 ms (-11.6\\%) | 41.0 pp | Net system value |
+| Overlay - Native | +0.0 ms (+0.0%) | 0.0 pp | Controller overhead |
+| Enforced - Overlay | -8.3 ms (-11.6%) | 41.0 pp | Enforcement benefit |
+| Enforced - Native | -8.3 ms (-11.6%) | 41.0 pp | Net system value |
 
 * 5 seeds, CIs use Student's t-distribution (t_{4,0.025} = 2.776).
 * Per-request admission logs in seed-level trace.json files.
+
+This deliberately capacity-pressured trace supports a narrow locality and
+tail-behavior claim, not broad production acceleration across workloads.

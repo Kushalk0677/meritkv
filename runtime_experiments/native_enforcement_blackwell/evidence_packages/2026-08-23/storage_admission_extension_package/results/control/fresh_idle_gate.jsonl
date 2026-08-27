@@ -1,0 +1,14 @@
+{"at": "2026-08-23T04:33:14.194151+00:00", "container_id": "bd8f88b634ee5a038abf245115372ca6c1927230a1f69d9a50bc905b70d53b8a", "event": "idle_gate_started", "health": "healthy", "quiet_seconds_required": 120.0, "restart_count": 0, "status": "running"}
+{"at": "2026-08-23T04:33:14.211680+00:00", "counters": [{"decode_moments": [2612.0, 2612.0, 85833165.0, 2612.0, 85833165.0, 8533.0], "total_prefill_busy_us": 14565749, "total_prefill_uncached_tokens": 90112}], "event": "quiet_window_started"}
+{"at": "2026-08-23T04:33:30.297831+00:00", "event": "quiet_progress", "quiet_seconds": 16.1, "required": 120.0}
+{"at": "2026-08-23T04:33:46.382561+00:00", "event": "quiet_progress", "quiet_seconds": 32.2, "required": 120.0}
+{"at": "2026-08-23T04:33:58.450842+00:00", "counters": [{"decode_moments": [2612.0, 2612.0, 85833165.0, 2612.0, 85833165.0, 8533.0], "total_prefill_busy_us": 14565749, "total_prefill_uncached_tokens": 90112}], "event": "quiet_window_started"}
+{"at": "2026-08-23T04:34:02.471267+00:00", "counters": [{"decode_moments": [2612.0, 2612.0, 85833165.0, 2612.0, 85833165.0, 8533.0], "total_prefill_busy_us": 14565749, "total_prefill_uncached_tokens": 90112}], "event": "quiet_window_started"}
+{"at": "2026-08-23T04:34:18.556874+00:00", "event": "quiet_progress", "quiet_seconds": 16.1, "required": 120.0}
+{"at": "2026-08-23T04:34:34.642207+00:00", "event": "quiet_progress", "quiet_seconds": 32.2, "required": 120.0}
+{"at": "2026-08-23T04:34:50.729788+00:00", "event": "quiet_progress", "quiet_seconds": 48.3, "required": 120.0}
+{"at": "2026-08-23T04:35:06.817344+00:00", "event": "quiet_progress", "quiet_seconds": 64.3, "required": 120.0}
+{"at": "2026-08-23T04:35:22.904806+00:00", "event": "quiet_progress", "quiet_seconds": 80.4, "required": 120.0}
+{"at": "2026-08-23T04:35:38.992752+00:00", "event": "quiet_progress", "quiet_seconds": 96.5, "required": 120.0}
+{"at": "2026-08-23T04:35:55.081223+00:00", "event": "quiet_progress", "quiet_seconds": 112.6, "required": 120.0}
+{"container_id": "bd8f88b634ee5a038abf245115372ca6c1927230a1f69d9a50bc905b70d53b8a", "counters": [{"decode_moments": [2612.0, 2612.0, 85833165.0, 2612.0, 85833165.0, 8533.0], "total_prefill_busy_us": 14565749, "total_prefill_uncached_tokens": 90112}], "event": "IDLE_GATE_PASSED", "passed_at": "2026-08-23T04:36:03.126570+00:00", "quiet_seconds": 120.655, "quiet_started_at": "2026-08-23T04:34:02.471267+00:00", "restart_count": 0}

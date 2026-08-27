@@ -1,5 +1,9 @@
 # Performance Fast-Path Update
 
+> **Historical implementation report:** Retained for development provenance.
+> Its diagnostic numbers are not paper-facing evidence; the manuscript is the
+> sole authority for current claims.
+
 This update addresses the observed regression in raw-mode sweeps after adding semantic metrics, ablations, and request-level tracing.
 
 ## Changes

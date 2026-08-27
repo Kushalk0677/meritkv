@@ -1,0 +1,16 @@
+model,prompt_mode,paired_cells,mean_speedup_vs_no_cache,mean_waste,mean_hit_rate,performance_scope
+Qwen/Qwen2.5-1.5B-Instruct,raw,50,0.997861,0.220000,0.000000,validated_economic_mode
+Qwen/Qwen2.5-1.5B-Instruct,templated,50,1.342718,0.000000,0.984375,diagnostic_excluded_low_custom_splice_agreement
+Qwen/Qwen2.5-1.5B-Instruct,semantic,50,1.028153,0.000000,0.624331,latency_only_negative_study
+TinyLlama/TinyLlama-1.1B-Chat-v1.0,raw,50,0.995173,0.060000,0.000000,validated_economic_mode
+TinyLlama/TinyLlama-1.1B-Chat-v1.0,templated,50,1.313170,0.000000,0.984375,validated
+TinyLlama/TinyLlama-1.1B-Chat-v1.0,semantic,50,1.028153,0.000000,0.385845,latency_only_negative_study
+google/gemma-2b-it,raw,50,0.999815,0.380000,0.000000,validated_economic_mode
+google/gemma-2b-it,templated,50,1.501681,0.000000,0.984375,validated
+google/gemma-2b-it,semantic,50,1.120398,0.000000,0.714929,latency_only_negative_study
+gpt2,raw,50,1.013608,0.000000,0.000000,validated_economic_mode
+gpt2,templated,50,0.909076,0.000000,0.984375,validated_regression
+gpt2,semantic,50,0.986692,0.000000,0.000000,latency_only_negative_study
+microsoft/Phi-3-mini-4k-instruct,raw,50,0.999685,0.260000,0.000000,validated_economic_mode
+microsoft/Phi-3-mini-4k-instruct,templated,50,1.611194,0.000000,0.984375,validated
+microsoft/Phi-3-mini-4k-instruct,semantic,50,1.056061,0.000000,0.620938,latency_only_negative_study

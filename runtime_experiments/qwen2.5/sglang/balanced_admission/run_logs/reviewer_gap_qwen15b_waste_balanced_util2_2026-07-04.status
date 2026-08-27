@@ -1,0 +1,8 @@
+state=complete
+run_id=reviewer_gap_qwen15b_waste_balanced_util2_2026-07-04
+updated_at=2026-07-03T23:29:38-04:00
+result_root=/home/jade_hand/research/shadowkv/results_reviewer_gap_qwen15b_waste_balanced_util2_2026-07-04
+log=/home/jade_hand/research/shadowkv/run_logs/reviewer_gap_qwen15b_waste_balanced_util2_2026-07-04.log
+vllm_image=shadowkv-shadowkv:latest
+sglang_image=shadowkv-sglang-native-admission:2026-06-22-counters
+completed_at=2026-07-03T23:29:38-04:00

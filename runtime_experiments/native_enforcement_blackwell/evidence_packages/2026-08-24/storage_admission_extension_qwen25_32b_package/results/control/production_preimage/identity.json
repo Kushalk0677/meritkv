@@ -1,0 +1,7 @@
+{
+  "captured_at": "2026-08-23T23:30:03.880029-04:00",
+  "compose_sha256": "2634aa9cd6d8e68929efd28ac1cff791366bce5132f6782e62c3e60889fbc137",
+  "container_id": "bd8f88b634ee5a038abf245115372ca6c1927230a1f69d9a50bc905b70d53b8a",
+  "image_id": "sha256:dfd8d4ab6001e8b5f9fa4be18baa26eefb20005579b24c7bc6141e3340717cd4",
+  "normalized_config_sha256": "b2f4f24ff9d81207ea55eeaf0b5cd8e5a196430e21c9307eebad5233b3a99adf"
+}

@@ -1,0 +1,246 @@
+{
+  "schema_version": 3,
+  "experiment": "meritkv_qwen25_capacity_pressure_20260824",
+  "status": "predeclared_pending_lfu_gpu_preflight_and_calibration",
+  "stakeholder": "Kushal Khemani",
+  "separate_extension_of": "meritkv_blackwell_enforced_20260820",
+  "preserve_prior_result_unchanged": true,
+  "model": {
+    "slug": "qwen25_32b",
+    "id": "Qwen/Qwen2.5-32B-Instruct",
+    "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+    "snapshot": "/datapool/cache/huggingface/hub/models--Qwen--Qwen2.5-32B-Instruct/snapshots/5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+    "container_snapshot": "/hf_hub/models--Qwen--Qwen2.5-32B-Instruct/snapshots/5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+    "config_sha256": "9c6772f138ef9e5b3d1c18f2c87e451bbc01f5f1a4eabb36f9bf4f53829b903e",
+    "weight_index_sha256": "0183543f2e6e40d3d1e863ed0b2a8c9cdaf2ee4045ce724a45cea30e9995a0af",
+    "tokenizer_manifest_sha256": "a28a1734767030cbbdc1588ea53965c763bae58e47596a4f03b237ac15b2c8b0"
+  },
+  "runtime": {
+    "image": "shadowkv-sglang-native-admission:2026-08-20-swa-counters",
+    "image_id": "sha256:f4593e56ec7f7858f465a62f36dfc42ba8a2d9e91b7700cba50e8b21809e4d3f",
+    "sglang_version": "0.5.13",
+    "port": 30000,
+    "context_length": 4096,
+    "mem_fraction_static": 0.88,
+    "max_total_tokens_candidates": [
+      16384
+    ],
+    "max_total_tokens_selection_rule": "16384 is the sole candidate and is frozen only because the pinned Qwen tokenizer gives calibration pressure 4.150390625 cache budgets, evaluation pressure 8.1455078125 to 8.3271484375 budgets, and a 0.254150390625-cap hot set; abort rather than retune if the GPU capacity gate fails",
+    "page_size": 1,
+    "dtype": "float16",
+    "attention_backend": "triton",
+    "sampling_backend": "pytorch",
+    "disable_cuda_graph": true,
+    "disable_piecewise_cuda_graph": true,
+    "enable_cache_report": true,
+    "enable_metrics": true,
+    "disable_hybrid_swa_memory": false,
+    "disable_hybrid_swa_memory_flag": "omitted",
+    "cache_implementation": "RadixCache for every included arm",
+    "cache_topology_acceptance": "every fresh startup log must prove impl=RadixCache hybrid_swa=False",
+    "cache_topology_rationale": "The pinned Qwen2.5-32B model has no sliding-window layers, and the same pinned image previously served it successfully with ordinary RadixCache. LRU and LFU therefore differ only by the predeclared retention flag, not by cache topology.",
+    "effective_retention": "arm-specific lru or lfu",
+    "retention_flags": {
+      "lru": "--radix-eviction-policy lru",
+      "lfu": "--radix-eviction-policy lfu"
+    },
+    "chronological_plan_order_required": true,
+    "physical_eviction_metric_registration": {
+      "mode": "lazy_on_first_physical_eviction",
+      "launch_gate": "require the metrics endpoint plus kv_evictable_tokens; the physical-eviction counter and histogram do not register until the first real eviction",
+      "non_measured_primer": "on every fresh server launch, replay frozen calibration one-off prompts only until a real physical eviction registers both metric definitions and emitted samples; retain a receipt, flush cache, and reset native action counters before any measured or resumed cell",
+      "primer_required_before_every_measured_cell": true,
+      "calibration_before_may_be_absent": false,
+      "calibration_after_required": true,
+      "all_post_calibration_snapshots_required": true,
+      "actual_sample_rule": "every measured before and after snapshot must contain both registered definitions and actually emitted evicted-token and eviction-count samples; runner-synthesized zero samples do not qualify",
+      "delta_rule": "all cell deltas subtract actually emitted monotonic samples captured after the excluded primer; calibration, smoke, and evaluation begin from a flushed cache with reset native action counters"
+    }
+  },
+  "arms": [
+    {
+      "name": "native_admit_all_lru",
+      "retention": "lru",
+      "policy": false,
+      "bypass_lookup": false,
+      "bypass_write": false
+    },
+    {
+      "name": "meritkv_write_through_lru",
+      "retention": "lru",
+      "policy": true,
+      "bypass_lookup": false,
+      "bypass_write": false
+    },
+    {
+      "name": "meritkv_skip_write_only_lru",
+      "retention": "lru",
+      "policy": true,
+      "bypass_lookup": false,
+      "bypass_write": true
+    },
+    {
+      "name": "meritkv_joint_skip_write_skip_lookup_lru",
+      "retention": "lru",
+      "policy": true,
+      "bypass_lookup": true,
+      "bypass_write": true
+    },
+    {
+      "name": "native_admit_all_lfu",
+      "retention": "lfu",
+      "policy": false,
+      "bypass_lookup": false,
+      "bypass_write": false
+    }
+  ],
+  "frequency_aware_baseline": {
+    "request": "LFU or another frequency-aware retention baseline, if feasible",
+    "baseline": "LFU",
+    "arm": "native_admit_all_lfu",
+    "status": "included_fail_closed_pending_gpu_preflight",
+    "feasibility_preclaimed": false,
+    "gate": "feasibility/lfu_feasibility_gate.json",
+    "runtime_receipt": "control/lfu_feasibility_receipt.json",
+    "preflight_excluded_from_measured_cells": true,
+    "failure_disposition": "abort the entire extension without deleting, substituting, or retuning the LFU arm"
+  },
+  "calibration": {
+    "seed": 32000,
+    "arm": "native_admit_all_lru",
+    "trace": "traces/calibration_seed_32000.jsonl",
+    "requests": 64,
+    "excluded_from_evaluation": true,
+    "must_follow_lfu_feasibility_pass": true,
+    "allowed_adjustments": [],
+    "policy_threshold_adjustment_required": false,
+    "candidate_disposition": "accept the sole 16384-token candidate or abort; do not substitute another cap",
+    "acceptance": {
+      "model_boots": true,
+      "requests_complete": true,
+      "evicted_tokens_gt": 0,
+      "hot_cached_hits_gt": 0,
+      "ooms": 0,
+      "request_retractions": 0
+    }
+  },
+  "evaluation": {
+    "seeds": [
+      32001,
+      32002,
+      32003,
+      32004,
+      32005
+    ],
+    "paired_identical_trace_within_seed": true,
+    "trace_pattern": "traces/evaluation_seed_{seed}.jsonl",
+    "trace_requests": 124,
+    "max_tokens": 1,
+    "temperature": 0.0,
+    "arrival_simulation": false,
+    "reset_only_before_cell": [
+      "flush_cache",
+      "shadowkv_admission_metrics/reset"
+    ],
+    "retuning_from_evaluation": false,
+    "cells": 25,
+    "measured_requests": 3100,
+    "plan": "evaluation_plan_25.tsv",
+    "chronological_execution_required": true,
+    "arm_order_design": {
+      "method": "five cyclic rows forming a complete 5x5 Latin square",
+      "orders_by_seed": {
+        "32001": [
+          "native_admit_all_lru",
+          "meritkv_write_through_lru",
+          "meritkv_skip_write_only_lru",
+          "meritkv_joint_skip_write_skip_lookup_lru",
+          "native_admit_all_lfu"
+        ],
+        "32002": [
+          "meritkv_write_through_lru",
+          "meritkv_skip_write_only_lru",
+          "meritkv_joint_skip_write_skip_lookup_lru",
+          "native_admit_all_lfu",
+          "native_admit_all_lru"
+        ],
+        "32003": [
+          "meritkv_skip_write_only_lru",
+          "meritkv_joint_skip_write_skip_lookup_lru",
+          "native_admit_all_lfu",
+          "native_admit_all_lru",
+          "meritkv_write_through_lru"
+        ],
+        "32004": [
+          "meritkv_joint_skip_write_skip_lookup_lru",
+          "native_admit_all_lfu",
+          "native_admit_all_lru",
+          "meritkv_write_through_lru",
+          "meritkv_skip_write_only_lru"
+        ],
+        "32005": [
+          "native_admit_all_lfu",
+          "native_admit_all_lru",
+          "meritkv_write_through_lru",
+          "meritkv_skip_write_only_lru",
+          "meritkv_joint_skip_write_skip_lookup_lru"
+        ]
+      },
+      "balance_statement": "Each seed contains every arm exactly once, and across five seeds every arm executes exactly once in each chronological position. The controller must execute TSV row order and may not group cells by retention."
+    }
+  },
+  "smoke": {
+    "seed": 32010,
+    "trace": "traces/smoke_seed_32010.jsonl",
+    "all_included_arms": true,
+    "cells": 5,
+    "requests_per_cell": 36,
+    "measured_requests": 180,
+    "plan": "smoke_plan_5.tsv",
+    "must_follow_calibration_and_freeze": true
+  },
+  "workload": {
+    "hot_families": 4,
+    "hot_prefix_repetitions": 40,
+    "one_off_prefix_repetitions": 48,
+    "phases": [
+      "bootstrap_hot_set",
+      "establish_hot_hits",
+      "capacity_pressure_with_hot_probes",
+      "post_pressure_probe",
+      "recovery"
+    ],
+    "pressure_requirement": "one-off prompt tokens admitted by native admit-all exceed four times max_total_tokens in calibration and every evaluation trace",
+    "hot_set_requirement": "combined hot prefixes consume no more than half max_total_tokens",
+    "pinned_hot_prefix_tokens_per_family": 1041,
+    "pinned_hot_set_tokens": 4164,
+    "useful_hot_hit_rule": "cached_tokens must be at least 1041, the pinned Qwen tokenizer token count of the full family shared_prefix_text; page_size is frozen to 1"
+  },
+  "metrics": [
+    "request_ttft_ms",
+    "request_end_to_end_latency_ms",
+    "request_cached_tokens",
+    "phase_and_hot_family",
+    "policy_decision_and_skip_bits",
+    "output_text_and_sha256",
+    "cell_ttft_mean_and_p95_ms",
+    "cell_end_to_end_mean_and_p95_ms",
+    "NVML_energy",
+    "sglang_evicted_tokens_total",
+    "sglang_eviction_duration_seconds_count",
+    "hot_exact_hit_rate_by_phase",
+    "hot_family_survival",
+    "requests_to_recover",
+    "cache_retention"
+  ],
+  "expected_totals": {
+    "cells": 31,
+    "measured_requests": 3344,
+    "calibration_cells": 1,
+    "smoke_cells": 5,
+    "evaluation_cells": 25
+  },
+  "freeze_rule": "write and verify the excluded LFU feasibility receipt, then calibration_receipt.json and evaluation_freeze.json before the first measured smoke or evaluation request; evaluation_freeze hash is immutable thereafter",
+  "scientific_unit": "paired seed",
+  "external_communication": false
+}

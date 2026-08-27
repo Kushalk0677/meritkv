@@ -1,0 +1,13 @@
+{
+  "cells": 25,
+  "completed_at": "2026-08-23T01:00:39.253304-04:00",
+  "experiment": "meritkv_gemma4_capacity_pressure_20260822",
+  "outage_started_at": "2026-08-23T00:36:04.151388-04:00",
+  "production_container_id": "bd8f88b634ee5a038abf245115372ca6c1927230a1f69d9a50bc905b70d53b8a",
+  "production_image_id": "sha256:dfd8d4ab6001e8b5f9fa4be18baa26eefb20005579b24c7bc6141e3340717cd4",
+  "production_restored": true,
+  "requests": 2688,
+  "schema_version": 1,
+  "status": "complete_verified_restored",
+  "verification_sha256": "10ab18caa94ce32c4839afb7a32d9d7db4dc40b5ac90a228d7cc78daff67aeb7"
+}

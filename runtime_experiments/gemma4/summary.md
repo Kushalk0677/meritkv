@@ -1,45 +1,20 @@
-﻿# Gemma 4 Blackwell Runtime Results
+# Gemma-4 Blackwell Runtime Compatibility
 
-Measured runtime baselines on NVIDIA RTX PRO 6000 Blackwell.
+The current paper reports the measured mean latency difference of the
+write-through MeritKV overlay versus each native cache backend. E4B is the 4B
+variant used only in this overlay study.
 
-## Hardware
+| Backend | E2B | E4B | 12B | 26B-A4B | 31B | Mean |
+|---|---:|---:|---:|---:|---:|---:|
+| SGLang Radix | +0.8% | +1.0% | +1.5% | +1.2% | +2.1% | +1.3% |
+| vLLM APC | +0.3% | +0.4% | +0.6% | +0.5% | +0.8% | +0.5% |
+| LMCache | +0.2% | +0.3% | +0.5% | +0.4% | +0.6% | +0.4% |
 
-NVIDIA RTX PRO 6000 Blackwell, 96 GB VRAM.
+Each model/backend value summarizes 50 matched cells: five datasets, two modes,
+and five seeds. This gives 250 matched cells per runtime and engine arm. The
+fixed-width bands produced by the runtime scripts are descriptive, not
+confidence intervals.
 
-## Models
-
-| Model | Params |
-|-------|:-----:|
-| Gemma 4 E2B | 2.3B |
-| Gemma 4 E4B | 4B |
-| Gemma 4 12B | 12B |
-| Gemma 4 26B-A4B | 26B |
-| Gemma 4 31B | 31B |
-
-## Layout
-
-| Path | Contents |
-|------|----------|
-| `vllm/results.csv` | vLLM no-cache, APC, and APC + MeritKV results. |
-| `sglang/results.csv` | SGLang no-cache, RadixAttention, and RadixAttention + MeritKV results. |
-| `lmcache/results.csv` | LMCache no-cache, LMCache + vLLM, and LMCache + MeritKV results. |
-| `*/raw/full/rep_*` | Raw per-cell benchmark JSONs for five measured seeds. |
-| `*/raw/aggregate_*` | Runtime-specific aggregate files from the run package. |
-
-## Coverage
-
-| Runtime | Models | Datasets | Modes | Engines | Seeds | CSV Rows | Benchmark JSONs |
-|---------|:-----:|:--------:|:----:|:-------:|:----:|:--------:|:---------------:|
-| vLLM | 5 | 5 | 2 | 3 | 5 | 750 | 750 |
-| SGLang | 5 | 5 | 2 | 3 | 5 | 750 | 750 |
-| LMCache | 5 | 5 | 2 | 3 | 5 | 750 | 750 |
-
-Each runtime folder also includes aggregate JSON/CSV files and MeritKV admission-tuning reports, so total JSON file counts are larger than the benchmark-cell counts.
-
-## Notes
-
-- 256 requests per cell, temperature 0, one output token.
-- NVML energy measurements are included in raw JSONs and curated CSVs.
-- The no-cache arm disables runtime caching for the corresponding runtime family.
-- MeritKV arms use selective admission with semantic reuse disabled.
-- `latency_reduction_vs_no_cache_pct` is `100 * (1 - mean_latency / no_cache_mean_latency)` for the matched model, dataset, mode, and seed cell.
+The integration remains write-through. These values are compatibility and
+decision-layer overhead evidence, not enforced MeritKV acceleration. Raw
+per-cell files are retained for provenance.

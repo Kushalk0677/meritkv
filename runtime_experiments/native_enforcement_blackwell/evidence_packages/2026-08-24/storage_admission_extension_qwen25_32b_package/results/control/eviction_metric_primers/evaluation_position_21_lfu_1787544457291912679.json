@@ -1,0 +1,146 @@
+{
+  "before": {
+    "definitions": [],
+    "evicted_tokens_total": 0,
+    "eviction_duration_count": 0,
+    "relevant_lines": [],
+    "samples": {}
+  },
+  "cache_flushed_after": true,
+  "cache_implementation": "RadixCache",
+  "candidate_class": "long_one_off_prefix",
+  "completed_at": "2026-08-24T00:07:37.291921-04:00",
+  "excluded_from_calibration_smoke_and_evaluation": true,
+  "hybrid_swa_memory": false,
+  "label": "evaluation_position_21_lfu",
+  "native_action_counters_reset_after": true,
+  "physical_eviction_delta": {
+    "evicted_tokens": 2168.0,
+    "eviction_calls": 1.0
+  },
+  "post_flush": {
+    "definitions": [
+      "sglang:evicted_tokens_total",
+      "sglang:eviction_duration_seconds"
+    ],
+    "evicted_tokens_total": 2168.0,
+    "eviction_duration_count": 1.0,
+    "relevant_lines": [
+      "# HELP sglang:evicted_tokens_total The number of tokens evicted from GPU to CPU.",
+      "sglang:evicted_tokens_total{cache_type=\"RadixCache\"} 2168.0",
+      "# HELP sglang:eviction_duration_seconds Time taken to evict memory from GPU to CPU in seconds.",
+      "sglang:eviction_duration_seconds_sum{cache_type=\"RadixCache\"} 6.735604256391525e-05",
+      "sglang:eviction_duration_seconds_count{cache_type=\"RadixCache\"} 1.0"
+    ],
+    "samples": {
+      "sglang:evicted_tokens_total{cache_type=\"RadixCache\"}": 2168.0,
+      "sglang:eviction_duration_seconds_count{cache_type=\"RadixCache\"}": 1.0,
+      "sglang:eviction_duration_seconds_sum{cache_type=\"RadixCache\"}": 6.735604256391525e-05
+    }
+  },
+  "predeclared_protocol_sha256": "eb402ccddc5694abde1e43c49f6a33d2569b5441b2654dc9b2e621e25cf50a06",
+  "purpose": "non_measured_lazy_physical_eviction_metric_registration",
+  "registered": {
+    "definitions": [
+      "sglang:evicted_tokens_total",
+      "sglang:eviction_duration_seconds"
+    ],
+    "evicted_tokens_total": 2168.0,
+    "eviction_duration_count": 1.0,
+    "relevant_lines": [
+      "# HELP sglang:evicted_tokens_total The number of tokens evicted from GPU to CPU.",
+      "sglang:evicted_tokens_total{cache_type=\"RadixCache\"} 2168.0",
+      "# HELP sglang:eviction_duration_seconds Time taken to evict memory from GPU to CPU in seconds.",
+      "sglang:eviction_duration_seconds_sum{cache_type=\"RadixCache\"} 6.735604256391525e-05",
+      "sglang:eviction_duration_seconds_count{cache_type=\"RadixCache\"} 1.0"
+    ],
+    "samples": {
+      "sglang:evicted_tokens_total{cache_type=\"RadixCache\"}": 2168.0,
+      "sglang:eviction_duration_seconds_count{cache_type=\"RadixCache\"}": 1.0,
+      "sglang:eviction_duration_seconds_sum{cache_type=\"RadixCache\"}": 6.735604256391525e-05
+    }
+  },
+  "requests": [
+    {
+      "input_prompt_sha256": "bb2f237172e8575f8b3d10f102c352a3ca5adc65f50f85b848efb3480985eea8",
+      "output_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "request_id": 8
+    },
+    {
+      "input_prompt_sha256": "7d0597a2fbcf23ea4fe6d0412f63072cb8668ee0971c234fda1b98bc16d3114e",
+      "output_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+      "request_id": 9
+    },
+    {
+      "input_prompt_sha256": "860ec98b27a2975d5ed604679fdb0693af6c4faaeeb5541ab81016023d391d3c",
+      "output_sha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+      "request_id": 10
+    },
+    {
+      "input_prompt_sha256": "ff8eb6710d5192a286e51e1c59cf31dd335f73732ef1e89279fe4c06a2b811f0",
+      "output_sha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+      "request_id": 11
+    },
+    {
+      "input_prompt_sha256": "1650e73d6d9d9ec8d84d98fba931006a5e3f7f156b93f353f04d5ae7d8fded7b",
+      "output_sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a",
+      "request_id": 14
+    },
+    {
+      "input_prompt_sha256": "4672f87206bf2e7c5a28d08ab1bb3e3b89681cfdc0e05294f24c4dc5f83bcf79",
+      "output_sha256": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+      "request_id": 15
+    },
+    {
+      "input_prompt_sha256": "cb354d44ae55c2ea03d581e4380d9eeaecd1c06467c9fab9e0bdbe2300af360b",
+      "output_sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683",
+      "request_id": 16
+    },
+    {
+      "input_prompt_sha256": "12dc5de2d46707ff5c28d548eb330d99d8b04ace094140b9de286b12ec9154a5",
+      "output_sha256": "7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451",
+      "request_id": 17
+    }
+  ],
+  "requests_executed": 8,
+  "retention": "lfu",
+  "runtime_image_id": "sha256:f4593e56ec7f7858f465a62f36dfc42ba8a2d9e91b7700cba50e8b21809e4d3f",
+  "schema_version": 1,
+  "server_argv": [
+    "python3",
+    "-m",
+    "sglang.launch_server",
+    "--model-path",
+    "/hf_hub/models--Qwen--Qwen2.5-32B-Instruct/snapshots/5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+    "--served-model-name",
+    "Qwen/Qwen2.5-32B-Instruct",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "30000",
+    "--context-length",
+    "4096",
+    "--mem-fraction-static",
+    "0.88",
+    "--max-total-tokens",
+    "16384",
+    "--page-size",
+    "1",
+    "--dtype",
+    "float16",
+    "--attention-backend",
+    "triton",
+    "--sampling-backend",
+    "pytorch",
+    "--disable-cuda-graph",
+    "--disable-piecewise-cuda-graph",
+    "--radix-eviction-policy",
+    "lfu",
+    "--enable-cache-report",
+    "--enable-metrics"
+  ],
+  "server_config_sha256": "b8d0e024d7ed97912fe628b0ae7c3cd6e1073c0d9f7f2443b8c8b4b5ebdade6a",
+  "source_trace": "traces/calibration_seed_32000.jsonl",
+  "source_trace_sha256": "eff3a518a54c15f164ee96fcfe535765255e1d3354dc4572c092a2eb03fdcf75",
+  "status": "pass"
+}

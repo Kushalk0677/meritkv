@@ -1,5 +1,9 @@
 # Deliverable Contents
 
+> **Source-campaign record:** Preserved for provenance. Current paper-facing
+> aggregation and fidelity limitations are in `../README.md` and
+> `../fidelity_results.md`.
+
 This package contains the complete seven-model ShadowKV++ HF Blackwell long-prefix experiment.
 
 - `REPORT_FOR_KUSHAL.md`: interpretation, results, caveats, and follow-up.
@@ -18,4 +22,3 @@ This package contains the complete seven-model ShadowKV++ HF Blackwell long-pref
 The original runtime result root is:
 
 `/home/jade_hand/research/shadowkv/hf_blackwell_semantic_n128_longprefix_20260710/results_blackwell_semantic_seven_models_longprefix_n128_20260713`
-

@@ -1,5 +1,9 @@
 # Memory-Bound Trace Results -- Qwen2.5 on Blackwell
 
+> **Campaign scope:** This file preserves the earlier three-arm Qwen campaign.
+> It is not the paper's principal four-arm native/occupancy-cap/enforced table.
+> Use `../MEMORY_BOUND_RESULTS.md` for the paper-facing comparison.
+
 3-phase interleaved trace exceeding KV cache capacity midway, forcing evictions.
 
 | Phase | Requests | Content | Purpose |
@@ -21,7 +25,7 @@
 KV cache: 192 KB/token.  Available for cache: 64.4 GB.
 Pressure (fraction of cache consumed by trace): 0.006.
 
-| Metric | No cache | Native | MeritKV | D vs native |
+| Metric | No cache | Native | MeritKV | Reported delta |
 |--------|:--------:|:------:|:-------:|:-----------:|
 | Mean latency | 58.4 ms | 54.7 ms | 54.6 ms | -6.51% |
 | Phase 3 recovery* | 0% | 100.0% | 100.0% | +0.0 pp |
@@ -41,7 +45,7 @@ Pressure (fraction of cache consumed by trace): 0.006.
 KV cache: 256 KB/token.  Available for cache: 28.0 GB.
 Pressure (fraction of cache consumed by trace): 0.019.
 
-| Metric | No cache | Native | MeritKV | D vs native |
+| Metric | No cache | Native | MeritKV | Reported delta |
 |--------|:--------:|:------:|:-------:|:-----------:|
 | Mean latency | 72.8 ms | 59.4 ms | 59.6 ms | -18.13% |
 | Phase 3 recovery* | 0% | 54.8% | 91.6% | +36.8 pp |
@@ -65,3 +69,6 @@ Pressure (fraction of cache consumed by trace): 0.019.
 | BWell | Qwen2.5-32B | 0.019 | 55% | 92% | +37pp | 11.8/3.2 |
 
 * Recovery rate: fraction of Phase 3 requests that hit cache (hit-rate metric, not latency).
+
+For both metric tables, the mean-latency delta is MeritKV versus no cache,
+whereas recovery and victim-miss deltas are MeritKV versus native caching.

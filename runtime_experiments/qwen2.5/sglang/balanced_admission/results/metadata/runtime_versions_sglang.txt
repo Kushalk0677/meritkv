@@ -1,0 +1,7 @@
+vllm==0.19.2rc1.dev107+g4eafc7292.cu130
+sglang==0.5.13
+torch==2.11.0+cu130
+transformers==5.8.1
+datasets==4.8.5
+numpy==2.2.6
+flashinfer-python==0.6.12

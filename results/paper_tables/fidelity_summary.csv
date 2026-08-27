@@ -1,0 +1,6 @@
+model,parameters,kv_agreement_rouge_l,prompt_sensitivity_rouge_l,exact_match_rate,agreement_band,precision,shared_prefix_ratio
+GPT-2,124M,0.876,0.320,0.792,Intermediate,float16,0.75
+TinyLlama,1.1B,0.966,0.235,0.968,High,float16,0.75
+Qwen2.5-1.5B,1.5B,0.200,0.221,0.008,Low,float16,0.75
+Gemma-2B,2.0B,0.974,0.305,0.951,High,float16,0.75
+Phi-3-mini,3.8B,0.931,0.252,0.837,Intermediate,float16,0.75

@@ -1,5 +1,9 @@
 # SGLang + LMCache Qwen2.5-32B Full Run Summary - 2026-06-08
 
+> **Raw campaign summary:** Retained for provenance. Paper-facing cross-size
+> aggregates and the write-through interpretation are in the enclosing
+> runtime READMEs and `results.csv` files.
+
 Result root: `/home/jade_hand/research/shadowkv/results_sglang_lmcache_q32b_full_20260608`
 
 ## Aggregate Averages

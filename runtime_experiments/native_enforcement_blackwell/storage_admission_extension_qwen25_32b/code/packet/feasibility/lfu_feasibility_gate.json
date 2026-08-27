@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "experiment": "meritkv_qwen25_capacity_pressure_20260824",
+  "status": "predeclared_fail_closed",
+  "optional_baseline": "LFU",
+  "arm": "native_admit_all_lfu",
+  "retention": "lfu",
+  "model": {
+    "id": "Qwen/Qwen2.5-32B-Instruct",
+    "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+    "snapshot": "/hf_hub/models--Qwen--Qwen2.5-32B-Instruct/snapshots/5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd"
+  },
+  "runtime": {
+    "image": "shadowkv-sglang-native-admission:2026-08-20-swa-counters",
+    "image_id": "sha256:f4593e56ec7f7858f465a62f36dfc42ba8a2d9e91b7700cba50e8b21809e4d3f",
+    "required_server_argument": "--radix-eviction-policy lfu",
+    "forbidden_server_argument": "--disable-hybrid-swa-memory",
+    "required_cache_topology": {
+      "implementation": "RadixCache",
+      "hybrid_swa": false
+    }
+  },
+  "execution_order": "before calibration, policy freeze, measured smoke, or evaluation",
+  "excluded_from_calibration_smoke_evaluation": true,
+  "required_evidence": {
+    "server_reaches_readiness": true,
+    "startup_log_proves": [
+      "impl=RadixCache",
+      "hybrid_swa=False"
+    ],
+    "functional_canary_completes": true,
+    "non_measured_primer_produces_real_physical_eviction": true,
+    "physical_eviction_metric_definitions_and_samples_present": true,
+    "no_oom_retraction_fatal_or_traceback": true,
+    "canonical_server_argv_and_hash_retained": true,
+    "runtime_receipt": "control/lfu_feasibility_receipt.json"
+  },
+  "pass_disposition": "retain all five frozen arms and proceed to excluded LRU calibration",
+  "failure_disposition": "abort_extension",
+  "failure_rule": "Do not delete or substitute the LFU arm, retune the cache budget, or continue with a four-arm result. Preserve the failed launch evidence and restore production."
+}

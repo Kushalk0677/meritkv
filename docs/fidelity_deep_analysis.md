@@ -8,24 +8,29 @@ On GPU (T4, float16), Qwen 2.5 1.5B shows **0.20 ROUGE-L** between ref (clean ge
 
 On CPU (float32), earlier tests showed ~0.99 correspondence with divergence starting at token 7.
 
-### Root Cause: Precision × Architecture Interaction
+### Observed Precision Sensitivity in This Custom-Splice Path
 
-The failure is a **compounding effect** of two factors:
+The diagnostic shows a precision-sensitive difference, but it does not isolate
+an architectural root cause or establish behavior of a native cache API.
 
-**Factor 1: Float16 precision loss in DynamicCache**
+**Potential contributor: float16 behavior in this DynamicCache splice**
 - The KV cache stores attention key/value tensors. On GPU with float16, each cache entry has only ~3.3 decimal digits of precision (vs ~7.3 for float32).
-- When `cache.crop(shared)` truncates the cache and new tokens are appended, the combined cache has **inconsistent numerical precision** at the crop boundary.
-- The attention scores computed across this boundary accumulate rounding errors faster than in float32.
+- After `cache.crop(shared)` truncates the cache and new tokens are appended,
+  the tested float16 path shows larger numerical differences than float32.
+- The measurements are consistent with numerical amplification across the
+  splice boundary, but they do not identify its cause or rule out position,
+  mask, cache-API, or implementation effects.
 
-**Factor 2: Qwen2's attention sensitivity**
-- Qwen2 uses a different attention implementation than LLaMA/Gemma. Layer-by-layer tracing showed that hidden state differences grow linearly through Qwen's 28-layer stack:
+**Observed Qwen2 trace**
+- Layer-by-layer tracing on the tested path showed that hidden-state differences grow through the 28-layer stack:
   - Layer 1: diff ≈ 5e-7 (float32) / ≈ 1e-4 (float16)
   - Layer 10: diff ≈ 1e-5 (float32) / ≈ 1e-3 (float16)  
   - Layer 28: diff ≈ 2e-5 (float32) / ≈ 1e-2 (float16)
 - In float32, the 2e-5 output diff only flips a token when the top-2 logits are exceptionally close.
 - In float16, the 1e-2 output diff flips tokens **immediately** — often at the first or second generated token.
 
-**Result**: On GPU, Qwen's outputs with KV reuse diverge from the reference within 1-2 tokens, producing semantically unrelated completions.
+**Observed result**: In this GPU diagnostic, Qwen outputs often diverge from the
+reference within the first generated tokens and have low aggregate ROUGE-L.
 
 ### Token-Level Divergence Pattern
 
@@ -43,12 +48,9 @@ Step  ref_token      reuse_token     Match
 
 The first 4-5 tokens typically match (they're copied from the prompt suffix), but the first **generated** token often differs due to the accumulated float16 error in the hidden state.
 
-### Why TinyLlama/Gemma/Phi-3 Don't Suffer
-
-These architectures either:
-- Use a **different attention normalization** (e.g., Gemma uses post-norm, LLaMA uses pre-norm) that bounds the error growth
-- Have **fewer layers** or **different attention head counts** that change the error propagation
-- Use **different position encoding** (e.g., RoPE with different base frequencies) that affects how the crop interacts with position embeddings
+The experiment does not determine why TinyLlama, Gemma, and Phi-3 have higher
+agreement. Differences in model implementation, cache handling, position
+metadata, precision, or other configuration details remain possible.
 
 ---
 
@@ -85,7 +87,8 @@ Because no cache is actually reused — the operation degenerates to a clean gen
 | TinyLlama | 1.0 | 1.0 |
 | Qwen (CPU) | 1.0 | ~0.99 |
 
-On CPU (float32), ratio=0.0 always shows 1.0. This confirms the pipeline is correct.
+On CPU (float32), ratio=0.0 shows 1.0. This checks the no-splice control path;
+it does not validate a nonempty splice.
 
 ---
 
@@ -107,8 +110,10 @@ The paper's experiments are typically run on GPU (float16) for speed, but the nu
 
 ### What This Means for the Paper
 
-1. **float16 amplifies architecture-dependent drift** — models that show minor drift on CPU (Qwen) become unusable on GPU
-2. **LLaMA/Gemma are robust to precision change** — their fidelity drops from 1.0 to ~0.96-0.97, still excellent
+1. **The tested Qwen splice is precision-sensitive** — its float16 agreement is
+   substantially lower than its float32 agreement.
+2. **TinyLlama/Gemma are higher in this check** — their observed float16
+   agreement is about 0.96--0.97.
 3. **Recommendation**: Validate KV reuse fidelity in the deployment precision (typically float16 on GPU)
 4. **Practical implication**: If using Qwen2-family models in float16, the `_partial_semantic_reuse` should use a conservative divergence threshold
 

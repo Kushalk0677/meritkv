@@ -1,0 +1,16 @@
+{
+  "archives": {
+    "shadowkv_qwen14b_native_admission_gate_2026-06-22.zip": "6eb93b8295338de95b90b39b11b9a83cb624d039c14e8407afd3f58ee56d85c4",
+    "shadowkv_qwen14b_native_admission_results_2026-06-21.zip": "92a979e09c360dba47cf207f731ed3c68d37efc9dfec5198ea6b292465044afa"
+  },
+  "claim": "June 21 supplies Req/scheduler/Radix request plumbing; June 22 adds requested/executed counters; August 20 adds Gemma SWA hooks. The capacity extension uses the pinned image's proven default Gemma SWARadixCache topology. The optional LFU baseline is omitted as infeasible because an ordinary RadixCache launch crashes on the first Gemma4 forward; the bound crash evidence is retained in packet/feasibility/.",
+  "files": {
+    "implementation_lineage/2026-06-21/Dockerfile.sglang_2026-06-21-native-admission": "b20cf9d924873a4006182528c47d367664d0d93402ac92ad8eb4bf9c2f38b5a4",
+    "implementation_lineage/2026-06-22/Dockerfile.sglang_2026-06-22-native-admission-counters": "70248fe7f333ec953d8b30c6dbd3125d0739292611c31e2cccd85e3dfca2184f",
+    "implementation_lineage/2026-06-22/hook_test_report.json": "c071e8c29bf665dd3be76eb9bb15e180668a6e9c1f0966c3f539b0b4df8902b8",
+    "implementation_lineage/2026-06-22/test_sglang_native_admission_hooks_2026_06_22.py": "e2323cc742f92cfa602b1b319cdc1e0815efe7edb599e750f4a81071ec088049",
+    "implementation_lineage/2026-08-20-gemma-swa/Dockerfile": "93522b0cc3e68bd268ea645eee6d215ae7361d78d9ff2b5d14170d1993d27c18",
+    "implementation_lineage/2026-08-20-gemma-swa/apply_swa_native_admission.py": "3312e39df2ca3a35e403acc9bfe1aeda39e815429aa8ec76c819d01aabb88e3e"
+  },
+  "schema_version": 1
+}

@@ -58,7 +58,8 @@ Useful metrics:
 
 ## 3. Logit-guarded reuse
 
-Purpose: correctness-preserving full semantic reuse.
+Purpose: explore a more conservative full semantic-reuse boundary. This
+ablation is not established as correctness-preserving.
 
 Before admitting semantic KV reuse, the backend compares next-token distributions after the current scaffold and the candidate semantic scaffold. Reuse is admitted only if the distance is below:
 

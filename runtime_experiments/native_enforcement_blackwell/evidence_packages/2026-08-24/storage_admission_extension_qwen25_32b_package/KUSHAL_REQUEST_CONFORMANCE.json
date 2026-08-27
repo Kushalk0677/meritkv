@@ -1,0 +1,62 @@
+{
+  "items": [
+    {
+      "check": "fixed SHA-256 values verified before and after packaging",
+      "evidence": "PRIOR_RESULT_REFERENCE.json and PRIOR_GEMMA_EXTENSION_REFERENCE.json",
+      "request": "retain completed work unchanged and report a separate extension"
+    },
+    {
+      "check": "pinned model revision plus config, weight-index, and tokenizer manifests",
+      "evidence": "packet/predeclared_protocol.json and every cell receipt",
+      "request": "Qwen2.5-32B if time permits"
+    },
+    {
+      "check": "four LRU arms plus a genuine native LFU RadixCache arm",
+      "evidence": "five smoke cells and 25 paired evaluation cells",
+      "request": "admit-all, write-through, skip-write-only, joint skip, and frequency-aware retention"
+    },
+    {
+      "check": "excluded launch, RadixCache topology, functional canary, and real physical eviction all passed before freeze",
+      "evidence": "results/control/lfu_feasibility_receipt.json",
+      "request": "LFU only if feasible"
+    },
+    {
+      "check": "tokenizer-measured hot-set/capacity and pressure gates",
+      "evidence": "packet/token_budget_manifest.json and frozen traces",
+      "request": "recurring hot set plus long one-offs under constrained cache"
+    },
+    {
+      "check": "disjoint seeds, one cell per arm/seed, and timestamp order exactly matching the frozen plan",
+      "evidence": "calibration_receipt.json, evaluation_freeze.json, and evaluation_plan_25.tsv",
+      "request": "separate calibration, freeze, then five paired seeds without retuning"
+    },
+    {
+      "check": "last smoke completion precedes first evaluation start",
+      "evidence": "five smoke cell receipts and evaluation timestamps",
+      "request": "smoke-test all arms before the full run"
+    },
+    {
+      "check": "finite metrics, emitted physical-eviction samples, frozen useful-hit thresholds, and complete per-family recovery",
+      "evidence": "SCIENTIFIC_REPORT.json and per-request traces",
+      "request": "latency, P95, energy, evictions, recovery, and useful resident hits"
+    },
+    {
+      "check": "requested/executed write counts equal bypasses; lookup counters are zero",
+      "evidence": "skip-write-only request traces and native counter deltas",
+      "request": "skip-write-only executes skip writes with zero requested skip lookups"
+    },
+    {
+      "check": "previously supplied supplement is reused by exact SHA-256 and is not rebuilt",
+      "evidence": "SELF_CONTAINMENT_SUPPLEMENT_REFERENCE.json",
+      "request": "legacy runner and base request-plumbing evidence"
+    },
+    {
+      "check": "exact container/image binding, NVFP4 image/model mount, direct chat/vision/relay, and LiteLLM readiness",
+      "evidence": "results/control/completion_receipt.json, recovery_state.json, production preimage, and restore probes",
+      "request": "restore the captured Qwen production service on every exit"
+    }
+  ],
+  "requester": "Kushal Khemani",
+  "schema_version": 1,
+  "status": "pass"
+}

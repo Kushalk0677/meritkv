@@ -1,0 +1,95 @@
+{
+  "cells": 1,
+  "cells_detail": [
+    {
+      "arm": "native_admit_all_lru",
+      "bypasses": 0,
+      "cached_tokens_total": 16727,
+      "end_to_end_latency_mean_ms": 380.7248004231951,
+      "end_to_end_latency_p95_ms": 602.146589802578,
+      "evicted_tokens": 141613.0,
+      "eviction_calls": 30.0,
+      "gpu_energy_j": 14382.427,
+      "phase": "calibration",
+      "phase_metrics": {
+        "bootstrap_hot_set": {
+          "end_to_end_mean_ms": 299.287513946183,
+          "end_to_end_p95_ms": 335.8316795900464,
+          "hot_cached_hit_rate": 0.0,
+          "hot_cached_hits": 0,
+          "hot_probes": 0,
+          "requests": 4,
+          "ttft_mean_ms": 299.12042967043817,
+          "ttft_p95_ms": 335.68072610069066
+        },
+        "capacity_pressure_with_hot_probes": {
+          "end_to_end_mean_ms": 457.0779785184034,
+          "end_to_end_p95_ms": 604.6034637605771,
+          "hot_cached_hit_rate": 0.25,
+          "hot_cached_hits": 4,
+          "hot_probes": 16,
+          "requests": 48,
+          "ttft_mean_ms": 456.9073390351453,
+          "ttft_p95_ms": 604.4275858206674
+        },
+        "establish_hot_hits": {
+          "end_to_end_mean_ms": 102.40304400213063,
+          "end_to_end_p95_ms": 103.28613554593176,
+          "hot_cached_hit_rate": 1.0,
+          "hot_cached_hits": 4,
+          "hot_probes": 4,
+          "requests": 4,
+          "ttft_mean_ms": 102.25356742739677,
+          "ttft_p95_ms": 103.13418325968087
+        },
+        "hot_set": {
+          "complete_recovery": true,
+          "post_pressure_survival_count": 4,
+          "post_pressure_surviving_families": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "requests_to_recover_by_family": {
+            "0": 1,
+            "1": 1,
+            "2": 1,
+            "3": 1
+          }
+        },
+        "post_pressure_probe": {
+          "end_to_end_mean_ms": 102.38370951265097,
+          "end_to_end_p95_ms": 103.25649157166481,
+          "hot_cached_hit_rate": 1.0,
+          "hot_cached_hits": 4,
+          "hot_probes": 4,
+          "requests": 4,
+          "ttft_mean_ms": 102.17251745052636,
+          "ttft_p95_ms": 103.0372730223462
+        },
+        "recovery": {
+          "end_to_end_mean_ms": 102.58679708931595,
+          "end_to_end_p95_ms": 105.27446959167719,
+          "hot_cached_hit_rate": 1.0,
+          "hot_cached_hits": 4,
+          "hot_probes": 4,
+          "requests": 4,
+          "ttft_mean_ms": 102.39161236677319,
+          "ttft_p95_ms": 105.07654785178602
+        }
+      },
+      "policy_decision_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "requests": 64,
+      "seed": 32000,
+      "status": "pass",
+      "summary_sha256": "093d31d643c4989addd650918b4dbdcde12770abef5478c518bb6838bf06be85",
+      "trace_sha256": "c2d92cff2e62db4b6009eb2c0d0a12a7ac2e628e0ce78d81efe4a196a9a1910e",
+      "ttft_mean_ms": 380.5516372085549,
+      "ttft_p95_ms": 601.9971761619672
+    }
+  ],
+  "phase": "calibration",
+  "requests": 64,
+  "status": "pass"
+}

@@ -1,0 +1,316 @@
+{
+  "cells": 4,
+  "cells_detail": [
+    {
+      "arm": "native_admit_all_lru",
+      "bypasses": 0,
+      "cached_tokens_total": 10381,
+      "end_to_end_latency_mean_ms": 355.3938323036871,
+      "end_to_end_latency_p95_ms": 584.9775257520378,
+      "evicted_tokens": 59212.0,
+      "eviction_calls": 15.0,
+      "gpu_energy_j": 7523.06,
+      "phase": "smoke",
+      "phase_metrics": {
+        "bootstrap_hot_set": {
+          "end_to_end_mean_ms": 290.38297629449517,
+          "end_to_end_p95_ms": 298.501388146542,
+          "hot_cached_hit_rate": 0.0,
+          "hot_cached_hits": 0,
+          "hot_probes": 0,
+          "requests": 4,
+          "ttft_mean_ms": 290.21398548502475,
+          "ttft_p95_ms": 298.360117780976
+        },
+        "capacity_pressure_with_hot_probes": {
+          "end_to_end_mean_ms": 450.35028347047046,
+          "end_to_end_p95_ms": 603.1618836335838,
+          "hot_cached_hit_rate": 0.25,
+          "hot_cached_hits": 2,
+          "hot_probes": 8,
+          "requests": 24,
+          "ttft_mean_ms": 450.1751811088373,
+          "ttft_p95_ms": 602.9712618794292
+        },
+        "establish_hot_hits": {
+          "end_to_end_mean_ms": 103.05383487138897,
+          "end_to_end_p95_ms": 105.94913698732853,
+          "hot_cached_hit_rate": 1.0,
+          "hot_cached_hits": 4,
+          "hot_probes": 4,
+          "requests": 4,
+          "ttft_mean_ms": 102.90310822892934,
+          "ttft_p95_ms": 105.80640165135264
+        },
+        "hot_set": {
+          "complete_recovery": true,
+          "post_pressure_survival_count": 4,
+          "post_pressure_surviving_families": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "requests_to_recover_by_family": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0
+          }
+        },
+        "post_pressure_probe": {
+          "end_to_end_mean_ms": 103.00597874447703,
+          "end_to_end_p95_ms": 105.54525442421436,
+          "hot_cached_hit_rate": 1.0,
+          "hot_cached_hits": 4,
+          "hot_probes": 4,
+          "requests": 4,
+          "ttft_mean_ms": 102.83357393927872,
+          "ttft_p95_ms": 105.38398260250688
+        }
+      },
+      "policy_decision_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "requests": 36,
+      "seed": 32010,
+      "status": "pass",
+      "summary_sha256": "bc90d1f0701fbc6452098dbbc4a8467f732995ec916583fd7a1f595e7f856dda",
+      "trace_sha256": "d3190064ac7b52dea9da9e553f44702e3998b4fd95dc1ff3966807e6f5300286",
+      "ttft_mean_ms": 355.2224171451396,
+      "ttft_p95_ms": 584.8058823030442
+    },
+    {
+      "arm": "meritkv_write_through_lru",
+      "bypasses": 20,
+      "cached_tokens_total": 10381,
+      "end_to_end_latency_mean_ms": 356.3036092479403,
+      "end_to_end_latency_p95_ms": 586.8649106705561,
+      "evicted_tokens": 59212.0,
+      "eviction_calls": 15.0,
+      "gpu_energy_j": 7573.437,
+      "phase": "smoke",
+      "phase_metrics": {
+        "bootstrap_hot_set": {
+          "end_to_end_mean_ms": 292.12438222020864,
+          "end_to_end_p95_ms": 298.89331741724163,
+          "hot_cached_hit_rate": 0.0,
+          "hot_cached_hits": 0,
+          "hot_probes": 0,
+          "requests": 4,
+          "ttft_mean_ms": 289.2371321795508,
+          "ttft_p95_ms": 296.6165774734691
+        },
+        "capacity_pressure_with_hot_probes": {
+          "end_to_end_mean_ms": 451.5351415417778,
+          "end_to_end_p95_ms": 602.6556789176539,
+          "hot_cached_hit_rate": 0.25,
+          "hot_cached_hits": 2,
+          "hot_probes": 8,
+          "requests": 24,
+          "ttft_mean_ms": 449.94653707059723,
+          "ttft_p95_ms": 600.8355874102563
+        },
+        "establish_hot_hits": {
+          "end_to_end_mean_ms": 102.66271594446152,
+          "end_to_end_p95_ms": 103.92551242839545,
+          "hot_cached_hit_rate": 1.0,
+          "hot_cached_hits": 4,
+          "hot_probes": 4,
+          "requests": 4,
+          "ttft_mean_ms": 100.76709929853678,
+          "ttft_p95_ms": 101.93703989498317
+        },
+        "hot_set": {
+          "complete_recovery": true,
+          "post_pressure_survival_count": 4,
+          "post_pressure_surviving_families": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "requests_to_recover_by_family": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0
+          }
+        },
+        "post_pressure_probe": {
+          "end_to_end_mean_ms": 102.73453581612557,
+          "end_to_end_p95_ms": 104.37390261795372,
+          "hot_cached_hit_rate": 1.0,
+          "hot_cached_hits": 4,
+          "hot_probes": 4,
+          "requests": 4,
+          "ttft_mean_ms": 100.92627978883684,
+          "ttft_p95_ms": 102.51752075273544
+        }
+      },
+      "policy_decision_digest": "5b03c3f31e7097e56820bab58d10da5fbc470472b5712d7a2b05382efaba9b86",
+      "requests": 36,
+      "seed": 32010,
+      "status": "pass",
+      "summary_sha256": "42962ce9239f30de8d274d65eb7af025d9c83c94a017c7b348d99c2a616f2930",
+      "trace_sha256": "d70bae734d19ece9471516606ab974193f1387159c02f0934e32c7a25261cfa2",
+      "ttft_mean_ms": 354.51219263227864,
+      "ttft_p95_ms": 585.3455492760986
+    },
+    {
+      "arm": "meritkv_skip_write_only_lru",
+      "bypasses": 20,
+      "cached_tokens_total": 12336,
+      "end_to_end_latency_mean_ms": 350.3182963338784,
+      "end_to_end_latency_p95_ms": 605.3765413817018,
+      "evicted_tokens": 0.0,
+      "eviction_calls": 0.0,
+      "gpu_energy_j": 7408.216,
+      "phase": "smoke",
+      "phase_metrics": {
+        "bootstrap_hot_set": {
+          "end_to_end_mean_ms": 297.90279851295054,
+          "end_to_end_p95_ms": 299.02755324728787,
+          "hot_cached_hit_rate": 0.0,
+          "hot_cached_hits": 0,
+          "hot_probes": 0,
+          "requests": 4,
+          "ttft_mean_ms": 295.38817203138024,
+          "ttft_p95_ms": 296.6442307922989
+        },
+        "capacity_pressure_with_hot_probes": {
+          "end_to_end_mean_ms": 409.24965574716526,
+          "end_to_end_p95_ms": 611.6668540518731,
+          "hot_cached_hit_rate": 1.0,
+          "hot_cached_hits": 8,
+          "hot_probes": 8,
+          "requests": 24,
+          "ttft_mean_ms": 407.66309353057295,
+          "ttft_p95_ms": 610.3248872095719
+        },
+        "establish_hot_hits": {
+          "end_to_end_mean_ms": 297.49233298934996,
+          "end_to_end_p95_ms": 301.60907360259444,
+          "hot_cached_hit_rate": 0.0,
+          "hot_cached_hits": 0,
+          "hot_probes": 4,
+          "requests": 4,
+          "ttft_mean_ms": 295.5190234351903,
+          "ttft_p95_ms": 299.37157118692994
+        },
+        "hot_set": {
+          "complete_recovery": true,
+          "post_pressure_survival_count": 4,
+          "post_pressure_surviving_families": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "requests_to_recover_by_family": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0
+          }
+        },
+        "post_pressure_probe": {
+          "end_to_end_mean_ms": 101.97160101961344,
+          "end_to_end_p95_ms": 103.1010706210509,
+          "hot_cached_hit_rate": 1.0,
+          "hot_cached_hits": 4,
+          "hot_probes": 4,
+          "requests": 4,
+          "ttft_mean_ms": 100.05779284983873,
+          "ttft_p95_ms": 101.02613102644682
+        }
+      },
+      "policy_decision_digest": "5b03c3f31e7097e56820bab58d10da5fbc470472b5712d7a2b05382efaba9b86",
+      "requests": 36,
+      "seed": 32010,
+      "status": "pass",
+      "summary_sha256": "2d5749ccdbcacfcb3dfef653a9241523d450a564adbc735d9d698e20d7bce897",
+      "trace_sha256": "4c07d62c56d301420f0e67b594ba15f34397ef3c211e9921416947bd1cac832a",
+      "ttft_mean_ms": 348.54928327776076,
+      "ttft_p95_ms": 603.9815676631406
+    },
+    {
+      "arm": "meritkv_joint_skip_write_skip_lookup_lru",
+      "bypasses": 20,
+      "cached_tokens_total": 12272,
+      "end_to_end_latency_mean_ms": 350.3869196218956,
+      "end_to_end_latency_p95_ms": 605.1978064933792,
+      "evicted_tokens": 0.0,
+      "eviction_calls": 0.0,
+      "gpu_energy_j": 7360.924,
+      "phase": "smoke",
+      "phase_metrics": {
+        "bootstrap_hot_set": {
+          "end_to_end_mean_ms": 299.9068610370159,
+          "end_to_end_p95_ms": 300.91857062652707,
+          "hot_cached_hit_rate": 0.0,
+          "hot_cached_hits": 0,
+          "hot_probes": 0,
+          "requests": 4,
+          "ttft_mean_ms": 297.3824410000816,
+          "ttft_p95_ms": 298.783294740133
+        },
+        "capacity_pressure_with_hot_probes": {
+          "end_to_end_mean_ms": 408.64120949602994,
+          "end_to_end_p95_ms": 610.5577108683065,
+          "hot_cached_hit_rate": 1.0,
+          "hot_cached_hits": 8,
+          "hot_probes": 8,
+          "requests": 24,
+          "ttft_mean_ms": 407.1465891902335,
+          "ttft_p95_ms": 609.2143090441823
+        },
+        "establish_hot_hits": {
+          "end_to_end_mean_ms": 297.6577850058675,
+          "end_to_end_p95_ms": 302.20465674065053,
+          "hot_cached_hit_rate": 0.0,
+          "hot_cached_hits": 0,
+          "hot_probes": 4,
+          "requests": 4,
+          "ttft_mean_ms": 295.5054729245603,
+          "ttft_p95_ms": 299.9269070336595
+        },
+        "hot_set": {
+          "complete_recovery": true,
+          "post_pressure_survival_count": 4,
+          "post_pressure_surviving_families": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "requests_to_recover_by_family": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0
+          }
+        },
+        "post_pressure_probe": {
+          "end_to_end_mean_ms": 104.07037357799709,
+          "end_to_end_p95_ms": 106.76639638841152,
+          "hot_cached_hit_rate": 1.0,
+          "hot_cached_hits": 4,
+          "hot_probes": 4,
+          "requests": 4,
+          "ttft_mean_ms": 102.24809474311769,
+          "ttft_p95_ms": 104.77664326317608
+        }
+      },
+      "policy_decision_digest": "5b03c3f31e7097e56820bab58d10da5fbc470472b5712d7a2b05382efaba9b86",
+      "requests": 36,
+      "seed": 32010,
+      "status": "pass",
+      "summary_sha256": "bee15fe69e9de87d6401814b9e354e8060bb3c51889e89e4beec2d0ad71ba835",
+      "trace_sha256": "b5219bedb8d35ce69485208d2a6f3659d4293456b31da7b26e44d0417ed70c5e",
+      "ttft_mean_ms": 348.6683937565734,
+      "ttft_p95_ms": 603.7878012284636
+    }
+  ],
+  "phase": "smoke",
+  "requests": 144,
+  "status": "pass"
+}

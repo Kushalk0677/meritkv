@@ -1,5 +1,9 @@
 # Deliverable Contents
 
+> **Source-campaign record:** Preserved for provenance. Current paper-facing
+> aggregation and fidelity limitations are in `../README.md` and
+> `../fidelity_results.md`.
+
 - `REPORT_FOR_KUSHAL.md`: results, interpretation, anomalies, and limitations.
 - `aggregate_summary.csv`: model/engine mean, minimum, and maximum metrics.
 - `dataset_results.csv`: paired results for every model, dataset, and cache engine.
@@ -10,4 +14,3 @@
 - `source_snapshot/`: exact patched benchmark source used for this run.
 
 Run `analyze_results.py` with Python and pandas to regenerate the summary and audit files.
-

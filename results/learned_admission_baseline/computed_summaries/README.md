@@ -24,3 +24,5 @@ Completed models: GPT-2, Qwen2.5-1.5B, TinyLlama-1.1B, Gemma-2B. Phi-3 is not in
 
 - The four-model Phase 3 learned-baseline results are usable.
 - Phi-3 is excluded because it OOMed before producing train traces.
+- MeritKV is faster on the three reuse-heavy model rows; GPT-2 is near
+  no-reuse parity and slightly favors the learned policy.

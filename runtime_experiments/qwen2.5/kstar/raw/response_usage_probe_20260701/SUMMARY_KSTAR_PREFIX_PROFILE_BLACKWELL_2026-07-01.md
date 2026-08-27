@@ -1,5 +1,11 @@
 # Blackwell k* Prefix-Length Profile
 
+> **Response-usage probe variant:** This file records the inconclusive
+> response-field-only pass. The OpenAI-compatible response did not expose
+> cached-token usage here, so its `None` values are not the paper's measured
+> breakeven result. Use the sibling metrics-backed `prefix_profile_20260701`
+> profile, which infers `k*=16`.
+
 Rows: `18`
 
 | Model | Inferred k* tokens | Positive points |

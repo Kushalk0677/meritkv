@@ -1,5 +1,10 @@
 # ShadowKV++ HF Blackwell Seven-Model Long-Prefix Results
 
+> **Historical source interpretation:** This report preserves the campaign
+> record as written at collection time. Statements about exactness,
+> architecture, or performance eligibility are superseded by `../README.md`,
+> `../fidelity_results.md`, and the repository claim map.
+
 ## Status
 
 Complete and verified. The experiment produced 210/210 full benchmark cells with zero measured failures across seven models, ten datasets, and three engines.
@@ -83,4 +88,3 @@ ComfyUI was not running, so its queue endpoint returned connection refused durin
 ## Recommended Follow-Up
 
 Use these data as a calibration result, not a universal small-model claim. The next targeted test should sweep prefix length for Qwen2.5-3B, Phi-3 Mini, and Gemma 4 E2B to estimate architecture-specific break-even thresholds. A three-repetition randomized run is warranted before publishing the Gemma 4 E2B and 12B latency percentages as final performance claims.
-

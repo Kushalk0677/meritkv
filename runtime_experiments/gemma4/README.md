@@ -1,14 +1,16 @@
 ﻿# Gemma 4 Blackwell Runtime Experiments
 
-This folder contains measured Gemma 4 Blackwell runtime benchmark results with no-cache, native runtime-cache, and MeritKV admission-policy arms across five seeds.
+This folder contains the measured Gemma-4 Blackwell write-through runtime
+campaign and the paper-facing overlay aggregates across five seeds.
 
 ## Contents
 
 | Path | Contents |
 |------|----------|
-| `vllm/results.csv` | Curated vLLM rows for no-cache, vLLM APC, and vLLM APC + MeritKV. |
-| `sglang/results.csv` | Curated SGLang rows for no-cache, RadixAttention, and RadixAttention + MeritKV. |
-| `lmcache/results.csv` | Curated LMCache + vLLM rows for no-cache, LMCache, and LMCache + MeritKV. |
+| `vllm/results.csv` | MeritKV-vs-APC mean latency differences. |
+| `sglang/results.csv` | MeritKV-vs-RadixAttention mean latency differences. |
+| `lmcache/results.csv` | MeritKV-vs-LMCache mean latency differences. |
+| `*/raw/legacy_detailed_results_precompact.csv` | Preserved former detailed top-level export. |
 | `vllm/raw/full/rep_*` | Per-cell benchmark JSONs for all five seeds. |
 | `sglang/raw/full/rep_*` | Per-cell benchmark JSONs for all five seeds. |
 | `lmcache/raw/full/rep_*` | Per-cell benchmark JSONs for all five seeds. |
@@ -17,7 +19,16 @@ This folder contains measured Gemma 4 Blackwell runtime benchmark results with n
 
 ## Models
 
-Gemma 4 E2B, E4B, 12B, 26B-A4B, and 31B.
+| Paper label | Checkpoint |
+|---|---|
+| E2B | `google/gemma-4-E2B-it` |
+| E4B | `google/gemma-4-E4B-it` |
+| 12B | `google/gemma-4-12B-it` |
+| 26B-A4B | `google/gemma-4-26B-A4B-it` |
+| 31B | `google/gemma-4-31B-it` |
+
+E4B is the 4B checkpoint used only in this runtime-overlay study, not an
+additional member of the twelve-model long-prefix scale study.
 
 ## Datasets
 
@@ -31,10 +42,7 @@ Gemma 4 E2B, E4B, 12B, 26B-A4B, and 31B.
 
 `42`, `123`, `456`, `789`, and `999`.
 
-## Metric Note
-
-The curated CSV column `latency_reduction_vs_no_cache_pct` is computed as:
-
-`100 * (1 - mean_latency_ms / no_cache_mean_latency_ms)`
-
-It is a latency-reduction percentage, not multiplicative throughput speedup.
+Each paper-facing row summarizes 50 matched cells. Raw no-cache, native-cache,
+and overlay cell records remain under the runtime-specific `raw/` directories.
+The overlay is write-through, so its positive deltas measure overhead rather
+than enforced MeritKV acceleration.

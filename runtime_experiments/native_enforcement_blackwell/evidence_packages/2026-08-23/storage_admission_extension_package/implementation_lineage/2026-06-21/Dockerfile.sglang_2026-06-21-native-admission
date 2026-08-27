@@ -1,0 +1,159 @@
+FROM shadowkv-sglang-lmcache:2026-06-14-no-native-radix
+
+RUN python3 - <<'PY'
+from pathlib import Path
+
+schedule_batch = Path("/usr/local/lib/python3.12/dist-packages/sglang/srt/managers/schedule_batch.py")
+text = schedule_batch.read_text()
+anchor = "import numpy as np\nimport torch\n"
+insert = """import numpy as np
+import torch
+
+SHADOWKV_ADMISSION_EXTRA_KEY_PREFIX = "__shadowkv_admission__:"
+
+
+def _parse_shadowkv_admission_extra_key(extra_key):
+    if not isinstance(extra_key, str) or not extra_key.startswith(SHADOWKV_ADMISSION_EXTRA_KEY_PREFIX):
+        return extra_key, False, False, None
+    payload = extra_key[len(SHADOWKV_ADMISSION_EXTRA_KEY_PREFIX):]
+    fields = {}
+    for item in payload.split(";"):
+        key, sep, value = item.partition("=")
+        if sep:
+            fields[key.strip()] = value.strip()
+    normalized_extra_key = fields.get("key") or None
+    skip_lookup = fields.get("lookup", "1") == "0"
+    skip_write = fields.get("write", "1") == "0"
+    tag = fields.get("tag") or None
+    return normalized_extra_key, skip_lookup, skip_write, tag
+"""
+if insert not in text:
+    if anchor not in text:
+        raise SystemExit("schedule_batch import anchor not found")
+    text = text.replace(anchor, insert, 1)
+
+old = """        self.extra_key = extra_key
+        self.lora_id = lora_id
+        self.routing_key = routing_key
+"""
+new = """        (
+            extra_key,
+            self.shadowkv_skip_cache_lookup,
+            self.shadowkv_skip_cache_write,
+            self.shadowkv_admission_tag,
+        ) = _parse_shadowkv_admission_extra_key(extra_key)
+        self.extra_key = extra_key
+        self.lora_id = lora_id
+        self.routing_key = routing_key
+"""
+if old not in text:
+    raise SystemExit("schedule_batch extra_key assignment anchor not found")
+text = text.replace(old, new, 1)
+schedule_batch.write_text(text)
+
+schedule_policy = Path("/usr/local/lib/python3.12/dist-packages/sglang/srt/managers/schedule_policy.py")
+text = schedule_policy.read_text()
+old = """    if token_ids is None:
+        token_ids = req.origin_input_ids + req.output_ids
+
+    match_result = tree_cache.match_prefix(
+"""
+new = """    if token_ids is None:
+        token_ids = req.origin_input_ids + req.output_ids
+    if getattr(req, "shadowkv_skip_cache_lookup", False):
+        token_ids = array("q")
+
+    match_result = tree_cache.match_prefix(
+"""
+if old not in text:
+    raise SystemExit("schedule_policy match_prefix_for_req anchor not found")
+text = text.replace(old, new, 1)
+schedule_policy.write_text(text)
+
+radix = Path("/usr/local/lib/python3.12/dist-packages/sglang/srt/mem_cache/radix_cache.py")
+text = radix.read_text()
+old = """        key = params.key
+        key, _ = key.maybe_to_bigram_view(self.is_eagle)
+"""
+new = """        if params.req is not None and getattr(params.req, "shadowkv_skip_cache_lookup", False):
+            return self._empty_match_result
+
+        key = params.key
+        key, _ = key.maybe_to_bigram_view(self.is_eagle)
+"""
+if old not in text:
+    raise SystemExit("radix match_prefix anchor not found")
+text = text.replace(old, new, 1)
+
+old = """        # In deterministic mode, disable finished request insertion to radix cache
+        if self.disable_finished_insert:
+            is_insert = False
+
+        kv_committed_len = req.pop_committed_kv_cache()
+"""
+new = """        # In deterministic mode, disable finished request insertion to radix cache
+        if self.disable_finished_insert:
+            is_insert = False
+        if getattr(req, "shadowkv_skip_cache_write", False):
+            is_insert = False
+
+        kv_committed_len = req.pop_committed_kv_cache()
+"""
+if old not in text:
+    raise SystemExit("radix cache_finished_req anchor not found")
+text = text.replace(old, new, 1)
+
+old = """        if self.disable:
+            return
+
+        token_ids = req.get_fill_ids()
+"""
+new = """        if self.disable or getattr(req, "shadowkv_skip_cache_write", False):
+            return
+
+        token_ids = req.get_fill_ids()
+"""
+if old not in text:
+    raise SystemExit("radix cache_unfinished_req anchor not found")
+text = text.replace(old, new, 1)
+radix.write_text(text)
+
+lmc = Path("/usr/local/lib/python3.12/dist-packages/sglang/srt/mem_cache/storage/lmcache/lmc_radix_cache.py")
+text = lmc.read_text()
+old = """    def cache_unfinished_req(self, req: Req, chunked=False):
+        if self._lmcache_disable_native_radix:
+"""
+new = """    def cache_unfinished_req(self, req: Req, chunked=False):
+        if getattr(req, "shadowkv_skip_cache_write", False):
+            return
+        if self._lmcache_disable_native_radix:
+"""
+if old not in text:
+    raise SystemExit("lmc cache_unfinished_req anchor not found")
+text = text.replace(old, new, 1)
+
+old = """    def cache_finished_req(self, req: Req, is_insert: bool = True) -> None:
+        \"\"\"On request completion, insert device KV into radix and store to LMCache.\"\"\"
+
+        if self._lmcache_disable_native_radix:
+"""
+new = """    def cache_finished_req(self, req: Req, is_insert: bool = True) -> None:
+        \"\"\"On request completion, insert device KV into radix and store to LMCache.\"\"\"
+
+        if getattr(req, "shadowkv_skip_cache_write", False):
+            is_insert = False
+        if self._lmcache_disable_native_radix:
+"""
+if old not in text:
+    raise SystemExit("lmc cache_finished_req anchor not found")
+text = text.replace(old, new, 1)
+lmc.write_text(text)
+
+print("patched native SGLang ShadowKV admission hook")
+PY
+
+ENV PYTHONPATH=/workspace/shadowkv/src:${PYTHONPATH}
+ENV USE_HUB_KERNELS=NO
+ENV FLASHINFER_DISABLE_VERSION_CHECK=1
+ENV PYTHONHASHSEED=0
+WORKDIR /workspace/shadowkv

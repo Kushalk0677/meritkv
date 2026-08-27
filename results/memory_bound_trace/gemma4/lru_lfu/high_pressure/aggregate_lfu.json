@@ -1,0 +1,20 @@
+{
+  "lfu": {
+    "seeds": 5,
+    "seeds_list": [
+      42,
+      123,
+      456,
+      789,
+      999
+    ],
+    "mean_latency_ms": 69.612,
+    "mean_latency_ms_ci95": 1.7044,
+    "final_round_recovery": 0.5208,
+    "final_round_recovery_ci95": 0.0189,
+    "total_evictions": 29.0,
+    "total_evictions_ci95": 1.9629,
+    "declined_admissions_phase1": 0.0,
+    "declined_admissions_phase1_ci95": 0.0
+  }
+}

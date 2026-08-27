@@ -53,7 +53,9 @@ cache.crop(0)    → empty cache
 prefill(B, past_key_values=None)  → same as clean generation
 ```
 
-This should always produce `ref_text == reuse_text` (ROUGE-L = 1.0), confirming the pipeline is free of implementation bugs.
+This should produce `ref_text == reuse_text` (ROUGE-L = 1.0), checking the
+no-splice control path. It does not by itself validate a nonempty splice or a
+native runtime cache.
 
 ### 2.4 Implementation Details
 

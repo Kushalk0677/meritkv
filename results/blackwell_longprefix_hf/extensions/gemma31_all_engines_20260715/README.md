@@ -1,5 +1,9 @@
 # Gemma 4 31B All-Engine Extension
 
+> **Auxiliary extension:** This single-model, single-seed all-engine campaign is
+> retained as supporting analysis. It is not a distinct paper result and does
+> not change the twelve-model primary aggregation.
+
 ## Engine Name Aliases
 
 Raw artifacts keep the stable engine IDs used during execution. Public-facing text maps them as follows:

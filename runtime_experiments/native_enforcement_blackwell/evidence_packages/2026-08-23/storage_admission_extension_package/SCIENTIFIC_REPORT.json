@@ -1,0 +1,181 @@
+{
+  "arm_aggregate_across_five_paired_seeds": {
+    "meritkv_joint_skip_write_skip_lookup_lru": {
+      "end_to_end_mean_ms": 367.4429812228247,
+      "end_to_end_p95_ms_mean_across_seeds": 626.5931511158124,
+      "evicted_tokens": 0.0,
+      "gpu_energy_j": 26765.5452,
+      "post_pressure_hot_survival": 4.0,
+      "seeds": 5,
+      "ttft_mean_ms": 365.69891114373723,
+      "ttft_p95_ms_mean_across_seeds": 625.1067057531327
+    },
+    "meritkv_skip_write_only_lru": {
+      "end_to_end_mean_ms": 368.44608523777777,
+      "end_to_end_p95_ms_mean_across_seeds": 628.0780504038557,
+      "evicted_tokens": 0.0,
+      "gpu_energy_j": 26884.7814,
+      "post_pressure_hot_survival": 4.0,
+      "seeds": 5,
+      "ttft_mean_ms": 366.7118586464635,
+      "ttft_p95_ms_mean_across_seeds": 626.6294414922595
+    },
+    "meritkv_write_through_lru": {
+      "end_to_end_mean_ms": 399.42697042283874,
+      "end_to_end_p95_ms_mean_across_seeds": 623.8374841911718,
+      "evicted_tokens": 305722.6,
+      "gpu_energy_j": 29406.217800000002,
+      "post_pressure_hot_survival": 3.2,
+      "seeds": 5,
+      "ttft_mean_ms": 397.6631637437329,
+      "ttft_p95_ms_mean_across_seeds": 622.43183827959
+    },
+    "native_admit_all_lru": {
+      "end_to_end_mean_ms": 399.31675516174084,
+      "end_to_end_p95_ms_mean_across_seeds": 623.316493188031,
+      "evicted_tokens": 305722.6,
+      "gpu_energy_j": 29395.985200000003,
+      "post_pressure_hot_survival": 3.2,
+      "seeds": 5,
+      "ttft_mean_ms": 399.14668410145225,
+      "ttft_p95_ms_mean_across_seeds": 623.1493344111368
+    }
+  },
+  "cells": 25,
+  "claim_boundary": "This separate frozen extension tests storage admission under measured cache pressure. It does not replace or retune the accepted August 20 native-enforcement result.",
+  "exact_output_mismatch_positions": 0,
+  "experiment": "meritkv_gemma4_capacity_pressure_20260822",
+  "lfu_optional_baseline": {
+    "attempted_topology": {
+      "cache_implementation": "RadixCache",
+      "hybrid_swa": false,
+      "reason": "The pinned Gemma SWARadixCache uses LRU internally and cannot provide a genuine LFU baseline; ordinary RadixCache is therefore required for the LFU selector to be meaningful."
+    },
+    "failure_fingerprint": "RuntimeError: view size is not compatible with input tensor's size and stride",
+    "full_crash_log": "packet/feasibility/lfu_launch_crash.log",
+    "full_crash_log_sha256": "8efd29927ac65ae2c9cff4c545dc8ccfc2789ca8d0218d212709a69386f18bd3",
+    "reason": "The ordinary RadixCache topology crashes on the first Gemma4 forward before retention behavior can be evaluated. Changing only lru to lfu cannot repair the incompatible KV-buffer layout.",
+    "receipt": "packet/feasibility/lfu_infeasibility_receipt.json",
+    "receipt_sha256": "1d7d42e13bed226164173d80fa81a9ba256e0f5433a6f7b73aaacce12f4776c1",
+    "request_boundary": "LFU or another frequency-aware retention baseline, if feasible",
+    "status": "omitted_as_infeasible_on_pinned_image",
+    "successful_lfu_cells": 0
+  },
+  "old_result": {
+    "cells": 414,
+    "requests": 102912,
+    "status": "verified_unchanged",
+    "zip": "MeritKV-Blackwell-native-enforcement-evidence-2026-08-20.zip",
+    "zip_sha256": "e7943267252fe160afdbbe37c72884eccd029cc66f22419688657d962d5f749b"
+  },
+  "paired_seed_deltas_for_skip_write_only": [
+    {
+      "meritkv_joint_skip_write_skip_lookup_lru": {
+        "end_to_end_mean_pct": 0.21754703174843293,
+        "evicted_tokens_delta": 0.0,
+        "gpu_energy_pct": 0.24024454489692815,
+        "hot_survival_delta": 0
+      },
+      "meritkv_write_through_lru": {
+        "end_to_end_mean_pct": -7.502345881108575,
+        "evicted_tokens_delta": -308237.0,
+        "gpu_energy_pct": -8.419559809003264,
+        "hot_survival_delta": 1
+      },
+      "native_admit_all_lru": {
+        "end_to_end_mean_pct": -6.780918318952445,
+        "evicted_tokens_delta": -308237.0,
+        "gpu_energy_pct": -7.558348952520221,
+        "hot_survival_delta": 1
+      },
+      "seed": 32001
+    },
+    {
+      "meritkv_joint_skip_write_skip_lookup_lru": {
+        "end_to_end_mean_pct": 0.27792021820884916,
+        "evicted_tokens_delta": 0.0,
+        "gpu_energy_pct": 0.49424293778472794,
+        "hot_survival_delta": 0
+      },
+      "meritkv_write_through_lru": {
+        "end_to_end_mean_pct": -7.937012152484002,
+        "evicted_tokens_delta": -306893.0,
+        "gpu_energy_pct": -8.596240485883833,
+        "hot_survival_delta": 1
+      },
+      "native_admit_all_lru": {
+        "end_to_end_mean_pct": -8.249557254368556,
+        "evicted_tokens_delta": -306893.0,
+        "gpu_energy_pct": -8.977718238229727,
+        "hot_survival_delta": 1
+      },
+      "seed": 32002
+    },
+    {
+      "meritkv_joint_skip_write_skip_lookup_lru": {
+        "end_to_end_mean_pct": 0.31114730154939707,
+        "evicted_tokens_delta": 0.0,
+        "gpu_energy_pct": 0.6227179787586579,
+        "hot_survival_delta": 0
+      },
+      "meritkv_write_through_lru": {
+        "end_to_end_mean_pct": -7.9504371173990895,
+        "evicted_tokens_delta": -307085.0,
+        "gpu_energy_pct": -8.762357038123413,
+        "hot_survival_delta": 1
+      },
+      "native_admit_all_lru": {
+        "end_to_end_mean_pct": -8.041972124687447,
+        "evicted_tokens_delta": -307085.0,
+        "gpu_energy_pct": -8.894217292373806,
+        "hot_survival_delta": 1
+      },
+      "seed": 32003
+    },
+    {
+      "meritkv_joint_skip_write_skip_lookup_lru": {
+        "end_to_end_mean_pct": 0.31445724988881096,
+        "evicted_tokens_delta": 0.0,
+        "gpu_energy_pct": 0.4877301415147528,
+        "hot_survival_delta": 0
+      },
+      "meritkv_write_through_lru": {
+        "end_to_end_mean_pct": -7.715753990128881,
+        "evicted_tokens_delta": -297297.0,
+        "gpu_energy_pct": -8.564932058477837,
+        "hot_survival_delta": 0
+      },
+      "native_admit_all_lru": {
+        "end_to_end_mean_pct": -7.794364623934136,
+        "evicted_tokens_delta": -297297.0,
+        "gpu_energy_pct": -8.665156691933628,
+        "hot_survival_delta": 0
+      },
+      "seed": 32004
+    },
+    {
+      "meritkv_joint_skip_write_skip_lookup_lru": {
+        "end_to_end_mean_pct": 0.2448350714357117,
+        "evicted_tokens_delta": 0.0,
+        "gpu_energy_pct": 0.38452751652438,
+        "hot_survival_delta": 0
+      },
+      "meritkv_write_through_lru": {
+        "end_to_end_mean_pct": -7.675883735933553,
+        "evicted_tokens_delta": -309101.0,
+        "gpu_energy_pct": -8.529052227498923,
+        "hot_survival_delta": 1
+      },
+      "native_admit_all_lru": {
+        "end_to_end_mean_pct": -7.777253760587155,
+        "evicted_tokens_delta": -309101.0,
+        "gpu_energy_pct": -8.605892428999196,
+        "hot_survival_delta": 1
+      },
+      "seed": 32005
+    }
+  ],
+  "requests": 2688,
+  "schema_version": 1,
+  "status": "verified"
+}

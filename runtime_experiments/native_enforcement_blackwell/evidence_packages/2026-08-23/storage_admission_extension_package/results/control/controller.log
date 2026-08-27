@@ -1,0 +1,60 @@
+[2026-08-23T00:32:44.239315-04:00] PREFLIGHT PASS inputs, model, image, independent action mapping, and lazy eviction metrics
+[2026-08-23T00:33:12.590353-04:00] PREFLIGHT PASS inputs, model, image, independent action mapping, and lazy eviction metrics
+[2026-08-23T00:33:14.136035-04:00] PRODUCTION SNAPSHOT id=bd8f88b634ee5a038abf245115372ca6c1927230a1f69d9a50bc905b70d53b8a image=sha256:dfd8d4ab6001e8b5f9fa4be18baa26eefb20005579b24c7bc6141e3340717cd4 compose=2634aa9cd6d8e68929efd28ac1cff791366bce5132f6782e62c3e60889fbc137 config=b2f4f24ff9d81207ea55eeaf0b5cd8e5a196430e21c9307eebad5233b3a99adf
+[2026-08-23T00:36:03.467115-04:00] IDLE GATE PASS 120 continuous seconds
+[2026-08-23T00:36:03.745805-04:00] RECOVERY ARMED state=/datapool/experiments/meritkv/gemma4_capacity_pressure_20260823/control/recovery_state.json run_id=meritkv-capacity-1787459763
+[2026-08-23T00:36:07.464654-04:00] OUTAGE STARTED GPU released
+[2026-08-23T00:38:03.190162-04:00] EVICTION METRIC PRIMER PASS requests=6 evicted_delta=4440.0 receipt=control/eviction_metric_primers/default_swa_all_phases_1787459883187366576.json
+[2026-08-23T00:38:03.190565-04:00] SERVER READY retention=lru label=default_swa_all_phases config=b5cf330f642d0434d9820545bd1b58d418ec96b1b504e0be0f050d0bc4dcd548 cache=SWARadixCache canary=pass
+[2026-08-23T00:38:03.246299-04:00] CELL START phase=calibration seed=32000 arm=native_admit_all_lru requests=64
+[2026-08-23T00:38:35.261432-04:00] CELL PASS phase=calibration seed=32000 arm=native_admit_all_lru
+[2026-08-23T00:38:35.407297-04:00] CELL START phase=smoke seed=32010 arm=native_admit_all_lru requests=36
+[2026-08-23T00:38:55.624759-04:00] CELL PASS phase=smoke seed=32010 arm=native_admit_all_lru
+[2026-08-23T00:38:55.675434-04:00] CELL START phase=smoke seed=32010 arm=meritkv_write_through_lru requests=36
+[2026-08-23T00:39:21.275165-04:00] CELL PASS phase=smoke seed=32010 arm=meritkv_write_through_lru
+[2026-08-23T00:39:21.324495-04:00] CELL START phase=smoke seed=32010 arm=meritkv_skip_write_only_lru requests=36
+[2026-08-23T00:39:46.101045-04:00] CELL PASS phase=smoke seed=32010 arm=meritkv_skip_write_only_lru
+[2026-08-23T00:39:46.152125-04:00] CELL START phase=smoke seed=32010 arm=meritkv_joint_skip_write_skip_lookup_lru requests=36
+[2026-08-23T00:40:10.842003-04:00] CELL PASS phase=smoke seed=32010 arm=meritkv_joint_skip_write_skip_lookup_lru
+[2026-08-23T00:40:10.933813-04:00] CELL START phase=evaluation seed=32001 arm=native_admit_all_lru requests=124
+[2026-08-23T00:41:07.525452-04:00] CELL PASS phase=evaluation seed=32001 arm=native_admit_all_lru
+[2026-08-23T00:41:07.578834-04:00] CELL START phase=evaluation seed=32001 arm=meritkv_write_through_lru requests=124
+[2026-08-23T00:42:09.235290-04:00] CELL PASS phase=evaluation seed=32001 arm=meritkv_write_through_lru
+[2026-08-23T00:42:09.288487-04:00] CELL START phase=evaluation seed=32001 arm=meritkv_skip_write_only_lru requests=124
+[2026-08-23T00:43:07.310942-04:00] CELL PASS phase=evaluation seed=32001 arm=meritkv_skip_write_only_lru
+[2026-08-23T00:43:07.363618-04:00] CELL START phase=evaluation seed=32001 arm=meritkv_joint_skip_write_skip_lookup_lru requests=124
+[2026-08-23T00:44:05.225235-04:00] CELL PASS phase=evaluation seed=32001 arm=meritkv_joint_skip_write_skip_lookup_lru
+[2026-08-23T00:44:05.279569-04:00] CELL START phase=evaluation seed=32002 arm=meritkv_write_through_lru requests=124
+[2026-08-23T00:45:06.871884-04:00] CELL PASS phase=evaluation seed=32002 arm=meritkv_write_through_lru
+[2026-08-23T00:45:06.923622-04:00] CELL START phase=evaluation seed=32002 arm=meritkv_skip_write_only_lru requests=124
+[2026-08-23T00:46:04.763627-04:00] CELL PASS phase=evaluation seed=32002 arm=meritkv_skip_write_only_lru
+[2026-08-23T00:46:04.815690-04:00] CELL START phase=evaluation seed=32002 arm=meritkv_joint_skip_write_skip_lookup_lru requests=124
+[2026-08-23T00:47:02.532317-04:00] CELL PASS phase=evaluation seed=32002 arm=meritkv_joint_skip_write_skip_lookup_lru
+[2026-08-23T00:47:02.584777-04:00] CELL START phase=evaluation seed=32002 arm=native_admit_all_lru requests=124
+[2026-08-23T00:47:59.684434-04:00] CELL PASS phase=evaluation seed=32002 arm=native_admit_all_lru
+[2026-08-23T00:47:59.737339-04:00] CELL START phase=evaluation seed=32003 arm=meritkv_skip_write_only_lru requests=124
+[2026-08-23T00:48:57.754478-04:00] CELL PASS phase=evaluation seed=32003 arm=meritkv_skip_write_only_lru
+[2026-08-23T00:48:57.808205-04:00] CELL START phase=evaluation seed=32003 arm=meritkv_joint_skip_write_skip_lookup_lru requests=124
+[2026-08-23T00:49:55.613355-04:00] CELL PASS phase=evaluation seed=32003 arm=meritkv_joint_skip_write_skip_lookup_lru
+[2026-08-23T00:49:55.663873-04:00] CELL START phase=evaluation seed=32003 arm=native_admit_all_lru requests=124
+[2026-08-23T00:50:52.884671-04:00] CELL PASS phase=evaluation seed=32003 arm=native_admit_all_lru
+[2026-08-23T00:50:52.937510-04:00] CELL START phase=evaluation seed=32003 arm=meritkv_write_through_lru requests=124
+[2026-08-23T00:51:54.904706-04:00] CELL PASS phase=evaluation seed=32003 arm=meritkv_write_through_lru
+[2026-08-23T00:51:54.958660-04:00] CELL START phase=evaluation seed=32004 arm=meritkv_joint_skip_write_skip_lookup_lru requests=124
+[2026-08-23T00:52:52.244021-04:00] CELL PASS phase=evaluation seed=32004 arm=meritkv_joint_skip_write_skip_lookup_lru
+[2026-08-23T00:52:52.294706-04:00] CELL START phase=evaluation seed=32004 arm=native_admit_all_lru requests=124
+[2026-08-23T00:53:48.797728-04:00] CELL PASS phase=evaluation seed=32004 arm=native_admit_all_lru
+[2026-08-23T00:53:48.849212-04:00] CELL START phase=evaluation seed=32004 arm=meritkv_write_through_lru requests=124
+[2026-08-23T00:54:50.073559-04:00] CELL PASS phase=evaluation seed=32004 arm=meritkv_write_through_lru
+[2026-08-23T00:54:50.125676-04:00] CELL START phase=evaluation seed=32004 arm=meritkv_skip_write_only_lru requests=124
+[2026-08-23T00:55:47.570406-04:00] CELL PASS phase=evaluation seed=32004 arm=meritkv_skip_write_only_lru
+[2026-08-23T00:55:47.621034-04:00] CELL START phase=evaluation seed=32005 arm=native_admit_all_lru requests=124
+[2026-08-23T00:56:45.232500-04:00] CELL PASS phase=evaluation seed=32005 arm=native_admit_all_lru
+[2026-08-23T00:56:45.284759-04:00] CELL START phase=evaluation seed=32005 arm=meritkv_write_through_lru requests=124
+[2026-08-23T00:57:47.641402-04:00] CELL PASS phase=evaluation seed=32005 arm=meritkv_write_through_lru
+[2026-08-23T00:57:47.692059-04:00] CELL START phase=evaluation seed=32005 arm=meritkv_skip_write_only_lru requests=124
+[2026-08-23T00:58:46.063410-04:00] CELL PASS phase=evaluation seed=32005 arm=meritkv_skip_write_only_lru
+[2026-08-23T00:58:46.115339-04:00] CELL START phase=evaluation seed=32005 arm=meritkv_joint_skip_write_skip_lookup_lru requests=124
+[2026-08-23T00:59:44.500746-04:00] CELL PASS phase=evaluation seed=32005 arm=meritkv_joint_skip_write_skip_lookup_lru
+[2026-08-23T01:00:39.252797-04:00] PRODUCTION RESTORED exact_container=bd8f88b634ee5a038abf245115372ca6c1927230a1f69d9a50bc905b70d53b8a image=sha256:dfd8d4ab6001e8b5f9fa4be18baa26eefb20005579b24c7bc6141e3340717cd4
+[2026-08-23T01:00:39.326284-04:00] RESTORE-ONLY recovery already verified; no action required

@@ -1,0 +1,1 @@
+{"counters": {"extra_key_controls_total": 20, "radix_skip_lookup_total": 20, "radix_skip_write_finished_total": 20, "skip_lookup_requested_total": 20, "skip_write_requested_total": 20}, "path": "/workspace/results/control/calibration_lru_action_counters.json", "updated_at": 1787542676.949356}

@@ -37,7 +37,10 @@ Prompt B is created by shuffling the last 25% of prompt A's tokens, preserving a
 
 ### Gemma-4 Family (ROUGE-L 0.977–0.988)
 
-The Gemma-4 architecture demonstrates the highest KV reuse fidelity across all model sizes. Fidelity increases with model scale as the larger hidden dimensions provide more numerical headroom against float16 rounding error. The Gemma-4 generation is robust to the prefix-splice operation, with typical output divergence occurring only after 15–20 tokens of autoregressive generation.
+Gemma-4 has the highest observed output agreement in this custom-splice
+diagnostic across the tested sizes. Agreement increases with size in these
+measurements, but the experiment does not isolate architecture or hidden
+dimension as the cause.
 
 | Model | Params | ROUGE-L | vs Gemma-2B (P100) |
 |-------|:------:|:-------:|:------------------:|
@@ -48,7 +51,10 @@ The Gemma-4 architecture demonstrates the highest KV reuse fidelity across all m
 
 ### Qwen2.5 Family (ROUGE-L 0.200–0.742)
 
-The Qwen2.5 architecture exhibits a precision-architecture interaction in float16 that amplifies KV cache error, consistent with measurements on P100. The effect is size-dependent: larger models with higher hidden dimensions provide better numerical ratio, reducing but not eliminating the drift. At 32B, ROUGE-L reaches 0.742, substantially better than the 1.5B variant but still below the Gemma-4/LLaMA floor.
+The tested Qwen2.5 float16 custom-splice path shows lower agreement at every
+size. Agreement rises from 0.200 at 1.5B to 0.742 at 32B, but remains below the
+high- and intermediate-agreement bands used for validated performance. We do
+not attribute this pattern to architecture or native-cache correctness.
 
 | Model | Params | ROUGE-L | Improvement |
 |-------|:------:|:-------:|:-----------:|
@@ -83,14 +89,19 @@ The Qwen2.5 architecture exhibits a precision-architecture interaction in float1
 
 ## Interpretation
 
-1. **Gemma-4 achieves the highest fidelity** (ROUGE-L 0.977–0.988), marginally exceeding Gemma-2 on P100. The fourth-generation architecture's attention mechanism is robust to KV cache perturbations.
+1. **Gemma-4 has the highest observed agreement** (ROUGE-L 0.977–0.988) in
+   this tested custom-splice path.
 
 2. **Qwen2.5 fidelity scales with model size** but remains below Gemma-4/LLaMA at every comparable size point. The float16 precision interaction documented on P100 persists on Blackwell, though the larger hidden dimensions of the 14B and 32B variants mitigate the effect substantially.
 
-3. **Prompt sensitivity** (the variability from rephrasing alone) is 0.19–0.32 ROUGE-L across models. All Gemma-4 and LLaMA models exceed this baseline by a wide margin (fidelity ROUGE-L 0.966–0.988 vs sensitivity 0.235–0.298), confirming that KV reuse preserves output quality within the inherent generation variability.
+3. **Prompt sensitivity** (the variability from rephrasing alone) is
+   0.19–0.32 ROUGE-L across models. It is contextual rather than a correctness
+   threshold or proof of output-quality preservation.
 
 4. **These results are for exact-scaffold reuse only.** The measured reuse path is the same exact-prefix splice used in the long-prefix HF benchmark. Approximate semantic-partial reuse may show different fidelity characteristics.
 
 ## Control
 
-At shared ratio = 0.0 (no shared prefix, empty cache), all models produce `ref_text == reuse_text` with ROUGE-L = 1.000 and 100% exact match, confirming the measurement pipeline is free of implementation artifacts.
+At shared ratio = 0.0 (no shared prefix, empty cache), all models produce
+`ref_text == reuse_text` with ROUGE-L = 1.000 and 100% exact match. This checks
+the no-splice control path, not a nonempty splice or native runtime cache.

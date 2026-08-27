@@ -16,9 +16,9 @@ against all baselines on P100.
 
 ## Experimental Setup
 
-- Models: Gemma-2B, Qwen2.5-1.5B, TinyLlama-1.1B, GPT-2, Phi-3-mini
+- Models: Gemma-2B, Qwen2.5-1.5B, TinyLlama-1.1B, GPT-2
 - Hardware: Tesla P100-PCIE-12GB, HF backend, float16, 64 requests per cell
-- 5 models x 10 datasets x 3 modes x 3 seeds = 360 cells per engine
+- 4 models x 10 datasets x 3 modes x 3 seeds = 360 cells per engine
 - Engines: no_cache, MeritKV-Sem (`shadow_kv`), MeritKV (`shadow_kv_plus`), MeritKV-Lite (`shadow_kv_plus_lite`), reactive_prefix_cache, greedy_prefix_cache, strict_reactive_prefix_cache
 
 ## Summary: MeritKV vs All Baselines
@@ -49,6 +49,11 @@ against all baselines on P100.
 
 1. **MeritKV vs MeritKV-Sem**: MeritKV 1.110x vs MeritKV-Sem 1.085x (+2.3%) with 0.056 waste vs 0.240 waste.
 2. **MeritKV vs greedy_prefix_cache**: MeritKV 1.110x vs greedy_prefix_cache 0.994x (+11.7%). MeritKV wins by 11.7%.
-2. **MeritKV vs reactive_prefix_cache**: MeritKV 1.110x vs reactive_prefix_cache 0.983x (+12.9%). MeritKV wins by 12.9%.
-2. **MeritKV vs strict_reactive_prefix_cache**: MeritKV 1.110x vs strict_reactive_prefix_cache 1.017x (+9.1%). MeritKV wins by 9.1%.
-2. **MeritKV vs MeritKV-Lite (`shadow_kv_plus_lite`)**: MeritKV 1.110x vs MeritKV-Lite 0.920x (+20.7%). MeritKV wins by 20.7%.
+3. **MeritKV vs reactive_prefix_cache**: MeritKV 1.110x vs reactive_prefix_cache 0.983x (+12.9%). MeritKV wins by 12.9%.
+4. **MeritKV vs strict_reactive_prefix_cache**: MeritKV 1.110x vs strict_reactive_prefix_cache 1.017x (+9.1%). MeritKV wins by 9.1%.
+5. **MeritKV vs MeritKV-Lite (`shadow_kv_plus_lite`)**: MeritKV 1.110x vs MeritKV-Lite 0.920x (+20.7%). MeritKV wins by 20.7%.
+
+The table reports arithmetic means of each engine's speedup versus no cache.
+The paper's direct paired MeritKV/strict-reactive comparison instead averages
+the matched-cell ratios and is `1.089x` overall (`1.028--1.113x` by dataset).
+These are different aggregation conventions, not conflicting measurements.

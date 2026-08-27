@@ -23,5 +23,8 @@ Completed models: GPT-2, Qwen2.5-1.5B, TinyLlama-1.1B, Gemma-2B. Phi-3 is not in
 
 - The four-model Phase 3 learned-baseline results are usable.
 - Phi-3 is excluded because it OOMed before producing train traces.
-- MeritKV consistently outperforms the learned policy on speedup across all models (2-3% advantage).
-- The learned policy achieves lower waste by being more conservative (more flips-to-bypass), but this trades off speedup.
+- On Qwen2.5-1.5B, TinyLlama, and Gemma-2B, MeritKV is about 1--3% faster in the utility variant.
+- GPT-2 is near no-reuse parity and the learned policy is slightly faster there
+  (1.012x versus 1.003x), so the four-model result is not a universal speed lead.
+- The learned policy is generally more conservative; the waste and speed
+  tradeoff is model-dependent.

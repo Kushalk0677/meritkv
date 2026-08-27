@@ -1,0 +1,56 @@
+{
+  "admission_min_bootstrap_admissions": 0,
+  "admission_preset": "balanced",
+  "admission_util_min_ms": 2.0,
+  "context_length": 4096,
+  "created_at_utc": "2026-07-04T03:25:33+00:00",
+  "dtype": "float16",
+  "kv_info": {
+    "dtype_bytes": 2,
+    "head_dim": 128,
+    "kv_bytes_per_token": 28672,
+    "kv_kib_per_token": 28.0,
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "num_attention_heads": 12,
+    "num_hidden_layers": 28,
+    "num_key_value_heads": 2
+  },
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "n_requests": 256,
+  "notes": [
+    "No-cache reference engines are used only for paired speedup<1 counts.",
+    "vLLM ShadowKV++ is write-through admission overlay; SGLang ShadowKV++ uses native admission hook.",
+    "Balanced rerun applies admission_preset=balanced, policy.utility.util_min_ms=2.0, and min_bootstrap_admissions=0."
+  ],
+  "reference_engines": [
+    "vllm_no_cache_reference",
+    "sglang_no_cache_reference"
+  ],
+  "requested_engines": [
+    "vllm_apc",
+    "vllm_apc_shadowkv_plus",
+    "sglang_radix_attention",
+    "sglang_radix_attention_shadowkv_plus"
+  ],
+  "seed": 20260703,
+  "workloads": [
+    {
+      "dataset": "ag_news",
+      "prompt_mode": "semantic",
+      "role": "pathological_semantic",
+      "workload_id": "pathological_semantic_ag_news"
+    },
+    {
+      "dataset": "ag_news",
+      "prompt_mode": "templated",
+      "role": "pathological_templated",
+      "workload_id": "pathological_templated_ag_news"
+    },
+    {
+      "dataset": "samsum",
+      "prompt_mode": "templated",
+      "role": "control",
+      "workload_id": "control_templated_samsum"
+    }
+  ]
+}

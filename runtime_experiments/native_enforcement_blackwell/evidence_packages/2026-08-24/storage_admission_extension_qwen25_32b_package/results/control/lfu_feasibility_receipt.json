@@ -1,0 +1,78 @@
+{
+  "cache": {
+    "hybrid_swa": false,
+    "implementation": "RadixCache"
+  },
+  "completed_at": "2026-08-23T23:34:57.227654-04:00",
+  "evaluated_cells_allowed": true,
+  "excluded_from_calibration_smoke_evaluation": true,
+  "functional_canary": {
+    "path": "control/server_canaries/lfu_feasibility_preflight.json",
+    "sha256": "6416901fac1a7803fca3d39c311dcf5f785148ecce5f28227174a77e0294dc91"
+  },
+  "model": {
+    "container_snapshot": "/hf_hub/models--Qwen--Qwen2.5-32B-Instruct/snapshots/5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+    "id": "Qwen/Qwen2.5-32B-Instruct",
+    "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+    "snapshot": "/datapool/cache/huggingface/hub/models--Qwen--Qwen2.5-32B-Instruct/snapshots/5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd"
+  },
+  "physical_eviction_primer": {
+    "path": "control/eviction_metric_primers/lfu_feasibility_preflight_1787542497213253645.json",
+    "sha256": "5138c875ffb281cc3d596c20622eaf4cd292cf1b278c3e44adc39367b1bb50d7"
+  },
+  "purpose": "excluded_pre_freeze_lfu_runtime_feasibility_gate",
+  "retention": "lfu",
+  "runtime": {
+    "image": "shadowkv-sglang-native-admission:2026-08-20-swa-counters",
+    "image_id": "sha256:f4593e56ec7f7858f465a62f36dfc42ba8a2d9e91b7700cba50e8b21809e4d3f"
+  },
+  "runtime_error_scan": {
+    "no_oom_retraction_fatal_or_traceback": true,
+    "startup_log_scanned": "control/server_launches/lfu_feasibility_preflight/startup_and_primer.log"
+  },
+  "schema_version": 1,
+  "server": {
+    "argv": [
+      "python3",
+      "-m",
+      "sglang.launch_server",
+      "--model-path",
+      "/hf_hub/models--Qwen--Qwen2.5-32B-Instruct/snapshots/5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+      "--served-model-name",
+      "Qwen/Qwen2.5-32B-Instruct",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "30000",
+      "--context-length",
+      "4096",
+      "--mem-fraction-static",
+      "0.88",
+      "--max-total-tokens",
+      "16384",
+      "--page-size",
+      "1",
+      "--dtype",
+      "float16",
+      "--attention-backend",
+      "triton",
+      "--sampling-backend",
+      "pytorch",
+      "--disable-cuda-graph",
+      "--disable-piecewise-cuda-graph",
+      "--radix-eviction-policy",
+      "lfu",
+      "--enable-cache-report",
+      "--enable-metrics"
+    ],
+    "config_sha256": "b8d0e024d7ed97912fe628b0ae7c3cd6e1073c0d9f7f2443b8c8b4b5ebdade6a",
+    "label": "lfu_feasibility_preflight",
+    "startup_log": "control/server_launches/lfu_feasibility_preflight/startup_and_primer.log",
+    "startup_log_sha256": "68474391892fee413f9cdab6ebbeea24fd59e30ef1db5d57f8a7dff0b45685b3"
+  },
+  "static_gate": {
+    "path": "feasibility/lfu_feasibility_gate.json",
+    "sha256": "4dcc0c73a41f43693c3a4e16d05a3375a48d60ec2104a47636fb93a4e760138f"
+  },
+  "status": "pass"
+}

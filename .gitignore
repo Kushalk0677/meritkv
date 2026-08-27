@@ -20,6 +20,7 @@ dist/
 # Local scratch outputs
 tmp*/
 *.log
+!runtime_experiments/qwen2.5/sglang/balanced_admission/**/*.log
 
 # OS/editor noise
 .DS_Store
@@ -37,6 +38,9 @@ experiments/fidelity_equiv_colab.ipynb
 *.zip
 *.tgz
 *.tar.gz
+!runtime_experiments/native_enforcement_blackwell/evidence_packages/2026-08-23/archives/*.zip
+!runtime_experiments/native_enforcement_blackwell/evidence_packages/2026-08-23/**/*.log
+!runtime_experiments/native_enforcement_blackwell/evidence_packages/2026-08-23/**
 .stratum/
 v10/
 p100_transfer/

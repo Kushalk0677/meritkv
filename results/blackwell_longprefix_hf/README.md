@@ -44,7 +44,8 @@ This folder is a complete, standalone result package for the Blackwell long-pref
 
 ## Duplicate Handling
 
-`google/gemma-4-12B-it` was measured twice. The primary package keeps the better measured result:
+`google/gemma-4-12B-it` was measured twice. The primary package designates one
+run as the paper-facing result and retains the other for provenance:
 
 - kept: `raw_results/google_gemma-4-12B-it`, mean speedup 1.433x
 - omitted from primary combined outputs: second Gemma 4 12B measurement, mean speedup 1.430x
@@ -89,13 +90,23 @@ The package also includes `fidelity_results.md`, which reports the exact-scaffol
 | Gemma-4-31B | 31B | Gemma-4 | 97.2% | 0.988 | 0.245 |
 | Qwen2.5-32B | 32B | Qwen2 | 31.5% | 0.742 | 0.190 |
 
-The high-level fidelity result is architecture-dependent. Gemma-4 models are consistently high fidelity (ROUGE-L 0.977-0.988), TinyLlama and Phi-3 also remain high, while Qwen2.5 improves with scale but remains more sensitive to the float16 KV splice. These fidelity measurements are for exact-scaffold reuse only, matching the measured reuse path in the long-prefix benchmark.
+The output-agreement result is model- and path-dependent. Gemma-4 models are
+consistently high in this check (ROUGE-L 0.977--0.988), TinyLlama and Phi-3 are
+high or intermediate, and Qwen2.5 remains lower at every size. The paper does
+not attribute this pattern to architecture. These measurements apply only to
+the tested float16 custom splice.
 
 ## Interpretation
 
-All checked MeritKV (`shadow_kv_plus`) cells executed the intended exact long-scaffold reuse path: 127/128 reuse successes, 16,256 reused prefix tokens, zero waste, and no backend fallbacks. These runs are evidence for reliable exact-scaffold KV reuse under the HF backend.
+The execution counters show that the custom HF long-scaffold splice was invoked
+in the checked MeritKV (`shadow_kv_plus`) cells: 127/128 reuse successes,
+16,256 reused prefix tokens, zero recorded waste, and no backend fallbacks.
+Invocation does not by itself establish output exactness. The accompanying
+agreement check is model-, precision-, and path-dependent; all Qwen float16
+custom-splice timing results are excluded from validated performance.
 
-They are not evidence for approximate semantic-partial reuse. The measured reuse path is exact scaffold reuse, not semantic partial reuse.
+These runs are not evidence for approximate semantic-partial reuse or for the
+correctness of a native vLLM, SGLang, or LMCache cache API.
 
 The results show a clear break-even behavior. Larger Gemma and Qwen models benefit from reuse, while very small models can lose latency despite correct reuse because fixed planning and external-KV overhead dominate the saved prefill work.
 
@@ -107,4 +118,5 @@ The results show a clear break-even behavior. Larger Gemma and Qwen models benef
 
 Each cell was measured across 5 independent seeds with randomized request order. Results include per-seed variation in latency and energy metrics.
 
-Do not average omitted duplicate measurements into the primary tables. The primary combined tables keep the better Gemma 4 12B result only.
+Do not average the retained duplicate measurement into the primary tables. The
+paper-facing combined tables use the designated Gemma 4 12B result only.

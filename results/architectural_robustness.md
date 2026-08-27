@@ -5,12 +5,14 @@ Raw artifacts keep stable engine IDs: `shadow_kv_plus` displays as MeritKV, `sha
 
 ## Overview
 
-MeritKV is evaluated under two complementary regimes. The point is not to present a single best-case number, but to show how the same cache-reuse policy behaves under both controlled research conditions and more realistic execution boundaries.
+MeritKV is evaluated under two complementary HF regimes: a controlled
+shared-process comparison and a process-isolated custom-splice comparison.
+Neither is the production vLLM/SGLang/LMCache path.
 
 | Regime | Conditions | Purpose |
 |---|---|---|
 | Controlled | Dedicated benchmark runs with the full multi-engine harness and aggregated T4/P100 outputs | Reproducible academic baseline and ceiling-style comparison |
-| Realistic | Process-isolated result files for deployment-style no-cache versus MeritKV checks | Practical sanity check under cleaner per-engine process boundaries |
+| Process-isolated | One-engine-per-process no-cache versus MeritKV custom-splice records | Isolation check with a direct no-cache baseline |
 
 The core architecture is the same in both regimes. What changes is the execution infrastructure around the engines.
 
@@ -64,7 +66,7 @@ summary_by_mode_engine.csv
 
 These files are the primary source for paper-style aggregate speedup, confidence interval, p95, hit-rate, and waste numbers.
 
-### Realistic Results
+### Process-Isolated Results
 
 The realistic result folder is:
 
@@ -111,7 +113,10 @@ The framework is designed to expose cases where caching is net-negative:
 
 ## 4. Why This Matters
 
-For reproducibility, the controlled results provide a stable aggregate benchmark. For deployment reasoning, the realistic results show whether the idea survives cleaner per-engine process boundaries. Keeping both regimes visible makes the paper more honest: the reader can separate best-case controlled behavior from deployment-style sanity checks.
+For reproducibility, the controlled results provide a stable aggregate
+benchmark. The process-isolated results test a cleaner execution boundary.
+Production runtime compatibility and enforced capacity-pressure traces are
+separate evidence families and must not be inferred from either HF regime.
 
 ## 5. Key Takeaways
 

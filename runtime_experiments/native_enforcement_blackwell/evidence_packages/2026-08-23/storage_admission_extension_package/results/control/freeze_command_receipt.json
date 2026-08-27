@@ -1,0 +1,7 @@
+{
+  "status": "frozen",
+  "calibration_receipt": "/datapool/experiments/meritkv/gemma4_capacity_pressure_20260823/control/calibration_receipt.json",
+  "calibration_receipt_sha256": "7ea3ef6b7ed876a260ae3a997e4c9130cd59c0624c848c9ae0c1c473d1b043a8",
+  "evaluation_freeze": "/datapool/experiments/meritkv/gemma4_capacity_pressure_20260823/control/evaluation_freeze.json",
+  "evaluation_freeze_sha256": "541402889dd8519d3be7b2547f31d68a5030a7b4b9992c00ac0a71c0d24b3e15"
+}

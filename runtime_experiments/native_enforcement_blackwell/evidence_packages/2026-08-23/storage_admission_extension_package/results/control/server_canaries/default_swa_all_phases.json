@@ -1,0 +1,30 @@
+{
+  "choices": [
+    {
+      "finish_reason": "length",
+      "index": 0,
+      "logprobs": null,
+      "matched_stop": null,
+      "message": {
+        "content": "Ready",
+        "reasoning_content": null,
+        "role": "assistant",
+        "tool_calls": null
+      }
+    }
+  ],
+  "created": 1787459878,
+  "id": "c14de1a634174a3a94111be64bf4bafb",
+  "metadata": {
+    "weight_version": "default"
+  },
+  "model": "google/gemma-4-31B-it",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 1,
+    "prompt_tokens": 19,
+    "prompt_tokens_details": null,
+    "reasoning_tokens": 0,
+    "total_tokens": 20
+  }
+}

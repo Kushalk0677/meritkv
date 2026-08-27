@@ -1,5 +1,11 @@
 # Semantic Fidelity Measurement — Direction 1
 
+> **Archived protocol:** This document preserves an earlier diagnostic
+> experiment design. It is not the current paper-facing fidelity claim. See
+> `../../docs/semantic_fidelity.md` and
+> `../../results/blackwell_longprefix_hf/fidelity_results.md` for the current
+> scope and limitations.
+
 Measures output quality of approximate semantic KV reuse by comparing
 generated text from exact-prefix vs semantic-approximate KV caches.
 

@@ -1,29 +1,45 @@
-# External Artifact Manifest
+# Repository Artifact Manifest
 
-This repository should contain clean source, documentation, curated result tables, and small diagnostic examples. Large transfer packages and raw working archives should stay outside git and be attached to a GitHub Release or stored in a lab artifact store.
+This is the complete working repository, not the compact anonymised reviewer
+snapshot. It contains source, measured aggregates, selected raw campaigns,
+historical provenance, and explicitly modelled estimates. The current paper and
+`CLAIMS_TO_ARTIFACTS.md` define the paper-facing evidence boundary.
 
-## Keep Out Of Git
+## Current Paper Evidence
 
-| Artifact | Status | Reason |
-|---|---|---|
-| `p100_transfer/` | external transfer package | Contains a self-contained runner copy, logs, tarballs, and historical scripts. Public repo now has `experiments/run_p100_isolated_sweep.py` and `docs/reproducing_p100.md`. |
-| `rtx6000_run_package.zip` | historical handoff archive | Contains pycache, egg-info, backups, session files, and bundled source. Do not commit. |
-| `blackwell_semantic_n128_pipeline.zip` | retired overlay package | Too small and incomplete for source control. Superseded by the public Blackwell runner and the full sendable package. |
-| `shadowkv_blackwell_semantic_n128_fullrepo_*.zip` | sendable full repo package | Useful for handing to a machine operator, but should be attached as a release artifact rather than committed. |
-| `v10/` | private working archive | Contains scratch experiments, old packages, profiles, notebooks, and intermediate outputs. Extract only curated docs/scripts/results. |
-| `.stratum/artifact_extraction/` | raw artifact extraction archive | Contains reviewer-gap runs, fidelity outputs, and runtime replicate bundles. Curate summaries into `results/` or `runtime_experiments/` before publishing. |
-
-## Public Repo Equivalents
-
-| Need | Public file |
+| Evidence family | Repository path |
 |---|---|
-| Blackwell semantic n=128 run | `experiments/run_blackwell_semantic_n128.py` and `docs/reproducing_blackwell.md` |
-| P100 rerun | `experiments/run_p100_isolated_sweep.py` and `docs/reproducing_p100.md` |
-| Controlled T4/P100 results | `results/controlled_results/` |
-| Process-isolated sanity checks | `results/realistic_results/` |
-| Fidelity examples | `results/fidelity_examples/` |
-| Runtime SGLang/vLLM/LMCache summaries | `runtime_experiments/` |
+| Canonical machine-readable paper tables | `results/paper_tables/` |
+| Controlled T4/P100 study | `results/controlled_results/` |
+| Process-isolated baseline comparison | `results/isolated_baseline_comparison/` |
+| Five-model process-isolated study | `results/realistic_results/` |
+| Blackwell long-prefix study | `results/blackwell_longprefix_hf/` |
+| Fidelity diagnostics | `results/fidelity_examples/`, `docs/results_table.md` |
+| Runtime compatibility | `runtime_experiments/qwen2.5/`, `runtime_experiments/gemma4/` |
+| Native SGLang balanced admission | `runtime_experiments/qwen2.5/sglang/balanced_admission/` |
+| Mixed/admission and learned baselines | `results/mixed_traffic/`, `results/learned_admission_baseline/` |
+| Capacity-pressure evidence | `results/memory_bound_trace/`, `results/memory_bound_trace_multiround/` |
 
-## Rule Of Thumb
+## Scope Classes
 
-If an artifact contains generated logs, cache directories, bundled source copies, or old session notes, do not commit it. If it contains a small script or a result table that someone can understand and rerun from the public repo, extract that piece and document where it came from.
+| Class | Examples | How to use |
+|---|---|---|
+| Paper-facing aggregate | `results/paper_tables/`, top-level runtime CSVs, and current summaries | Use for reported values and claims. |
+| Complete paper-facing runtime bundle | `runtime_experiments/qwen2.5/sglang/balanced_admission/` | Audit the native balanced-admission table from aggregate, request-level, log, command, and environment records. |
+| Raw campaign provenance | Runtime `raw/`, long-prefix `provenance/`, operator notes | Audit a specific campaign; do not override current aggregation. |
+| Auxiliary experiment | Blackwell semantic n=128, Gemma all-engine extension | Method development or follow-up analysis; not a distinct paper result. |
+| Historical development report | `docs/reports/`, `experiments/archive/` | Implementation history only. |
+| Modelled estimate | `results/energy_estimates/` | Excluded from measured paper evidence. |
+
+## External-Only Artifacts
+
+Large transfer packages, environment archives, model weights, downloaded
+datasets, caches, and duplicate repository snapshots should remain outside git.
+Attach release-quality archives separately and record checksums and provenance.
+
+## Consistency Rule
+
+Campaign-specific notes may retain their original numbers, but they must carry
+a scope notice. Current READMEs and the claim map use the paper's aggregation,
+write-through/enforced distinction, and fidelity limitations. No missing seed
+record should be reconstructed from a paper aggregate.

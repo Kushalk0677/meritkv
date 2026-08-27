@@ -1,5 +1,10 @@
 # ShadowKV++ Long-Prefix HF Results: Gemma 4 31B and 26B-A4B
 
+> **Historical source interpretation:** This report preserves the campaign
+> record as written at collection time. Statements about exactness,
+> architecture, or performance eligibility are superseded by `../README.md`,
+> `../fidelity_results.md`, and the repository claim map.
+
 Run date: 2026-07-11 (America/New_York)  
 Hardware: NVIDIA RTX PRO 6000 Blackwell Workstation Edition, 97,887 MiB VRAM  
 Driver/CUDA: 580.119.02 / CUDA 13.0  
@@ -73,4 +78,3 @@ This is one seed and one execution per cell. Engines ran in fixed order (`no_cac
 The source snapshot includes the single-backend calibration patch required for large FP16 models, the long-scaffold admission fix, mutable-cache isolation, current Hugging Face dataset IDs, and regression tests. The patched suite passed `93 passed, 1 skipped`.
 
 Production `qwen36-27b-fp8-vllm` was restored after the sweep and `/v1/models` returned HTTP 200 with model ID `qwen36-27b-fp8`.
-

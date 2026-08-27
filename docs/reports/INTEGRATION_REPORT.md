@@ -1,5 +1,9 @@
 # MeritKV Full Repository Integration Report
 
+> **Historical implementation report:** Retained for development provenance.
+> Its smoke-test numbers and terminology are not paper-facing evidence; the
+> manuscript is the sole authority for current claims and names.
+
 ## Engine Name Aliases
 
 Raw artifacts keep stable engine IDs: `shadow_kv_plus` displays as MeritKV, `shadow_kv` displays as MeritKV-Sem, and `shadow_kv_plus_lite` displays as MeritKV-Lite.

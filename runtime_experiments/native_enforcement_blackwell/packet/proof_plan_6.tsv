@@ -1,0 +1,7 @@
+proof_id	model_slug	model_id	arm	seed	dataset	prompt_mode	requests	trace
+1	qwen25_32b	Qwen/Qwen2.5-32B-Instruct	native_baseline	20260820	samsum	templated	64	admission_sensitive_trace.jsonl
+2	qwen25_32b	Qwen/Qwen2.5-32B-Instruct	meritkv_write_through	20260820	samsum	templated	64	admission_sensitive_trace.jsonl
+3	qwen25_32b	Qwen/Qwen2.5-32B-Instruct	meritkv_enforced	20260820	samsum	templated	64	admission_sensitive_trace.jsonl
+4	gemma4_31b	google/gemma-4-31B-it	native_baseline	20260820	samsum	templated	64	admission_sensitive_trace.jsonl
+5	gemma4_31b	google/gemma-4-31B-it	meritkv_write_through	20260820	samsum	templated	64	admission_sensitive_trace.jsonl
+6	gemma4_31b	google/gemma-4-31B-it	meritkv_enforced	20260820	samsum	templated	64	admission_sensitive_trace.jsonl

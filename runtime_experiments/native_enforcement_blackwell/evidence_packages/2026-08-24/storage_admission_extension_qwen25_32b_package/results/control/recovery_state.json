@@ -1,0 +1,32 @@
+{
+  "armed_at": "2026-08-23T23:33:06.049325-04:00",
+  "experiment": {
+    "client_name": "meritkv-capacity-qwen25-cell-client",
+    "server_name": "meritkv-capacity-qwen25-server"
+  },
+  "monitor": {
+    "job_id": "b8813f6b0489",
+    "resume_required": true,
+    "was_active": true
+  },
+  "outage_started_at": "2026-08-23T23:33:06.454819-04:00",
+  "phase": "restore_verified",
+  "production": {
+    "compose_path": "/home/jade_hand/active/services/qwen38-27b-fp8-sglang/docker-compose.yml",
+    "compose_sha256": "2634aa9cd6d8e68929efd28ac1cff791366bce5132f6782e62c3e60889fbc137",
+    "container_id": "bd8f88b634ee5a038abf245115372ca6c1927230a1f69d9a50bc905b70d53b8a",
+    "image_id": "sha256:dfd8d4ab6001e8b5f9fa4be18baa26eefb20005579b24c7bc6141e3340717cd4",
+    "model": "qwen38-27b-fp8",
+    "name": "qwen38-27b-fp8-sglang",
+    "normalized_config_sha256": "b2f4f24ff9d81207ea55eeaf0b5cd8e5a196430e21c9307eebad5233b3a99adf",
+    "url": "http://127.0.0.1:8017"
+  },
+  "restore_attempted_at": "2026-08-24T00:12:56.717567-04:00",
+  "restore_attempts": 1,
+  "restore_evidence_dir": "/datapool/experiments/meritkv/qwen25_capacity_pressure_20260824/control/restore_1787544776",
+  "restore_required": false,
+  "restore_status": "verified",
+  "restored_at": "2026-08-24T00:13:50.725200-04:00",
+  "run_id": "meritkv-capacity-1787542386",
+  "schema_version": 1
+}

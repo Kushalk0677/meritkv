@@ -1,6 +1,11 @@
 # Qwen2.5 Memory-Bound Trace
 
-This folder contains the Qwen2.5 Blackwell memory-bound trace copied from `C:\shadowkv\v10\results\memory_bound_trace_qwen`.
+This folder contains the Qwen2.5 Blackwell memory-bound trace. `SOURCE.txt`
+records the source snapshot used to assemble this portable repository package.
+
+This subfolder preserves its campaign-level three-arm summary. The paper-facing
+native/occupancy-cap/enforced comparison and its metric definitions are
+consolidated in `../MEMORY_BOUND_RESULTS.md`.
 
 ## Coverage
 

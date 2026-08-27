@@ -3,12 +3,15 @@
 Raw artifacts keep stable engine IDs: `shadow_kv_plus` displays as MeritKV, `shadow_kv` displays as MeritKV-Sem, and `shadow_kv_plus_lite` displays as MeritKV-Lite.
 
 
-MeritKV is evaluated under two complementary result regimes. The purpose is not to present one best-case number, but to show how the same per-request utility controller behaves under controlled benchmark conditions and under cleaner deployment-style process boundaries.
+MeritKV is evaluated under two complementary HF result regimes. The purpose is
+to separate the controlled shared-process comparison from a cleaner
+process-isolated custom-splice comparison. Neither is the production
+vLLM/SGLang/LMCache path.
 
 | Regime | Files | Purpose |
 |--------|-------|---------|
 | Controlled | `results/controlled_results/` | Main academic comparison across engines, models, datasets, prompt modes, and seeds |
-| Realistic | `results/realistic_results/` | Process-isolated no-cache versus MeritKV traces for deployment sanity checks |
+| Process-isolated | `results/realistic_results/` | No-cache versus MeritKV custom-splice traces with one engine per process |
 
 ## Architecture Invariants
 
@@ -52,7 +55,7 @@ results/controlled_results/
 
 These runs compare multiple in-repository engines on the same benchmark harness. They are the right source for headline speedup, p95, hit-rate, waste, and confidence-interval summaries.
 
-## Realistic Results
+## Process-Isolated Results
 
 The realistic bundle contains process-isolated traces for the most important deployment comparison:
 
@@ -62,13 +65,17 @@ results/realistic_results/
   MeritKV (`shadow_kv_plus`) benchmark JSONs: `shadow_kv_plus/**/benchmark_*.json`
 ```
 
-Use these files when checking whether the policy still behaves sensibly when each engine starts from a cleaner process boundary. They are not a replacement for the controlled aggregate CSVs; they are a sanity check that the measured gains are not only artifacts of one in-process benchmark layout.
+Use these files when checking behavior with a cleaner process boundary. They
+are not a production-runtime test and do not replace the controlled aggregates.
+The Qwen float16 custom-splice row is diagnostic only because its output
+agreement is materially lower.
 
 ## Why Both Regimes Matter
 
 Controlled results answer the research question: does per-request utility admission beat simpler cache strategies when everything is measured in one benchmark harness?
 
-Realistic results answer the deployment question: does the same policy avoid obvious negative-utility behavior when measured with cleaner process boundaries and a direct no-cache comparison?
+Process-isolated results ask whether the same policy behavior persists with
+cleaner engine isolation and a direct no-cache comparison.
 
 Together, they support a more honest claim: MeritKV improves reuse decisions by admitting only requests with positive expected utility, while exposing cases where bypass is better than reuse.
 

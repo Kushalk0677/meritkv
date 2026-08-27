@@ -1,5 +1,10 @@
 # Memory-Bound Trace Results -- Gemma 4 on Blackwell
 
+> **Scope:** This is a legacy auxiliary Gemma campaign record. The paper's
+> principal memory-bound evidence is the consolidated Blackwell Qwen2.5-32B
+> and T4 Qwen2.5-7B comparison in `../MEMORY_BOUND_RESULTS.md`, plus the
+> separately released enforced Gemma-4-31B multiround trace.
+
 3-phase interleaved trace exceeding KV cache capacity midway, forcing evictions.
 
 | Phase | Requests | Content | Purpose |

@@ -1,6 +1,6 @@
-# MeritKV: Novel Per-Request Utility Decisions for KV Cache Reuse
+# MeritKV: Utility-Gated Admission Control for KV-Cache Reuse in LLM Serving
 
-[![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](PENDING)
+![Manuscript under review](https://img.shields.io/badge/manuscript-under_review-lightgrey.svg)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
@@ -46,9 +46,11 @@ MeritKV combines three cooperating components:
 
 ## Key Results
 
-### Main HF Evaluation
+### Controlled and Process-Isolated HF Evaluation
 
-The controlled HuggingFace results cover 5 models, 10 datasets, 3 prompt modes, and 3 seeds (`42`, `123`, `456`) on T4 and P100 GPUs. The aggregate CSVs live under `results/controlled_results/`.
+The controlled Hugging Face study covers five models, ten datasets, three
+prompt modes, and three seeds (`42`, `123`, `456`) on T4 and P100 GPUs. The
+aggregate CSVs live under `results/controlled_results/`.
 
 Baselines include no-cache, reactive prefix caching, greedy prefix caching, strict reactive prefix caching, frequency speculation, MeritKV-Sem (`shadow_kv`), and MeritKV (`shadow_kv_plus`).
 
@@ -62,30 +64,75 @@ Baselines include no-cache, reactive prefix caching, greedy prefix caching, stri
 | MeritKV-Sem | 1.287x | 0.264 | 0.606 |
 | **MeritKV** | **1.365x** | **0.156** | **0.402** |
 
-The headline result is not just higher hit rate. MeritKV improves latency while reducing wasted speculative work relative to MeritKV-Sem.
+The result is a latency-waste tradeoff rather than a hit-rate claim: MeritKV
+improves controlled latency while reducing speculative waste relative to
+MeritKV-Sem. In the separate four-model process-isolated baseline matrix,
+MeritKV is `1.089x` faster than strict reactive overall, with per-dataset ratios
+from `1.028x` to `1.113x`.
 
-### Runtime Evaluation
+### Production Runtime Compatibility
 
-Runtime-system experiments are stored in `runtime_experiments/` and cover SGLang, LMCache, and vLLM on an NVIDIA RTX PRO 6000 Blackwell system with Qwen2.5 models from 1.5B to 32B.
+Runtime-system experiments under `runtime_experiments/` cover SGLang, LMCache,
+and vLLM on Blackwell with Qwen2.5 from 1.5B to 32B and five Gemma-4 variants.
+These integrations are write-through: they measure compatibility and observed
+decision-layer overhead, not production acceleration caused by MeritKV.
 
 | Metric | Value |
 |--------|-------|
-| MeritKV vs LMCache at 7B | +16.7% |
-| MeritKV at 32B over LMCache | +5.1% |
-| vLLM APC + MeritKV vs no-cache at 32B | +19.0% |
-| GPU energy saving, vLLM at 32B | about 25% |
+| Qwen2.5 SGLang overlay/native latency ratio | 1.013 to 0.953 |
+| Qwen2.5 vLLM overlay/native latency ratio | 0.975 to 0.993 |
+| vLLM-32B APC+MeritKV vs APC mean latency | +0.44% |
+| vLLM-32B APC+MeritKV vs APC P95 latency | +0.59% |
+| vLLM-32B APC+MeritKV vs APC idle-adjusted energy/request | -0.22% |
+| Mean Gemma-4 overlay overhead | +1.3% SGLang, +0.5% vLLM, +0.4% LMCache |
+
+The separate Qwen2.5-1.5B balanced-admission experiment uses a native SGLang
+per-request admission hook rather than the broad write-through integration. On
+the pathological short-prefix semantic AG News workload, MeritKV skipped 254 of
+256 cache lookups and reduced attempted cache-query traffic from 957.8 MB to
+6.8 MB (99.3%). Mean latency increased from 10.9 ms to 20.2 ms, so this result
+demonstrates enforced waste avoidance, not a latency improvement. The complete
+bundle is under `runtime_experiments/qwen2.5/sglang/balanced_admission/`.
+
+The broad runtime study must not be read as an acceleration result. Enforced
+execute-or-bypass evidence appears separately in the capacity-pressure traces:
+at 56 GB and 28 GB, enforcement lowers mean latency by `11.6%` and `16.7%`
+versus the write-through overlay and improves final recovery by 41 and 61
+percentage points.
+
+A separate frozen native-enforcement matrix on Qwen2.5-32B and Gemma-4-31B
+verifies that requested bypasses reached the SGLang cache: all 42 proof-cell
+bypasses per model matched executed skip-lookup and skip-write counters. The
+full workload bypassed only 50 of 12,800 requests per model and therefore
+showed near-parity, not acceleration, versus write-through (+0.197% and
++0.144% mean latency). The complete 414-cell evidence package is under
+`runtime_experiments/native_enforcement_blackwell/`.
 
 ### KV Cache Reuse Fidelity
 
-Fidelity examples live in `results/fidelity_examples/`. These files are diagnostic examples, not a claim that approximate semantic KV substitution is universally safe.
+Fidelity examples live in `results/fidelity_examples/`. They evaluate a custom
+Hugging Face `DynamicCache` splice, not native vLLM/SGLang/LMCache cache
+correctness. These files are diagnostic examples, not a claim that approximate
+semantic KV substitution is universally safe.
 
 | Model | ROUGE-L | Interpretation |
 |-------|:-------:|----------------|
-| TinyLlama 1.1B | 0.966 | robust in this check |
-| Gemma 2B | 0.974 | robust in this check |
-| Phi-3 Mini | 0.931 | acceptable but should be checked |
-| GPT-2 | 0.876 | acceptable but should be checked |
-| Qwen2.5 1.5B | 0.200 | needs precision/quality guard |
+| TinyLlama 1.1B | 0.966 | high observed agreement |
+| Gemma 2B | 0.974 | high observed agreement |
+| Phi-3 Mini | 0.931 | intermediate observed agreement |
+| GPT-2 | 0.876 | marginally above the intermediate-band boundary |
+| Qwen2.5 1.5B | 0.200 | lower observed agreement; timing excluded |
+
+The descriptive agreement bands are not universal correctness thresholds. All
+Qwen float16 custom-splice speedups are excluded from validated performance,
+and the observed pattern is not attributed to architecture.
+
+The separate explicit-state continuation check under float16 SDPA compares the
+splice directly with equivalent native cached decoding. It agrees on 956/960
+decoded tokens across five T4 models, including 192/192 for Qwen2.5-1.5B and
+Gemma-2B. This direct-equivalence diagnostic answers a different question from
+the crop-and-replay ROUGE-L results above; its raw JSONs and summary are under
+`results/exact_splice_validation/`.
 
 ---
 
@@ -116,8 +163,15 @@ experiments/
 
 results/
   controlled_results/          T4/P100 controlled benchmark JSONs and CSV summaries
+  paper_tables/                Canonical machine-readable paper tables
+  isolated_baseline_comparison/ Four-model process-isolated baseline comparison
   realistic_results/           Process-isolated no-cache and MeritKV JSON outputs
+  blackwell_longprefix_hf/      Twelve-instance long-prefix aggregates and provenance
   fidelity_examples/           Per-sample KV reuse fidelity examples
+  exact_splice_validation/     Explicit-state continuation raw JSONs and summary
+  mixed_traffic/                Admission and mixed-workload summaries
+  memory_bound_trace/           Three-phase capacity-pressure traces
+  memory_bound_trace_multiround/ Four-arm enforced multiround traces
   sweep_timing/                Small timing/smoke outputs
   RESULTS.md                   Public result-bundle guide
   architectural_robustness.md  Controlled versus realistic validation notes
@@ -203,7 +257,7 @@ print(f"Reused {result.matched_prefix_length} tokens, "
 | `profile_plan.py` | Controller `Plan()` latency profiling |
 | `eval_comprehensive.py` | ROUGE-L and exact-match evaluation |
 | `analyze_shadowkv_results.py` | Result parser and policy-summary generator |
-| `run_blackwell_semantic_n128.py` | Isolated RTX PRO 6000 Blackwell semantic n=128 sweep |
+| `run_blackwell_semantic_n128.py` | Auxiliary RTX PRO 6000 Blackwell semantic-execution sweep; not a distinct paper result |
 | `run_p100_isolated_sweep.py` | Conservative isolated P100 rerun driver |
 
 ### Reproduce a Small Matrix
@@ -244,9 +298,18 @@ For GPU checks, use `experiments/fidelity_equiv_colab.ipynb` from the archive/ex
 |---|---|
 | Controlled T4/P100 benchmark JSONs and summaries | `results/controlled_results/` |
 | Aggregate controlled CSVs | `results/controlled_results/summary_by_engine.csv`, `results/controlled_results/summary_by_mode_engine.csv` |
+| Canonical machine-readable paper tables | `results/paper_tables/` |
+| Process-isolated baseline matrix | `results/isolated_baseline_comparison/` |
 | Process-isolated no-cache and MeritKV outputs | `results/realistic_results/` |
+| Blackwell long-prefix aggregates and provenance | `results/blackwell_longprefix_hf/` |
 | Fidelity example JSONs | `results/fidelity_examples/` |
+| Explicit-state continuation validation | `results/exact_splice_validation/` |
+| Mixed/admission comparisons | `results/mixed_traffic/` |
+| Capacity-pressure traces | `results/memory_bound_trace/`, `results/memory_bound_trace_multiround/` |
 | Runtime-system experiments | `runtime_experiments/` |
+| Native SGLang balanced admission | `runtime_experiments/qwen2.5/sglang/balanced_admission/` |
+| Native SGLang enforcement matrix | `runtime_experiments/native_enforcement_blackwell/` |
+| Native Gemma-4-31B storage admission | `runtime_experiments/native_enforcement_blackwell/storage_admission_extension/` |
 
 ---
 
@@ -258,7 +321,8 @@ To keep the repository lightweight:
 - **Model weights** - all models are downloaded from Hugging Face at runtime.
 - **Datasets** - all datasets are downloaded from Hugging Face at runtime.
 - **Transient local outputs** outside the curated `results/` and `runtime_experiments/` snapshots.
-- **Full raw runtime deliverables** used to build the compact runtime CSVs.
+- **Complete raw runtime archives** for every aggregate row. Selected raw
+  campaigns are retained; the complete release is separate.
 
 ---
 
@@ -271,7 +335,7 @@ To keep the repository lightweight:
 | Architectural robustness | [results/architectural_robustness.md](results/architectural_robustness.md) |
 | Fidelity experiment methodology | [docs/experimental_setup.md](docs/experimental_setup.md) |
 | Fidelity results and coupled utility | [docs/results_table.md](docs/results_table.md) |
-| Qwen float16 root cause | [docs/fidelity_deep_analysis.md](docs/fidelity_deep_analysis.md) |
+| Qwen float16 diagnostic analysis | [docs/fidelity_deep_analysis.md](docs/fidelity_deep_analysis.md) |
 | Semantic correctness boundary | [docs/semantic_fidelity.md](docs/semantic_fidelity.md) |
 | Runtime experiments | [runtime_experiments/README.md](runtime_experiments/README.md) |
 | Blackwell reproduction | [docs/reproducing_blackwell.md](docs/reproducing_blackwell.md) |
@@ -282,17 +346,7 @@ To keep the repository lightweight:
 
 ## Citation
 
-```bibtex
-@misc{khemani2026shadowkv,
-  title={MeritKV: Novel Per-Request Utility Decisions for Waste-Aware KV Cache Reuse},
-  author={Kushal Khemani and Evan Leri and Sparsh Mittal},
-  year={2026},
-  eprint={XXXX.XXXXX},
-  archivePrefix={arXiv},
-  primaryClass={cs.CL},
-  url={https://arxiv.org/abs/XXXX.XXXXX},
-}
-```
+Citation metadata will be added when a public paper identifier is available.
 
 ---
 

@@ -52,18 +52,21 @@ semantic opportunity metrics:
 - `semantic_opportunity_estimated_savings_ms`
 - `semantic_blocked_by_backend_total`
 
-On `FakeBackend`, approximate semantic partial reuse may execute as an ablation.
-This gives two separate claims:
+On `FakeBackend`, approximate semantic partial reuse may execute as an
+ablation. A separate explicitly enabled process-isolated diagnostic can also
+execute approximate substitution on the HF path; it is not safety-validated.
+This gives separate claims:
 
 1. Real backend: policy and opportunity detection are measured safely.
-2. Fake backend: approximate partial reuse potential can be stress-tested.
+2. Flag-on diagnostic: approximate execution behavior can be measured, without
+   claiming output-quality preservation.
 
 ## Expected paper claim
 
 Do not claim that semantic KV reuse is production-safe yet. The correct claim is:
 
 > MeritKV identifies semantic reuse opportunities that exact-prefix caches miss,
-> and exposes a correctness-aware boundary between safe exact reuse and approximate
+> and exposes a correctness-aware boundary between token-identical reuse and approximate
 > semantic reuse opportunities.
 
 This is stronger and more credible than pretending semantic KV reuse is already

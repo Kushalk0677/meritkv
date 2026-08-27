@@ -1,76 +1,46 @@
-# Cross-Runtime Summary
+# Qwen2.5 Cross-Runtime Summary
 
-This summary covers the curated runtime tables and the included run files for vLLM, SGLang/LMCache, and k-star.
+These are the measured Blackwell aggregates reported in the current paper. No
+model-size point is interpolated. Runtime cache behavior is write-through, so
+the overlay rows establish compatibility and observed decision-layer overhead,
+not MeritKV-caused production acceleration.
 
-## Curated Table Coverage
+## SGLang and LMCache
 
-| Dataset | Rows | Models | Engines | Dataset count |
+| Model | LMCache latency (ms) | Native Radix latency (ms) | Radix+MeritKV latency (ms) | Overlay/native |
 |---|---:|---:|---:|---:|
-| SGLang | 290 | 5 | 3 | 10 |
-| vLLM | 270 | 5 | 3 | 10 |
-| LMCache | 100 | 5 | 1 | 10 |
+| Qwen2.5-1.5B | 12.9 | 11.7 | 11.9 | 1.013 |
+| Qwen2.5-3B | 17.3 | 15.6 | 15.7 | 1.006 |
+| Qwen2.5-7B | 28.6 | 24.6 | 23.8 | 0.976 |
+| Qwen2.5-14B | 53.4 | 47.0 | 46.2 | 0.981 |
+| Qwen2.5-32B | 102.1 | 101.7 | 96.9 | 0.953 |
 
-## SGLang: MeritKV Speedup vs LMCache Baseline
+The like-for-like comparison is native RadixAttention versus
+RadixAttention+MeritKV. LMCache without Radix caches only one to two tokens per
+request here and is contextual rather than the principal baseline.
 
-Mean across the curated SGLang table:
+## vLLM APC Scale Ratios
 
-| Model | MeritKV vs LMCache |
+| Model | APC+MeritKV/APC latency |
 |---|---:|
-| Qwen2.5-1.54B | +7.2% |
-| Qwen2.5-3.09B | +8.4% |
-| Qwen2.5-7.61B | +15.7% |
-| Qwen2.5-14.7B | +12.7% |
-| Qwen2.5-32.5B | +2.7% |
+| Qwen2.5-1.5B | 0.985 |
+| Qwen2.5-3B | 0.990 |
+| Qwen2.5-7B | 0.975 |
+| Qwen2.5-14B | 0.980 |
+| Qwen2.5-32B | 0.993 |
 
-## SGLang: MeritKV Speedup vs Native RadixAttention
+## vLLM Qwen2.5-32B Five-Replicate Campaign
 
-Mean across the curated SGLang table:
+| Engine | Mean latency (ms) | P95 latency (ms) | Idle-adjusted J/request |
+|---|---:|---:|---:|
+| No cache | 72.84 | 89.96 | 36.32 |
+| APC | 59.37 | 73.62 | 26.63 |
+| APC+MeritKV | 59.62 | 73.93 | 26.59 |
 
-| Model | MeritKV vs RadixAttention |
-|---|---:|
-| Qwen2.5-1.54B | -1.1% |
-| Qwen2.5-3.09B | -0.8% |
-| Qwen2.5-7.61B | +2.9% |
-| Qwen2.5-14.7B | +1.7% |
-| Qwen2.5-32.5B | +3.7% |
+The paper's APC+MeritKV/APC changes, `+0.44%` mean latency, `+0.59%` P95,
+and `-0.22%` energy, are means of paired per-replicate ratios. They therefore
+need not equal ratios of the rounded arithmetic means.
 
-## vLLM Qwen2.5-32B 5-Replicate Aggregate
-
-The July 1 vLLM aggregate is in `vllm/raw/q32b_5rep_20260701/` and contains 150 rows: 5 reps x 10 dataset/mode cells x 3 engines.
-
-| Engine | Jobs | Mean ms | P95 ms | Throughput rps | Idle J/request | Metrics cached tokens |
-|---|---:|---:|---:|---:|---:|---:|
-| vLLM APC | 50 | 59.37 | 73.62 | 17.25 | 26.63 | 1,472,032 |
-| vLLM APC + MeritKV | 50 | 59.62 | 73.93 | 17.17 | 26.59 | 1,470,400 |
-| vLLM no cache | 50 | 72.84 | 89.96 | 14.21 | 36.32 | 0 |
-
-Paired deltas from the run summary:
-
-| Comparison | Mean latency delta | P95 delta | Throughput delta | Idle J/request delta |
-|---|---:|---:|---:|---:|
-| APC + MeritKV vs APC | +0.44% | +0.59% | -0.42% | -0.22% |
-| APC + MeritKV vs no cache | -17.59% | -18.03% | +21.56% | -27.26% |
-| APC vs no cache | -17.95% | -18.42% | +22.10% | -27.09% |
-
-## SGLang/LMCache Qwen2.5-32B Run
-
-The June 8 SGLang/LMCache tree is in `sglang/raw/q32b_full_20260608/`.
-
-| Baseline | Mean latency ms | P95 latency ms | Throughput rps | Cached tokens total | Cached tokens mean | Idle-adjusted J/request |
-|---|---:|---:|---:|---:|---:|---:|
-| sglang_radix_attention | 99.09 | 112.87 | 10.19 | 351,688 | 137.38 | 44.98 |
-| lmcache | 99.45 | 114.83 | 10.15 | 359,986 | 140.62 | 44.79 |
-
-## k-star Prefix Profile
-
-The primary Blackwell prefix profile is in `kstar/raw/prefix_profile_20260701/`.
-
-| Model | Inferred k* tokens | Positive points |
-|---|---:|---:|
-| Qwen/Qwen2.5-1.5B-Instruct | 16 | 5 |
-| Qwen/Qwen2.5-7B-Instruct | 16 | 4 |
-| Qwen/Qwen2.5-32B-Instruct | 16 | 5 |
-
-Response-level cached-token fields stayed at zero for this vLLM `/v1/completions` path. The cache-hit signal comes from the vLLM metrics deltas in the k-star CSV/JSON files.
-
-
+Selected raw 32B campaign records and the separate k-star prefix profile remain
+under the corresponding `raw/` and `kstar/` folders. Raw summaries preserve
+campaign-level observations and do not override this paper-facing aggregation.

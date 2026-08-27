@@ -1,0 +1,5 @@
+order	arm	retention	seed	trace	requests
+1	native_admit_all_lru	lru	32010	traces/smoke_seed_32010.jsonl	36
+2	meritkv_write_through_lru	lru	32010	traces/smoke_seed_32010.jsonl	36
+3	meritkv_skip_write_only_lru	lru	32010	traces/smoke_seed_32010.jsonl	36
+4	meritkv_joint_skip_write_skip_lookup_lru	lru	32010	traces/smoke_seed_32010.jsonl	36

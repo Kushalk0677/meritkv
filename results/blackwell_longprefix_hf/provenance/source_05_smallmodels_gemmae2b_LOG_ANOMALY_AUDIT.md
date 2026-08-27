@@ -1,5 +1,8 @@
 # Log Anomaly Audit
 
+> **Source-campaign audit:** Preserved for provenance. It audits collection
+> integrity and is not a paper-facing performance or fidelity claim.
+
 - Measured benchmark failures: none (`failed=0/180`, `failed=0/30`).
 - Smoke failures: none (`failed=0/18`, `failed=0/3`).
 - CUDA OOM, CUDA error, Python traceback, killed process, or external-workload abort: none.

@@ -1,0 +1,7 @@
+captured_at=2026-07-03T23:20:05-04:00
+hostname=first-light
+kernel=Linux first-light 6.12.76 #1-NixOS SMP PREEMPT_DYNAMIC Thu Mar  5 15:04:32 UTC 2026 x86_64 GNU/Linux
+cwd=/home/jade_hand/research/shadowkv
+vllm_image=shadowkv-shadowkv:latest
+sglang_image=shadowkv-sglang-native-admission:2026-06-22-counters
+run_id=reviewer_gap_qwen15b_waste_balanced_util2_2026-07-04

@@ -1,5 +1,10 @@
 # MeritKV-Sem: Tiered Prefix Caching for LLM Serving
 
+> **Historical repository snapshot:** This document predates the current
+> MeritKV paper and is retained for development provenance. The manuscript is
+> the sole authority for current claims; use `../../README.md` for repository
+> navigation.
+
 ## Engine Name Aliases
 
 Raw artifacts keep stable engine IDs: `shadow_kv_plus` displays as MeritKV, `shadow_kv` displays as MeritKV-Sem, and `shadow_kv_plus_lite` displays as MeritKV-Lite.

@@ -1,0 +1,25 @@
+paper_area,artifact_path,artifact_type,hardware,seeds,enforcement,status
+implementation,src/proactive_kv_cache/,source code,portable,n/a,controller implementation,included
+configuration,config/config.yaml,configuration,portable,n/a,n/a,included
+canonical paper tables,results/paper_tables/,measured aggregate tables,mixed,documented,mixed,included
+controlled study,results/controlled_results/summary_by_engine.csv,measured aggregate,T4 and P100,"42;123;456",HF engine path,included
+controlled study,results/controlled_results/summary_by_mode_engine.csv,measured aggregate,T4 and P100,"42;123;456",HF engine path,included
+process-isolated study,results/realistic_results/summary_by_model_mode.csv,measured aggregate,P100,"42;123;456;789;999",HF custom-splice path,included
+baseline comparison,results/isolated_baseline_comparison/results_detail.csv,measured cell table,P100,"42;123;456",HF engine path,included
+long-prefix scale study,results/blackwell_longprefix_hf/model_summary.csv,measured aggregate,RTX PRO 6000 Blackwell,"42;123;456;789;999",HF custom-splice path,included
+long-prefix scale study,results/blackwell_longprefix_hf/dataset_results.csv,measured dataset table,RTX PRO 6000 Blackwell,"42;123;456;789;999",HF custom-splice path,included
+fidelity,results/fidelity_examples/,selected per-sample diagnostic,mixed,documented,custom-splice diagnostic,included
+exact-splice validation,results/exact_splice_validation/,T4 raw JSON reports and validation summary,T4,42,explicit-state HF SDPA continuation,included
+runtime compatibility,runtime_experiments/qwen2.5/,measured compact aggregates,RTX PRO 6000 Blackwell,documented,write-through overlay,included
+runtime compatibility,runtime_experiments/gemma4/,measured compact aggregates,RTX PRO 6000 Blackwell,"42;123;456;789;999",write-through overlay,included
+native balanced admission,runtime_experiments/qwen2.5/sglang/balanced_admission/,complete measured bundle,RTX PRO 6000 Blackwell,20260703,native SGLang skip-lookup/skip-write,included
+native enforcement,runtime_experiments/native_enforcement_blackwell/,complete 414-cell evidence package,RTX PRO 6000 Blackwell,"42;123;456;789;999",native SGLang execute-or-bypass,included
+native storage admission,runtime_experiments/native_enforcement_blackwell/storage_admission_extension/,curated five-seed summaries counters and frozen code,RTX PRO 6000 Blackwell,"32001;32002;32003;32004;32005",native SGLang skip-write and skip-lookup,included
+native storage admission raw,runtime_experiments/native_enforcement_blackwell/evidence_packages/2026-08-23/,complete extracted raw packages original archives logs manifests and verifiers,RTX PRO 6000 Blackwell,"32001;32002;32003;32004;32005",native SGLang skip-write and skip-lookup,included
+memory pressure,results/memory_bound_trace/,aggregate and reconciled selected per-seed traces,Blackwell and T4,"42;123;456;789;999",admission trace,included
+enforced multiround,results/memory_bound_trace_multiround/,measured compact reports,RTX PRO 6000 Blackwell,"42;123;456;789;999",execute-or-bypass enforced,included
+mixed traffic,results/mixed_traffic/MIXED_TRAFFIC_RESULTS.md,measured compact report,documented,documented,admission comparison,included
+learned baseline,results/learned_admission_baseline/computed_summaries/,measured compact summaries,documented,documented,policy comparison,included
+experiment commands,experiments/,source scripts,portable,n/a,depends on script,included
+tests,tests/,test suite,portable,n/a,n/a,included
+memory pressure baselines,results/memory_bound_trace/gemma4/lru_lfu/,measured compact per-seed ledgers and aggregates,RTX PRO 6000 Blackwell,"42;123;456;789;999",controlled-bank admission and eviction policies,included

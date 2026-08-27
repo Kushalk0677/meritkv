@@ -2,6 +2,10 @@
 
 Raw artifacts keep stable engine IDs: `shadow_kv_plus` displays as MeritKV, `shadow_kv` displays as MeritKV-Sem, and `shadow_kv_plus_lite` displays as MeritKV-Lite.
 
+> **Scope:** This runner is an auxiliary semantic-execution experiment, not a
+> distinct paper result family. Its outputs must not be used as output-quality
+> evidence or substituted for the paper's long-prefix, runtime, or fidelity
+> tables.
 
 Use `experiments/run_blackwell_semantic_n128.py` for the RTX PRO 6000 Blackwell semantic-reuse sweep. This is the cleaned public version of the local handoff package; the old zip packages are not required.
 

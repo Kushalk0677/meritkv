@@ -1,0 +1,4 @@
+harness,semantic_opportunities_detected,served_by_exact_or_bypass,approximate_substitutions_executed,execution_rate,qwen_detected,qwen_executed,qwen_execution_rate,safety_sandbox_checks
+shared_process_flag_off,691,691,0,0.000,,,,0
+process_isolated_flag_on,362,32,330,0.912,101,101,1.000,0
+

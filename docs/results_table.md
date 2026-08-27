@@ -8,13 +8,16 @@
 
 | Model | Params | Samples | Exact Match | ROUGE-L | Fidelity |
 |-------|--------|---------|-------------|---------|----------|
-| TinyLlama | 1.1B | 640 | 96.8% | **0.966** | Robust in this check |
-| Gemma 2B | 2.0B | 640 | 95.1% | **0.974** | Robust in this check |
-| Phi-3 Mini | 3.8B | 640 | 83.7% | **0.931** | Needs validation |
-| GPT-2 | 124M | 640 | 79.2% | **0.876** | Needs validation |
-| Qwen 2.5 1.5B | 1.5B | 640 | 0.8% | **0.200** | Needs guard |
+| TinyLlama | 1.1B | 1,280 | 96.8% | **0.966** | High agreement in this check |
+| Gemma 2B | 2.0B | 1,280 | 95.1% | **0.974** | High agreement in this check |
+| Phi-3 Mini | 3.8B | 1,280 | 83.7% | **0.931** | Intermediate agreement |
+| GPT-2 | 124M | 1,280 | 79.2% | **0.876** | Marginally above lower boundary |
+| Qwen 2.5 1.5B | 1.5B | 1,280 | 0.8% | **0.200** | Lower agreement; timing excluded |
 
-**Key finding**: LLaMA-family (TinyLlama) and Gemma architectures show high fidelity in this check (ROUGE-L > 0.96). Qwen2 is highly sensitive in float16 due to a precision-architecture interaction (Section 3).
+**Key finding**: TinyLlama and Gemma show high agreement in this particular
+float16 custom-splice check (ROUGE-L > 0.96), while Qwen2.5 is much lower. This
+is a result of the tested path, precision, and configuration; it is not an
+architecture-level or native-cache correctness claim.
 
 ### 1.2 Prompt Sensitivity (exact vs ref) - Baseline
 
@@ -51,7 +54,9 @@
 | TinyLlama | alpaca_eval | 128 | **100%** | **1.0** |
 | TinyLlama | banking77 | 128 | **100%** | **1.0** |
 
-At ratio=0.0 (no shared prefix, no cache reuse), the output is identical to clean generation. This confirms the pipeline is implementation-correct and free of artifacts.
+At ratio=0.0 (no shared prefix, no cache reuse), the output is identical to
+clean generation. This checks the no-splice control path; it does not by itself
+validate a nonempty splice or a native runtime cache.
 
 ## 3. Precision Comparison: float32 (CPU) vs float16 (GPU)
 
@@ -70,7 +75,10 @@ The precision-dependent fidelity loss has two components:
 - float32: ~2e-5 (negligible, only flips tokens at close decision boundaries)
 - float16: ~1e-2 (significant, flips tokens regularly)
 
-**2. Architecture amplification**: Qwen2's attention implementation amplifies the float16 error approximately 10x more than LLaMA/Gemma. Layer-by-layer tracing shows Qwen's hidden state diff grows from ~1e-4 at layer 1 to ~1e-2 at layer 28 in float16. The same experiment in float32 grew from ~5e-7 to ~2e-5.
+**2. Tested-path amplification**: In the Qwen float16 diagnostic, the observed
+hidden-state difference grows from about 1e-4 at layer 1 to about 1e-2 at layer
+28; the float32 comparison reaches about 2e-5. This local trace describes the
+tested custom splice and does not identify an architectural cause.
 
 ### 3.2 Recommendation
 
@@ -88,13 +96,13 @@ The precision-dependent fidelity loss has two components:
 
 ## 5. Coupled Utility and Risk-Averse Admission
 
-The base utility U = B - C - W treats benefit, cost, and waste as independent. In practice they are coupled through the model's VRAM footprint kappa. The coupled utility extends U with a coupling penalty:
+The base utility U = B - C - W treats benefit, cost, and waste as independent. In practice they are coupled through the total memory footprint m of the candidate cache entry. The coupled utility extends U with a coupling penalty:
 
 ```
-U(lambda) = U - lambda * kappa * B * max(e_w, 0.02)
+U(lambda) = U - lambda * m * B * max(e_w, 0.02)
 ```
 
-where lambda >= 0 is the risk-aversion parameter (default 0.15). At lambda = 0, the base policy is recovered exactly. This is analogous to mean-variance portfolio optimization: lambda controls the operator's tolerance for covariance between benefit and waste.
+where m is the total entry footprint in MB (approximately kappa * k for a k-token entry) and lambda >= 0 is the risk-aversion parameter (default 0.15, with units 1/MB). At lambda = 0, the base policy is recovered exactly. This is a single-knob risk-aversion control, not a formal mean-variance model; no benefit/waste covariance is estimated.
 
 ### 5.1 Coupling Ratios per Model
 
@@ -106,7 +114,7 @@ where lambda >= 0 is the risk-aversion parameter (default 0.15). At lambda = 0, 
 | Gemma | 0.018 | 0.23x | - | - | -3 |
 | Phi-3 | **0.375** | **4.75x** | 178 | 61 | **-117** |
 
-The coupling penalty is negligible for four of five models (coupling ratio < 0.4x benefit). For Phi-3, whose kappa = 0.375 MB/token is 14-21x larger than the other models, the coupling ratio reaches 4.75x benefit, blocking 117 of 178 semantic-mode admits.
+The coupling penalty is negligible for four of five models (coupling ratio < 0.4x benefit). For Phi-3, whose kappa = 0.375 MB/token is 14-21x larger than the other models, the larger total entry footprint drives the coupling ratio to 4.75x benefit, blocking 117 of 178 semantic-mode admits.
 
 ### 5.2 Lambda Ablation Sweep
 
@@ -121,7 +129,7 @@ At lambda = 0, the policy matches the base results exactly (sanity check). At th
 
 ### 5.3 Relationship to the Breakeven Guard
 
-The coupling penalty is complementary to the memory-breakeven guard. The guard is a **hard constraint** derived from hardware physics: it rejects speculative precomputes shorter than k* because they can never break even. The coupling penalty is a **soft preference** tuned by the operator: it discounts admits where high benefit correlates with high waste, reducing risk without enforcing a hard cutoff.
+The coupling penalty is complementary to the memory-breakeven guard. The guard is a **hard constraint** derived from hardware physics: it rejects speculative precomputes shorter than k* because they can never break even. The coupling penalty is a **soft preference** tuned by the operator: it discounts memory-heavy admits where high benefit and observed waste coincide, reducing risk without enforcing a hard cutoff.
 
 ## 6. Implications for MeritKV
 

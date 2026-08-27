@@ -54,8 +54,9 @@ Location: `src/proactive_kv_cache/semantic.py`
 A dependency-free token sketch index. It uses hashed unigram and bigram features to estimate semantic/structural neighbourhoods cheaply in the serving path.
 
 Important correctness rule:
-- real backends only perform exact-prefix KV reuse;
-- approximate semantic partial reuse is enabled only for `FakeBackend` unless explicitly overridden.
+- default real-backend paths block approximate semantic KV substitution;
+- an explicit flag-on process-isolated diagnostic enables approximate execution
+  for analysis, but does not establish safety.
 
 This means the repo can study the opportunity of semantic approximate reuse without silently making unsafe correctness claims.
 
@@ -84,11 +85,15 @@ This makes the policy auditable and reproducible from prior experiment logs.
 - synthetic matrix.
 
 ### Performance evidence
-- Hugging Face or vLLM runs,
+- Hugging Face runs with matched no-cache baselines,
 - repeated seeds,
 - public datasets,
 - raw + templated modes,
 - no-cache/reactive/strict-reactive/MeritKV-Sem/MeritKV comparisons.
+
+Production vLLM/SGLang/LMCache write-through rows are compatibility and
+overhead evidence. Enforced performance evidence is separately limited to the
+capacity-pressure traces.
 
 ### Publishable MeritKV metrics
 Report at least:

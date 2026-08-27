@@ -1,0 +1,13 @@
+{
+  "cells": 31,
+  "completed_at": "2026-08-24T00:13:50.737284-04:00",
+  "experiment": "meritkv_qwen25_capacity_pressure_20260824",
+  "outage_started_at": "2026-08-23T23:33:06.454819-04:00",
+  "production_container_id": "bd8f88b634ee5a038abf245115372ca6c1927230a1f69d9a50bc905b70d53b8a",
+  "production_image_id": "sha256:dfd8d4ab6001e8b5f9fa4be18baa26eefb20005579b24c7bc6141e3340717cd4",
+  "production_restored": true,
+  "requests": 3344,
+  "schema_version": 1,
+  "status": "complete_verified_restored",
+  "verification_sha256": "ee5ef512aede497f2c1d48b47a83eabff703489cd6fee23677379d7fb8494c7b"
+}

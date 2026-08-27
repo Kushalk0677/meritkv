@@ -20,7 +20,12 @@ The fidelity experiment asks:
 
 > If cached KV state from one prompt prefix is reused inside another prompt computation, does the generated output change?
 
-The test uses `DynamicCache.crop()` to keep a shared prefix and then compares clean generation against reuse-assisted generation.
+The test uses the Hugging Face `DynamicCache.crop()` custom splice on a single
+unpadded sequence and compares clean generation against reuse-assisted
+generation. The implementation forwards the cache object with the matching
+suffix, attention mask, and position handling available in this path; it does
+not supply the explicit `cache_position` handling used by every native runtime
+cache API.
 
 ```text
 prompt A -> prefill -> crop shared prefix -> continue prompt B suffix -> generate reuse_text
@@ -45,7 +50,10 @@ results/fidelity_examples/
   f32/
 ```
 
-The float16 examples show model-dependent behavior. TinyLlama and Gemma-style models were comparatively robust in these checks, while Qwen-style models showed much larger sensitivity. These examples should be used as diagnostic evidence, not as universal guarantees.
+The float16 examples show model-dependent behavior. TinyLlama and Gemma have
+higher observed agreement in these checks, while Qwen is much lower. These
+examples are diagnostic evidence about the tested configuration, not an
+architectural attribution or universal guarantee.
 
 ## Interpretation
 
@@ -86,3 +94,9 @@ python experiments/run_fidelity_equiv.py --device cpu \
 ```
 
 GPU checks should be interpreted with the actual deployment dtype, typically float16 or bfloat16, because precision can change the observed fidelity.
+
+Before calling a supported native-cache path exact, validate token-level output
+agreement and, where the API exposes them, logits under the native cache API,
+its attention mask and `cache_position` semantics, the deployed precision, and
+the stated comparison rule. The current Qwen runtime numbers are not fidelity
+evidence.

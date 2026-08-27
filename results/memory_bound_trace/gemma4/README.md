@@ -1,6 +1,7 @@
 # Gemma 4 Memory-Bound Trace
 
-This folder contains the Gemma 4 Blackwell memory-bound trace copied from `C:\shadowkv\v10\results\memory_bound_trace_gemma4`.
+This folder contains the Gemma-4 Blackwell memory-bound trace. Source
+provenance is recorded in `SOURCE.txt`.
 
 ## Coverage
 
@@ -15,9 +16,15 @@ This folder contains the Gemma 4 Blackwell memory-bound trace copied from `C:\sh
 - `MEMORY_BOUND_RESULTS.md`: paper-facing summary table.
 - `gemma4_memory_bound_summary.csv`: compact aggregate table for quick inspection.
 - `gemma_4_12b/` and `gemma_4_31b/`: aggregate JSON plus per-seed summary and trace JSON.
+- `MEMORY_BOUND_LRU_LFU_BASELINE.md`: paper-facing five-policy comparison.
+- `lru_lfu/`: complete controlled-bank LRU/LFU per-seed traces, summaries,
+  aggregates, logs, metadata, and checksums.
 - `MANIFEST_SHA256.txt`: checksums for copied files.
 - `SOURCE.txt`: source provenance.
 
 ## Interpretation
 
-Use Phase 3 recovery, victim misses/evictions, and declined Phase 1 admissions as the main evidence. Some seed-level generic `hit_rate` values are derived and can exceed 1.0 slightly, so they should not be treated as literal hit fractions.
+Use Phase 3 recovery, victim misses/evictions, and declined Phase 1 admissions
+from the aggregate as the evidence. The retained seed JSONs are legacy
+provenance: some generic derived fields and latency records do not reconcile
+with the aggregate and must not be used to reconstruct paper values.

@@ -1,0 +1,196 @@
+{
+  "arms": [
+    "native_admit_all_lru",
+    "meritkv_write_through_lru",
+    "meritkv_skip_write_only_lru",
+    "meritkv_joint_skip_write_skip_lookup_lru"
+  ],
+  "cache_topology": "default Gemma SWARadixCache with effective LRU retention",
+  "calibration_seed": 32000,
+  "evaluation_design": {
+    "balance_rule": "four cyclic Latin rows followed by the first row; over five seeds every arm appears once per seed and in every position, with one position repeated",
+    "cells": 20,
+    "plan": "evaluation_plan_20.tsv",
+    "plan_sha256": "13df29e54b47252404033a56ddf478e6c6fdbc57103b5a38fe7aa8895032b9f8",
+    "position_counts_by_arm": {
+      "meritkv_joint_skip_write_skip_lookup_lru": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 2
+      },
+      "meritkv_skip_write_only_lru": {
+        "1": 1,
+        "2": 1,
+        "3": 2,
+        "4": 1
+      },
+      "meritkv_write_through_lru": {
+        "1": 1,
+        "2": 2,
+        "3": 1,
+        "4": 1
+      },
+      "native_admit_all_lru": {
+        "1": 2,
+        "2": 1,
+        "3": 1,
+        "4": 1
+      }
+    }
+  },
+  "evaluation_seeds": [
+    32001,
+    32002,
+    32003,
+    32004,
+    32005
+  ],
+  "generator_sha256": "50ef1fb58ad1e0d192267c7dcd2e66ff47b4667c7f07406f6ec7295eae026c32",
+  "optional_lfu_baseline": {
+    "receipt": "feasibility/lfu_infeasibility_receipt.json",
+    "receipt_sha256": "1d7d42e13bed226164173d80fa81a9ba256e0f5433a6f7b73aaacce12f4776c1",
+    "scientific_disposition": "omitted_as_infeasible",
+    "status": "infeasible_on_pinned_image"
+  },
+  "schema_version": 1,
+  "smoke_design": {
+    "cells": 4,
+    "plan": "smoke_plan_4.tsv",
+    "plan_sha256": "7c5070d745a937492684ee3d845e29186192500d893b43d87c926116e62a64c6"
+  },
+  "smoke_seed": 32010,
+  "traces": {
+    "traces/calibration_seed_32000.jsonl": {
+      "class_counts": {
+        "hot_bootstrap": 4,
+        "hot_established_probe": 4,
+        "hot_post_pressure_probe": 4,
+        "hot_pressure_probe": 16,
+        "hot_recovery_probe": 4,
+        "long_one_off_prefix": 32
+      },
+      "phase_counts": {
+        "bootstrap_hot_set": 4,
+        "capacity_pressure_with_hot_probes": 48,
+        "establish_hot_hits": 4,
+        "post_pressure_probe": 4,
+        "recovery": 4
+      },
+      "requests": 64,
+      "sha256": "eff3a518a54c15f164ee96fcfe535765255e1d3354dc4572c092a2eb03fdcf75"
+    },
+    "traces/evaluation_seed_32001.jsonl": {
+      "class_counts": {
+        "hot_bootstrap": 4,
+        "hot_established_probe": 8,
+        "hot_post_pressure_probe": 4,
+        "hot_pressure_probe": 32,
+        "hot_recovery_probe": 12,
+        "long_one_off_prefix": 64
+      },
+      "phase_counts": {
+        "bootstrap_hot_set": 4,
+        "capacity_pressure_with_hot_probes": 96,
+        "establish_hot_hits": 8,
+        "post_pressure_probe": 4,
+        "recovery": 12
+      },
+      "requests": 124,
+      "sha256": "f18df913b67c0d0db12d2e69c69e938b1ea244e471bc4b7aeb6fa4f7f24eef5f"
+    },
+    "traces/evaluation_seed_32002.jsonl": {
+      "class_counts": {
+        "hot_bootstrap": 4,
+        "hot_established_probe": 8,
+        "hot_post_pressure_probe": 4,
+        "hot_pressure_probe": 32,
+        "hot_recovery_probe": 12,
+        "long_one_off_prefix": 64
+      },
+      "phase_counts": {
+        "bootstrap_hot_set": 4,
+        "capacity_pressure_with_hot_probes": 96,
+        "establish_hot_hits": 8,
+        "post_pressure_probe": 4,
+        "recovery": 12
+      },
+      "requests": 124,
+      "sha256": "53ad53bdad3f318f3d4c747daad514f525c0b20255acb2fb93dc18ba0da3866b"
+    },
+    "traces/evaluation_seed_32003.jsonl": {
+      "class_counts": {
+        "hot_bootstrap": 4,
+        "hot_established_probe": 8,
+        "hot_post_pressure_probe": 4,
+        "hot_pressure_probe": 32,
+        "hot_recovery_probe": 12,
+        "long_one_off_prefix": 64
+      },
+      "phase_counts": {
+        "bootstrap_hot_set": 4,
+        "capacity_pressure_with_hot_probes": 96,
+        "establish_hot_hits": 8,
+        "post_pressure_probe": 4,
+        "recovery": 12
+      },
+      "requests": 124,
+      "sha256": "f1beb2c241fc24d0c9188eca8984dc4472f3edcb728c0a1f9ac26e946c9fdd26"
+    },
+    "traces/evaluation_seed_32004.jsonl": {
+      "class_counts": {
+        "hot_bootstrap": 4,
+        "hot_established_probe": 8,
+        "hot_post_pressure_probe": 4,
+        "hot_pressure_probe": 32,
+        "hot_recovery_probe": 12,
+        "long_one_off_prefix": 64
+      },
+      "phase_counts": {
+        "bootstrap_hot_set": 4,
+        "capacity_pressure_with_hot_probes": 96,
+        "establish_hot_hits": 8,
+        "post_pressure_probe": 4,
+        "recovery": 12
+      },
+      "requests": 124,
+      "sha256": "0d0a7abadcf8c32c41b1e05e549c0e9eb8e9a6f75ba7e7af5f3869c625153c8b"
+    },
+    "traces/evaluation_seed_32005.jsonl": {
+      "class_counts": {
+        "hot_bootstrap": 4,
+        "hot_established_probe": 8,
+        "hot_post_pressure_probe": 4,
+        "hot_pressure_probe": 32,
+        "hot_recovery_probe": 12,
+        "long_one_off_prefix": 64
+      },
+      "phase_counts": {
+        "bootstrap_hot_set": 4,
+        "capacity_pressure_with_hot_probes": 96,
+        "establish_hot_hits": 8,
+        "post_pressure_probe": 4,
+        "recovery": 12
+      },
+      "requests": 124,
+      "sha256": "655a2ccc7fea49aeef5146afdfbdb2c30774e54f1d58c4d3004e453c4b2b4f59"
+    },
+    "traces/smoke_seed_32010.jsonl": {
+      "class_counts": {
+        "hot_bootstrap": 4,
+        "hot_established_probe": 4,
+        "hot_post_pressure_probe": 4,
+        "hot_pressure_probe": 8,
+        "long_one_off_prefix": 16
+      },
+      "phase_counts": {
+        "bootstrap_hot_set": 4,
+        "capacity_pressure_with_hot_probes": 24,
+        "establish_hot_hits": 4,
+        "post_pressure_probe": 4
+      },
+      "requests": 36,
+      "sha256": "17dcb2f617c7330e0d3d2f491330425328e26cb1d457583fef3073b23faa69a3"
+    }
+  }
+}

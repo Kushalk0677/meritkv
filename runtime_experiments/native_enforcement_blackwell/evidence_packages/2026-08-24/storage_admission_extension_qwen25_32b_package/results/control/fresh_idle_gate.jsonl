@@ -1,0 +1,16 @@
+{"at": "2026-08-24T03:30:04.343056+00:00", "container_id": "bd8f88b634ee5a038abf245115372ca6c1927230a1f69d9a50bc905b70d53b8a", "event": "idle_gate_started", "health": "healthy", "quiet_seconds_required": 120.0, "restart_count": 0, "status": "running"}
+{"at": "2026-08-24T03:30:04.361634+00:00", "counters": [{"decode_moments": [770586.0, 972977.0, 25502716867.0, 1450599.0, 32762076638.0, 2821087.0], "total_prefill_busy_us": 937163668, "total_prefill_uncached_tokens": 5897264}], "event": "quiet_window_started"}
+{"at": "2026-08-24T03:30:20.452601+00:00", "event": "quiet_progress", "quiet_seconds": 16.1, "required": 120.0}
+{"at": "2026-08-24T03:30:26.485013+00:00", "counters": [{"decode_moments": [770586.0, 972977.0, 25502716867.0, 1450599.0, 32762076638.0, 2821087.0], "total_prefill_busy_us": 937163668, "total_prefill_uncached_tokens": 5897264}], "event": "quiet_window_started"}
+{"at": "2026-08-24T03:30:42.576815+00:00", "counters": [{"decode_moments": [770599.0, 972990.0, 25503102102.0, 1450612.0, 32762461873.0, 2821133.0], "total_prefill_busy_us": 937878888, "total_prefill_uncached_tokens": 5903837}], "event": "busy", "reasons": ["rank0.num_running_reqs=1", "rank0.num_active_tokens=14821"]}
+{"at": "2026-08-24T03:30:44.586423+00:00", "counters": [{"decode_moments": [770625.0, 973016.0, 25503870885.0, 1450638.0, 32763230656.0, 2821233.0], "total_prefill_busy_us": 937878888, "total_prefill_uncached_tokens": 5903837}], "event": "quiet_window_started"}
+{"at": "2026-08-24T03:31:00.675741+00:00", "counters": [{"decode_moments": [771088.0, 973479.0, 25517611138.0, 1451101.0, 32776970909.0, 2822511.0], "total_prefill_busy_us": 937878888, "total_prefill_uncached_tokens": 5903837}], "event": "busy", "reasons": ["rank0.num_running_reqs=1", "rank0.num_active_tokens=18460"]}
+{"at": "2026-08-24T03:31:04.698036+00:00", "counters": [{"decode_moments": [771202.0, 973593.0, 25521016987.0, 1451215.0, 32780376758.0, 2822835.0], "total_prefill_busy_us": 937878888, "total_prefill_uncached_tokens": 5903837}], "event": "quiet_window_started"}
+{"at": "2026-08-24T03:31:20.784498+00:00", "event": "quiet_progress", "quiet_seconds": 16.1, "required": 120.0}
+{"at": "2026-08-24T03:31:36.871799+00:00", "event": "quiet_progress", "quiet_seconds": 32.2, "required": 120.0}
+{"at": "2026-08-24T03:31:52.963915+00:00", "event": "quiet_progress", "quiet_seconds": 48.3, "required": 120.0}
+{"at": "2026-08-24T03:32:09.052095+00:00", "event": "quiet_progress", "quiet_seconds": 64.4, "required": 120.0}
+{"at": "2026-08-24T03:32:25.143043+00:00", "event": "quiet_progress", "quiet_seconds": 80.4, "required": 120.0}
+{"at": "2026-08-24T03:32:41.232483+00:00", "event": "quiet_progress", "quiet_seconds": 96.5, "required": 120.0}
+{"at": "2026-08-24T03:32:57.323637+00:00", "event": "quiet_progress", "quiet_seconds": 112.6, "required": 120.0}
+{"container_id": "bd8f88b634ee5a038abf245115372ca6c1927230a1f69d9a50bc905b70d53b8a", "counters": [{"decode_moments": [771202.0, 973593.0, 25521016987.0, 1451215.0, 32780376758.0, 2822835.0], "total_prefill_busy_us": 937878888, "total_prefill_uncached_tokens": 5903837}], "event": "IDLE_GATE_PASSED", "passed_at": "2026-08-24T03:33:05.367464+00:00", "quiet_seconds": 120.669, "quiet_started_at": "2026-08-24T03:31:04.698036+00:00", "restart_count": 0}

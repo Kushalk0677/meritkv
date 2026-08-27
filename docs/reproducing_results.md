@@ -51,15 +51,21 @@ The public aggregate results summarize 5 models, 10 datasets, 3 prompt modes, an
 
 ```text
 results/
+  paper_tables/           # Canonical machine-readable paper tables
   controlled_results/     # T4/P100 controlled JSONs and aggregate CSVs
+  isolated_baseline_comparison/ # Four-model P100 baseline matrix
   realistic_results/      # Process-isolated no_cache and MeritKV (`shadow_kv_plus`) JSONs
+  blackwell_longprefix_hf/ # Twelve-instance custom-splice scale study
   fidelity_examples/      # Per-sample fidelity examples
-  sweep_timing/           # Small timing/smoke outputs
+  mixed_traffic/          # Admission and mixed-workload summaries
+  memory_bound_trace/     # Three-phase capacity-pressure traces
+  memory_bound_trace_multiround/ # Four-arm enforced traces
 ```
 
 Primary aggregate files:
 
 ```text
+results/paper_tables/
 results/controlled_results/summary_by_engine.csv
 results/controlled_results/summary_by_mode_engine.csv
 results/controlled_results/manifest.json
@@ -67,32 +73,15 @@ results/controlled_results/manifest.json
 
 ## Runtime Results
 
-The runtime experiments in `runtime_experiments/` use SGLang, LMCache, and vLLM on an RTX PRO 6000 Blackwell GPU with Qwen2.5-family models.
+The runtime experiments in `runtime_experiments/` use SGLang, LMCache, and vLLM
+on an RTX PRO 6000 Blackwell GPU with Qwen2.5 and Gemma-4 models. The broad
+integrations are write-through and therefore measure compatibility and observed
+overlay cost rather than enforced acceleration.
 
-Each runtime CSV table contains columns such as:
-
-| Column | Description |
-|--------|-------------|
-| `model_slug` | Model identifier |
-| `model_params_B` | Parameter count in billions |
-| `dataset` | Dataset name |
-| `mode` | Prompt mode |
-| `engine` | Engine name |
-| `mean_latency_ms` | Mean request latency in ms |
-| `latency_ci_95_lower` | 95% CI lower bound, when available |
-| `latency_ci_95_upper` | 95% CI upper bound, when available |
-| `throughput_rps` | Throughput in requests/sec |
-| `cached_tokens_mean` | Mean cached tokens per request |
-| `gpu_energy_j` | Total GPU energy in Joules |
-| `speedup_vs_lmcache_pct` | Speedup vs LMCache baseline, where applicable |
-
-The compact CSVs in this public repo are the curated tables. Full raw runtime deliverables are not included here; regenerate them only if you have the external runtime systems and original measurement environment.
-
-### Regenerate Aggregate Tables
-
-```bash
-cd runtime_experiments
-python build_complete_tables.py
-```
-
-This command is intended for a working copy that also has the raw runtime deliverables available. In the public repo, treat the checked-in CSVs as the compact release artifacts.
+The top-level runtime CSVs are paper-facing measured aggregates. Their schemas
+differ by campaign: Qwen includes absolute SGLang values, scale ratios, and the
+32B five-replicate aggregate; Gemma records per-model overlay latency deltas.
+Selected raw records are retained below `raw/`, but there is no single checked-in
+script that regenerates every cross-runtime aggregate from a uniform raw tree.
+Use each family README and preserve the paper's aggregation conventions,
+especially the mean-of-paired-ratios convention for vLLM-32B.

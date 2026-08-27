@@ -37,7 +37,9 @@ The current float32 control file is:
 f32/gpt2_results.json
 ```
 
-Use this folder as example data, not as the primary aggregate result table. The primary performance summaries live in `results/controlled_results/summary_by_engine.csv` and `results/controlled_results/summary_by_mode_engine.csv`.
+Use this folder as example data, not as the primary aggregate result table.
+Paper-facing aggregate agreement values are summarized in
+`../blackwell_longprefix_hf/fidelity_results.md` and `../../docs/results_table.md`.
 
 ## Format
 
@@ -60,4 +62,6 @@ Fidelity is computed by comparing `ref_text` and `reuse_text`, commonly with ROU
 
 - Approximate semantic KV reuse is not automatically correctness-preserving.
 - Treat these examples as diagnostic evidence for when reuse is safe, risky, or model-dependent.
-- Qwen-style models have shown sensitivity in prior checks, so semantic reuse claims should be guarded rather than absolute.
+- The reported float16 Qwen2.5 custom-splice configuration has low output
+  agreement and is excluded from validated performance evidence. These
+  diagnostics do not establish exactness for a native runtime cache API.

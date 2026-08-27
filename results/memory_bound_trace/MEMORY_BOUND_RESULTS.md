@@ -12,7 +12,12 @@
 |----------|-------------|
 | **No cache** | Disabled |
 | **Native** | vLLM APC (Blackwell) / HF prefix cache (T4). Admits unconditionally. |
+| **Occupancy cap** | Blind admit-eight/FIFO cap used in the principal paper comparison. |
 | **MeritKV** | Full U = B - C - W admission gate. |
+
+The principal paper cases are Blackwell/Qwen2.5-32B and T4/Qwen2.5-7B. Other
+model rows below are auxiliary campaign summaries and should not be substituted
+for those principal comparisons.
 
 ---
 ## Blackwell RTX PRO 6000
@@ -159,4 +164,15 @@ KV cache: 56 KB/token.  Available for cache: 0.1 GB.  Pressure (fraction of cach
 In the metric tables, latency deltas compare MeritKV with no cache; recovery and victim-miss deltas compare MeritKV with native caching.
 
 Qwen2.5 and Gemma 4 Blackwell rows include raw aggregate and per-seed trace JSONs under `qwen2.5/` and `gemma4/`.
+
+For the principal Blackwell Qwen2.5-32B comparison, native, occupancy-cap, and
+enforced MeritKV respectively produce `78.7%`, `28.0%`, and `21.3%`
+victim-miss rates; `185.4`, `151.2`, and `142.1` ms P95 victim latency; and
+`2.34`, `0.82`, and `0.68` GB of victim reload traffic. For the principal T4
+Qwen2.5-7B comparison, victim-miss rates are `98.7%`, `8.0%`, and `4.0%`,
+while P95 victim latencies are `122.8`, `12.4`, and `8.3` ms.
+
+The retained Gemma per-seed JSONs are legacy provenance. Some generic derived
+fields and latency rows do not reconcile with the canonical aggregate, so paper
+claims must use the aggregate summaries rather than reconstructing seed values.
 

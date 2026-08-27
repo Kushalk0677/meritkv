@@ -1,0 +1,7 @@
+model,prefill_cost_beta_ms_per_token,prefill_cv_pct,reuse_overhead_delta_r_ms,reuse_cv_pct,kv_storage_kappa_mb_per_token,analytic_breakeven_kstar_tokens,hardware
+GPT-2,0.600,0.0,2.03,6.9,0.0352,3.4,T4
+TinyLlama,0.607,3.5,6.09,9.9,0.0215,10.0,T4
+Qwen2.5,0.741,8.1,8.21,9.1,0.0273,11.1,T4
+Gemma-2B,1.002,0.5,10.93,0.7,0.0176,10.9,T4
+Phi-3-mini,1.198,1.1,11.51,1.2,0.3750,9.6,T4
+

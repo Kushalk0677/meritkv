@@ -1,0 +1,11 @@
+[Unit]
+Description=Arm frozen Qwen2.5 capacity-pressure extension for 23:30 EDT
+
+[Timer]
+OnCalendar=2026-08-23 23:30:00 America/New_York
+AccuracySec=1s
+Persistent=true
+Unit=meritkv-qwen25-capacity-pressure-20260823.service
+
+[Install]
+WantedBy=timers.target

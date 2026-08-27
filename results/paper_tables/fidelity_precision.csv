@@ -1,0 +1,4 @@
+model,float32_rouge_l,float16_rouge_l,shared_prefix_ratio
+TinyLlama,1.000,0.966,0.75
+Qwen2.5,0.990,0.200,0.75
+

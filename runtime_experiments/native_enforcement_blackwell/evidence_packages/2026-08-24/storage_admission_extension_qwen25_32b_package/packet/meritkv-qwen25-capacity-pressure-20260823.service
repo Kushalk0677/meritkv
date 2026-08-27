@@ -1,0 +1,17 @@
+[Unit]
+Description=Frozen five-arm MeritKV Qwen2.5-32B RadixCache capacity-pressure extension
+After=docker.service network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/jade_hand/research/shadowkv/gemma4_runtime_overlay_matrix_20260718
+Environment=PATH=/run/current-system/sw/bin:/home/jade_hand/.nix-profile/bin:/home/jade_hand/.local/bin:/usr/bin
+ExecStart=/run/current-system/sw/bin/python3 /home/jade_hand/research/shadowkv/gemma4_runtime_overlay_matrix_20260718/meritkv_qwen25_capacity_pressure_20260823/run_capacity_extension.py run
+ExecStopPost=/run/current-system/sw/bin/python3 /home/jade_hand/research/shadowkv/gemma4_runtime_overlay_matrix_20260718/meritkv_qwen25_capacity_pressure_20260823/run_capacity_extension.py restore-only
+Restart=no
+TimeoutStartSec=infinity
+TimeoutStopSec=1800
+KillMode=control-group
+OOMPolicy=stop
+

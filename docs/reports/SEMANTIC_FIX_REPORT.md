@@ -1,5 +1,9 @@
 # Semantic Opportunity Fix Report
 
+> **Historical implementation report:** Retained for development provenance.
+> It documents a code fix, not a current paper result; the manuscript is the
+> sole authority for current semantic claims.
+
 ## Engine Name Aliases
 
 Raw artifacts keep stable engine IDs: `shadow_kv_plus` displays as MeritKV, `shadow_kv` displays as MeritKV-Sem, and `shadow_kv_plus_lite` displays as MeritKV-Lite.

@@ -1,0 +1,7 @@
+{
+  "status": "frozen",
+  "calibration_receipt": "/datapool/experiments/meritkv/qwen25_capacity_pressure_20260824/control/calibration_receipt.json",
+  "calibration_receipt_sha256": "f8ee28a35722ab2983d4059f673dc143559b53099850aa3cdb6e1ee729f6d69f",
+  "evaluation_freeze": "/datapool/experiments/meritkv/qwen25_capacity_pressure_20260824/control/evaluation_freeze.json",
+  "evaluation_freeze_sha256": "203972744b5e9a0707b070b473eaeb47bbff92c938bfaf441e1016c76df512ba"
+}

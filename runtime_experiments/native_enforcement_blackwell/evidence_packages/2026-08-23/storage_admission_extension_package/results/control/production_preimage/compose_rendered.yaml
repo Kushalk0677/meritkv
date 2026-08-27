@@ -1,0 +1,121 @@
+name: qwen38-27b-fp8-sglang
+services:
+  sglang:
+    command:
+      - --model-path
+      - /model
+      - --served-model-name
+      - qwen38-27b-fp8
+      - --trust-remote-code
+      - --context-length
+      - "262144"
+      - --max-running-requests
+      - "8"
+      - --max-mamba-cache-size
+      - "64"
+      - --mamba-ssm-dtype
+      - bfloat16
+      - --mamba-full-memory-ratio
+      - "4.21"
+      - --mamba-radix-cache-strategy
+      - extra_buffer_lazy
+      - --speculative-algorithm
+      - EAGLE
+      - --speculative-num-steps
+      - "3"
+      - --speculative-eagle-topk
+      - "1"
+      - --speculative-num-draft-tokens
+      - "4"
+      - --mem-fraction-static
+      - "0.88"
+      - --cuda-graph-max-bs-decode
+      - "8"
+      - --attention-backend
+      - flashinfer
+      - --chunked-prefill-size
+      - "8192"
+      - --disable-prefill-cuda-graph
+      - --image-processor-backend
+      - pil
+      - --reasoning-parser
+      - qwen3
+      - --tool-call-parser
+      - qwen3_coder
+      - --host
+      - 0.0.0.0
+      - --port
+      - "30000"
+    container_name: qwen38-27b-fp8-sglang
+    devices:
+      - source: nvidia.com/gpu=all
+        target: nvidia.com/gpu=all
+        permissions: rwm
+    entrypoint:
+      - python3
+      - -m
+      - sglang.launch_server
+    environment:
+      VIDEO_MAX_PIXELS: "180633600"
+    healthcheck:
+      test:
+        - CMD
+        - python3
+        - -c
+        - import urllib.request; urllib.request.urlopen('http://127.0.0.1:30000/health', timeout=5).read()
+      timeout: 10s
+      interval: 30s
+      retries: 5
+      start_period: 15m0s
+    image: local/sglang:qwen38-nvfp4-mtp-92eeed-queuefix35609-v1
+    ipc: host
+    logging:
+      driver: journald
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        host_ip: 127.0.0.1
+        target: 30000
+        published: "8017"
+        protocol: tcp
+    pull_policy: never
+    restart: unless-stopped
+    security_opt:
+      - label=disable
+    shm_size: "34359738368"
+    stop_grace_period: 2m0s
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      stack:
+        soft: 67108864
+        hard: 67108864
+    volumes:
+      - type: bind
+        source: /datapool/models/orcarouter/Qwen3.8-27B-Uncensored-NVFP4
+        target: /model
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: /datapool/cache/huggingface
+        target: /root/.cache/huggingface
+        bind:
+          create_host_path: true
+      - type: bind
+        source: /dev/null
+        target: /root/.cache/huggingface/token
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: /dev/null
+        target: /root/.cache/huggingface/stored_tokens
+        read_only: true
+        bind:
+          create_host_path: true
+networks:
+  default:
+    name: qwen38-27b-fp8-sglang_default

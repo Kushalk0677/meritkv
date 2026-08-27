@@ -1,0 +1,11 @@
+runtime,model_params_b,native_latency_ms,overlay_latency_ms,overlay_to_native_ratio,measurement_scope
+SGLang_Radix,1.5,11.7,11.9,1.013,measured aggregate
+SGLang_Radix,3,15.6,15.7,1.006,measured aggregate
+SGLang_Radix,7,24.6,23.8,0.976,measured aggregate
+SGLang_Radix,14,47.0,46.2,0.981,measured aggregate
+SGLang_Radix,32,101.7,96.9,0.953,measured aggregate
+vLLM_APC,1.5,,,0.985,measured paired aggregate
+vLLM_APC,3,,,0.990,measured paired aggregate
+vLLM_APC,7,,,0.975,measured paired aggregate
+vLLM_APC,14,,,0.980,measured paired aggregate
+vLLM_APC,32,,,0.993,measured paired aggregate

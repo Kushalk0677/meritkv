@@ -1,0 +1,22 @@
+{
+  "container_id": "bd8f88b634ee5a038abf245115372ca6c1927230a1f69d9a50bc905b70d53b8a",
+  "counters": [
+    {
+      "decode_moments": [
+        2612.0,
+        2612.0,
+        85833165.0,
+        2612.0,
+        85833165.0,
+        8533.0
+      ],
+      "total_prefill_busy_us": 14565749,
+      "total_prefill_uncached_tokens": 90112
+    }
+  ],
+  "event": "IDLE_GATE_PASSED",
+  "passed_at": "2026-08-23T04:36:03.126570+00:00",
+  "quiet_seconds": 120.655,
+  "quiet_started_at": "2026-08-23T04:34:02.471267+00:00",
+  "restart_count": 0
+}

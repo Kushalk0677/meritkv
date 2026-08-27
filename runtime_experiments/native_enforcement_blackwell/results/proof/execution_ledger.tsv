@@ -1,0 +1,14 @@
+timestamp	event	model_slug	model_id	arm	seed	dataset	prompt_mode	requests
+2026-08-20T03:17:27-04:00	start	qwen25_32b	Qwen/Qwen2.5-32B-Instruct	native_baseline	20260820	samsum	templated	64
+2026-08-20T03:18:01-04:00	start	qwen25_32b	Qwen/Qwen2.5-32B-Instruct	native_baseline	20260820	samsum	templated	64
+2026-08-20T03:18:39-04:00	pass	qwen25_32b	Qwen/Qwen2.5-32B-Instruct	native_baseline	20260820	samsum	templated	64
+2026-08-20T03:18:39-04:00	start	qwen25_32b	Qwen/Qwen2.5-32B-Instruct	meritkv_write_through	20260820	samsum	templated	64
+2026-08-20T03:19:23-04:00	pass	qwen25_32b	Qwen/Qwen2.5-32B-Instruct	meritkv_write_through	20260820	samsum	templated	64
+2026-08-20T03:19:23-04:00	start	qwen25_32b	Qwen/Qwen2.5-32B-Instruct	meritkv_enforced	20260820	samsum	templated	64
+2026-08-20T03:20:08-04:00	pass	qwen25_32b	Qwen/Qwen2.5-32B-Instruct	meritkv_enforced	20260820	samsum	templated	64
+2026-08-20T03:21:39-04:00	start	gemma4_31b	google/gemma-4-31B-it	native_baseline	20260820	samsum	templated	64
+2026-08-20T03:22:51-04:00	pass	gemma4_31b	google/gemma-4-31B-it	native_baseline	20260820	samsum	templated	64
+2026-08-20T03:22:51-04:00	start	gemma4_31b	google/gemma-4-31B-it	meritkv_write_through	20260820	samsum	templated	64
+2026-08-20T03:23:41-04:00	pass	gemma4_31b	google/gemma-4-31B-it	meritkv_write_through	20260820	samsum	templated	64
+2026-08-20T03:23:41-04:00	start	gemma4_31b	google/gemma-4-31B-it	meritkv_enforced	20260820	samsum	templated	64
+2026-08-20T03:24:30-04:00	pass	gemma4_31b	google/gemma-4-31B-it	meritkv_enforced	20260820	samsum	templated	64

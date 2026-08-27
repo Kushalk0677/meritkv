@@ -1,18 +1,14 @@
 # vLLM Runtime Results
 
-This folder contains the curated vLLM table and the included Qwen2.5-32B run files.
+`results.csv` contains two measured paper-facing campaigns: APC+MeritKV/APC
+latency ratios for Qwen2.5 1.5B through 32B, and the no-cache/APC/APC+MeritKV
+aggregates for the separate five-replicate 32B campaign.
 
-## Files
+The primary 32B raw campaign is under `raw/q32b_5rep_20260701/`; earlier 32B
+records remain under `raw/q32b_20260603/`. Paired percentage changes are means
+of per-replicate ratios and need not equal ratios of rounded aggregate means.
+The former detailed top-level export is preserved as
+`raw/legacy_detailed_results_precompact.csv`.
 
-| Path | Contents |
-|---|---|
-| `results.csv` | Curated vLLM presentation table covering no-cache, APC, and APC + MeritKV. |
-| `raw/q32b_5rep_20260701/` | 5-replicate Qwen2.5-32B aggregate, summary, and available benchmark JSONs. |
-| `raw/q32b_20260603/` | Earlier full Qwen2.5-32B run tree with no-cache, APC, and APC + MeritKV benchmark JSONs. |
-
-## Notes
-
-- `results.csv` is the public-facing table.
-- The `raw/` folders keep the corresponding run files inside the vLLM runtime folder.
-- The July 1 aggregate has 150 rows: 5 reps x 10 dataset/mode cells x 3 engines.
-
+The integration is write-through, so APC+MeritKV versus APC measures observed
+overlay compatibility/overhead rather than enforced acceleration.

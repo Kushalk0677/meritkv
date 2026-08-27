@@ -1,5 +1,10 @@
 # ShadowKV++ Long-Prefix HF Results: Qwen2.5-14B
 
+> **Historical source interpretation:** This report preserves the campaign
+> record as written at collection time. Statements about exactness,
+> architecture, or performance eligibility are superseded by `../README.md`,
+> `../fidelity_results.md`, and the repository claim map.
+
 Run date: 2026-07-10 to 2026-07-11 (America/New_York)  
 Hardware: NVIDIA RTX PRO 6000 Blackwell Workstation Edition, 97,887 MiB VRAM  
 Driver/CUDA: 580.119.02 / CUDA 13.0  
@@ -79,4 +84,3 @@ The engines ran in fixed order (`no_cache`, `shadow_kv`, `shadow_kv_plus`). Befo
 The patched source includes the previously validated long-scaffold admission fix, mutable-cache isolation, current Hugging Face dataset IDs, and regression tests. The source test suite passed `92 passed, 1 skipped` before this family of runs.
 
 Production `qwen36-27b-fp8-vllm` was restored after the sweep and `/v1/models` returned HTTP 200 with model ID `qwen36-27b-fp8`.
-

@@ -1,0 +1,70 @@
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                         Scheduled Jobs                                  │
+└─────────────────────────────────────────────────────────────────────────┘
+
+  6bc92a38622c [active]
+    Name:      task-hub-live-verify
+    Schedule:  30 8 * * *
+    Repeat:    ∞
+    Next run:  2026-08-23T08:30:00-04:00
+    Deliver:   all
+    Script:    task_hub_verify.py
+    Last run:  2026-08-22T08:33:02.412338-04:00  ok
+    Execution: completed  8047a91061e74260ae0e81853caf1786
+    ⚠ Delivery failed: no delivery target resolved for deliver=all
+
+  b8813f6b0489 [active]
+    Name:      local-model-health
+    Schedule:  15 3 * * *
+    Repeat:    ∞
+    Next run:  2026-08-23T03:15:00-04:00
+    Deliver:   all
+    Script:    model_health_check.py
+    Mode:      no-agent (script stdout delivered directly)
+    Last run:  2026-08-22T03:15:39.370014-04:00  ok
+    Execution: completed  62b083b92432457fa798bfa85d4c9079
+
+  17c15a44a7c2 [active]
+    Name:      agentvm-watcher
+    Schedule:  */15 * * * *
+    Repeat:    ∞
+    Next run:  2026-08-23T00:45:00-04:00
+    Deliver:   origin
+    Script:    agentvm-watcher.sh
+    Mode:      no-agent (script stdout delivered directly)
+    Last run:  2026-08-23T00:30:49.623457-04:00  ok
+    Execution: completed  867c81d262b841ceaad0b30e4b64a070
+
+  705973b0062f [active]
+    Name:      wiki-hygiene-sweep
+    Schedule:  0 9 * * 1
+    Repeat:    ∞
+    Next run:  2026-08-24T09:00:00-04:00
+    Deliver:   all
+    Script:    wiki_hygiene.py auto
+    Mode:      no-agent (script stdout delivered directly)
+    Last run:  2026-08-17T09:00:56.034202-04:00  error: Script not found: /home/jade_hand/.hermes/scripts/wiki_hygiene.py auto
+    ⚠ Delivery failed: no delivery target resolved for deliver=all
+
+  a6c3ef5fda06 [active]
+    Name:      atspi-wedge-watchdog
+    Schedule:  */15 * * * *
+    Repeat:    ∞
+    Next run:  2026-08-23T00:45:00-04:00
+    Deliver:   origin
+    Script:    atspi_wedge_watchdog.sh
+    Mode:      no-agent (script stdout delivered directly)
+    Last run:  2026-08-23T00:30:42.835067-04:00  ok
+    Execution: completed  bd377b32b3c24af191dbbeed64ba5425
+
+  87867fa24e5e [completed]
+    Name:      rook-telegram-wireup-verify
+    Schedule:  once at 2026-08-19 21:35
+    Repeat:    1/1
+    Next run:  None
+    Deliver:   origin
+    Last run:  2026-08-19T21:45:45.450414-04:00  ok
+    Execution: completed  c7619197e4574d83b5cbd4a051649027
+    ⚠ Delivery failed: delivery error: No live adapter for platform 'api_server'. Is the gateway running with this platform connected? For out-of-process delivery (e.g. cron in a separate process), the platform plugin must register a standalone_sender_fn on its PlatformEntry. (target api_server:20260817_204007_fe5f48)
+

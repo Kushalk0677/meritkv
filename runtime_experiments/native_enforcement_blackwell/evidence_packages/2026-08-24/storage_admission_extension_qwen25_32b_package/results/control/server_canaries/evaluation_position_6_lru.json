@@ -1,0 +1,30 @@
+{
+  "choices": [
+    {
+      "finish_reason": "length",
+      "index": 0,
+      "logprobs": null,
+      "matched_stop": null,
+      "message": {
+        "content": "Ready",
+        "reasoning_content": null,
+        "role": "assistant",
+        "tool_calls": null
+      }
+    }
+  ],
+  "created": 1787543206,
+  "id": "cf9056411f204edbabdbd236001dfa35",
+  "metadata": {
+    "weight_version": "default"
+  },
+  "model": "Qwen/Qwen2.5-32B-Instruct",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 1,
+    "prompt_tokens": 35,
+    "prompt_tokens_details": null,
+    "reasoning_tokens": 0,
+    "total_tokens": 36
+  }
+}

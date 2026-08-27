@@ -1,0 +1,62 @@
+{
+  "items": [
+    {
+      "check": "old package verifier: 414 cells, 102912 requests",
+      "evidence": "PRIOR_RESULT_REFERENCE.json and verified original ZIP hash",
+      "request": "preserve the completed experiment unchanged"
+    },
+    {
+      "check": "packet/verify_extension.py all",
+      "evidence": "packet/predeclared_protocol.json, results/control/evaluation_freeze.json",
+      "request": "separate frozen storage-admission extension"
+    },
+    {
+      "check": "model/config/index/tokenizer hashes",
+      "evidence": "cell receipts and pinned model revision",
+      "request": "Gemma 4 31B priority"
+    },
+    {
+      "check": "native action counter invariants on four required arms",
+      "evidence": "20 evaluation cells across five seeds",
+      "request": "native admit-all, write-through, skip-write-only, joint skip"
+    },
+    {
+      "check": "optional baseline honestly omitted: the pinned default SWARadixCache is effectively LRU; forcing ordinary RadixCache reaches ready then crashes on the first Gemma4 forward",
+      "evidence": "packet/feasibility/lfu_infeasibility_receipt.json and full lfu_launch_crash.log",
+      "request": "LFU or another frequency-aware baseline, if feasible"
+    },
+    {
+      "check": "4004-token hot set, >138k one-off tokens, 16384-token cap",
+      "evidence": "packet/token_budget_manifest.json",
+      "request": "recurring hot set plus long one-offs under constrained cache"
+    },
+    {
+      "check": "disjoint seed and chronological hash binding",
+      "evidence": "results/control/calibration_receipt.json and evaluation_freeze.json",
+      "request": "separate calibration then freeze"
+    },
+    {
+      "check": "one cell per required arm/seed; identical trace and policy decision digests",
+      "evidence": "packet/evaluation_plan_20.tsv",
+      "request": "five paired evaluation seeds without retuning"
+    },
+    {
+      "check": "recomputed finite metrics and physical SGLang eviction counters",
+      "evidence": "SCIENTIFIC_REPORT.json and per-request traces",
+      "request": "latency, P95, energy, evictions, recovery, useful hits"
+    },
+    {
+      "check": "lookup=1;write=0 payload; all lookup counters zero; write counters equal bypasses",
+      "evidence": "skip-write-only traces and native counters",
+      "request": "skip-write executed with zero requested skip-lookup"
+    },
+    {
+      "check": "manifest hashes and relocated verifier",
+      "evidence": "meritkv_blackwell_20260817/, source_snapshot/, implementation_lineage/",
+      "request": "include legacy runner and base request-plumbing patch"
+    }
+  ],
+  "requester": "Kushal Khemani",
+  "schema_version": 1,
+  "status": "pass"
+}

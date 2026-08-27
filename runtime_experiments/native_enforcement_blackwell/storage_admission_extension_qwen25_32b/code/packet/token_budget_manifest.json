@@ -1,0 +1,201 @@
+{
+  "capacity_candidate_selection": "16384 is frozen only because the pinned-tokenizer calibration and every evaluation trace pass the predeclared pressure and hot-set gates",
+  "max_total_tokens": 16384,
+  "minimum_useful_hit_rule": "cached_tokens >= shared_prefix_tokens",
+  "model_id": "Qwen/Qwen2.5-32B-Instruct",
+  "model_revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+  "offline_capacity_gate": {
+    "calibration_and_evaluation_traces_checked": 6,
+    "candidate": 16384,
+    "smoke_pressure_gate_exempt": true,
+    "status": "pass"
+  },
+  "page_size": 1,
+  "schema_version": 1,
+  "tokenizer_class": "Qwen2TokenizerFast",
+  "tokenizer_file_sha256": {
+    "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+    "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "tokenizer_manifest_sha256": "a28a1734767030cbbdc1588ea53965c763bae58e47596a4f03b237ac15b2c8b0",
+  "tokenizer_path": "/hf_hub/models--Qwen--Qwen2.5-32B-Instruct/snapshots/5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+  "traces": {
+    "traces/calibration_seed_32000.jsonl": {
+      "hot_prefix_tokens_by_family": {
+        "0": 1041,
+        "1": 1041,
+        "2": 1041,
+        "3": 1041
+      },
+      "hot_set_to_cap_ratio": 0.254150390625,
+      "hot_set_tokens": 4164,
+      "minimum_useful_cached_tokens_by_family": {
+        "0": 1041,
+        "1": 1041,
+        "2": 1041,
+        "3": 1041
+      },
+      "one_off_pressure_prompt_tokens": 68000,
+      "one_off_pressure_to_cap_ratio": 4.150390625,
+      "requests": 64,
+      "requirements": {
+        "hot_set_le_half_cap": true,
+        "one_off_pressure_gt_four_caps": true
+      },
+      "sha256": "eff3a518a54c15f164ee96fcfe535765255e1d3354dc4572c092a2eb03fdcf75",
+      "total_prompt_tokens": 102216
+    },
+    "traces/evaluation_seed_32001.jsonl": {
+      "hot_prefix_tokens_by_family": {
+        "0": 1041,
+        "1": 1041,
+        "2": 1041,
+        "3": 1041
+      },
+      "hot_set_to_cap_ratio": 0.254150390625,
+      "hot_set_tokens": 4164,
+      "minimum_useful_cached_tokens_by_family": {
+        "0": 1041,
+        "1": 1041,
+        "2": 1041,
+        "3": 1041
+      },
+      "one_off_pressure_prompt_tokens": 135856,
+      "one_off_pressure_to_cap_ratio": 8.2919921875,
+      "requests": 124,
+      "requirements": {
+        "hot_set_le_half_cap": true,
+        "one_off_pressure_gt_four_caps": true
+      },
+      "sha256": "f18df913b67c0d0db12d2e69c69e938b1ea244e471bc4b7aeb6fa4f7f24eef5f",
+      "total_prompt_tokens": 200028
+    },
+    "traces/evaluation_seed_32002.jsonl": {
+      "hot_prefix_tokens_by_family": {
+        "0": 1041,
+        "1": 1041,
+        "2": 1041,
+        "3": 1041
+      },
+      "hot_set_to_cap_ratio": 0.254150390625,
+      "hot_set_tokens": 4164,
+      "minimum_useful_cached_tokens_by_family": {
+        "0": 1041,
+        "1": 1041,
+        "2": 1041,
+        "3": 1041
+      },
+      "one_off_pressure_prompt_tokens": 135232,
+      "one_off_pressure_to_cap_ratio": 8.25390625,
+      "requests": 124,
+      "requirements": {
+        "hot_set_le_half_cap": true,
+        "one_off_pressure_gt_four_caps": true
+      },
+      "sha256": "53ad53bdad3f318f3d4c747daad514f525c0b20255acb2fb93dc18ba0da3866b",
+      "total_prompt_tokens": 199404
+    },
+    "traces/evaluation_seed_32003.jsonl": {
+      "hot_prefix_tokens_by_family": {
+        "0": 1041,
+        "1": 1041,
+        "2": 1041,
+        "3": 1041
+      },
+      "hot_set_to_cap_ratio": 0.254150390625,
+      "hot_set_tokens": 4164,
+      "minimum_useful_cached_tokens_by_family": {
+        "0": 1041,
+        "1": 1041,
+        "2": 1041,
+        "3": 1041
+      },
+      "one_off_pressure_prompt_tokens": 134944,
+      "one_off_pressure_to_cap_ratio": 8.236328125,
+      "requests": 124,
+      "requirements": {
+        "hot_set_le_half_cap": true,
+        "one_off_pressure_gt_four_caps": true
+      },
+      "sha256": "f1beb2c241fc24d0c9188eca8984dc4472f3edcb728c0a1f9ac26e946c9fdd26",
+      "total_prompt_tokens": 199116
+    },
+    "traces/evaluation_seed_32004.jsonl": {
+      "hot_prefix_tokens_by_family": {
+        "0": 1041,
+        "1": 1041,
+        "2": 1041,
+        "3": 1041
+      },
+      "hot_set_to_cap_ratio": 0.254150390625,
+      "hot_set_tokens": 4164,
+      "minimum_useful_cached_tokens_by_family": {
+        "0": 1041,
+        "1": 1041,
+        "2": 1041,
+        "3": 1041
+      },
+      "one_off_pressure_prompt_tokens": 133456,
+      "one_off_pressure_to_cap_ratio": 8.1455078125,
+      "requests": 124,
+      "requirements": {
+        "hot_set_le_half_cap": true,
+        "one_off_pressure_gt_four_caps": true
+      },
+      "sha256": "0d0a7abadcf8c32c41b1e05e549c0e9eb8e9a6f75ba7e7af5f3869c625153c8b",
+      "total_prompt_tokens": 197628
+    },
+    "traces/evaluation_seed_32005.jsonl": {
+      "hot_prefix_tokens_by_family": {
+        "0": 1041,
+        "1": 1041,
+        "2": 1041,
+        "3": 1041
+      },
+      "hot_set_to_cap_ratio": 0.254150390625,
+      "hot_set_tokens": 4164,
+      "minimum_useful_cached_tokens_by_family": {
+        "0": 1041,
+        "1": 1041,
+        "2": 1041,
+        "3": 1041
+      },
+      "one_off_pressure_prompt_tokens": 136432,
+      "one_off_pressure_to_cap_ratio": 8.3271484375,
+      "requests": 124,
+      "requirements": {
+        "hot_set_le_half_cap": true,
+        "one_off_pressure_gt_four_caps": true
+      },
+      "sha256": "655a2ccc7fea49aeef5146afdfbdb2c30774e54f1d58c4d3004e453c4b2b4f59",
+      "total_prompt_tokens": 200604
+    },
+    "traces/smoke_seed_32010.jsonl": {
+      "hot_prefix_tokens_by_family": {
+        "0": 1041,
+        "1": 1041,
+        "2": 1041,
+        "3": 1041
+      },
+      "hot_set_to_cap_ratio": 0.254150390625,
+      "hot_set_tokens": 4164,
+      "minimum_useful_cached_tokens_by_family": {
+        "0": 1041,
+        "1": 1041,
+        "2": 1041,
+        "3": 1041
+      },
+      "one_off_pressure_prompt_tokens": 33040,
+      "one_off_pressure_to_cap_ratio": 2.0166015625,
+      "requests": 36,
+      "requirements": {
+        "hot_set_le_half_cap": true,
+        "one_off_pressure_gt_four_caps": false
+      },
+      "sha256": "17dcb2f617c7330e0d3d2f491330425328e26cb1d457583fef3073b23faa69a3",
+      "total_prompt_tokens": 54424
+    }
+  }
+}

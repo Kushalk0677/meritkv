@@ -1,0 +1,400 @@
+{
+  "arm_aggregate_across_five_paired_seeds": {
+    "meritkv_joint_skip_write_skip_lookup_lru": {
+      "complete_hot_recovery_cells": 5,
+      "end_to_end_mean_ms": 321.84930126813634,
+      "end_to_end_p95_ms_mean_across_seeds": 534.1491266572848,
+      "evicted_tokens": 0.0,
+      "gpu_energy_j": 23481.6132,
+      "post_pressure_hot_survival": 4.0,
+      "seeds": 5,
+      "ttft_mean_ms": 318.86561159945785,
+      "ttft_p95_ms_mean_across_seeds": 532.1330669242889
+    },
+    "meritkv_skip_write_only_lru": {
+      "complete_hot_recovery_cells": 5,
+      "end_to_end_mean_ms": 318.48085260229004,
+      "end_to_end_p95_ms_mean_across_seeds": 530.5255493475124,
+      "evicted_tokens": 0.0,
+      "gpu_energy_j": 23230.2082,
+      "post_pressure_hot_survival": 4.0,
+      "seeds": 5,
+      "ttft_mean_ms": 315.56910923982576,
+      "ttft_p95_ms_mean_across_seeds": 528.5251762066036
+    },
+    "meritkv_write_through_lru": {
+      "complete_hot_recovery_cells": 5,
+      "end_to_end_mean_ms": 346.04980816553916,
+      "end_to_end_p95_ms_mean_across_seeds": 521.9212817260996,
+      "evicted_tokens": 150580.2,
+      "gpu_energy_j": 25460.694199999998,
+      "post_pressure_hot_survival": 4.0,
+      "seeds": 5,
+      "ttft_mean_ms": 343.2067195456775,
+      "ttft_p95_ms_mean_across_seeds": 519.8823566641659
+    },
+    "native_admit_all_lfu": {
+      "complete_hot_recovery_cells": 5,
+      "end_to_end_mean_ms": 305.51327069274964,
+      "end_to_end_p95_ms_mean_across_seeds": 516.6839246917516,
+      "evicted_tokens": 126940.6,
+      "gpu_energy_j": 22287.8626,
+      "post_pressure_hot_survival": 4.0,
+      "seeds": 5,
+      "ttft_mean_ms": 305.3481457965268,
+      "ttft_p95_ms_mean_across_seeds": 516.5149955730885
+    },
+    "native_admit_all_lru": {
+      "complete_hot_recovery_cells": 5,
+      "end_to_end_mean_ms": 341.65779395749973,
+      "end_to_end_p95_ms_mean_across_seeds": 516.5868430864066,
+      "evicted_tokens": 150580.2,
+      "gpu_energy_j": 25130.518799999998,
+      "post_pressure_hot_survival": 4.0,
+      "seeds": 5,
+      "ttft_mean_ms": 341.49340639386565,
+      "ttft_p95_ms_mean_across_seeds": 516.4244973426685
+    }
+  },
+  "arms": [
+    "native_admit_all_lru",
+    "meritkv_write_through_lru",
+    "meritkv_skip_write_only_lru",
+    "meritkv_joint_skip_write_skip_lookup_lru",
+    "native_admit_all_lfu"
+  ],
+  "cache_topology": {
+    "hybrid_swa": false,
+    "implementation": "RadixCache",
+    "lfu_arms": 1,
+    "lru_arms": 4
+  },
+  "cells": 31,
+  "claim_boundary": "This is a separate frozen Qwen2.5-32B storage-admission extension. It does not replace or retune the accepted August 20 result or the completed Gemma extension. Metrics are reported as measured; no positive performance conclusion is implied by conformance alone.",
+  "exact_output_mismatch_positions": 0,
+  "experiment": "meritkv_qwen25_capacity_pressure_20260824",
+  "lfu_frequency_aware_baseline": {
+    "arm": "native_admit_all_lfu",
+    "excluded_preflight_receipt": {
+      "completed_at": "2026-08-23T23:34:57.227654-04:00",
+      "functional_canary_sha256": "6416901fac1a7803fca3d39c311dcf5f785148ecce5f28227174a77e0294dc91",
+      "physical_eviction_delta": {
+        "evicted_tokens": 2168.0,
+        "eviction_calls": 1.0
+      },
+      "physical_eviction_primer": "control/eviction_metric_primers/lfu_feasibility_preflight_1787542497213253645.json",
+      "physical_eviction_primer_sha256": "5138c875ffb281cc3d596c20622eaf4cd292cf1b278c3e44adc39367b1bb50d7",
+      "receipt": "control/lfu_feasibility_receipt.json",
+      "receipt_sha256": "e3b0cd6ded738111c591f7ff102382dbadbe34e60bc57fef54018eff1dbaedf7",
+      "server_config_sha256": "b8d0e024d7ed97912fe628b0ae7c3cd6e1073c0d9f7f2443b8c8b4b5ebdade6a",
+      "startup_log": "control/server_launches/lfu_feasibility_preflight/startup_and_primer.log",
+      "startup_log_sha256": "68474391892fee413f9cdab6ebbeea24fd59e30ef1db5d57f8a7dff0b45685b3",
+      "status": "pass"
+    },
+    "measured_cells": 6,
+    "status": "feasible_included"
+  },
+  "measured_design": {
+    "all_five_smoke_cells_completed_before_evaluation": true,
+    "chronological_latin_balance_verified": true,
+    "excluded_calibration_cells": 1,
+    "excluded_lfu_feasibility_preflight": 1,
+    "measured_evaluation_cells": 25,
+    "measured_smoke_cells": 5,
+    "paired_evaluation_seeds": [
+      32001,
+      32002,
+      32003,
+      32004,
+      32005
+    ]
+  },
+  "model": "Qwen/Qwen2.5-32B-Instruct",
+  "observed_evaluation_execution_order": [
+    {
+      "arm": "native_admit_all_lru",
+      "seed": 32001,
+      "started_at": "2026-08-23T23:40:27.054081-04:00"
+    },
+    {
+      "arm": "meritkv_write_through_lru",
+      "seed": 32001,
+      "started_at": "2026-08-23T23:41:16.937118-04:00"
+    },
+    {
+      "arm": "meritkv_skip_write_only_lru",
+      "seed": 32001,
+      "started_at": "2026-08-23T23:42:11.051589-04:00"
+    },
+    {
+      "arm": "meritkv_joint_skip_write_skip_lookup_lru",
+      "seed": 32001,
+      "started_at": "2026-08-23T23:43:01.970984-04:00"
+    },
+    {
+      "arm": "native_admit_all_lfu",
+      "seed": 32001,
+      "started_at": "2026-08-23T23:44:59.057399-04:00"
+    },
+    {
+      "arm": "meritkv_write_through_lru",
+      "seed": 32002,
+      "started_at": "2026-08-23T23:46:50.503233-04:00"
+    },
+    {
+      "arm": "meritkv_skip_write_only_lru",
+      "seed": 32002,
+      "started_at": "2026-08-23T23:47:44.059088-04:00"
+    },
+    {
+      "arm": "meritkv_joint_skip_write_skip_lookup_lru",
+      "seed": 32002,
+      "started_at": "2026-08-23T23:48:34.522010-04:00"
+    },
+    {
+      "arm": "native_admit_all_lfu",
+      "seed": 32002,
+      "started_at": "2026-08-23T23:50:33.743654-04:00"
+    },
+    {
+      "arm": "native_admit_all_lru",
+      "seed": 32002,
+      "started_at": "2026-08-23T23:52:25.079616-04:00"
+    },
+    {
+      "arm": "meritkv_skip_write_only_lru",
+      "seed": 32003,
+      "started_at": "2026-08-23T23:53:15.018268-04:00"
+    },
+    {
+      "arm": "meritkv_joint_skip_write_skip_lookup_lru",
+      "seed": 32003,
+      "started_at": "2026-08-23T23:54:05.532374-04:00"
+    },
+    {
+      "arm": "native_admit_all_lfu",
+      "seed": 32003,
+      "started_at": "2026-08-23T23:56:02.415152-04:00"
+    },
+    {
+      "arm": "native_admit_all_lru",
+      "seed": 32003,
+      "started_at": "2026-08-23T23:57:53.880158-04:00"
+    },
+    {
+      "arm": "meritkv_write_through_lru",
+      "seed": 32003,
+      "started_at": "2026-08-23T23:58:43.831207-04:00"
+    },
+    {
+      "arm": "meritkv_joint_skip_write_skip_lookup_lru",
+      "seed": 32004,
+      "started_at": "2026-08-23T23:59:38.313753-04:00"
+    },
+    {
+      "arm": "native_admit_all_lfu",
+      "seed": 32004,
+      "started_at": "2026-08-24T00:01:52.871107-04:00"
+    },
+    {
+      "arm": "native_admit_all_lru",
+      "seed": 32004,
+      "started_at": "2026-08-24T00:03:57.703110-04:00"
+    },
+    {
+      "arm": "meritkv_write_through_lru",
+      "seed": 32004,
+      "started_at": "2026-08-24T00:04:47.250997-04:00"
+    },
+    {
+      "arm": "meritkv_skip_write_only_lru",
+      "seed": 32004,
+      "started_at": "2026-08-24T00:05:41.101910-04:00"
+    },
+    {
+      "arm": "native_admit_all_lfu",
+      "seed": 32005,
+      "started_at": "2026-08-24T00:07:37.350108-04:00"
+    },
+    {
+      "arm": "native_admit_all_lru",
+      "seed": 32005,
+      "started_at": "2026-08-24T00:09:28.753844-04:00"
+    },
+    {
+      "arm": "meritkv_write_through_lru",
+      "seed": 32005,
+      "started_at": "2026-08-24T00:10:19.016224-04:00"
+    },
+    {
+      "arm": "meritkv_skip_write_only_lru",
+      "seed": 32005,
+      "started_at": "2026-08-24T00:11:13.515486-04:00"
+    },
+    {
+      "arm": "meritkv_joint_skip_write_skip_lookup_lru",
+      "seed": 32005,
+      "started_at": "2026-08-24T00:12:04.430075-04:00"
+    }
+  ],
+  "paired_seed_deltas_for_skip_write_only": [
+    {
+      "comparisons": {
+        "meritkv_joint_skip_write_skip_lookup_lru": {
+          "end_to_end_mean_pct": -0.9513629455256356,
+          "evicted_tokens_delta": 0.0,
+          "gpu_energy_pct": -0.8169035752981335,
+          "hot_survival_delta": 0
+        },
+        "meritkv_write_through_lru": {
+          "end_to_end_mean_pct": -7.990535947924837,
+          "evicted_tokens_delta": -151185.0,
+          "gpu_energy_pct": -8.777674471750107,
+          "hot_survival_delta": 0
+        },
+        "native_admit_all_lfu": {
+          "end_to_end_mean_pct": 4.205608619714529,
+          "evicted_tokens_delta": -127950.0,
+          "gpu_energy_pct": 4.334501920087508,
+          "hot_survival_delta": 0
+        },
+        "native_admit_all_lru": {
+          "end_to_end_mean_pct": -6.400720903657719,
+          "evicted_tokens_delta": -151185.0,
+          "gpu_energy_pct": -7.091152725260585,
+          "hot_survival_delta": 0
+        }
+      },
+      "seed": 32001
+    },
+    {
+      "comparisons": {
+        "meritkv_joint_skip_write_skip_lookup_lru": {
+          "end_to_end_mean_pct": -1.3937982535352833,
+          "evicted_tokens_delta": 0.0,
+          "gpu_energy_pct": -1.621533699169364,
+          "hot_survival_delta": 0
+        },
+        "meritkv_write_through_lru": {
+          "end_to_end_mean_pct": -7.34574120487641,
+          "evicted_tokens_delta": -150657.0,
+          "gpu_energy_pct": -8.209306288196805,
+          "hot_survival_delta": 0
+        },
+        "native_admit_all_lfu": {
+          "end_to_end_mean_pct": 3.977124261707443,
+          "evicted_tokens_delta": -127326.0,
+          "gpu_energy_pct": 3.681474711042654,
+          "hot_survival_delta": 0
+        },
+        "native_admit_all_lru": {
+          "end_to_end_mean_pct": -7.213487266936736,
+          "evicted_tokens_delta": -150657.0,
+          "gpu_energy_pct": -8.15103875419605,
+          "hot_survival_delta": 0
+        }
+      },
+      "seed": 32002
+    },
+    {
+      "comparisons": {
+        "meritkv_joint_skip_write_skip_lookup_lru": {
+          "end_to_end_mean_pct": -1.1404123452771642,
+          "evicted_tokens_delta": 0.0,
+          "gpu_energy_pct": -1.328644560384129,
+          "hot_survival_delta": 0
+        },
+        "meritkv_write_through_lru": {
+          "end_to_end_mean_pct": -8.364883849540716,
+          "evicted_tokens_delta": -150321.0,
+          "gpu_energy_pct": -9.161583441415788,
+          "hot_survival_delta": 0
+        },
+        "native_admit_all_lfu": {
+          "end_to_end_mean_pct": 3.844592209612996,
+          "evicted_tokens_delta": -127134.0,
+          "gpu_energy_pct": 3.8898188188528193,
+          "hot_survival_delta": 0
+        },
+        "native_admit_all_lru": {
+          "end_to_end_mean_pct": -7.047230301495033,
+          "evicted_tokens_delta": -150321.0,
+          "gpu_energy_pct": -7.807883971275309,
+          "hot_survival_delta": 0
+        }
+      },
+      "seed": 32003
+    },
+    {
+      "comparisons": {
+        "meritkv_joint_skip_write_skip_lookup_lru": {
+          "end_to_end_mean_pct": -0.8358517621322559,
+          "evicted_tokens_delta": 0.0,
+          "gpu_energy_pct": -0.6876478535760566,
+          "hot_survival_delta": 0
+        },
+        "meritkv_write_through_lru": {
+          "end_to_end_mean_pct": -8.012108211301383,
+          "evicted_tokens_delta": -149073.0,
+          "gpu_energy_pct": -8.76510881729713,
+          "hot_survival_delta": 0
+        },
+        "native_admit_all_lfu": {
+          "end_to_end_mean_pct": 4.848151743119833,
+          "evicted_tokens_delta": -123767.0,
+          "gpu_energy_pct": 4.964122203733234,
+          "hot_survival_delta": 0
+        },
+        "native_admit_all_lru": {
+          "end_to_end_mean_pct": -6.569355226744989,
+          "evicted_tokens_delta": -149073.0,
+          "gpu_energy_pct": -7.301810218601956,
+          "hot_survival_delta": 0
+        }
+      },
+      "seed": 32004
+    },
+    {
+      "comparisons": {
+        "meritkv_joint_skip_write_skip_lookup_lru": {
+          "end_to_end_mean_pct": -0.9111079311104664,
+          "evicted_tokens_delta": 0.0,
+          "gpu_energy_pct": -0.8960191190418909,
+          "hot_survival_delta": 0
+        },
+        "meritkv_write_through_lru": {
+          "end_to_end_mean_pct": -8.111674540807478,
+          "evicted_tokens_delta": -151665.0,
+          "gpu_energy_pct": -8.880437300525823,
+          "hot_survival_delta": 0
+        },
+        "native_admit_all_lfu": {
+          "end_to_end_mean_pct": 4.354330417028285,
+          "evicted_tokens_delta": -128526.0,
+          "gpu_energy_pct": 4.2795140352023475,
+          "hot_survival_delta": 0
+        },
+        "native_admit_all_lru": {
+          "end_to_end_mean_pct": -6.685416252657051,
+          "evicted_tokens_delta": -151665.0,
+          "gpu_energy_pct": -7.453983179018053,
+          "hot_survival_delta": 0
+        }
+      },
+      "seed": 32005
+    }
+  ],
+  "requests": 3344,
+  "restoration": {
+    "completion_receipt_sha256": "c94dbe6ea1a50c4b14ca65e69da87cb9de70813d6c6a03f667b0faa4781b5bb8",
+    "full_verification_sha256": "ee5ef512aede497f2c1d48b47a83eabff703489cd6fee23677379d7fb8494c7b",
+    "nvfp4_preimage_sha256": "b2f4f24ff9d81207ea55eeaf0b5cd8e5a196430e21c9307eebad5233b3a99adf",
+    "production_container_id": "bd8f88b634ee5a038abf245115372ca6c1927230a1f69d9a50bc905b70d53b8a",
+    "production_image_id": "sha256:dfd8d4ab6001e8b5f9fa4be18baa26eefb20005579b24c7bc6141e3340717cd4",
+    "recovery_state_sha256": "81bb09637099062eea591994bc3989ec713a6fc2ad1c1f4eea105396ded85045",
+    "restore_evidence": "control/restore_1787544776",
+    "status": "pass"
+  },
+  "schema_version": 1,
+  "status": "verified"
+}

@@ -1,0 +1,13 @@
+dataset,meritkv_speedup_relative_to_strict_reactive,models,modes,seeds
+alpaca_eval,1.113,4,3,3
+ag_news,1.103,4,3,3
+dolly,1.087,4,3,3
+daily_dialog,1.072,4,3,3
+oasst1,1.072,4,3,3
+banking77,1.065,4,3,3
+samsum,1.062,4,3,3
+xsum,1.030,4,3,3
+ultrachat,1.028,4,3,3
+cnn_dailymail,1.028,4,3,3
+overall,1.089,4,3,3
+

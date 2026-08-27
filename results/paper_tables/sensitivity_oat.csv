@@ -1,0 +1,13 @@
+tuned_constant,max_abs_delta_speedup_pct
+equivalence_key_boost,1.40
+semantic_reuse_fraction,0.19
+semantic_threshold,<0.01
+semantic_benefit_discount,<0.01
+sandbox_max_divergence,<0.01
+templated_signal,<0.01
+entropy_penalty_weight,<0.01
+health_base_hit_waste_weights,<0.01
+ewma_alpha,<0.01
+suffix_cost,<0.01
+risk_aversion_lambda,<0.01
+

@@ -84,16 +84,20 @@ The 0.72 discount on benefit accounts for semantic uncertainty. Admitted semanti
 
 ### Risk-Averse Extension (Coupled Utility)
 
-The base U = B - C - W treats benefit, cost, and waste as independent. In practice they are coupled through the model's VRAM footprint kappa:
+The base U = B - C - W treats benefit, cost, and waste as independent. In practice they are coupled through the total memory footprint of the candidate cache entry:
 
 ```
-Ue(lambda) = Ue - lambda * kappa * Be * max(ew, 0.02)
-Us(lambda) = Us - lambda * kappa * Bs * max(ew, 0.02)
+Ue(lambda) = Ue - lambda * me * Be * max(ew, 0.02)
+Us(lambda) = Us - lambda * ms * Bs * max(ew, 0.02)
 ```
 
-lambda >= 0 is the risk-aversion parameter (default 0.15). At lambda = 0 the base policy is recovered exactly. This is analogous to mean-variance portfolio optimisation.
+Here me and ms are the total exact- and semantic-entry footprints in MB (approximately kappa * k for a k-token entry). lambda >= 0 is the risk-aversion parameter (default 0.15, with units 1/MB). At lambda = 0 the base policy is recovered exactly.
 
-**Why a coupling penalty?** High-kappa models (Phi-3: 0.375 MB/token) incur larger waste penalties because each wasted precompute occupies more memory. The covariance between benefit and waste is negative (correlation -0.24), meaning high-benefit admits also correlate with high waste. The penalty automatically blocks the worst semantic-mode failures on Phi-3.
+**Why a coupling penalty?** For a fixed prefix length, high-kappa models
+(Phi-3: 0.375 MB/token) produce larger entries and therefore receive a larger
+discount on high-benefit, high-waste admits. The paper treats this as a
+single-knob risk-aversion extension and does not claim a formal mean-variance
+interpretation or estimate benefit/waste covariance.
 
 ### EWMA Feedback
 
@@ -131,7 +135,8 @@ In semantic prompt mode, prompts carry a semantic_equivalence_key. Queries withi
 
 ## Parameter Calibration
 
-Seven parameters are calibrated from hardware measurements, not guessed:
+The cost-model quantities are measured or derived from model configuration;
+policy thresholds are separately tuned and sensitivity-tested:
 
 | Parameter | Meaning | How Calibrated |
 |-----------|---------|----------------|
@@ -139,7 +144,7 @@ Seven parameters are calibrated from hardware measurements, not guessed:
 | delta_r | Reuse overhead (ms) | Y-intercept of latency profile |
 | kappa | KV footprint (MB/token) | Estimated from model config |
 | k* | Breakeven prefix length | Eq: k* = delta_r / (beta - kappa * 1000 / Bw) |
-| k_min | Minimum reusable prefix | 16, safe for 4/5 models (Phi-3 uses breakeven guard) |
+| k_min | Minimum reusable prefix | 16, above the measured T4 analytical k* range of 3--11 tokens |
 | n_min | Minimum prefix observations | 8, derived from EWMA standard error |
 | U_min | Minimum utility threshold | beta * k_min - delta_r - memory_penalty - noise_floor |
 

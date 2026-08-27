@@ -22,13 +22,13 @@ python experiments/run_p100_isolated_sweep.py \
   --results_root results_p100_smoke
 ```
 
-## Main Controlled Run
+## Public Isolated Rerun
 
 ```bash
 python experiments/run_p100_isolated_sweep.py
 ```
 
-Default matrix:
+Current runner default:
 
 ```text
 5 models x 10 datasets x 3 prompt modes x 3 seeds x 3 engines
@@ -41,6 +41,12 @@ no_cache
 shadow_kv       # MeritKV-Sem
 shadow_kv_plus  # MeritKV
 ```
+
+This default is a convenient public sweep, not an assertion that every
+configured cell appears in the paper. The released process-isolated comparison
+contains four completed models (Gemma-2B, Qwen2.5-1.5B, TinyLlama-1.1B, and
+GPT-2), for 360 cells per engine. The separate controlled study and its
+availability accounting are documented in `results/controlled_results/`.
 
 To execute approximate semantic KV reuse in semantic mode, add:
 

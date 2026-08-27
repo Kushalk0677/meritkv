@@ -1,5 +1,10 @@
 # Qwen32B vLLM 5-Total-Replicate Summary
 
+> **Raw campaign summary:** This is the source for the paper's five-replicate
+> Qwen2.5-32B vLLM table. Percentage deltas below are means of matched
+> per-replicate ratios, so they need not equal ratios of the displayed
+> aggregate means.
+
 Rows: `150` / expected `150`
 Reps present: `[1, 2, 3, 4, 5]`
 

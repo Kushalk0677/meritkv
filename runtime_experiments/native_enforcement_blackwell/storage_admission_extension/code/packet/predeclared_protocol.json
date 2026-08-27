@@ -1,0 +1,196 @@
+{
+  "schema_version": 2,
+  "experiment": "meritkv_gemma4_capacity_pressure_20260822",
+  "status": "predeclared_pending_calibration",
+  "stakeholder": "Kushal Khemani",
+  "separate_extension_of": "meritkv_blackwell_enforced_20260820",
+  "preserve_prior_result_unchanged": true,
+  "model": {
+    "slug": "gemma4_31b",
+    "id": "google/gemma-4-31B-it",
+    "revision": "b9ea41a2887d8607f594846523f94c6cc75ac8a4",
+    "snapshot": "/datapool/cache/huggingface/hub/models--google--gemma-4-31B-it/snapshots/b9ea41a2887d8607f594846523f94c6cc75ac8a4",
+    "config_sha256": "e967dd38bc5cfd38bd09a995a7bf4a754075df2b46aba68f7fbb5a791e6d8dd1",
+    "weight_index_sha256": "d4aff3b976d69c123a29d1c085d7ba4de1ac3f4ca1726a7f81e1b11462a64ea2",
+    "tokenizer_manifest_sha256": "202cc4cc84e68aa6ec005e5b35a0627b4de805cfe1df61d5c5fc5b1f25fcca0e"
+  },
+  "runtime": {
+    "image": "shadowkv-sglang-native-admission:2026-08-20-swa-counters",
+    "image_id": "sha256:f4593e56ec7f7858f465a62f36dfc42ba8a2d9e91b7700cba50e8b21809e4d3f",
+    "sglang_version": "0.5.13",
+    "port": 30000,
+    "context_length": 4096,
+    "mem_fraction_static": 0.88,
+    "max_total_tokens_candidates": [16384],
+    "max_total_tokens_selection_rule": "single predeclared candidate; abort rather than retune if capacity gate fails",
+    "page_size": 1,
+    "dtype": "float16",
+    "attention_backend": "triton",
+    "sampling_backend": "pytorch",
+    "disable_cuda_graph": true,
+    "disable_piecewise_cuda_graph": true,
+    "enable_cache_report": true,
+    "enable_metrics": true,
+    "disable_hybrid_swa_memory": false,
+    "cache_implementation": "SWARadixCache for every included arm",
+    "cache_topology_acceptance": "startup log must prove impl=SWARadixCache hybrid_swa=True",
+    "cache_topology_rationale": "The pinned Gemma4 runtime's supported KV layout is the default hybrid SWA topology. An ordinary RadixCache launch reached readiness but crashed on the first Gemma4 forward in the Triton KV-buffer write path; all required arms therefore share the default SWARadixCache with its effective LRU retention.",
+    "effective_retention": "lru",
+    "retention_flag": "--radix-eviction-policy lru",
+    "physical_eviction_metric_registration": {
+      "mode": "lazy_on_first_physical_eviction",
+      "launch_gate": "require the metrics endpoint plus kv_evictable_tokens and swa_evictable_tokens; the physical-eviction counter and histogram do not register until the first eviction",
+      "non_measured_primer": "on every fresh server launch, replay frozen calibration one-off prompts only until a real physical eviction registers both metric families; retain a receipt, flush cache, and reset native action counters before any measured or resumed cell",
+      "primer_required_before_every_measured_cell": true,
+      "calibration_before_may_be_absent": false,
+      "calibration_after_required": true,
+      "all_post_calibration_snapshots_required": true,
+      "actual_sample_rule": "every measured before and after snapshot must contain both registered definitions and actually emitted evicted-token and eviction-count samples; runner-synthesized zero samples do not qualify",
+      "delta_rule": "all cell deltas subtract actually emitted monotonic samples captured after the excluded primer; calibration, smoke, and evaluation begin from a flushed cache with reset native action counters"
+    }
+  },
+  "arms": [
+    {
+      "name": "native_admit_all_lru",
+      "retention": "lru",
+      "policy": false,
+      "bypass_lookup": false,
+      "bypass_write": false
+    },
+    {
+      "name": "meritkv_write_through_lru",
+      "retention": "lru",
+      "policy": true,
+      "bypass_lookup": false,
+      "bypass_write": false
+    },
+    {
+      "name": "meritkv_skip_write_only_lru",
+      "retention": "lru",
+      "policy": true,
+      "bypass_lookup": false,
+      "bypass_write": true
+    },
+    {
+      "name": "meritkv_joint_skip_write_skip_lookup_lru",
+      "retention": "lru",
+      "policy": true,
+      "bypass_lookup": true,
+      "bypass_write": true
+    }
+  ],
+  "optional_frequency_aware_baseline": {
+    "request": "LFU or another frequency-aware retention baseline, if feasible",
+    "status": "infeasible_on_pinned_image",
+    "scientific_disposition": "omitted_as_infeasible",
+    "replacement_baseline_added": false,
+    "receipt": "feasibility/lfu_infeasibility_receipt.json",
+    "reason": "A genuine LFU arm requires ordinary RadixCache because the pinned SWARadixCache uses LRU internally. Ordinary RadixCache with the frozen Gemma4 configuration crashes on the first forward before a measured request completes."
+  },
+  "calibration": {
+    "seed": 32000,
+    "trace": "traces/calibration_seed_32000.jsonl",
+    "excluded_from_evaluation": true,
+    "allowed_adjustments": ["max_total_tokens", "hardware_specific_policy_threshold_if_required"],
+    "policy_threshold_adjustment_required": false,
+    "acceptance": {
+      "model_boots": true,
+      "requests_complete": true,
+      "evicted_tokens_gt": 0,
+      "hot_cached_hits_gt": 0,
+      "ooms": 0,
+      "request_retractions": 0
+    }
+  },
+  "evaluation": {
+    "seeds": [32001, 32002, 32003, 32004, 32005],
+    "paired_identical_trace_within_seed": true,
+    "trace_pattern": "traces/evaluation_seed_{seed}.jsonl",
+    "trace_requests": 124,
+    "max_tokens": 1,
+    "temperature": 0.0,
+    "arrival_simulation": false,
+    "reset_only_before_cell": ["flush_cache", "shadowkv_admission_metrics/reset"],
+    "retuning_from_evaluation": false,
+    "cells": 20,
+    "plan": "evaluation_plan_20.tsv",
+    "arm_order_design": {
+      "method": "four cyclic Latin rows followed by the first row",
+      "orders_by_seed": {
+        "32001": [
+          "native_admit_all_lru",
+          "meritkv_write_through_lru",
+          "meritkv_skip_write_only_lru",
+          "meritkv_joint_skip_write_skip_lookup_lru"
+        ],
+        "32002": [
+          "meritkv_write_through_lru",
+          "meritkv_skip_write_only_lru",
+          "meritkv_joint_skip_write_skip_lookup_lru",
+          "native_admit_all_lru"
+        ],
+        "32003": [
+          "meritkv_skip_write_only_lru",
+          "meritkv_joint_skip_write_skip_lookup_lru",
+          "native_admit_all_lru",
+          "meritkv_write_through_lru"
+        ],
+        "32004": [
+          "meritkv_joint_skip_write_skip_lookup_lru",
+          "native_admit_all_lru",
+          "meritkv_write_through_lru",
+          "meritkv_skip_write_only_lru"
+        ],
+        "32005": [
+          "native_admit_all_lru",
+          "meritkv_write_through_lru",
+          "meritkv_skip_write_only_lru",
+          "meritkv_joint_skip_write_skip_lookup_lru"
+        ]
+      },
+      "balance_statement": "Each seed contains every arm exactly once. Across five seeds every arm appears in every position, with one position repeated; exact integer equality is impossible because five is not divisible by four."
+    }
+  },
+  "smoke": {
+    "seed": 32010,
+    "trace": "traces/smoke_seed_32010.jsonl",
+    "all_included_arms": true,
+    "cells": 4,
+    "plan": "smoke_plan_4.tsv",
+    "requests": 36
+  },
+  "workload": {
+    "hot_families": 4,
+    "hot_prefix_repetitions": 40,
+    "one_off_prefix_repetitions": 48,
+    "phases": [
+      "bootstrap_hot_set",
+      "establish_hot_hits",
+      "capacity_pressure_with_hot_probes",
+      "post_pressure_probe",
+      "recovery"
+    ],
+    "pressure_requirement": "one-off prompt tokens admitted by native admit-all exceed four times max_total_tokens",
+    "hot_set_requirement": "combined hot prefixes consume no more than half max_total_tokens",
+    "useful_hot_hit_rule": "cached_tokens must be at least the pinned tokenizer token count of the full family shared_prefix_text; page_size is frozen to 1"
+  },
+  "metrics": [
+    "request_ttft_ms",
+    "request_end_to_end_latency_ms",
+    "request_cached_tokens",
+    "phase_and_hot_family",
+    "policy_decision_and_skip_bits",
+    "output_text_and_sha256",
+    "cell_ttft_mean_and_p95_ms",
+    "cell_end_to_end_mean_and_p95_ms",
+    "NVML_energy",
+    "sglang_evicted_tokens_total",
+    "sglang_eviction_duration_seconds_count",
+    "hot_exact_hit_rate_by_phase",
+    "hot_family_survival",
+    "requests_to_recover"
+  ],
+  "freeze_rule": "write calibration_receipt.json and evaluation_freeze.json before the first smoke or evaluation request; evaluation_freeze hash is immutable thereafter",
+  "scientific_unit": "paired seed",
+  "external_communication": false
+}

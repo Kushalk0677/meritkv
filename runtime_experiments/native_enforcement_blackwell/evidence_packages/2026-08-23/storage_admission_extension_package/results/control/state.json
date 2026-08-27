@@ -1,0 +1,8 @@
+{
+  "detail": "25 cells and 2688 requests verified; production restored",
+  "experiment": "meritkv_gemma4_capacity_pressure_20260822",
+  "phase": "verified",
+  "pid": 1187253,
+  "status": "complete",
+  "updated_at": "2026-08-23T01:00:39.253472-04:00"
+}
