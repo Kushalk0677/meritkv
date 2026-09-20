@@ -53,6 +53,4 @@ abstract: >
   admit-all LRU; Qwen P95 regresses by 1.65% versus write-through, and native LFU
   remains stronger on that trace. A controlled multi-round trace reduces latency by
   11.6–16.7% and improves recovery by 41–61 percentage points versus write-through;
-  recovery remains 15.2–28.2 percentage points above controlled-bank LFU. The
-  implementation and experiment artifacts are publicly available at
-  https://github.com/Kushalk0677/meritkv.
+  recovery remains 15.2–28.2 percentage points above controlled-bank LFU.
