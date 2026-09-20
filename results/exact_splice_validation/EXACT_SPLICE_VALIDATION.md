@@ -85,6 +85,6 @@ These results support a scoped claim: with the recorded cache API, mask, logical
 
 ## Raw artifacts
 
-The internal ShadowKV repository includes the per-model JSON reports and JSON environment, status, and summary metadata under `raw/`. The curated anonymous MeritKV repository intentionally publishes only this concise report; the raw internal artifacts can be added to the reviewer release if artifact policy permits.
+The raw execution logs and per-model JSON environment, status, and summary metadata are retained under `raw/`. This public research repository publishes this concise summary report alongside the primary evidence.
 
 The downloaded archives passed their embedded SHA-256 manifest checks. No scientific execution failures were recorded. The `strict_pass` field is a tensor-level `allclose` diagnostic and should not be interpreted as the token-level outcome; all float16 reports retain the raw differences rather than relaxing tolerances after observing the results.

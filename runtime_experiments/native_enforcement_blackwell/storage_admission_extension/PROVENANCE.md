@@ -37,7 +37,7 @@ The `code/` directory preserves the parts of the executed implementation that ma
 - `meritkv_blackwell_20260817/` and `meritkv_blackwell_20260820/`: preserved instrumentation wrappers used by the cell runner.
 - `source_snapshot/`: compact Python import closure used by those wrappers.
 
-The server-orchestration controller is not in the anonymous package because it contains machine-specific service paths and restoration controls. This omission does not remove the executed cell logic, frozen protocol, cache hook, or verifier. Full commands, server logs, request traces, receipts, and the original orchestration controller remain in the private package identified above.
+The server-orchestration controller is not in the public package because it contains machine-specific service paths and restoration controls. This omission does not remove the executed cell logic, frozen protocol, cache hook, or verifier. Full commands, server logs, request traces, receipts, and the complete evidence packages are preserved under `evidence_packages/`.
 
 ## Aggregate construction
 

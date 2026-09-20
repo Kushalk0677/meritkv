@@ -45,8 +45,8 @@ The `code/` directory retains the executed components that materially support re
 - `meritkv_blackwell_20260817/` and `meritkv_blackwell_20260820/`: preserved instrumentation wrappers used by the cell runner.
 - `source_snapshot/`: compact Python import closure used by those wrappers.
 
-Machine-specific service units, server restoration controls, raw commands, server logs, and request traces remain only in the complete private package.
-Author/operator identity metadata is also omitted from the anonymous curated derivative.
+Machine-specific service units, server restoration controls, raw commands, server logs, and request traces are retained in the project evidence packages.
+Personal operator credentials and machine-specific host paths are omitted from the public repository package.
 
 ## Aggregate construction
 
