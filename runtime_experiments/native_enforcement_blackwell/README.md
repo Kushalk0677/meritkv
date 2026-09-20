@@ -41,7 +41,7 @@ Outputs were compared as exact UTF-8 text plus SHA-256, without normalization or
 
 ## Artifact scope
 
-The private ShadowKV repository retains the frozen configuration, implementation patch, accepted benchmark records, request-level artifacts, native action counters, server logs, verification tooling, and completion receipt. The public MeritKV reviewer repository retains this concise paper-facing summary only.
+This repository retains the frozen configuration, implementation patch, accepted benchmark records, request-level artifacts, native action counters, server logs, verification tooling, and completion receipt. Concise paper-facing summaries are provided alongside the original archives and their byte-verified expanded packages.
 
 - Evidence-package SHA-256: `e7943267252fe160afdbbe37c72884eccd029cc66f22419688657d962d5f749b`
 - Completion-receipt SHA-256: `476f33dab27e65e5e9f750fde3e25bd6dbccf085398d7791d1a6395eea9776ee`

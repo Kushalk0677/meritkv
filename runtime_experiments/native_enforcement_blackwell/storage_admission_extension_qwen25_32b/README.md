@@ -52,4 +52,4 @@ This extension does not establish general production acceleration under ordinary
 - `PROVENANCE.md`: package hash, verification status, curation boundary, and code inventory.
 - `code/`: the frozen trace generator, cell wrapper, plans, verifier, feasibility gate, instrumentation wrappers, and compact source closure used by the executed package.
 
-The public derivative intentionally omits request-level traces, server logs, host restoration records, transfer archives, and operator-specific orchestration. The complete unmodified package is preserved in the private ShadowKV evidence repository.
+This curated summary directory omits request-level traces, server logs, host-restoration records, transfer archives, and operator-specific orchestration. The complete unmodified evidence package, including the retained records, is preserved under `../evidence_packages/2026-08-24/`.

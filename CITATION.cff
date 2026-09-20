@@ -1,17 +1,34 @@
 cff-version: 1.2.0
-title: "MeritKV: Novel Per-Request Utility Decisions for Waste-Aware KV Cache Reuse"
-message: "If you use this repository, please cite the project."
+title: "MeritKV: Utility-Gated Admission Control for KV-Cache Reuse in LLM Serving"
+message: "If you use this repository, please cite the accepted TMLR paper."
 type: software
 authors:
   - family-names: Khemani
     given-names: Kushal
+    affiliation: Independent Researcher
   - family-names: Leri
     given-names: Evan
+    affiliation: Independent Researcher
   - family-names: Mittal
     given-names: Sparsh
+    affiliation: Indian Institute of Technology Roorkee
 version: 0.3.0
 license: "MIT"
-repository-code: "https://github.com/Kushalk0677/shadowkv"
+repository-code: "https://github.com/Kushalk0677/meritkv"
+url: "https://openreview.net/forum?id=y3j6fucWQP"
+preferred-citation:
+  type: article
+  title: "MeritKV: Utility-Gated Admission Control for KV-Cache Reuse in LLM Serving"
+  authors:
+    - family-names: Khemani
+      given-names: Kushal
+    - family-names: Leri
+      given-names: Evan
+    - family-names: Mittal
+      given-names: Sparsh
+  journal: "Transactions on Machine Learning Research"
+  year: 2026
+  url: "https://openreview.net/forum?id=y3j6fucWQP"
 abstract: >
   MeritKV is a per-request policy controller for KV cache reuse in LLM
   serving. Instead of treating reuse as a yes/no prefix-cache decision, it

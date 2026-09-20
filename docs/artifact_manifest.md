@@ -1,7 +1,7 @@
 # Repository Artifact Manifest
 
-This is the complete working repository, not the compact anonymised reviewer
-snapshot. It contains source, measured aggregates, complete project-retained raw campaigns,
+This is the complete public research repository, not the compact review
+artifact snapshot. It contains source, measured aggregates, complete project-retained raw campaigns,
 historical provenance, and explicitly modelled estimates. The current paper and
 `CLAIMS_TO_ARTIFACTS.md` define the paper-facing evidence boundary.
 
