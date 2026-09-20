@@ -30,9 +30,29 @@ preferred-citation:
   year: 2026
   url: "https://openreview.net/forum?id=y3j6fucWQP"
 abstract: >
-  MeritKV is a per-request policy controller for KV cache reuse in LLM
-  serving. Instead of treating reuse as a yes/no prefix-cache decision, it
-  scores whether reuse helps the current request. The controller can admit
-  reuse, bypass low-utility candidates, account for wasted speculative work,
-  and record semantic reuse opportunities without blindly executing unsafe
-  approximate KV substitution.
+  Key-value (KV) cache reuse lowers prefill latency, but lookup, cache manipulation,
+  and speculative precompute can cost more than the computation they save, so a
+  serving system can be slower than no cache even at a high hit rate. We argue that
+  KV reuse should be a per-request economic decision rather than an unconditional
+  mode, and present MeritKV, a lightweight admission-control layer that scores each
+  candidate reuse by its net utility (saved prefill time minus reuse cost minus expected
+  waste) and executes it only when that estimate is positive, bypassing otherwise. The
+  gate is backend-agnostic and composes on top of existing prefix caches, while a
+  single waste-feedback loop makes admission self-correcting as workloads change.
+  Across controlled studies on five Hugging Face models (GPT-2, TinyLlama, Qwen2.5,
+  Gemma, and Phi-3; 124M–3.8B parameters) and ten datasets, MeritKV matches no-cache
+  performance on low-reuse traffic (0.99–1.01x) and observes 1.31–1.61x in custom-HF
+  diagnostic configurations on structured prompts. In a 360-cell admission-policy
+  comparison, it improves speedup from 1.085x to 1.110x while reducing the waste ratio
+  from 24.0% to 5.6% relative to MeritKV-Sem, the reactive-plus-speculative variant
+  without the policy controller. We additionally evaluate twelve models up to 32B and
+  write-through SGLang, LMCache, and vLLM overlays, which establish compatibility and
+  controller overhead, not acceleration. Under capacity pressure, five-seed native
+  SGLang traces on Gemma-4-31B and Qwen2.5-32B show skip-write admission eliminating
+  measured evictions and reducing mean latency/energy by 6.8–7.7%/7.6–8.5% versus native
+  admit-all LRU; Qwen P95 regresses by 1.65% versus write-through, and native LFU
+  remains stronger on that trace. A controlled multi-round trace reduces latency by
+  11.6–16.7% and improves recovery by 41–61 percentage points versus write-through;
+  recovery remains 15.2–28.2 percentage points above controlled-bank LFU. The
+  implementation and experiment artifacts are publicly available at
+  https://github.com/Kushalk0677/meritkv.
