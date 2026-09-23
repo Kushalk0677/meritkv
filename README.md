@@ -1,7 +1,6 @@
 # MeritKV: Utility-Gated Admission Control for KV-Cache Reuse in LLM Serving
 
 [![TMLR accepted](https://img.shields.io/badge/TMLR-accepted-brightgreen.svg)](https://openreview.net/forum?id=y3j6fucWQP)
-[![YouTube Video](https://img.shields.io/badge/YouTube-Video_Talk-red.svg?logo=youtube)](https://www.youtube.com/watch?v=X5VAFEl17zE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
