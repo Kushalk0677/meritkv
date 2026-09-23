@@ -1,6 +1,7 @@
 # MeritKV: Utility-Gated Admission Control for KV-Cache Reuse in LLM Serving
 
 [![TMLR accepted](https://img.shields.io/badge/TMLR-accepted-brightgreen.svg)](https://openreview.net/forum?id=y3j6fucWQP)
+[![YouTube Video](https://img.shields.io/badge/YouTube-Video_Talk-red.svg?logo=youtube)](https://www.youtube.com/watch?v=X5VAFEl17zE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
@@ -8,6 +9,18 @@ MeritKV is a per-request policy controller for KV cache reuse in LLM serving. In
 
 > **Authors:** Kushal Khemani, Evan Leri, Sparsh Mittal  
 > **Paper:** Accepted by Transactions on Machine Learning Research. [Reviews and decision on OpenReview](https://openreview.net/forum?id=y3j6fucWQP).
+
+---
+
+## Video Presentation
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=X5VAFEl17zE">
+    <img src="https://img.youtube.com/vi/X5VAFEl17zE/maxresdefault.jpg" alt="MeritKV Video Presentation" width="750"/>
+  </a>
+  <br>
+  <em>Click above to watch the video presentation on YouTube.</em>
+</p>
 
 ---
 
